@@ -7,55 +7,55 @@ import com.tgb.lk.annotation.ExcelVOAttribute;
 @AutoBean(alias = "Promotion",table="promotion")
 public class Promotion {
 
-  @AutoField(alias = "id", column = "id", isKey = true , isRequired = true , type="Integer", length=0)
-  @ExcelVOAttribute(name = "id", column = "A")
-  private int id;
+  @AutoField(alias = "promotionId", column = "promotion_id", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "promotion_id", column = "A")
+  private int promotionId;
 
-  @AutoField(alias = "name", column = "name", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "name", column = "B")
-  private String name;
+  @AutoField(alias = "promotionName", column = "promotion_name", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "promotion_name", column = "B")
+  private String promotionName;
 
-  @AutoField(alias = "threshold", column = "threshold", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "threshold", column = "C")
-  private int threshold;
+  @AutoField(alias = "promotionThreshold", column = "promotion_threshold", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "promotion_threshold", column = "C")
+  private Double promotionThreshold;
 
-  @AutoField(alias = "deduction", column = "deduction", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "deduction", column = "D")
-  private int deduction;
+  @AutoField(alias = "promotionDeduction", column = "promotion_deduction", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "promotion_deduction", column = "D")
+  private Double promotionDeduction;
 
-  @AutoField(alias = "scope", column = "scope", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "scope", column = "E")
-  private int scope;
+  @AutoField(alias = "effectiveTime", column = "effective_time", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "effective_time", column = "E")
+  private int effectiveTime;
 
 
-  public int getId() {
-    return id;
+  public int getPromotionId() {
+    return promotionId;
   }
-  public void setId(int id){
-    this.id = id;
+  public void setPromotionId(int promotionId){
+    this.promotionId = promotionId;
   }
-  public String getName() {
-    return name;
+  public String getPromotionName() {
+    return promotionName;
   }
-  public void setName(String name){
-    this.name = name;
+  public void setPromotionName(String promotionName){
+    this.promotionName = promotionName;
   }
-  public int getThreshold() {
-    return threshold;
+  public Double getPromotionThreshold() {
+    return promotionThreshold;
   }
-  public void setThreshold(int threshold){
-    this.threshold = threshold;
+  public void setPromotionThreshold(Double promotionThreshold){
+    this.promotionThreshold = promotionThreshold;
   }
-  public int getDeduction() {
-    return deduction;
+  public Double getPromotionDeduction() {
+    return promotionDeduction;
   }
-  public void setDeduction(int deduction){
-    this.deduction = deduction;
+  public void setPromotionDeduction(Double promotionDeduction){
+    this.promotionDeduction = promotionDeduction;
   }
-  public int getScope() {
-    return scope;
+  public int getEffectiveTime() {
+    return effectiveTime;
   }
-  public void setScope(int scope){
-    this.scope = scope;
+  public void setEffectiveTime(int effectiveTime){
+    this.effectiveTime = effectiveTime;
   }
 }

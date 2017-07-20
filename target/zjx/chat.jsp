@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.neusoft.model.User" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Bruce Lee
   Date: 2017/7/16
@@ -6,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -15,10 +16,17 @@
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/chat_style.css">
     <script type="text/javascript">
         var client;
-        clientID = '1';   //session获取登录用户的用户编号
+        var clientID = '${user.nickName}';   //session获取登录用户的用户编号
+        var all_users = [];
         function lostConnection() {
             //$('#message').append('连接已经断开！');
             alert('连接已经断开');
+            <%
+            List<User> users = (List<User>)request.getAttribute("chat_users");
+            for(int i = 0; i < users.size(); ++i){%>
+                all_users.push('<%=(String)users.get(i).getNickName()%>');
+            <%}%>
+            <%=request.getAttribute("userName")%>
         }
 
         function successConnection() {
@@ -31,7 +39,10 @@
             var msgObj = jQuery.parseJSON(message.payloadString);
             //添加新消息
             //$('#message').append(msgObj.from + ':' + msgObj.body + '</br>');
-            append_msg(msgObj.from, msgObj.body);
+            if(msgObj.to == clientID){
+
+                append_msg(msgObj.from, msgObj.body);
+            }
         }
 
         function connect() {
@@ -70,7 +81,7 @@
             send_message.destinationName = "topic";
             client.send(send_message);
             append_msg(clientID, msg.body, true);
-            alert('fasong' + send_message);
+            alertss('fasong' + send_message);
         }
 
         function append_msg(user, msg, clear){
@@ -159,9 +170,10 @@
         <div class="chat_right">
             <ul class="user_list" title="双击用户私聊">
                 <li class="fn-clear selected"><em>所有用户</em></li>
-                <li class="fn-clear" data-id="1"><span><img src="images/hetu.jpg" width="30" height="30"  alt=""/></span><em>河图</em><small class="online" title="在线"></small></li>
-                <li class="fn-clear" data-id="2"><span><img src="images/53f44283a4347.jpg" width="30" height="30"  alt=""/></span><em>猫猫</em><small class="online" title="在线"></small></li>
-                <li class="fn-clear" data-id="3"><span><img src="images/53f442834079a.jpg" width="30" height="30"  alt=""/></span><em>白猫</em><small class="offline" title="离线"></small></li>
+
+                <c:forEach items="${chat_users}" var="chat_user" varStatus="index_object">
+                    <li class="fn-clear" data-id="${index_object.index+1}"><span><img src="images/hetu.jpg" width="30" height="30"  alt=""/></span><em>${chat_user.nickName}</em><small class="online" title="在线"></small></li>
+                </c:forEach>
             </ul>
         </div>
     </div>

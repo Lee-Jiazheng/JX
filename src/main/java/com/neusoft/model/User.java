@@ -9,46 +9,56 @@ import java.util.Date;
 @AutoBean(alias = "User",table="user")
 public class User {
 
-  @AutoField(alias = "id", column = "id", isKey = true , isRequired = true , type="Integer", length=0)
-  @ExcelVOAttribute(name = "id", column = "A")
-  private int id;
+  @AutoField(alias = "userId", column = "user_id", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "user_id", column = "A")
+  private int userId;
 
-  @AutoField(alias = "nickname", column = "nickname", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "nickname", column = "B")
-  private String nickname;
+  @AutoField(alias = "password", column = "password", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "password", column = "B")
+  private String password;
 
-  @AutoField(alias = "realname", column = "realname", length = 45)
-  @ExcelVOAttribute(name = "realname", column = "C")
+  @AutoField(alias = "nickName", column = "nick_name", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "nick_name", column = "C")
+  private String nickName;
+
+  @AutoField(alias = "realname", column = "realname", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "realname", column = "D")
   private String realname;
 
   @AutoField(alias = "createTime", column = "create_time", isRequired = true, type = "Date")
-  @ExcelVOAttribute(name = "create_time", column = "D")
+  @ExcelVOAttribute(name = "create_time", column = "E")
   private Date createTime;
 
-  @AutoField(alias = "email", column = "email", length = 45)
-  @ExcelVOAttribute(name = "email", column = "E")
+  @AutoField(alias = "email", column = "email", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "email", column = "F")
   private String email;
 
   @AutoField(alias = "phone", column = "phone", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "phone", column = "F")
+  @ExcelVOAttribute(name = "phone", column = "G")
   private String phone;
 
   @AutoField(alias = "credit", column = "credit", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "credit", column = "G")
+  @ExcelVOAttribute(name = "credit", column = "H")
   private int credit;
 
 
-  public int getId() {
-    return id;
+  public int getUserId() {
+    return userId;
   }
-  public void setId(int id){
-    this.id = id;
+  public void setUserId(int userId){
+    this.userId = userId;
   }
-  public String getNickname() {
-    return nickname;
+  public String getPassword() {
+    return password;
   }
-  public void setNickname(String nickname){
-    this.nickname = nickname;
+  public void setPassword(String password){
+    this.password = password;
+  }
+  public String getNickName() {
+    return nickName;
+  }
+  public void setNickName(String nickName){
+    this.nickName = nickName;
   }
   public String getRealname() {
     return realname;

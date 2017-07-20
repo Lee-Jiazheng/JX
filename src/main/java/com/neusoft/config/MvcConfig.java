@@ -29,6 +29,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter
         registry.addResourceHandler("/js/**").addResourceLocations("/js/");
         registry.addResourceHandler("/css/**").addResourceLocations("/css/");
         registry.addResourceHandler("/images/**").addResourceLocations("/images/");
+        registry.addResourceHandler("/admin/**").addResourceLocations("/admin/");
         super.addResourceHandlers(registry);
     }
 
@@ -76,11 +77,10 @@ public class MvcConfig extends WebMvcConfigurerAdapter
         return configurer;
     }*/
 
-    //@Bean("multipartResolver")
-    /*@Bean
+    @Bean(name = "multipartResolver")
     public MultipartResolver multipartResolver(){
         CommonsMultipartResolver mr=new CommonsMultipartResolver();
         mr.setMaxUploadSize(10240000);
         return mr;
-    }*/
+    }
 }
