@@ -1,0 +1,105 @@
+$grey_font:#aaa;
+$white_backgroud:#fff;
+$white_font:#fff;
+$white_border:#e8e8e8;
+
+$black_border:#333;
+$black_font:#333;
+$grey_border:#ccc;
+$logo_blue:#15a8e0;
+
+.smalllogo_reg{
+    height: 40px;
+    width: 120px;
+    background-image: url(../images/logo.png);
+    background-size:120px;
+    background-position: 1px 2px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+.reg_nav{
+    height: 74px;
+    .reg_nav_left{
+        position: absolute;
+        left:180px;
+        top:25px;
+        font-size: 18px;
+    }
+    .reg_nav_right{
+        position: absolute;
+        top:25px;
+        right:50px;
+        font-size: 16px;
+        color:$grey_font;
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+}
+.main{
+    background: $white_backgroud;
+}
+
+#reg_row{
+    width: 1200px;
+    margin:0 auto;
+    position: relative;
+    border-bottom: 1px solid $white_border;
+    .reg_box{
+        width: 400px;
+        padding: 40px 25px;
+        color: #6c6c6c;
+        margin: 0 auto;
+    }
+}
+
+.reg_field{
+    border: 1px solid $grey_border;
+    margin:30px 0;
+    padding: 5px;
+    .reg_label{
+        margin-top:5px;
+        float: left;
+        height: 25px;
+        width: 25%;
+        border-right: 1px solid $grey_border;
+        padding:2px 0 0 5px;
+        label{
+            padding-left:10px;
+            font-size: 15px;
+        }
+    }
+    .reg_input{
+        float: right;
+        width: 70%;
+        height: 35px;
+        input{
+            width: 95%;
+            height: 85%;
+            border: none;
+            outline: 0;
+            font-size: 16px;
+            color:$black_font;
+
+        }
+    }
+    .clear{
+        clear: both;
+    }
+}
+.icon_login{
+    font-size: 29px;
+    
+}
+input[type=submit]{
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: $logo_blue;
+    color: $white_font;
+    width: 100%;
+    height: 35px;
+    margin: 5px 0 20px;
+}
