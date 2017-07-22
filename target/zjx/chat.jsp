@@ -69,7 +69,11 @@
         }
 
         $(function($) {
+            $.get("add_chat_user.do", function (responsetext) {
+                alert(responsetext);
+            });
             connect();
+
         });
 
         function sendMsg() {

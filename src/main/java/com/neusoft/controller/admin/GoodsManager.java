@@ -1,6 +1,10 @@
 package com.neusoft.controller.admin;
 
+import com.neusoft.mapper.IAdminMapper;
+import com.neusoft.model.Goods;
+import com.neusoft.service.IAdminService;
 import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +15,7 @@ import javax.mail.Multipart;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -20,16 +25,22 @@ import java.util.UUID;
 @RequestMapping("/admin/")
 public class GoodsManager {
 
-    //@RequestMapping("add_good.do")
-    @RequestMapping("upload.do")
-    public ModelAndView upload(MultipartFile file, HttpServletRequest request){
-        String path = request.getSession().getServletContext().getRealPath("/upload");
-        String fileName = UUID.randomUUID().toString().replace("-", "") + file.getOriginalFilename();
-        try{
-            FileUtils.writeByteArrayToFile(new File(path, fileName), file.getBytes());
-        }catch (IOException e){
-            System.out.println("文件上传失败");
-        }
+    @Value("#{adminService}")
+    private IAdminService adminService;
+    //增加一个商品
+    @RequestMapping("add_good.do")
+    public ModelAndView add_good(){
+        Goods good = new Goods();
+        good.setGoodsName("汉堡");
+        Date date = new Date();
+
+        good.setGoodsCreateTime(date);
+        good.setGoodsCategory(2);
+        good.setGoodsQuantity(100);
+        good.setGoodsPrice(99.9);
+        good.setGoodsStatus(0);
+        good.setGoodsUpdateTime(date);
+        adminService.add_good(good);
         return null;
     }
 

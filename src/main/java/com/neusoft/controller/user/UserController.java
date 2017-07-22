@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import sun.security.pkcs11.Secmod;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,14 +39,24 @@ public class UserController {
     private IUserService userService;
 
     @RequestMapping("verify_username.do")
-    public boolean verify_username(HttpServletRequest request) throws IOException {
-        return false;
+    public String verify_username(String username) throws IOException {
+        if(userService.check_username(username) == true)
+            return "ok";
+        return "unvalid username";
     }
 
     @RequestMapping("user_login.do")
-    public ModelAndView user_login(User user, HttpServletRequest request) throws IOException {
-        userService.user_login(user);
-        return null;
+    public ModelAndView user_login(User _user, HttpServletRequest request) throws IOException {
+        ModelAndView mav = new ModelAndView();
+        User user = userService.user_login(_user);
+        if(user != null){
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
+            mav.setViewName("login");
+        }else{
+            mav.setViewName("login");
+        }
+        return mav;
     }
 
     //用户注册
@@ -54,9 +65,20 @@ public class UserController {
         return null;
     }
 
-
     @RequestMapping("chat.do")
-    public ModelAndView chat(HttpServletRequest request) throws IOException {
+    public ModelAndView chat(HttpServletRequest request){
+        ModelAndView mav = new ModelAndView("chat");
+
+        mav.addObject("chat_users", userService.getChatUsers(new User()));
+
+        return mav;
+    }
+
+    @RequestMapping("add_chat_user.do")
+    public ModelAndView add_chat_user(HttpServletResponse response) throws IOException {
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("utf-8");
+        response.getWriter().write("heh");
         return null;
     }
 }

@@ -1,6 +1,7 @@
 package com.neusoft.mapper;
 
 import com.neusoft.model.User;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -12,8 +13,8 @@ import java.util.List;
 public interface IUserMapper {
     @Select("select * from user where nickname = #{user_name}")
     User getUserByName(@Param("user_name") String user_name);
-    @Select("select * from user where nickname = #{nickname} and password = #{password}")
+    @Select("select * from user where nickname = #{nickName} and password = #{password}")
     User verifyUser(User user);
-
-    List<User> getSelectUser();
+    @Insert("insert into user() values()")
+    int addUser(User user);
 }
