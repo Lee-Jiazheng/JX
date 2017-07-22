@@ -14,4 +14,6 @@ public interface IUserMapper {
     User getUserByName(@Param("user_name") String user_name);
     @Select("select * from user where nickname = #{nickname} and password = #{password}")
     User verifyUser(User user);
+
+    List<User> getSelectUser();
 }

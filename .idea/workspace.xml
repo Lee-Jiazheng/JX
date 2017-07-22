@@ -1,7 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd6b947f-3f3f-4b3c-879f-000d63aff18f" name="Default" comment="" />
+    <list default="true" id="dd6b947f-3f3f-4b3c-879f-000d63aff18f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/User1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/UserManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/controller/UserManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/UserManager.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Collections.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Collections.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Category.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Category.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Goods.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Goods.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Category.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Category.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/config/ModuleConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/config/ModuleConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Shopcart.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Shopcart.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Collections.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Collections.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/AdminUser.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/AdminUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Shopcart.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Shopcart.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IUserMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IUserMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/admin/AdminManager.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/admin/AdminManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/user/UserManager.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/user/UserManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Promotion.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Promotion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IChatMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IChatMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Comments.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Comments.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/MvcConfig.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/MvcConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/admin/GoodsManager.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/admin/GoodsManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IUserMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IUserMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/AdminUser.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/AdminUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/ChatUserRecord.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/ChatUserRecord.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IChatMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IChatMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/ModuleConfig.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/ModuleConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/User.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/User.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/config/MvcConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/config/MvcConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Evaluate.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Evaluate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/user/UserManager.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/user/UserManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JX.iml" afterPath="$PROJECT_DIR$/JX.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/admin/AdminManager.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/admin/AdminManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IAdminMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IAdminMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Evaluate.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Evaluate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/admin/GoodsManager.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/admin/GoodsManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Goods.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Goods.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Order.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Order.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Comments.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Comments.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IAdminMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IAdminMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/ChatUserRecord.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/ChatUserRecord.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Order.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Order.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Promotion.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Promotion.class" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,31 +69,29 @@
       <file leaf-file-name="chat.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/chat.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+            <state relative-caret-position="1034">
+              <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sqlMapConfig.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/sqlMapConfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoodsManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GoodsManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="330">
+              <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IUserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,8 +99,8 @@
       <file leaf-file-name="MvcConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/config/MvcConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+            <state relative-caret-position="1540">
+              <caret line="84" column="5" lean-forward="false" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -62,8 +109,8 @@
       <file leaf-file-name="ModuleConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/config/ModuleConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="308">
+              <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -72,18 +119,8 @@
       <file leaf-file-name="AdminManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/AdminManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="638">
+              <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -92,8 +129,8 @@
       <file leaf-file-name="admin_reg_page.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin_reg_page.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+            <state relative-caret-position="440">
+              <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -102,18 +139,18 @@
       <file leaf-file-name="admin_upload_file.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin_upload_file.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="330">
               <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+            <state relative-caret-position="190">
+              <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,7 +185,11 @@
       <find>message</find>
       <find>提 交</find>
       <find>arrive</find>
+      <find>test</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -177,7 +218,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/admin/admin_reg_page.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/admin_reg_page.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IAdminMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/model/ChatUserRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IChatMapper.java" />
@@ -186,8 +226,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/config/MvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/admin_upload_file.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/AdminManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserManager.java" />
       </list>
     </option>
   </component>
@@ -233,7 +274,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -513,6 +553,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -525,6 +566,7 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="pas&#9;FILE&#9;jar://C:/Users/Bruce Lee/.m2/repository/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.jar!/com/alibaba/fastjson/serializer/PascalNameFilter.class" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1025,14 +1067,16 @@
       <workItem from="1500252077182" duration="13179000" />
       <workItem from="1500276118282" duration="9508000" />
       <workItem from="1500367234257" duration="12939000" />
+      <workItem from="1500562693748" duration="406000" />
+      <workItem from="1500683659137" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53498000" />
+    <option name="totallyTimeSpent" value="53910000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1049,18 +1093,17 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39044482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39044482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277592" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3047776" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30392158" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22913617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2284041" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1069,6 +1112,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32784185" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1126,13 +1170,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.4.RELEASE/spring-web-4.2.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -1254,7 +1291,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="682">
           <caret line="45" column="6" lean-forward="false" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,7 +1307,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1304,18 +1339,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin_reg_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin_reg_page.html" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1340,16 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/model/ChatUserRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1371,7 +1388,7 @@
         <state relative-caret-position="264">
           <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1380,7 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="118" lean-forward="false" selection-start-line="1" selection-start-column="118" selection-end-line="1" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1389,11 +1405,11 @@
         <state relative-caret-position="198">
           <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1639#1640#0" expanded="true" />
-            <element signature="e#1669#1670#0" expanded="true" />
-            <element signature="e#1905#1906#0" expanded="true" />
-            <element signature="e#1939#1940#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1639#1640#0" expanded="false" />
+            <element signature="e#1669#1670#0" expanded="false" />
+            <element signature="e#1905#1906#0" expanded="false" />
+            <element signature="e#1939#1940#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1408,31 +1424,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sqlMapConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        <state relative-caret-position="616">
+          <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/chat.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        <state relative-caret-position="1034">
+          <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin_reg_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        <state relative-caret-position="440">
+          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin_upload_file.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="330">
           <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding />
         </state>
@@ -1440,42 +1456,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/AdminManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        <state relative-caret-position="638">
+          <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/config/ModuleConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="308">
+          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/config/MvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="84" column="5" lean-forward="false" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/UserManager.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/config/MvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="190">
+          <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

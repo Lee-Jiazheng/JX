@@ -64,17 +64,6 @@ public class UserManager {
         return null;
     }
 
-    @RequestMapping("test")
-    public ModelAndView test() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("sqlMapConfig.xml");
-        //创建会话工厂,传入Mybatis的配置文件信息
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        IUserMapper userMapper = sqlSession.getMapper(IUserMapper.class);
-        //List<User> users = userMapper.getSelectUser();
-        ModelAndView mav = new ModelAndView("index.jsp");
-        return mav;
-    }
 
     @RequestMapping("chat.do")
     public ModelAndView chat(HttpServletRequest request) throws IOException {
