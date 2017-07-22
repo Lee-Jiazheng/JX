@@ -28,12 +28,6 @@ public class AdminManager {
     //管理员注册的Servlet
     @RequestMapping("admin_register.do")
     public ModelAndView admin_register(AdminUser adminUser) throws IOException {
-        int num = new ModuleConfig().getSqlSession().getMapper(IAdminMapper.class).addAdminUser(adminUser);
-        if(num == 0){
-            //注册失败
-        }else{
-            //注册成功，跳转主业，添加Session
-        }
         return null;
     }
 
