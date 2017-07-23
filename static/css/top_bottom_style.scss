@@ -9,6 +9,7 @@ $main_background: #f6f6f6;
 $bottom_black:#414141;
 $bottom_white:#aaaaaa;
 $main_background:#f6f6f6;
+$grey_border:#ccc;
 
 
 html,body,ol,ul,p,h1,h2,h3,h4,h5,h6{
@@ -347,13 +348,13 @@ i{
 .main{
     position:relative;
     z-index:10;
-    background-color: $main_background;
     .row{
        @extend .row; 
     } 
 }
 
 .footer{
+    border-top: 1px solid $grey_border;
     background-color: #fff;
     .footer_top{
         @extend .row;

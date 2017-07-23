@@ -4,10 +4,9 @@
         <meta charset="utf-8">
         <title>京西商城 - 智·享·生·活</title>
         <link rel="stylesheet" href="css/top_bottom_style.css"></link>
-        <link rel="stylesheet" href="css/user_center.css"></link>
+        <link rel="stylesheet" href="css/show_style.css"></link>        
         <script src="js/jquery-3.2.1.min.js"></script>
         
-
     </head>
     <body>
         <div class="header" id="top">
@@ -524,572 +523,181 @@
 
 
         <div class="main">
-                <div clsss="row" id="user_row">
-                    <div class="user_left">
-                        <div class="user_detail">
-                            <a class="user_icon" href="javascript:">
-                                <img src="images/defaultblue.png">
-                            </a>
-                            <p class="user_nickname">
-                                ThornWu
-                            </p>
-                            <a class="user_level" href="javascript:">
-                                普通会员
-                            </a>
-                        </div>
-                        <div class="user_menu">
-                            <a class="user_menu_link active" href="javascript:">
-                                个人信息
-                            </a>
-                            <a class="user_menu_link" href="javascript:">
-                                订单管理
-                            </a>
-                            <a class="user_menu_link " href="javascript:">
-                                地址管理
-                            </a>
-                            <a class="user_menu_link" href="javascript:">
-                                商品收藏
-                            </a>
-                            <a class="user_menu_link" href="javascript:">
-                                账号安全
-                            </a>
-                        </div>
+            <div clsss="row" id="show_row">
+                <div class="product_level">
+                    <a href="javascript:">首页</a>
+                    &nbsp; > &nbsp;
+                    <a href="javascript:">一级分类</a>
+                    &nbsp; > &nbsp;
+                    <a href="javascript:">二级分类</a>
+                    &nbsp; > &nbsp;
+                    有情怀的商品
+                </div>
+
+                <div class="product_show">
+                    <div class="product_show_left">
+                        <img src="images/defaultblue.png">
                     </div>
-                    <div class="user_main">
-                        
-                        <!--个人信息-->
-                        <div id="user_info_manage">
-                            <div class="user_info_tab">
-                                <span class="info_tab_item active">
-                                    基本资料
-                                </span>  
-                            </div>
-                            <div class="user_info_content">
-                                <form class="user_info_form">
-                                    <div class="user_info_item">
-                                        <label class="item_intro">
-                                            用户&nbsp;ID
-                                        </label>
-                                        <div class="item_detail">
-                                            20143623
-                                        </div>
-                                    </div>
-
-                                    <div class="user_info_item">
-                                        <label class="item_intro">
-                                            用户名
-                                        </label>
-                                        <div class="item_detail">
-                                            thornwu
-                                        </div>
-                                    </div>
-
-
-                                    <div class="user_info_item">
-                                        <label class="item_intro">
-                                            注册时间
-                                        </label>
-                                        <div class="item_detail">
-                                            2017-07-20
-                                        </div>
-                                    </div>
-
-                                    <div class="user_info_item">
-                                        <label class="item_intro">
-                                            真实姓名
-                                        </label>
-                                        <div class="item_detail">   
-                                            <input type="text" value="吴思伦">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="user_info_item">
-                                        <label class="item_intro">
-                                            手机
-                                        </label>
-                                        <div class="item_detail">
-                                            <input type="text" value="13433394357">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="user_info_item">
-                                        <label class="item_intro">
-                                            电子邮箱
-                                        </label>
-                                        <div class="item_detail">
-                                            <input type="text" value="wzzz00118@163.com">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="user_info_item">
-                                        <input type="submit" value="保存" class="save_button">
-                                    </div>
-
-                                </form>
-                            </div>
+                    <div class="product_show_right">
+                        <div class="product_info_name">
+                            <p class="product_name">有情怀的商品</p>
+                            <p class="product_brief">100%情怀</p>
                         </div>
 
-                        <!--订单管理-->
-                        <div id="user_orders_manage">
-                            <div class="user_info_tab">
-                                <span class="info_tab_item active">
-                                    全部订单
-                                </span>
-
-                                <span class="info_tab_item">
-                                    待付款
-                                </span>
-
-                                <span class="info_tab_item">
-                                    待发货
-                                </span>
-
-                                <span class="info_tab_item">
-                                    已发货
-                                </span>
-
-                                
-                                <span class="info_tab_item">
-                                    待评价
-                                </span>
-
+                        <div class="product_price">
+                            <div class="price_detail">
+                                <span class="label">售价：</span>
+                                <span class="rmb">￥</span>
+                                <span class="product_current_price">219.00</span>
+                                <span class="product_origin_price">￥250.00</span>
+                                <span class="clear"></span>
                             </div>
-                            <div class="user_info_content">
-                               <div class="order_list">
-                                    <table class="order_item">
-                                        <tbody>
-                                            <tr class="head first">
-                                                <th colspan="7">
-                                                    <span>
-                                                        下单时间：2017-07-20 15:42:09
-                                                    </span>
-                                                    <span>
-                                                        订单号：16049590
-                                                    </span>
-                                                </th>
-                                            </tr>
+                           
+                            <div class="sale_info">
+                                <span class="label">促销信息：</span>
+                                <span class="sale_detail">满300减100</span>
+                                <span class="sale_detail">满三免一</span>
+                            </div>
 
-                                            <tr class="head">
-                                                <th class="head_large">
-                                                    <span>
-                                                        商品信息
-                                                    </span>
-                                                </th>
-                                                
-                                                <th class="head_small">
-                                                    <span>
-                                                        单价
-                                                    </span>
-                                                </th>
-                                                
-                                                <th  class="head_small">
-                                                    <span>
-                                                        数量
-                                                    </span>
-                                                </th>
-                                                
-                                                <th class="head_small">
-                                                    <span>
-                                                        小计
-                                                    </span>
-                                                </th>
-                                                
-                                                <th class="head_medium">
-                                                    <span>
-                                                        总计
-                                                    </span>
-                                                </th>
-                                                
-                                                                                                
-                                                <th class="head_medium">
-                                                    <span>
-                                                        订单状态
-                                                    </span>
-                                                </th>
+                            
+                            <div class="service_info">
+                                <span class="label">服务：</span>
+                                <span class="service_detail">100% 正品保证</span>
+                                <span class="service_detail">30 天无忧退换货</span>
+                                <span class="service_detail">24 小时在线客服</span>                                
+                            </div>
 
-                                                                                                                                                
-                                                <th class="head_medium">
-                                                    <span>
-                                                        订单操作
-                                                    </span>
-                                                </th>
+                            <div class="clear">
+                            </div>
 
-                                            </tr>
-                                            
-                                            <tr class="body">
-                                                <td colspan="4">
-                                                    <div class="good_detail">
-                                                        <div class="good_name">
-                                                            <a href="javascript:">
-                                                                <img src="images/defaultblack.png" class="good_image">
-                                                            </a>
-                                                            <a class="good_info" href="javascript:">
-                                                                很长很长很长很长很长很长的名字
-                                                            </a>
-                                                        </div>
+                        </div>
 
-                                                        <div class="good_num">
-                                                            ￥150
-                                                        </div>
-
-                                                        <div class="good_num">
-                                                            1
-                                                        </div>
-
-                                                        <div class="good_num good_sum">
-                                                            ￥150
-                                                        </div>
-                                                    </div>
-
-                                                </td>
-                                                        
-                                                <td>
-                                                    <div class="good_total good_sum">
-                                                            ￥150
-                                                    </div>
-                                                        
-                                                </td>
-
-                                                <td>
-                                                    <div class="good_total">
-                                                            <a href="javascript:">交易成功</a>
-                                                    </div>
-                                                </td>
-                                                
-                                                <td>
-                                                    <div class="good_total">
-                                                            <a href="javascript:" class="good_total_link">订单详情</a>
-                                                            <a href="javascript:" class="good_total_link">查看物流</a>
-                                                            <a href="javascript:" class="good_total_link">评价</a>
-                                                    </div>
-                                                </td>
-
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                    
-                                    <table class="order_item">
-                                        <tbody>
-                                            <tr class="head first">
-                                                <th colspan="7">
-                                                    <span>
-                                                        下单时间：2017-07-20 15:42:09
-                                                    </span>
-                                                    <span>
-                                                        订单号：16049590
-                                                    </span>
-                                                </th>
-                                            </tr>
-
-                                            <tr class="head">
-                                                <th class="head_large">
-                                                    <span>
-                                                        商品信息
-                                                    </span>
-                                                </th>
-                                                
-                                                <th class="head_small">
-                                                    <span>
-                                                        单价
-                                                    </span>
-                                                </th>
-                                                
-                                                <th  class="head_small">
-                                                    <span>
-                                                        数量
-                                                    </span>
-                                                </th>
-                                                
-                                                <th class="head_small">
-                                                    <span>
-                                                        小计
-                                                    </span>
-                                                </th>
-                                                
-                                                <th class="head_medium">
-                                                    <span>
-                                                        总计
-                                                    </span>
-                                                </th>
-                                                
-                                                                                                
-                                                <th class="head_medium">
-                                                    <span>
-                                                        订单状态
-                                                    </span>
-                                                </th>
-
-                                                                                                                                                
-                                                <th class="head_medium">
-                                                    <span>
-                                                        订单操作
-                                                    </span>
-                                                </th>
-
-                                            </tr>
-                                            
-                                            <tr class="body">
-                                                <td colspan="4">
-                                                    <div class="good_detail">
-                                                        <div class="good_name">
-                                                            <a href="javascript:">
-                                                                <img src="images/defaultblack.png" class="good_image">
-                                                            </a>
-                                                            <a class="good_info" href="javascript:">
-                                                                很长很长很长很长很长很长的名字
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="good_num">
-                                                            ￥150
-                                                        </div>
-
-                                                        <div class="good_num">
-                                                            1
-                                                        </div>
-
-                                                        <div class="good_num good_sum">
-                                                            ￥150
-                                                        </div>
-                                                    </div>
-
-                                                </td>
-                                                        
-                                                <td>
-                                                    <div class="good_total good_sum">
-                                                            ￥150
-                                                    </div>
-                                                        
-                                                </td>
-
-                                                <td>
-                                                    <div class="good_total">
-                                                            <a href="javascript:">交易成功</a>
-                                                    </div>
-                                                </td>
-                                                
-                                                <td>
-                                                    <div class="good_total">
-                                                            <a href="javascript:" class="good_total_link">订单详情</a>
-                                                            <a href="javascript:" class="good_total_link">查看物流</a>
-                                                            <a href="javascript:" class="good_total_link">评价</a>
-                                                    </div>
-                                                </td>
-
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
+                        <div class="select_product">
+                            <div class="product_num">
+                                <span class="label">数量：</span>
+                                <div class="num_selection">
+                                    <i class="iconfont icon-minus num_button"></i>
+                                    <input type="text" class="num_input" value="1">
+                                    <i class="iconfont icon-plus num_button"></i>
                                 </div>
                             </div>
-                        </div>
-
-                        <!--地址管理-->
-                        <div id="user_address_manage">
-                            <div class="user_info_tab">
-                                <span class="info_tab_item active">
-                                    地址管理
-                                </span>  
-                            </div>
-                            <div class="user_info_content">
-                                    <a href="javascript:" class="new_address">+新建收货地址</a>
-                                    <table class="order_item address_list_item">
-                                        <tbody>
-
-                                            <tr class="head">
-                                                <th class="head_medium">
-                                                    <span>
-                                                        收货人
-                                                    </span>
-                                                </th>
-                                                
-                                                <th class="head_large">
-                                                    <span>
-                                                        详细地址
-                                                    </span>
-                                                </th>
-                                                
-                                                <th  class="head_medium_lager">
-                                                    <span>
-                                                        联系方式
-                                                    </span>
-                                                </th>
-                                                
-                                                <th class="head_medium_lager">
-                                                    <span>
-                                                        操作
-                                                    </span>
-                                                </th>
-                                                
-                                                <th class="head_medium_lager">
-                                                    <span>
-                                                        &nbsp;
-                                                    </span>
-                                                </th>
-
-                                            </tr>
-                                            
-                                            <tr class="address_info">
-                                                <td>吴思伦</td>
-                                                <td>辽宁省沈阳市和平区创新路195号东北大学浑南校区</td>
-                                                <td>13433394357</td>
-
-                                                <td>
-                                                    <a href="javascript:" class="address_link address_first add_address">编辑</a>
-                                                    <a href="javascript:" class="address_link">删除</a>
-                                                </td>
-
-                                                <td>
-                                                    <a href="javascript:" class="address_default">默认地址</a>
-                                                </td>
-                                                
-                                            </tr>
-
-                                            <tr class="address_info">
-                                                <td>吴某某</td>
-                                                <td>广东省汕头市龙湖区金砂东路</td>
-                                                <td>13433394357</td>
-
-                                                <td>
-                                                    <a href="javascript:" class="address_link address_first add_address">编辑</a>
-                                                    <a href="javascript:" class="address_link">删除</a>
-                                                </td>
-
-                                                <td>
-                                                    <a href="javascript:" class="address_link">设为默认地址</a>
-                                                </td>
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <div class="clear">
                             </div>
                         </div>
 
-                        <!--商品收藏-->
-                        <div id="user_favorite">
-                            <div class="user_info_tab">
-                                <span class="info_tab_item active">
-                                    商品收藏
-                                </span>  
-                            </div>
-                            <div class="user_info_content">
-                                <ul class="favorite_list">
-                                    <li class="favorite_item">
-                                        <div class="product_info">
-                                            <div class="button_field">
-                                               <a href="javascript:" class="addtional_button">
-                                                    <i class="iconfont icon-gouwuche button_icon"></i>
-                                                </a>
-                                                <a href="javascript:" class="addtional_button">
-                                                    <i class="iconfont icon-shanchu2 button_icon"></i>
-                                                </a>
-                                            </div>
-
-                                            <div class="product_image">
-                                                <a href="javascript:">
-                                                    <img src="images/defaultblue.png" class="product_img">
-                                                </a>
-                                            </div>
-
-                                            <div class="product_description">
-                                                <a href="javascript:" class="product_name">测试商品测试商品测试商品测试商品测试商品</a>
-                                                <p class="product_price">￥150</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    
-                                    
-                                    <li class="favorite_item">
-                                        <div class="product_info">
-                                            <div class="button_field">
-                                               <a href="javascript:" class="addtional_button">
-                                                    <i class="iconfont icon-gouwuche button_icon"></i>
-                                                </a>
-                                                <a href="javascript:" class="addtional_button">
-                                                    <i class="iconfont icon-shanchu2 button_icon"></i>
-                                                </a>
-                                            </div>
-
-                                            <div class="product_image">
-                                                <a href="javascript:">
-                                                    <img src="images/defaultblue.png" class="product_img">
-                                                </a>
-                                            </div>
-
-                                            <div class="product_description">
-                                                <a href="javascript:" class="product_name">测试商品测试商品测试商品测试商品测试商品</a>
-                                                <p class="product_price">￥150</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    
-
-
-
-
-                    
-
-
-                                    <li class="clear">
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="product_button">
+                            <a href="javascript:" class="large_button purchase_button">立即购买</a>
+                            <a href="javascript:" class="large_button add_button">加入购物车</a>
+                            <a href="javascript:" class="small_button">
+                                <i class="iconfont icon-shoucang"></i>
+                                <p class="icon_description">收藏</p> 
+                            </a>
                         </div>
                         
-                        <!--账号安全-->
-                        <div id="user_security">
-                            <div class="user_info_tab">
-                                <span class="info_tab_item active">
-                                    账号安全
-                                </span>  
-                            </div>
-                            <div class="user_info_content">
-                                <div class="user_info_form set_width">
-                                    <div class="user_info_item set_bottom">
-                                        <label class="item_intro">
-                                            您的账号
-                                        </label>
-                                        <div class="item_detail">
-                                            ThornWu
-                                        </div>
-                                    </div>
-
-                                    <div class="user_info_item">
-                                        <label class="item_intro">
-                                            登录密码
-                                        </label>
-                                        <div class="item_detail security_info">
-                                            建议您定期更换密码，设置安全性高的密码可以使帐号更安全
-                                            <a href="javascript:">修改</a>
-                                        </div>
-                                        
-                                    </div>
-
-
-                                    <div class="user_info_item">
-                                        <label class="item_intro">
-                                            绑定手机
-                                        </label>
-                                        <div class="item_detail security_info">
-                                            当前绑定手机号为：134****4357，若手机丢失或停用，请及时更换
-                                            <a href="javascript:">更换</a>
-                                        </div>
-
-                                    </div>       
-
-                                </div>
-                            </div>
-                        </div>
-
-
                     </div>
                     <div class="clear">
                     </div>
                 </div>
- 
+
+                <div class="product_more">
+                    <div class="left">
+                            <div class="product_info_tab">
+                                <span class="info_tab_item active" id="product_detail">
+                                    商品详情
+                                </span>
+                                <span class="info_tab_item" id="product_review">
+                                    评价
+                                </span>                                   
+                            </div>
+                            <div class="product_info_content">
+                                <div class="product_intro">
+                                    <ul class="intro_list">
+
+                                        <li class="intro_item">
+                                            <span class="intro_label">面料</span>
+                                            <span class="intro_content">100%纯棉</span>
+                                        </li>
+
+                                        <li class="intro_item">
+                                            <span class="intro_label">产地</span>
+                                            <span class="intro_content">山东省青岛市</span>
+                                        </li>
+                                        
+                                        <li class="intro_item">
+                                            <span class="intro_label">执行标准</span>
+                                            <span class="intro_content">GB/T22796-2009</span>
+                                        </li>
+                                                                                
+                                        <li class="clear">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_review">
+                                    <ul class="review_list">
+                                        <li class="review_item first_review">
+                                            <div class="review_left">
+                                                <img src="images/defaultblack.png">
+                                                <div class="image_mask"></div>
+                                            </div>
+                                            <div class="review_right">
+                                                <p>纯棉的，颜色很高大上，主要质地很好，收到就水洗了，洗完感觉更软了，很好！夏天盖着一定很舒服！</p>
+                                                <p class="review_time">2017-07-14 21:24</p>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </li>
+
+                                        <li class="review_item">
+                                            <div class="review_left">
+                                                <img src="images/defaultblack.png">
+                                                <div class="image_mask"></div>
+                                            </div>
+                                            <div class="review_right">
+                                                <p>纯棉的，颜色很高大上，主要质地很好，收到就水洗了，洗完感觉更软了，很好！夏天盖着一定很舒服！</p>
+                                                <p class="review_time">2017-07-14 21:24</p>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </li>
+                                        
+                                        <li class="clear">
+                                        </li>
+                                    </ul>
+                            </div>
+                    </div>
+                    <div class="right">
+                             <div class="product_info_tab">
+                                <p class="recommend_title">
+                                    商品推荐
+                                </p>  
+                            </div>
+                            <a href="javascript:" class="recommend_url first_recommend">
+                                <div class="image_container">
+                                    <img src="images/defaultblack.png" class="product_img">
+                                </div>
+                                <p class="recommend_detail">测试商品</p>
+                                <p class="recommend_price">￥150</p>
+                            </a>
+
+                            <a href="javascript:" class="recommend_url">
+                                <div class="image_container">
+                                    <img src="images/defaultblack.png" class="product_img">
+                                </div>
+                                <p class="recommend_detail">测试商品</p>
+                                <p class="recommend_price">￥150</p>
+                            </a>
+   
+                            <a href="javascript:" class="recommend_url">
+                                <div class="image_container">
+                                    <img src="images/defaultblack.png" class="product_img">
+                                </div>
+                                <p class="recommend_detail">测试商品</p>
+                                <p class="recommend_price">￥150</p>
+                            </a>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -1141,41 +749,129 @@
                 </div>
             </div>
         </div>
+        <div class="max_tip">
+            单品已达到上限
+        </div>
+        <div class="min_tip">
+            本商品1件起售
+        </div>
         <script src="js/top_bottom.js"></script>
         <script src="js/all.js"></script>
+        <script>
+            var max_product_num=50;
+            var min_product_num=1;
+            var reg = new RegExp("^[0-9]*");
 
-        <div class="widgetcontainer">
-            <div class="mask_widget"></div>
-            <div class="address_widget">
-                <i class="iconfont icon-shanchu1 close_address_form"></i>
-                <form class="address_form">
-                    <div class="address_form_title">新建地址</div>
-                    <div class="address_form_item">
-                        <label class="detail_title">详细地址:</label>
-                        <textarea cols="75" rows="8" id="address_detail" name="address_detail" required="required"></textarea>
-                    </div>
-                    <div class="address_form_item">
-                        <div class="address_left">
-                            <label>联系方式:</label>
-                            <input type="text" name="address_contact" id="address_contact" required="required">
-                        </div>
-                        <div class="address_right">
-                            <label>收货人:</label>
-                            <input type="text" name="address_receiver_name" id="address_receiver_name" required="required">
-                        </div>
-                        <div class="clear">
-                        </div>
-                    </div>
+            $('.icon-minus').css('cursor','not-allowed');
 
-                    <div class="address_form_item form_button">
-                        <input type="submit" class="address_submit" value="保存">
-                        <a href="javascript:" class="cancel_button">取消</a>
-                    </div>
+            $('.small_button').mouseover(function(){
+                $('.icon-shoucang').css('color','white');
+                $('.icon_description').css('color','white');
+                $(this).css('background-color','#15a8e0');
+            });
+            $('.small_button').mouseout(function(){
+                $('.icon-shoucang').css('color','#15a8e0');
+                $('.icon_description').css('color','#15a8e0');
+                $(this).css('background-color','white');
+            });
+            $('.num_input').change(function(){
+                $(this).val($(this).val().match(reg));
+                
+                if($(this).val()==max_product_num){
+                    $('.icon-plus').css('cursor','not-allowed');
+                }
+                else if($(this).val()>max_product_num){
+                    $('.icon-plus').css('cursor','not-allowed');
+                    $(this).val(max_product_num);
+                    product_num_max();
+                }
+                else if($(this).val()==min_product_num){
+                    $('.icon-minus').css('cursor','not-allowed');
+                }
+                else if($(this).val()<min_product_num){
+                    $('.icon-minus').css('cursor','not-allowed');
+                    $(this).val(min_product_num);
+                    product_num_min();
+                }
+                else{
+                    $('.icon-plus').css('cursor','pointer');
+                    $('.icon-minus').css('cursor','pointer');
+                }
+            });
 
-                </form>
-            </div>
+            $('.icon-plus').click(function(){
+                if($('.num_input').val()>=max_product_num){
+                    product_num_max();
+                    $('.icon-plus').css('cursor','not-allowed');   
+                }
+                else{
+                    $('.num_input').val(parseInt($('.num_input').val())+1);
+                    if($('.num_input').val()>=max_product_num){
+                        $('.icon-plus').css('cursor','not-allowed');   
+                    }
+                    if($('.num_input').val()!=min_product_num){
+                        $('.icon-minus').css('cursor','pointer');
+                    }
+                }
+            });
+            
 
-        </div>
-        <script src="js/user_center.js"></script>
+            $('.icon-minus').click(function(){
+                if($('.num_input').val()<=min_product_num){
+                    product_num_min();
+                    $('.icon-minus').css('cursor','not-allowed');  
+                }
+                else{
+                    $('.num_input').val(parseInt($('.num_input').val())-1);
+                    if($('.num_input').val()<=min_product_num){
+                        $('.icon-minus').css('cursor','not-allowed');   
+                    }
+                    if($('.num_input').val()!=max_product_num){
+                        $('.icon-plus').css('cursor','pointer');   
+                    }
+                }
+            });
+
+            function product_num_max(){
+                $('.max_tip').show();
+                $('.max_tip').animate({opacity:1},200,function(){
+                    $('.max_tip').delay(1700).animate({opacity:0},2000,function(){
+                            $('.max_tip').delay(2400).hide();
+                    });
+                });
+            };
+
+            function product_num_min(){
+                $('.min_tip').show();
+                $('.min_tip').animate({opacity:1},200,function(){
+                    $('.min_tip').delay(1700).animate({opacity:0},2000,function(){
+                            $('.min_tip').delay(2400).hide();
+                    });
+                });
+            }
+
+            $('.product_img').mouseover(function(){
+                $(this).animate({height:"165px"},550);
+            });
+            $('.product_img').mouseout(function(){
+                $(this).animate({height:"160px"},300);
+            });
+
+            $('#product_detail').click(function(){
+                $('.product_review').hide();
+                $('.product_info_content').show();
+                $('#product_detail').addClass('active');
+                $('#product_review').removeClass('active');
+                $('#product_detail').css('border-right','1px solid #e8e8e8');
+            });
+
+            $('#product_review').click(function(){
+                $('.product_info_content').hide();
+                $('.product_review').show();
+                $('#product_review').addClass('active');
+                $('#product_detail').removeClass('active');
+                $('#product_detail').css('border-right','none');
+            });
+        </script>
     </body>
 </html>

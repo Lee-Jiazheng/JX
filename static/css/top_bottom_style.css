@@ -270,10 +270,10 @@ i {
 
 .main {
   position: relative;
-  z-index: 10;
-  background-color: #f6f6f6; }
+  z-index: 10; }
 
 .footer {
+  border-top: 1px solid #ccc;
   background-color: #fff; }
   .footer .footer_top .row .intro_list, .footer .footer_top .header .top_nav .top_row .intro_list, .header .top_nav .footer .footer_top .top_row .intro_list, .footer .footer_top .header .main_nav .init_main .main_row .intro_list, .header .main_nav .init_main .footer .footer_top .main_row .intro_list, .footer .footer_top .footer_top .intro_list, .footer .footer_top .footer_bottom .intro_list {
     padding: 40px 0;
