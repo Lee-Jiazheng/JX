@@ -1,6 +1,6 @@
 .main {
   position: relative;
-  z-index: -1;
+  z-index: 10;
   background-color: #f6f6f6; }
 
 /*# sourceMappingURL=index_main_style.css.map */

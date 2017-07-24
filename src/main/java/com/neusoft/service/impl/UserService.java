@@ -66,5 +66,10 @@ public class UserService implements IUserService{
         return chatMapper.getAllChatUserByUserId(1);
     }
 
+    @Override
+    public void alter_user_info(User user) {
+        userMapper.updateUser(user);
+    }
+
 
 }

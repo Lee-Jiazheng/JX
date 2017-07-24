@@ -173,14 +173,40 @@ i {
         .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li, .header .fixed_nav .row .inner_main .nav_ul .nav_li, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li {
           float: left;
           padding: 6px 40px 0;
-          font-size: 14px; }
+          font-size: 14px;
+          height: 60px; }
+          .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .row .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li .nav_dropdown, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown {
+            position: absolute;
+            z-index: 101;
+            top: 26px;
+            left: 0;
+            width: 300%;
+            margin-left: -100%;
+            background-color: #fff;
+            margin-top: 50px;
+            display: none; }
+            .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .fixed_nav .row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown .card_list {
+              position: relative;
+              padding-top: 33px;
+              text-align: center; }
+              .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list, .header .fixed_nav .row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list {
+                display: inline-block;
+                white-space: nowrap;
+                width: 1050px; }
+                .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list .item, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list .item, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list .item, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list .item, .header .fixed_nav .row .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list .item, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list .item, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list .item, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list .item, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown .card_list .card_item_list .item {
+                  float: left;
+                  margin: 0 50px;
+                  margin-bottom: 30px;
+                  vertical-align: middle;
+                  width: 44px; }
         .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .first, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .first, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .first, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .first, .header .fixed_nav .row .inner_main .nav_ul .first, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .first, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .first, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .first, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .first {
           margin-left: 50px;
           padding-left: 30px; }
         .header .fixed_nav .top_nav .top_row .inner_main .nav_ul a, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul a, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul a, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul a, .header .fixed_nav .row .inner_main .nav_ul a, .header .fixed_nav .footer .footer_top .inner_main .nav_ul a, .footer .header .fixed_nav .footer_top .inner_main .nav_ul a, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul a, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul a {
           position: relative;
           display: block;
-          padding-bottom: 6px; }
+          padding-bottom: 6px;
+          font-weight: 600; }
         .header .fixed_nav .top_nav .top_row .inner_main .nav_ul a:hover, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul a:hover, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul a:hover, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul a:hover, .header .fixed_nav .row .inner_main .nav_ul a:hover, .header .fixed_nav .footer .footer_top .inner_main .nav_ul a:hover, .footer .header .fixed_nav .footer_top .inner_main .nav_ul a:hover, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul a:hover, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul a:hover {
           color: #15a8e0;
           border-bottom: 3px solid #15a8e0; }
@@ -244,10 +270,10 @@ i {
 
 .main {
   position: relative;
-  z-index: 10;
-  background-color: #f6f6f6; }
+  z-index: 10; }
 
 .footer {
+  border-top: 1px solid #ccc;
   background-color: #fff; }
   .footer .footer_top .row .intro_list, .footer .footer_top .header .top_nav .top_row .intro_list, .header .top_nav .footer .footer_top .top_row .intro_list, .footer .footer_top .header .main_nav .init_main .main_row .intro_list, .header .main_nav .init_main .footer .footer_top .main_row .intro_list, .footer .footer_top .footer_top .intro_list, .footer .footer_top .footer_bottom .intro_list {
     padding: 40px 0;
@@ -325,6 +351,28 @@ i {
   width: 12px; }
 
 .icon_top {
-  font-size: 20px; }
+  font-size: 20px;
+  font-weight: 600; }
+
+.url_nav_drop {
+  border: none !important;
+  color: #333 !important; }
+  .url_nav_drop .icon_nav_drop {
+    height: 50px;
+    width: 50px;
+    font-size: 36px;
+    vertical-align: top; }
+  .url_nav_drop .title_nav_drop {
+    font-size: 14px;
+    line-height: 1;
+    width: 100px;
+    margin-left: -28px;
+    margin-top: 10px;
+    font-weight: 600; }
+
+.url_nav_drop:hover {
+  text-decoration: none;
+  border: none !important;
+  color: #15a8e0 !important; }
 
 /*# sourceMappingURL=top_bottom_style.css.map */

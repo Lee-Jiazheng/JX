@@ -35,4 +35,14 @@ public class UserInfoController {
 
         return null;
     }
+
+    @RequestMapping("alter_user_info.do")
+    public ModelAndView alter_user_info(HttpServletRequest request, User user){
+        //判断session的id
+        user.setNickName("李佳");
+        user.setPassword("hahaha");
+        user.setUserId(1);
+        userService.alter_user_info(user);
+        return null;
+    }
 }

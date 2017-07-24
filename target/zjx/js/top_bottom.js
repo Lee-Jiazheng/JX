@@ -1,6 +1,5 @@
         $(document).ready(function() {  
              var scrollPos=$(window).scrollTop();  
-                console.log(scrollPos);
                 if(scrollPos >=120){  
                     change_navbar();
                 }else{  
@@ -9,7 +8,6 @@
 
             $(window).scroll(function(){  
                 var scrollPos=$(window).scrollTop();  
-                console.log(scrollPos);
                 if(scrollPos >=120){  
                     change_navbar();              
                 }else{  
@@ -53,3 +51,4 @@
                 $(".first").css('margin-left','50px');
                 $(".user_info").css('display',"none");   
         }
+

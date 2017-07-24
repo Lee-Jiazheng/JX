@@ -14,4 +14,5 @@ public interface IUserService {
     public boolean user_register(User user);
     public boolean change_avatar(MultipartFile avatar, User _user, String filePath);
     List<User> getChatUsers(User user);
+    void alter_user_info(User user);
 }

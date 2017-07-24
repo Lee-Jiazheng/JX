@@ -1,6 +1,7 @@
 package com.neusoft.controller.admin;
 
 import com.neusoft.mapper.IAdminMapper;
+import com.neusoft.model.Category;
 import com.neusoft.model.Goods;
 import com.neusoft.service.IAdminService;
 import org.apache.commons.io.FileUtils;
@@ -13,9 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.Multipart;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -27,6 +31,9 @@ public class GoodsManager {
 
     @Value("#{adminService}")
     private IAdminService adminService;
+
+
+
     //增加一个商品
     @RequestMapping("add_good.do")
     public ModelAndView add_good(){

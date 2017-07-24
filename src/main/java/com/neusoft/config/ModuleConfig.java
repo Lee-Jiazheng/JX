@@ -9,6 +9,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -31,6 +32,7 @@ import java.io.InputStream;
  * Created by Bruce Lee on 2017/7/17.
  */
 @Configuration
+@EnableCaching
 @EnableTransactionManagement()
 @ComponentScan(basePackages = {"com.neusoft.service"})
 public class ModuleConfig {
@@ -94,11 +96,12 @@ public class ModuleConfig {
     // redis服务器中心
     @Bean
     public JedisConnectionFactory connectionFactory(@Value("#{poolConfig}") JedisPoolConfig poolConfig , @Value("${redis.host}") String hostName,
-                                                    @Value("${redis.port}") int port, @Value("${redis.maxWait}") int timeout) {
+                                                    @Value("${redis.port}") int port, @Value("${redis.maxWait}") int timeout, @Value("${redis.password}") String password) {
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
         jedisConnectionFactory.setPoolConfig(poolConfig);
         jedisConnectionFactory.setHostName(hostName);
         jedisConnectionFactory.setPort(port);
+        jedisConnectionFactory.setPassword(password);
         jedisConnectionFactory.setTimeout(timeout);
         return jedisConnectionFactory;
     }

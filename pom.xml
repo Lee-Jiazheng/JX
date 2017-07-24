@@ -255,19 +255,58 @@
       <version>2.7.3</version>
     </dependency>
     <!--Redis end -->
-
-    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+    <!-- Spring Security -->
     <dependency>
       <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-core</artifactId>
-      <version>5.0.0.M2</version>
+      <artifactId>spring-security-web</artifactId>
+      <version>${spring.security.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>${spring.security.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-taglibs</artifactId>
+      <version>${spring.security.version}</version>
+    </dependency>
+
 
 
 
   </dependencies>
   <build>
-    <finalName>zjx</finalName>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.7</source>
+                  <target>1.7</target>
+              </configuration>
+          </plugin>
+          <plugin>
+              <groupId>org.eclipse.jetty</groupId>
+              <artifactId>jetty-maven-plugin</artifactId>
+              <version>9.2.2.v20140723</version>
+              <configuration>
+                  <webApp>
+                      <contextPath>/${project.artifactId}</contextPath>
+                  </webApp>
+                  <httpConnector>
+                      <port>8080</port>
+                      <idleTimeout>60000</idleTimeout>
+                  </httpConnector>
+              </configuration>
+          </plugin>
+      </plugins>
+      <finalName>zjx</finalName>
   </build>
+
+
 
 </project>
