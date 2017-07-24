@@ -24,6 +24,24 @@ $red_font:#d4282d;
     height: 100%;
     overflow: hidden;
 }
+@mixin form_button{
+    .close_form{
+        font-size: 30px;
+        color:lighten($grey_font,20%);
+        font-weight: bold;
+        float: right;
+        margin-top:-10px;
+    }
+    .close_form:hover{
+        color:darken($grey_font,10%);
+    }
+    .cancel_button{
+        color:$white_font;
+        background:darken($grey_background,20%);
+        padding:10px 50px;
+        margin-left:20px;
+    }
+}
 
 #user_row{
     font-size: 14px;
@@ -343,7 +361,7 @@ $red_font:#d4282d;
     text-decoration: underline;
 }
 
-.widgetcontainer{
+.widgetcontainer,.icon_widgetcontainer,.password_widgetcontainer{
     display: none;
     z-index: 2150;
     position: fixed;
@@ -417,27 +435,141 @@ $red_font:#d4282d;
                 }
             }
         }
+        @include form_button;
         .form_button{
             margin: 30px 10px 0 0;
             float: right;
             width:288px!important;
         }
-        .close_address_form{
-            font-size: 30px;
-            color:lighten($grey_font,20%);
-            font-weight: bold;
+    }
+    .icon_widget{
+        font-size: 14px;
+        margin: 0 auto;
+        width: 400px;
+        height: 400px;
+        background-color: $white_background;
+        z-index: 2200;
+        position: relative;
+        top: 15%;
+        padding: 40px 50px;
+        @include form_button;
+
+        .form_button{
+            margin: -10px 54px 0 0;
             float: right;
-            margin-top:-10px;
+            width:288px!important;
         }
-        .close_address_form:hover{
-            color:darken($grey_font,10%);
+        .icon_form{
+            margin-top:30px;
+            .icon_form_title{
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            .icon_form_item{
+                input[type=submit]{
+                    padding: 10px 50px;
+                    background-color: $logo_blue;
+                    color: $white_font;
+                    border: none;
+                    cursor: pointer;
+                }
+                input[type=submit]:hover{
+                    background-color: lighten($logo_blue,10%);
+                }
+                .icon_main{
+                    padding: 80px 0;
+                    p{
+                        text-align: center;
+                    }
+                    .file_box{
+                        display: block;
+                        margin: 10px auto;
+                        width: 175px;
+                        height: 54px;
+                        border: 1px solid $grey_border;
+                        position: relative;
+                        .file_input{
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                        }
+                        .file_tip{
+                            position: absolute;
+                            font-size: 16px;
+                            top: 15px;
+                            width: 100%;
+                        }
+                        
+                    }
+                    .filename{
+                        margin-top: 5px;
+                    }
+                    .alert{
+                        color: $red_font;
+                    }
+                }
+            }
         }
-        .cancel_button{
-            color:$white_font;
-            background:darken($grey_background,20%);
-            padding:10px 50px;
-            margin-left:20px;
+    }
+
+    .password_widget{
+        font-size: 14px;
+        margin: 0 auto;
+        width: 380px;
+        height: 350px;
+        background-color: $white_background;
+        z-index: 2200;
+        position: relative;
+        top: 15%;
+        padding: 40px 50px;
+        @include form_button;
+        .password_form{
+            .password_form_title{
+                font-size: 18px;
+                margin-bottom: 50px;
+            }
+            .password_form_item{
+                font-size: 16px;
+                margin: 40px 60px 35px;
+                width: 270px;
+                label{
+                    margin-right: 15px;
+                    top:0;
+
+                }
+
+                input[type=password]{
+                    padding: 5px;
+                    float:right;
+                }
+  
+                input[type=submit]{
+                    padding: 10px 50px;
+                    background-color: $logo_blue;
+                    color: $white_font;
+                    border: none;
+                    cursor: pointer;
+                }
+                input[type=submit]:hover{
+                    background-color: lighten($logo_blue,10%);
+                }
+                .password_left{
+                    float: left;
+                }
+                .password_right{
+                    float: right;
+                    margin-right: 10px;
+                }
+                .clear{
+                    clear: both;
+                }
+            }
+            .form_button{
+                width:380px!important;
+                margin-left:45px!important;
+            }
         }
+            
     }
 }
 

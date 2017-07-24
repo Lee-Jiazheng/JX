@@ -5,6 +5,7 @@
         <title>京西商城 - 智·享·生·活</title>
         <link rel="stylesheet" href="css/top_bottom_style.css"></link>
         <link rel="stylesheet" href="css/reg_style.css"></link>
+        <script src="js/jquery-3.2.1.min.js"></script>
     </head>
     <body>
         <div class="header">
@@ -34,7 +35,8 @@
                                         <label>用户名</label>
                                     </div>
                                     <div class="reg_input">
-                                        <input type="text">
+                                        <input type="text" id="nickName" name="nickName">
+                                        <span class="nickName_tip">用户名已存在</span>
                                     </div>
                                     <div class="clear">
                                     </div>
@@ -67,7 +69,8 @@
                                         <label>确认密码</label>
                                     </div>
                                     <div class="reg_input">
-                                        <input type="password">
+                                        <input type="password" id="repeatPass">
+                                        <span class="repeat_tip">两次密码不同</span>
                                     </div>
                                     <div class="clear">
                                     </div>
@@ -152,5 +155,20 @@
                 </div>
             </div>
         </div>
+        <script>
+            $('#nickName').change(function(){
+                $('.nickName_tip').show();             
+            });
+            $('#nickName').focus(function(){
+                $('.nickName_tip').hide();             
+            });
+            $('#repeatPass').change(function(){
+                $('.repeat_tip').show();
+            });
+            $('#repeatPass').focus(function(){
+                $('.repeat_tip').hide();
+            });
+        </script>
+
     </body>
 </html>

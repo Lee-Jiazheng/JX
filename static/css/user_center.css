@@ -254,7 +254,7 @@
 .new_address:hover {
   text-decoration: underline; }
 
-.widgetcontainer {
+.widgetcontainer, .icon_widgetcontainer, .password_widgetcontainer {
   display: none;
   z-index: 2150;
   position: fixed;
@@ -266,7 +266,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden; }
-  .widgetcontainer .mask_widget {
+  .widgetcontainer .mask_widget, .icon_widgetcontainer .mask_widget, .password_widgetcontainer .mask_widget {
     opacity: 0.8 !important;
     background-color: #333;
     position: absolute;
@@ -277,7 +277,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden; }
-  .widgetcontainer .address_widget {
+  .widgetcontainer .address_widget, .icon_widgetcontainer .address_widget, .password_widgetcontainer .address_widget {
     font-size: 14px;
     margin: 0 auto;
     width: 620px;
@@ -287,61 +287,179 @@
     position: relative;
     top: 15%;
     padding: 40px 50px; }
-    .widgetcontainer .address_widget .address_form {
+    .widgetcontainer .address_widget .address_form, .icon_widgetcontainer .address_widget .address_form, .password_widgetcontainer .address_widget .address_form {
       margin-top: 30px; }
-      .widgetcontainer .address_widget .address_form .address_form_title {
+      .widgetcontainer .address_widget .address_form .address_form_title, .icon_widgetcontainer .address_widget .address_form .address_form_title, .password_widgetcontainer .address_widget .address_form .address_form_title {
         font-size: 18px;
         margin-bottom: 30px; }
-      .widgetcontainer .address_widget .address_form .address_form_item {
+      .widgetcontainer .address_widget .address_form .address_form_item, .icon_widgetcontainer .address_widget .address_form .address_form_item, .password_widgetcontainer .address_widget .address_form .address_form_item {
         margin: 20px 0 0 20px;
         width: 600px; }
-        .widgetcontainer .address_widget .address_form .address_form_item textarea, .widgetcontainer .address_widget .address_form .address_form_item input[type=text] {
+        .widgetcontainer .address_widget .address_form .address_form_item textarea, .widgetcontainer .address_widget .address_form .address_form_item input[type=text], .icon_widgetcontainer .address_widget .address_form .address_form_item textarea, .icon_widgetcontainer .address_widget .address_form .address_form_item input[type=text], .password_widgetcontainer .address_widget .address_form .address_form_item textarea, .password_widgetcontainer .address_widget .address_form .address_form_item input[type=text] {
           border: 1px solid #ccc; }
-        .widgetcontainer .address_widget .address_form .address_form_item textarea {
+        .widgetcontainer .address_widget .address_form .address_form_item textarea, .icon_widgetcontainer .address_widget .address_form .address_form_item textarea, .password_widgetcontainer .address_widget .address_form .address_form_item textarea {
           padding: 9px;
           outline: 0;
           resize: none; }
-        .widgetcontainer .address_widget .address_form .address_form_item label {
+        .widgetcontainer .address_widget .address_form .address_form_item label, .icon_widgetcontainer .address_widget .address_form .address_form_item label, .password_widgetcontainer .address_widget .address_form .address_form_item label {
           margin-right: 15px;
           top: 0; }
-        .widgetcontainer .address_widget .address_form .address_form_item .detail_title {
+        .widgetcontainer .address_widget .address_form .address_form_item .detail_title, .icon_widgetcontainer .address_widget .address_form .address_form_item .detail_title, .password_widgetcontainer .address_widget .address_form .address_form_item .detail_title {
           display: block;
           width: 60px;
           float: left; }
-        .widgetcontainer .address_widget .address_form .address_form_item input[type=text] {
+        .widgetcontainer .address_widget .address_form .address_form_item input[type=text], .icon_widgetcontainer .address_widget .address_form .address_form_item input[type=text], .password_widgetcontainer .address_widget .address_form .address_form_item input[type=text] {
           padding: 5px; }
-        .widgetcontainer .address_widget .address_form .address_form_item input[type=submit] {
+        .widgetcontainer .address_widget .address_form .address_form_item input[type=submit], .icon_widgetcontainer .address_widget .address_form .address_form_item input[type=submit], .password_widgetcontainer .address_widget .address_form .address_form_item input[type=submit] {
           padding: 10px 50px;
           background-color: #15a8e0;
           color: #fff;
           border: none;
           cursor: pointer; }
-        .widgetcontainer .address_widget .address_form .address_form_item input[type=submit]:hover {
+        .widgetcontainer .address_widget .address_form .address_form_item input[type=submit]:hover, .icon_widgetcontainer .address_widget .address_form .address_form_item input[type=submit]:hover, .password_widgetcontainer .address_widget .address_form .address_form_item input[type=submit]:hover {
           background-color: #3bbced; }
-        .widgetcontainer .address_widget .address_form .address_form_item .address_left {
+        .widgetcontainer .address_widget .address_form .address_form_item .address_left, .icon_widgetcontainer .address_widget .address_form .address_form_item .address_left, .password_widgetcontainer .address_widget .address_form .address_form_item .address_left {
           float: left; }
-        .widgetcontainer .address_widget .address_form .address_form_item .address_right {
+        .widgetcontainer .address_widget .address_form .address_form_item .address_right, .icon_widgetcontainer .address_widget .address_form .address_form_item .address_right, .password_widgetcontainer .address_widget .address_form .address_form_item .address_right {
           float: right;
           margin-right: 10px; }
-        .widgetcontainer .address_widget .address_form .address_form_item .clear {
+        .widgetcontainer .address_widget .address_form .address_form_item .clear, .icon_widgetcontainer .address_widget .address_form .address_form_item .clear, .password_widgetcontainer .address_widget .address_form .address_form_item .clear {
           clear: both; }
-    .widgetcontainer .address_widget .form_button {
-      margin: 30px 10px 0 0;
-      float: right;
-      width: 288px !important; }
-    .widgetcontainer .address_widget .close_address_form {
+    .widgetcontainer .address_widget .close_form, .icon_widgetcontainer .address_widget .close_form, .password_widgetcontainer .address_widget .close_form {
       font-size: 30px;
       color: #cccccc;
       font-weight: bold;
       float: right;
       margin-top: -10px; }
-    .widgetcontainer .address_widget .close_address_form:hover {
+    .widgetcontainer .address_widget .close_form:hover, .icon_widgetcontainer .address_widget .close_form:hover, .password_widgetcontainer .address_widget .close_form:hover {
       color: gray; }
-    .widgetcontainer .address_widget .cancel_button {
+    .widgetcontainer .address_widget .cancel_button, .icon_widgetcontainer .address_widget .cancel_button, .password_widgetcontainer .address_widget .cancel_button {
       color: #fff;
       background: #c2c2c2;
       padding: 10px 50px;
       margin-left: 20px; }
+    .widgetcontainer .address_widget .form_button, .icon_widgetcontainer .address_widget .form_button, .password_widgetcontainer .address_widget .form_button {
+      margin: 30px 10px 0 0;
+      float: right;
+      width: 288px !important; }
+  .widgetcontainer .icon_widget, .icon_widgetcontainer .icon_widget, .password_widgetcontainer .icon_widget {
+    font-size: 14px;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    z-index: 2200;
+    position: relative;
+    top: 15%;
+    padding: 40px 50px; }
+    .widgetcontainer .icon_widget .close_form, .icon_widgetcontainer .icon_widget .close_form, .password_widgetcontainer .icon_widget .close_form {
+      font-size: 30px;
+      color: #cccccc;
+      font-weight: bold;
+      float: right;
+      margin-top: -10px; }
+    .widgetcontainer .icon_widget .close_form:hover, .icon_widgetcontainer .icon_widget .close_form:hover, .password_widgetcontainer .icon_widget .close_form:hover {
+      color: gray; }
+    .widgetcontainer .icon_widget .cancel_button, .icon_widgetcontainer .icon_widget .cancel_button, .password_widgetcontainer .icon_widget .cancel_button {
+      color: #fff;
+      background: #c2c2c2;
+      padding: 10px 50px;
+      margin-left: 20px; }
+    .widgetcontainer .icon_widget .form_button, .icon_widgetcontainer .icon_widget .form_button, .password_widgetcontainer .icon_widget .form_button {
+      margin: -10px 54px 0 0;
+      float: right;
+      width: 288px !important; }
+    .widgetcontainer .icon_widget .icon_form, .icon_widgetcontainer .icon_widget .icon_form, .password_widgetcontainer .icon_widget .icon_form {
+      margin-top: 30px; }
+      .widgetcontainer .icon_widget .icon_form .icon_form_title, .icon_widgetcontainer .icon_widget .icon_form .icon_form_title, .password_widgetcontainer .icon_widget .icon_form .icon_form_title {
+        font-size: 18px;
+        margin-bottom: 10px; }
+      .widgetcontainer .icon_widget .icon_form .icon_form_item input[type=submit], .icon_widgetcontainer .icon_widget .icon_form .icon_form_item input[type=submit], .password_widgetcontainer .icon_widget .icon_form .icon_form_item input[type=submit] {
+        padding: 10px 50px;
+        background-color: #15a8e0;
+        color: #fff;
+        border: none;
+        cursor: pointer; }
+      .widgetcontainer .icon_widget .icon_form .icon_form_item input[type=submit]:hover, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item input[type=submit]:hover, .password_widgetcontainer .icon_widget .icon_form .icon_form_item input[type=submit]:hover {
+        background-color: #3bbced; }
+      .widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main, .password_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main {
+        padding: 80px 0; }
+        .widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main p, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main p, .password_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main p {
+          text-align: center; }
+        .widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .file_box, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .file_box, .password_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .file_box {
+          display: block;
+          margin: 10px auto;
+          width: 175px;
+          height: 54px;
+          border: 1px solid #ccc;
+          position: relative; }
+          .widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .file_box .file_input, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .file_box .file_input, .password_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .file_box .file_input {
+            width: 100%;
+            height: 100%;
+            opacity: 0; }
+          .widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .file_box .file_tip, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .file_box .file_tip, .password_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .file_box .file_tip {
+            position: absolute;
+            font-size: 16px;
+            top: 15px;
+            width: 100%; }
+        .widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .filename, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .filename, .password_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .filename {
+          margin-top: 5px; }
+        .widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .alert, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .alert, .password_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .alert {
+          color: #d4282d; }
+  .widgetcontainer .password_widget, .icon_widgetcontainer .password_widget, .password_widgetcontainer .password_widget {
+    font-size: 14px;
+    margin: 0 auto;
+    width: 380px;
+    height: 350px;
+    background-color: #fff;
+    z-index: 2200;
+    position: relative;
+    top: 15%;
+    padding: 40px 50px; }
+    .widgetcontainer .password_widget .close_form, .icon_widgetcontainer .password_widget .close_form, .password_widgetcontainer .password_widget .close_form {
+      font-size: 30px;
+      color: #cccccc;
+      font-weight: bold;
+      float: right;
+      margin-top: -10px; }
+    .widgetcontainer .password_widget .close_form:hover, .icon_widgetcontainer .password_widget .close_form:hover, .password_widgetcontainer .password_widget .close_form:hover {
+      color: gray; }
+    .widgetcontainer .password_widget .cancel_button, .icon_widgetcontainer .password_widget .cancel_button, .password_widgetcontainer .password_widget .cancel_button {
+      color: #fff;
+      background: #c2c2c2;
+      padding: 10px 50px;
+      margin-left: 20px; }
+    .widgetcontainer .password_widget .password_form .password_form_title, .icon_widgetcontainer .password_widget .password_form .password_form_title, .password_widgetcontainer .password_widget .password_form .password_form_title {
+      font-size: 18px;
+      margin-bottom: 50px; }
+    .widgetcontainer .password_widget .password_form .password_form_item, .icon_widgetcontainer .password_widget .password_form .password_form_item, .password_widgetcontainer .password_widget .password_form .password_form_item {
+      font-size: 16px;
+      margin: 40px 60px 35px;
+      width: 270px; }
+      .widgetcontainer .password_widget .password_form .password_form_item label, .icon_widgetcontainer .password_widget .password_form .password_form_item label, .password_widgetcontainer .password_widget .password_form .password_form_item label {
+        margin-right: 15px;
+        top: 0; }
+      .widgetcontainer .password_widget .password_form .password_form_item input[type=password], .icon_widgetcontainer .password_widget .password_form .password_form_item input[type=password], .password_widgetcontainer .password_widget .password_form .password_form_item input[type=password] {
+        padding: 5px;
+        float: right; }
+      .widgetcontainer .password_widget .password_form .password_form_item input[type=submit], .icon_widgetcontainer .password_widget .password_form .password_form_item input[type=submit], .password_widgetcontainer .password_widget .password_form .password_form_item input[type=submit] {
+        padding: 10px 50px;
+        background-color: #15a8e0;
+        color: #fff;
+        border: none;
+        cursor: pointer; }
+      .widgetcontainer .password_widget .password_form .password_form_item input[type=submit]:hover, .icon_widgetcontainer .password_widget .password_form .password_form_item input[type=submit]:hover, .password_widgetcontainer .password_widget .password_form .password_form_item input[type=submit]:hover {
+        background-color: #3bbced; }
+      .widgetcontainer .password_widget .password_form .password_form_item .password_left, .icon_widgetcontainer .password_widget .password_form .password_form_item .password_left, .password_widgetcontainer .password_widget .password_form .password_form_item .password_left {
+        float: left; }
+      .widgetcontainer .password_widget .password_form .password_form_item .password_right, .icon_widgetcontainer .password_widget .password_form .password_form_item .password_right, .password_widgetcontainer .password_widget .password_form .password_form_item .password_right {
+        float: right;
+        margin-right: 10px; }
+      .widgetcontainer .password_widget .password_form .password_form_item .clear, .icon_widgetcontainer .password_widget .password_form .password_form_item .clear, .password_widgetcontainer .password_widget .password_form .password_form_item .clear {
+        clear: both; }
+    .widgetcontainer .password_widget .password_form .form_button, .icon_widgetcontainer .password_widget .password_form .form_button, .password_widgetcontainer .password_widget .password_form .form_button {
+      width: 380px !important;
+      margin-left: 45px !important; }
 
 .favorite_list {
   width: 97%;

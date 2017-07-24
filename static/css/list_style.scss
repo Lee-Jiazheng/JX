@@ -1,0 +1,151 @@
+$black_font:#333;
+$white_font:#fff;
+$white_background:#fff;
+$white_border:#e8e8e8;
+$logo_blue:#15a8e0;
+$dark_grey_background:#ddd;
+$grey_border:#ccc;
+$grey_background:#f5f5f5;
+$grey_font:#999;
+$red_font:#d7282d;
+
+#main{
+    background-color: $grey_background;
+    padding-bottom: 30px;
+}
+#list_row{
+    width: 1200px;
+    margin: 0 auto;
+    .product_level{
+        font-size: 12px;
+        width:100%;
+        padding: 25px 0 15px;
+        color:$grey_font;
+        a{
+            color:$black_font;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+
+    .product_roll{
+        .roll_main{
+                height: 360px;
+                margin: 30px 0 50px;
+                overflow: hidden;
+                position: relative;
+            .roll_button{
+                border-radius: 25px;
+                height: 50px;
+                width: 50px;
+                border: 1px solid $logo_blue;
+                background-color: $logo_blue;
+                color: $white_font;
+                cursor:pointer;
+                position: absolute;
+                top:150px;
+                font-weight: bold;
+                display: none;
+            }
+            .left{
+                left:20px;
+            }
+            .right{
+                right:20px;
+            }
+
+            .image_field{
+                a{
+                    img{
+                        width: 1200px;
+                    }
+                }
+            }
+        }
+        
+    }
+
+     .product_show{   
+        background-color: $white_background;
+        margin-bottom: 50px;
+        padding: 15px 70px 30px;
+        font-size: 14px;
+
+        .product_selection{
+            
+            .product_classify label,.product_sort label{
+                color:$grey_font;
+                float: left;
+                margin-right: 22px;
+            }
+            .product_classify .classify_url a,.product_sort .sort_url a{
+                color:$black_font;
+                margin:0 20px 10px 0;
+                float: left;
+            }
+            .product_classify .classify_url .active,.product_sort .sort_url .active{
+                color: $logo_blue;
+            }
+            .product_classify .classify_url a:hover,.product_sort .sort_url a:hover{
+                color:$logo_blue;
+            }
+            .product_classify,.product_sort{
+                padding: 15px 0 5px;
+                border-bottom: 1px dashed $grey_border;
+            }
+            .product_sort .sort_url a .active{
+                color:$logo_blue!important;
+            }
+        }   
+        
+        .product_show_content{
+            .product_list{
+                margin-top: 30px;
+                .product_item{
+                    text-align: center;
+                    width: 20%;
+                    float: left;
+                    padding: 15px 0;
+                    .item_photo{
+                        height: 180px;
+                        .item_photo_url{
+                            img{
+                                height: 160px;
+                            }
+                        }
+                    }
+                    .item_description{
+                        a{
+                            font-weight: bold;
+                            font-size: 16px;
+                            max-width: 180px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            display: block;
+                            margin: 0 auto;
+                        }
+                        a:hover{
+                            color: $logo_blue;
+                        }
+                        .product_price{
+                            font-size: 14px;
+                            color:$red_font;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+
+
+}
+.clear{
+    clear: both;
+}
+
+.icon-sort{
+    color:$black_font;
+}
