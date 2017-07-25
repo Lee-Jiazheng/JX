@@ -10,7 +10,8 @@ $bottom_black:#414141;
 $bottom_white:#aaaaaa;
 $main_background:#f6f6f6;
 $grey_border:#ccc;
-
+$white_background:#fff;
+$black_font:#333;
 
 html,body,ol,ul,p,h1,h2,h3,h4,h5,h6{
     margin:0;
@@ -471,4 +472,27 @@ i{
     text-decoration: none;
     border: none!important;
     color:$logo_blue!important;
+}
+
+.toolbox{
+    position: fixed;
+    right:0;
+    bottom: 20px;
+    z-index: 9900;
+    background-color:$white_background;
+    border: 1px solid $grey_border;
+    .tool_item{
+        a{
+            width: 70px;
+            height: 70px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            border-bottom: 1px solid $grey_border;
+            .icon_right{
+                color: $black_font!important;
+                font-size: 40px;
+            }
+        }
+    }
 }

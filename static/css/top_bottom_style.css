@@ -375,4 +375,22 @@ i {
   border: none !important;
   color: #15a8e0 !important; }
 
+.toolbox {
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  z-index: 9900;
+  background-color: #fff;
+  border: 1px solid #ccc; }
+  .toolbox .tool_item a {
+    width: 70px;
+    height: 70px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc; }
+    .toolbox .tool_item a .icon_right {
+      color: #333 !important;
+      font-size: 40px; }
+
 /*# sourceMappingURL=top_bottom_style.css.map */

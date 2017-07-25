@@ -1,4 +1,5 @@
             $('.new_address').click(function(){
+                $('.address_form_title').text('新建地址');
                 $('.widgetcontainer').show();
                 $('#address_detail').val('');
                 $('#address_receiver_name').val('');

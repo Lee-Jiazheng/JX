@@ -403,7 +403,11 @@
             top: 15px;
             width: 100%; }
         .widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .filename, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .filename, .password_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .filename {
-          margin-top: 5px; }
+          margin: 5px auto;
+          max-width: 250px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
         .widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .alert, .icon_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .alert, .password_widgetcontainer .icon_widget .icon_form .icon_form_item .icon_main .alert {
           color: #d4282d; }
   .widgetcontainer .password_widget, .icon_widgetcontainer .password_widget, .password_widgetcontainer .password_widget {
