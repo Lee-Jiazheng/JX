@@ -36,7 +36,7 @@ public class CommentsService implements ICommentsService{
         Map<Goods, List<Comments>> maps = new HashMap<Goods, List<Comments>>();
         List<Goods> goods = goodsMapper.getAllGoods();
         for(Goods good : goods){
-            maps.put(good, commentsMapper.getCommentsByGoods(good.getGoodsId()));
+            maps.put(good, commentsMapper.getCommentsByGoods(good.getGoodsid()));
         }
         return maps;
     }
@@ -52,9 +52,9 @@ public class CommentsService implements ICommentsService{
         List<CommentsWithUserName> commentsWithUserNames = new ArrayList<CommentsWithUserName>();;
         for(Comments comment : commentsList){
             CommentsWithUserName commentsWithUserName = new CommentsWithUserName();
-            commentsWithUserName.userName = userMapper.getUserNameByCommentsBuyerID(comment.getCommentsBuyer());
-            commentsWithUserName.setCommentsContent(comment.getCommentsContent());
-            commentsWithUserName.setCommentsTime(comment.getCommentsTime());
+            commentsWithUserName.userName = userMapper.getUserNameByCommentsBuyerID(comment.getCommentsbuyer());
+            commentsWithUserName.setCommentscontent(comment.getCommentscontent());
+            commentsWithUserName.setCommentstime(comment.getCommentstime());
             commentsWithUserNames.add(commentsWithUserName);
         }
         return commentsWithUserNames;
@@ -64,4 +64,5 @@ public class CommentsService implements ICommentsService{
     public Goods getGoodsInfoByID(int goodsID) {
         return goodsMapper.getGoods(goodsID);
     }
+
 }

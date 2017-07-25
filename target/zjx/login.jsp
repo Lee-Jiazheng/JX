@@ -93,7 +93,7 @@
                             <i class="iconfont icon-wode icon_login"></i>
                         </div>
                         <div class="input_field">
-                            <input type="text" name="nickName">
+                            <input type="text" name="nickname">
                         </div>
                         <div class="clear">
                         </div>

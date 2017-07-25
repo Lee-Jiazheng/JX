@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Bruce Lee on 2017/7/19.
  */
 public interface IChatMapper {
-    @Select("select * from user where userid in (select passiveuser from chatuserrecord where origin_user = #{id})")
+    @Select("select * from user where userid in (select passiveuser from chatuserrecord where originuser = #{id})")
     List<User> getAllChatUserByUserId(int id);
 
     @Insert("insert into passiveuser values(#{userid1}, #{userid2})")

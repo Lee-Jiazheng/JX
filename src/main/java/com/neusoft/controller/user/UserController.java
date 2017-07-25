@@ -38,11 +38,15 @@ public class UserController {
     @Value("#{userManager}")
     private IUserService userService;
 
-    @RequestMapping("verify_username.do")
-    public String verify_username(String username) throws IOException {
+    @RequestMapping("verify_nick_name.do")
+    public void verify_nick_name(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String username = (String)request.getParameter("nickname");
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("utf-8");
         if(userService.check_username(username) == true)
-            return "ok";
-        return "unvalid username";
+            response.getWriter().write("ok");
+        else
+            response.getWriter().write("error");
     }
 
     @RequestMapping("user_login.do")
@@ -62,7 +66,13 @@ public class UserController {
     //用户注册
     @RequestMapping("user_register.do")
     public ModelAndView user_register(User user, HttpServletRequest request) throws IOException {
-        return null;
+        ModelAndView mav = new ModelAndView("register");
+        if(userService.user_register(user) == true){
+            mav.setViewName("user_center");
+        }else{
+            mav.addObject("reg_info", "注册失败");
+        }
+        return mav;
     }
 
     @RequestMapping("chat.do")

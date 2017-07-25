@@ -13,7 +13,6 @@ public class testFileTest {
 
         System.out.println("fuck");
         UserController userController = new UserController();
-        System.out.println(userController.verify_username("1"));
     }
 
 }

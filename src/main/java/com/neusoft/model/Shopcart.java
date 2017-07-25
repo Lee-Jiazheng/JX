@@ -1,43 +1,41 @@
 package com.neusoft.model;
 
-import com.tgb.lk.annotation.AutoBean;
-import com.tgb.lk.annotation.AutoField;
-import com.tgb.lk.annotation.ExcelVOAttribute;
-
-import java.util.Date;
+import java.io.Serializable;
+import java.util.*;
+import com.tgb.lk.annotation.*;
 
 @AutoBean(alias = "Shopcart",table="shopcart")
-public class Shopcart {
+public class Shopcart  implements Serializable {
 
-  @AutoField(alias = "shopcartBuyer", column = "shopcart_buyer", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "shopcart_buyer", column = "A")
-  private int shopcartBuyer;
+  @AutoField(alias = "shopcartbuyer", column = "shopcartbuyer", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "shopcartbuyer", column = "A")
+  private int shopcartbuyer;
 
-  @AutoField(alias = "shopcartGoods", column = "shopcart_goods", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "shopcart_goods", column = "B")
-  private int shopcartGoods;
+  @AutoField(alias = "shopcartgoods", column = "shopcartgoods", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "shopcartgoods", column = "B")
+  private int shopcartgoods;
 
-  @AutoField(alias = "shopcartTime", column = "shopcart_time", isRequired = true, type = "Date")
-  @ExcelVOAttribute(name = "shopcart_time", column = "C")
-  private Date shopcartTime;
+  @AutoField(alias = "shopcarttime", column = "shopcarttime", isRequired = true, type = "Date")
+  @ExcelVOAttribute(name = "shopcarttime", column = "C")
+  private Date shopcarttime;
 
 
-  public int getShopcartBuyer() {
-    return shopcartBuyer;
+  public int getShopcartbuyer() {
+    return shopcartbuyer;
   }
-  public void setShopcartBuyer(int shopcartBuyer){
-    this.shopcartBuyer = shopcartBuyer;
+  public void setShopcartbuyer(int shopcartbuyer){
+    this.shopcartbuyer = shopcartbuyer;
   }
-  public int getShopcartGoods() {
-    return shopcartGoods;
+  public int getShopcartgoods() {
+    return shopcartgoods;
   }
-  public void setShopcartGoods(int shopcartGoods){
-    this.shopcartGoods = shopcartGoods;
+  public void setShopcartgoods(int shopcartgoods){
+    this.shopcartgoods = shopcartgoods;
   }
-  public Date getShopcartTime() {
-    return shopcartTime;
+  public Date getShopcarttime() {
+    return shopcarttime;
   }
-  public void setShopcartTime(Date shopcartTime){
-    this.shopcartTime = shopcartTime;
+  public void setShopcarttime(Date shopcarttime){
+    this.shopcarttime = shopcarttime;
   }
 }

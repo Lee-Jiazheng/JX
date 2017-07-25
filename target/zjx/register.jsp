@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,15 @@
     <title>京西商城 - 智·享·生·活</title>
     <link rel="stylesheet" href="css/top_bottom_style.css"></link>
     <link rel="stylesheet" href="css/reg_style.css"></link>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        #reg_row .reg_box{
+            width:450px!important;
+        }
+        .reg_field .reg_input input{
+            width: 70%!important;
+        }
+    </style>
 </head>
 <body>
 <div class="header">
@@ -36,13 +46,14 @@
         <div class="reg_box">
             <div class="form">
 
-                <form action="user_register.do">
+                <form>
                     <div class="reg_field">
                         <div class="reg_label">
                             <label>用户名</label>
                         </div>
                         <div class="reg_input">
-                            <input type="text" name="nickName">
+                            <input type="text" id="nickName" name="nickname">
+                            <span class="nickName_tip">用户名已存在</span>
                         </div>
                         <div class="clear">
                         </div>
@@ -52,7 +63,7 @@
                         <div class="reg_label">
                             <label>真实姓名</label>
                         </div>
-                        <div class="reg_input" >
+                        <div class="reg_input">
                             <input type="text" name="realname">
                         </div>
                         <div class="clear">
@@ -64,7 +75,7 @@
                             <label>密码</label>
                         </div>
                         <div class="reg_input">
-                            <input type="password" name="password">
+                            <input type="password" id="pass" name="password">
                         </div>
                         <div class="clear">
                         </div>
@@ -75,7 +86,8 @@
                             <label>确认密码</label>
                         </div>
                         <div class="reg_input">
-                            <input type="password">
+                            <input type="password" id="repeatPass">
+                            <span class="repeat_tip">两次密码不同</span>
                         </div>
                         <div class="clear">
                         </div>
@@ -160,5 +172,29 @@
         </div>
     </div>
 </div>
+<script>
+    $('#nickName').change(function(){
+        $.get("verify_nick_name.do?nickname="+$('#nickName').val(), function (responsetext) {
+            if(responsetext == "ok"){
+                $('.nickName_tip').hide();
+            }else{
+                $('.nickName_tip').show();
+            }
+        });
+    });
+    $('#nickName').focus(function(){
+        $('.nickName_tip').hide();
+    });
+    $('#repeatPass').change(function(){
+        if($('#repeatPass').val() != $('#pass').val()){
+            $('.repeat_tip').show();
+        }else{
+            $('.repeat_tip').hide();
+        }
+    });
+    $('#repeatPass').focus(function(){
+        $('.repeat_tip').hide();
+    });
+</script>
 </body>
 </html>

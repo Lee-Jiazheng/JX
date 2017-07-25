@@ -1,10 +1,11 @@
 package com.neusoft.model;
 
+import java.io.Serializable;
 import java.util.*;
 import com.tgb.lk.annotation.*;
 
 @AutoBean(alias = "AdminUser",table="admin_user")
-public class AdminUser {
+public class AdminUser implements Serializable{
 
   @AutoField(alias = "id", column = "id", type = "Integer")
   @ExcelVOAttribute(name = "id", column = "A")

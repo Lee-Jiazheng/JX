@@ -134,7 +134,7 @@
         border: 1px solid #15a8e0;
         display: block;
         float: right;
-        margin-right: 175px;
+        margin-right: 174px;
         color: #15a8e0; }
       #show_row .product_show .product_show_right .product_button .icon_description {
         margin-top: 5px;
@@ -205,6 +205,12 @@
           height: 180px; }
           #show_row .product_more .right .recommend_url .image_container .product_img {
             height: 160px; }
+        #show_row .product_more .right .recommend_url .recommend_detail {
+          max-width: 200px;
+          margin: 0 auto;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
         #show_row .product_more .right .recommend_url .recommend_detail:hover {
           color: #15a8e0; }
         #show_row .product_more .right .recommend_url .recommend_price {
@@ -261,5 +267,8 @@
     text-align: center;
     font-weight: bold;
     margin-top: 12px; }
+
+.toolbox {
+  position: fixed; }
 
 /*# sourceMappingURL=show_style.css.map */

@@ -13,8 +13,7 @@ public class RedisUtils {
 
     public Object get(final String key) {
         Object result = null;
-        ValueOperations<Serializable, Object> operations = redisTemplate
-                .opsForValue();
+        ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
         result = operations.get(key);
         return result;
     }

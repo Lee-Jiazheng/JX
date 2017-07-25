@@ -14,7 +14,7 @@ import java.util.List;
 public interface IUserMapper {
     @Select("select * from user where nickname = #{user_name}")
     User getUserByName(@Param("user_name") String user_name);
-    @Select("select * from user where nickname = #{nickName} and password = #{password}")
+    @Select("select * from user where nickname = #{nickname} and password = #{password}")
     User verifyUser(User user);
     @Insert("insert into user() values()")
     int addUser(User user);
@@ -22,17 +22,21 @@ public interface IUserMapper {
     @Select("select * from user where userId= #{userId}")
     User getUserById(@Param("userId") int userId);
 
-    @Insert("insert into user(userId,password,nickName,realname,createTime," +
+    @Insert("insert into user(userId,password,nickname,realname,createTime," +
             "email,phone,credit,isAdmin) " +
-            "values(#{userId},#{password},#{nickName},#{realname}," +
+            "values(#{userid},#{password},#{nickname},#{realname}," +
             "#{createTime},#{email},#{phone},#{credit})")
     void registerUser(User user);
 
-    @Update("update user set nickname=#{nickName},password=#{password}," +
+    @Update("update user set nickname=#{nickname},realnam = #{realname}, password=#{password}," +
             "email=#{email},phone=#{phone},credit=#{credit} where " +
-            "userId=#{userId}")
+            "userId=#{userid}")
     void updateUser(User user);
+
+    @Update("update user set userphoto=#{userphoto} where nickname = #{nickname}")
+    void updateAvatar(User user);
 
     @Select("select nickname from user, comments where userid=commentsbuyer and userid=#{buyer_id}")
     String getUserNameByCommentsBuyerID(int buyer_id);
+
 }

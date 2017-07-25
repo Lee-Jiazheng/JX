@@ -16,7 +16,7 @@
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/chat_style.css">
     <script type="text/javascript">
         var client;
-        var clientID = '${user.nickName}';   //session获取登录用户的用户编号
+        var clientID = '${user.nickname}';   //session获取登录用户的用户编号
         var all_users = [];
         function lostConnection() {
             //$('#message').append('连接已经断开！');
@@ -24,7 +24,7 @@
             <%
             List<User> users = (List<User>)request.getAttribute("chat_users");
             for(int i = 0; i < users.size(); ++i){%>
-                all_users.push('<%=(String)users.get(i).getNickName()%>');
+                all_users.push('<%=(String)users.get(i).getNickname()%>');
             <%}%>
             <%=request.getAttribute("userName")%>
         }
@@ -125,7 +125,7 @@
         <div class="uinfo fn-clear">
             <div class="uface"><img src="images/hetu.jpg" width="40" height="40"  alt=""/></div>
             <div class="uname">
-                河图<i class="fontico down"></i>
+                ${user.nickname}  <i class="fontico down"></i>
                 <ul class="managerbox">
                     <li><a href="#"><i class="fontico lock"></i>修改密码</a></li>
                     <li><a href="#"><i class="fontico logout"></i>退出登录</a></li>
@@ -176,7 +176,7 @@
                 <li class="fn-clear selected"><em>所有用户</em></li>
 
                 <c:forEach items="${chat_users}" var="chat_user" varStatus="index_object">
-                    <li class="fn-clear" data-id="${index_object.index+1}"><span><img src="images/hetu.jpg" width="30" height="30"  alt=""/></span><em>${chat_user.nickName}</em><small class="online" title="在线"></small></li>
+                    <li class="fn-clear" data-id="${index_object.index+1}"><span><img src="images/hetu.jpg" width="30" height="30"  alt=""/></span><em>${chat_user.nickname}</em><small class="online" title="在线"></small></li>
                 </c:forEach>
             </ul>
         </div>

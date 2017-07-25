@@ -1,90 +1,91 @@
 package com.neusoft.model;
 
+import java.io.Serializable;
 import java.util.*;
 import com.tgb.lk.annotation.*;
 
 @AutoBean(alias = "Order",table="order")
-public class Order {
+public class Order  implements Serializable {
 
-  @AutoField(alias = "orderId", column = "order_id", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "order_id", column = "A")
-  private int orderId;
+  @AutoField(alias = "orderid", column = "orderid", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "orderid", column = "A")
+  private int orderid;
 
-  @AutoField(alias = "orderGoods", column = "order_goods", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "order_goods", column = "B")
-  private int orderGoods;
+  @AutoField(alias = "ordergoods", column = "ordergoods", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "ordergoods", column = "B")
+  private int ordergoods;
 
-  @AutoField(alias = "orderBuyer", column = "order_buyer", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "order_buyer", column = "C")
-  private int orderBuyer;
+  @AutoField(alias = "orderbuyer", column = "orderbuyer", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "orderbuyer", column = "C")
+  private int orderbuyer;
 
-  @AutoField(alias = "orderTime", column = "order_time", isRequired = true, type = "Date")
-  @ExcelVOAttribute(name = "order_time", column = "D")
-  private Date orderTime;
+  @AutoField(alias = "ordertime", column = "ordertime", isRequired = true, type = "Date")
+  @ExcelVOAttribute(name = "ordertime", column = "D")
+  private Date ordertime;
 
-  @AutoField(alias = "orderFinished", column = "order_finished", isRequired = true)
-  @ExcelVOAttribute(name = "order_finished", column = "E")
-  private Boolean orderFinished;
+  @AutoField(alias = "orderfinished", column = "orderfinished", isRequired = true)
+  @ExcelVOAttribute(name = "orderfinished", column = "E")
+  private Boolean orderfinished;
 
-  @AutoField(alias = "orderDestination", column = "order_destination", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "order_destination", column = "F")
-  private String orderDestination;
+  @AutoField(alias = "orderdestination", column = "orderdestination", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "orderdestination", column = "F")
+  private String orderdestination;
 
-  @AutoField(alias = "�����ɽ�ʱ����Ʒ�۸�", column = "order_price", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "order_price", column = "G")
-  private Double orderPrice;
+  @AutoField(alias = "�����ɽ�ʱ����Ʒ�۸�", column = "orderprice", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "orderprice", column = "G")
+  private Double orderprice;
 
-  @AutoField(alias = "orderCompany", column = "order_company", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "order_company", column = "H")
-  private String orderCompany;
+  @AutoField(alias = "ordercompany", column = "ordercompany", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "ordercompany", column = "H")
+  private String ordercompany;
 
 
-  public int getOrderId() {
-    return orderId;
+  public int getOrderid() {
+    return orderid;
   }
-  public void setOrderId(int orderId){
-    this.orderId = orderId;
+  public void setOrderid(int orderid){
+    this.orderid = orderid;
   }
-  public int getOrderGoods() {
-    return orderGoods;
+  public int getOrdergoods() {
+    return ordergoods;
   }
-  public void setOrderGoods(int orderGoods){
-    this.orderGoods = orderGoods;
+  public void setOrdergoods(int ordergoods){
+    this.ordergoods = ordergoods;
   }
-  public int getOrderBuyer() {
-    return orderBuyer;
+  public int getOrderbuyer() {
+    return orderbuyer;
   }
-  public void setOrderBuyer(int orderBuyer){
-    this.orderBuyer = orderBuyer;
+  public void setOrderbuyer(int orderbuyer){
+    this.orderbuyer = orderbuyer;
   }
-  public Date getOrderTime() {
-    return orderTime;
+  public Date getOrdertime() {
+    return ordertime;
   }
-  public void setOrderTime(Date orderTime){
-    this.orderTime = orderTime;
+  public void setOrdertime(Date ordertime){
+    this.ordertime = ordertime;
   }
-  public Boolean getOrderFinished() {
-    return orderFinished;
+  public Boolean getOrderfinished() {
+    return orderfinished;
   }
-  public void setOrderFinished(Boolean orderFinished){
-    this.orderFinished = orderFinished;
+  public void setOrderfinished(Boolean orderfinished){
+    this.orderfinished = orderfinished;
   }
-  public String getOrderDestination() {
-    return orderDestination;
+  public String getOrderdestination() {
+    return orderdestination;
   }
-  public void setOrderDestination(String orderDestination){
-    this.orderDestination = orderDestination;
+  public void setOrderdestination(String orderdestination){
+    this.orderdestination = orderdestination;
   }
-  public Double getOrderPrice() {
-    return orderPrice;
+  public Double getOrderprice() {
+    return orderprice;
   }
-  public void setOrderPrice(Double orderPrice){
-    this.orderPrice = orderPrice;
+  public void setOrderprice(Double orderprice){
+    this.orderprice = orderprice;
   }
-  public String getOrderCompany() {
-    return orderCompany;
+  public String getOrdercompany() {
+    return ordercompany;
   }
-  public void setOrderCompany(String orderCompany){
-    this.orderCompany = orderCompany;
+  public void setOrdercompany(String ordercompany){
+    this.ordercompany = ordercompany;
   }
 }

@@ -1,50 +1,51 @@
 package com.neusoft.model;
 
+import java.io.Serializable;
 import java.util.*;
 import com.tgb.lk.annotation.*;
 
 @AutoBean(alias = "Category",table="category")
-public class Category {
+public class Category implements Serializable{
 
-  @AutoField(alias = "categoryId", column = "category_id", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "category_id", column = "A")
-  private int categoryId;
+  @AutoField(alias = "categoryid", column = "categoryid", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "categoryid", column = "A")
+  private int categoryid;
 
-  @AutoField(alias = "����500��100", column = "category_name", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "category_name", column = "B")
-  private String categoryName;
+  @AutoField(alias = "����500��100", column = "categoryname", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "categoryname", column = "B")
+  private String categoryname;
 
-  @AutoField(alias = "parentFlag", column = "parent_flag", isRequired = true)
-  @ExcelVOAttribute(name = "parent_flag", column = "C")
-  private Boolean parentFlag;
+  @AutoField(alias = "parentflag", column = "parentflag", isRequired = true)
+  @ExcelVOAttribute(name = "parentflag", column = "C")
+  private Boolean parentflag;
 
-  @AutoField(alias = "parentId", column = "parent_id", type = "Integer")
-  @ExcelVOAttribute(name = "parent_id", column = "D")
-  private int parentId;
+  @AutoField(alias = "parentid", column = "parentid", type = "Integer")
+  @ExcelVOAttribute(name = "parentid", column = "D")
+  private int parentid;
 
 
-  public int getCategoryId() {
-    return categoryId;
+  public int getCategoryid() {
+    return categoryid;
   }
-  public void setCategoryId(int categoryId){
-    this.categoryId = categoryId;
+  public void setCategoryid(int categoryid){
+    this.categoryid = categoryid;
   }
-  public String getCategoryName() {
-    return categoryName;
+  public String getCategoryname() {
+    return categoryname;
   }
-  public void setCategoryName(String categoryName){
-    this.categoryName = categoryName;
+  public void setCategoryname(String categoryname){
+    this.categoryname = categoryname;
   }
-  public Boolean getParentFlag() {
-    return parentFlag;
+  public Boolean getParentflag() {
+    return parentflag;
   }
-  public void setParentFlag(Boolean parentFlag){
-    this.parentFlag = parentFlag;
+  public void setParentflag(Boolean parentflag){
+    this.parentflag = parentflag;
   }
-  public int getParentId() {
-    return parentId;
+  public int getParentid() {
+    return parentid;
   }
-  public void setParentId(int parentId){
-    this.parentId = parentId;
+  public void setParentid(int parentid){
+    this.parentid = parentid;
   }
 }

@@ -35,5 +35,12 @@ public class AdminController {
     public ModelAndView admin_login(HttpServletRequest request, User user){
         return null;
     }
+
+    @RequestMapping("admin_chat.do")
+    public ModelAndView admin_chat(HttpServletRequest request){
+        //官方客服页面
+        ModelAndView mav = new ModelAndView("admin/admin_chat");
+        return mav;
+    }
 }
 

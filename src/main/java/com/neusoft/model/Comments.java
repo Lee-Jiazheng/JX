@@ -1,60 +1,61 @@
 package com.neusoft.model;
 
+import java.io.Serializable;
 import java.util.*;
 import com.tgb.lk.annotation.*;
 
 @AutoBean(alias = "Comments",table="comments")
-public class Comments {
+public class Comments  implements Serializable {
 
-  @AutoField(alias = "commentsId", column = "comments_id", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "comments_id", column = "A")
-  protected int commentsId;
+  @AutoField(alias = "commentsid", column = "commentsid", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "commentsid", column = "A")
+  private int commentsid;
 
-  @AutoField(alias = "commentsBuyer", column = "comments_buyer", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "comments_buyer", column = "B")
-  protected int commentsBuyer;
+  @AutoField(alias = "commentsbuyer", column = "commentsbuyer", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "commentsbuyer", column = "B")
+  private int commentsbuyer;
 
-  @AutoField(alias = "commentsGoods", column = "comments_goods", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "comments_goods", column = "C")
-  protected int commentsGoods;
+  @AutoField(alias = "commentsgoods", column = "commentsgoods", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "commentsgoods", column = "C")
+  private int commentsgoods;
 
-  @AutoField(alias = "commentsContent", column = "comments_content", isRequired = true, length = 255)
-  @ExcelVOAttribute(name = "comments_content", column = "D")
-  protected String commentsContent;
+  @AutoField(alias = "commentscontent", column = "commentscontent", isRequired = true, length = 255)
+  @ExcelVOAttribute(name = "commentscontent", column = "D")
+  private String commentscontent;
 
-  @AutoField(alias = "commentsTime", column = "comments_time", isRequired = true, type = "Date")
-  @ExcelVOAttribute(name = "comments_time", column = "E")
-  protected Date commentsTime;
+  @AutoField(alias = "commentstime", column = "commentstime", isRequired = true, type = "Date")
+  @ExcelVOAttribute(name = "commentstime", column = "E")
+  private Date commentstime;
 
 
-  public int getCommentsId() {
-    return commentsId;
+  public int getCommentsid() {
+    return commentsid;
   }
-  public void setCommentsId(int commentsId){
-    this.commentsId = commentsId;
+  public void setCommentsid(int commentsid){
+    this.commentsid = commentsid;
   }
-  public int getCommentsBuyer() {
-    return commentsBuyer;
+  public int getCommentsbuyer() {
+    return commentsbuyer;
   }
-  public void setCommentsBuyer(int commentsBuyer){
-    this.commentsBuyer = commentsBuyer;
+  public void setCommentsbuyer(int commentsbuyer){
+    this.commentsbuyer = commentsbuyer;
   }
-  public int getCommentsGoods() {
-    return commentsGoods;
+  public int getCommentsgoods() {
+    return commentsgoods;
   }
-  public void setCommentsGoods(int commentsGoods){
-    this.commentsGoods = commentsGoods;
+  public void setCommentsgoods(int commentsgoods){
+    this.commentsgoods = commentsgoods;
   }
-  public String getCommentsContent() {
-    return commentsContent;
+  public String getCommentscontent() {
+    return commentscontent;
   }
-  public void setCommentsContent(String commentsContent){
-    this.commentsContent = commentsContent;
+  public void setCommentscontent(String commentscontent){
+    this.commentscontent = commentscontent;
   }
-  public Date getCommentsTime() {
-    return commentsTime;
+  public Date getCommentstime() {
+    return commentstime;
   }
-  public void setCommentsTime(Date commentsTime){
-    this.commentsTime = commentsTime;
+  public void setCommentstime(Date commentstime){
+    this.commentstime = commentstime;
   }
 }

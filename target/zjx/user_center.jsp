@@ -1,3 +1,7 @@
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="com.neusoft.model.User" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Bruce Lee
@@ -23,12 +27,10 @@
         <div class="top_row">
             <img src="images/slogan.png">
             <div class="right">
-
                 <div class="before_login">
                     <a href="javascript:">登录</a>
                     <a href="javascript:">注册</a>
                 </div>
-
                 <div class="after_login">
                     <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
                         <a href="javascript:">
@@ -538,10 +540,12 @@
         <div class="user_left">
             <div class="user_detail">
                 <a class="user_icon" href="javascript:">
-                    <img src="images/defaultblue.png">
+                    <%--<c:if >--%>
+                    <img src="avatar/${user.userphoto}">
+                    <%--</c:if>--%>
                 </a>
                 <p class="user_nickname">
-                    ThornWu
+                    ${user.nickname}
                 </p>
                 <a class="user_level" href="javascript:">
                     普通会员
@@ -581,7 +585,7 @@
                                 用户&nbsp;ID
                             </label>
                             <div class="item_detail">
-                                20143623
+                                ${user.userid}
                             </div>
                         </div>
 
@@ -590,7 +594,7 @@
                                 用户名
                             </label>
                             <div class="item_detail">
-                                thornwu
+                                ${user.nickname}
                             </div>
                         </div>
 
@@ -599,8 +603,11 @@
                             <label class="item_intro">
                                 注册时间
                             </label>
+                            <%
+                            SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                            String date = ft.format(((User)request.getSession().getAttribute("user")).getCreatetime());%>
                             <div class="item_detail">
-                                2017-07-20
+                                <%=date%>
                             </div>
                         </div>
 
@@ -609,7 +616,7 @@
                                 真实姓名
                             </label>
                             <div class="item_detail">
-                                <input type="text" value="吴思伦" name="realname">
+                                <input type="text" value="${user.realname}" name="real_name">
                             </div>
                         </div>
 
@@ -618,7 +625,7 @@
                                 手机
                             </label>
                             <div class="item_detail">
-                                <input type="text" value="13433394357" name="phone">
+                                <input type="text" value="${user.phone}" name="phone">
                             </div>
                         </div>
 
@@ -627,7 +634,7 @@
                                 电子邮箱
                             </label>
                             <div class="item_detail">
-                                <input type="text" value="wzzz00118@163.com" name="email">
+                                <input type="text" value="${user.email}" name = "email">
                             </div>
                         </div>
 
@@ -664,234 +671,137 @@
                                 </span>
 
                 </div>
+
+
+
+
                 <div class="user_info_content">
                     <div class="order_list">
-                        <table class="order_item">
-                            <tbody>
-                            <tr class="head first">
-                                <th colspan="7">
+
+
+
+                        <c:forEach items="#{orders}" var="order">
+
+                            <table class="order_item">
+                                <tbody>
+                                <tr class="head first">
+                                    <th colspan="7">
                                                     <span>
                                                         下单时间：2017-07-20 15:42:09
                                                     </span>
-                                    <span>
-                                                        订单号：16049590
+                                        <span>
+                                                        订单号：${order.orderid}
                                                     </span>
-                                </th>
-                            </tr>
+                                    </th>
+                                </tr>
 
-                            <tr class="head">
-                                <th class="head_large">
+                                <tr class="head">
+                                    <th class="head_large">
                                                     <span>
                                                         商品信息
                                                     </span>
-                                </th>
+                                    </th>
 
-                                <th class="head_small">
+                                    <th class="head_small">
                                                     <span>
                                                         单价
                                                     </span>
-                                </th>
+                                    </th>
 
-                                <th  class="head_small">
+                                    <th  class="head_small">
                                                     <span>
                                                         数量
                                                     </span>
-                                </th>
+                                    </th>
 
-                                <th class="head_small">
+                                    <th class="head_small">
                                                     <span>
                                                         小计
                                                     </span>
-                                </th>
+                                    </th>
 
-                                <th class="head_medium">
+                                    <th class="head_medium">
                                                     <span>
                                                         总计
                                                     </span>
-                                </th>
+                                    </th>
 
 
-                                <th class="head_medium">
+                                    <th class="head_medium">
                                                     <span>
                                                         订单状态
                                                     </span>
-                                </th>
+                                    </th>
 
 
-                                <th class="head_medium">
+                                    <th class="head_medium">
                                                     <span>
                                                         订单操作
                                                     </span>
-                                </th>
+                                    </th>
 
-                            </tr>
+                                </tr>
 
-                            <tr class="body">
-                                <td colspan="4">
-                                    <div class="good_detail">
-                                        <div class="good_name">
-                                            <a href="javascript:">
-                                                <img src="images/defaultblack.png" class="good_image">
-                                            </a>
-                                            <a class="good_info" href="javascript:">
-                                                很长很长很长很长很长很长的名字
-                                            </a>
+                                <tr class="body">
+                                    <td colspan="4">
+                                        <div class="good_detail">
+                                            <div class="good_name">
+                                                <a href="javascript:">
+                                                    <c:if test="${!empty order.photo}">
+                                                        <img src="good_picture/${order.photo}" class="good_image">
+                                                    </c:if>
+                                                    <c:if test="${empty order.photo}">
+                                                        <img src="images/defaultblack.png" class="good_image">
+                                                    </c:if>
+                                                </a>
+                                                <a class="good_info" href="javascript:">
+                                                    ${order.goodsname}
+                                                </a>
+                                            </div>
+
+                                            <div class="good_num">
+                                                ￥${order.reilGoodPrice}
+                                            </div>
+
+                                            <div class="good_num">
+                                                ${order.amount}
+                                            </div>
+
+                                            <div class="good_num good_sum">
+                                                ￥${order.orderprice}
+                                            </div>
                                         </div>
 
-                                        <div class="good_num">
-                                            ￥150
+                                    </td>
+
+                                    <td>
+                                        <div class="good_total good_sum">
+                                            ￥${order.orderprice}
                                         </div>
 
-                                        <div class="good_num">
-                                            1
+                                    </td>
+
+                                    <td>
+                                        <div class="good_total">
+                                            <a href="javascript:">${order.orderStatus}</a>
                                         </div>
+                                    </td>
 
-                                        <div class="good_num good_sum">
-                                            ￥150
+                                    <td>
+                                        <div class="good_total">
+                                            <a href="javascript:" class="good_total_link">订单详情</a>
+                                            <a href="javascript:" class="good_total_link">查看物流</a>
+                                            <a href="javascript:" class="good_total_link">评价</a>
                                         </div>
-                                    </div>
-
-                                </td>
-
-                                <td>
-                                    <div class="good_total good_sum">
-                                        ￥150
-                                    </div>
-
-                                </td>
-
-                                <td>
-                                    <div class="good_total">
-                                        <a href="javascript:">交易成功</a>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="good_total">
-                                        <a href="javascript:" class="good_total_link">订单详情</a>
-                                        <a href="javascript:" class="good_total_link">查看物流</a>
-                                        <a href="javascript:" class="good_total_link">评价</a>
-                                    </div>
-                                </td>
+                                    </td>
 
 
-                            </tr>
-                            </tbody>
-                        </table>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </c:forEach>
 
 
-                        <table class="order_item">
-                            <tbody>
-                            <tr class="head first">
-                                <th colspan="7">
-                                                    <span>
-                                                        下单时间：2017-07-20 15:42:09
-                                                    </span>
-                                    <span>
-                                                        订单号：16049590
-                                                    </span>
-                                </th>
-                            </tr>
-
-                            <tr class="head">
-                                <th class="head_large">
-                                                    <span>
-                                                        商品信息
-                                                    </span>
-                                </th>
-
-                                <th class="head_small">
-                                                    <span>
-                                                        单价
-                                                    </span>
-                                </th>
-
-                                <th  class="head_small">
-                                                    <span>
-                                                        数量
-                                                    </span>
-                                </th>
-
-                                <th class="head_small">
-                                                    <span>
-                                                        小计
-                                                    </span>
-                                </th>
-
-                                <th class="head_medium">
-                                                    <span>
-                                                        总计
-                                                    </span>
-                                </th>
-
-
-                                <th class="head_medium">
-                                                    <span>
-                                                        订单状态
-                                                    </span>
-                                </th>
-
-
-                                <th class="head_medium">
-                                                    <span>
-                                                        订单操作
-                                                    </span>
-                                </th>
-
-                            </tr>
-
-                            <tr class="body">
-                                <td colspan="4">
-                                    <div class="good_detail">
-                                        <div class="good_name">
-                                            <a href="javascript:">
-                                                <img src="images/defaultblack.png" class="good_image">
-                                            </a>
-                                            <a class="good_info" href="javascript:">
-                                                很长很长很长很长很长很长的名字
-                                            </a>
-                                        </div>
-
-                                        <div class="good_num">
-                                            ￥150
-                                        </div>
-
-                                        <div class="good_num">
-                                            1
-                                        </div>
-
-                                        <div class="good_num good_sum">
-                                            ￥150
-                                        </div>
-                                    </div>
-
-                                </td>
-
-                                <td>
-                                    <div class="good_total good_sum">
-                                        ￥150
-                                    </div>
-
-                                </td>
-
-                                <td>
-                                    <div class="good_total">
-                                        <a href="javascript:">交易成功</a>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="good_total">
-                                        <a href="javascript:" class="good_total_link">订单详情</a>
-                                        <a href="javascript:" class="good_total_link">查看物流</a>
-                                        <a href="javascript:" class="good_total_link">评价</a>
-                                    </div>
-                                </td>
-
-
-                            </tr>
-                            </tbody>
-                        </table>
 
                     </div>
                 </div>
@@ -1063,7 +973,7 @@
                                 您的账号
                             </label>
                             <div class="item_detail">
-                                ThornWu
+                                ${user.nickname}
                             </div>
                         </div>
 
@@ -1073,7 +983,7 @@
                             </label>
                             <div class="item_detail security_info">
                                 建议您定期更换密码，设置安全性高的密码可以使帐号更安全
-                                <a href="javascript:">修改</a>
+                                <a href="javascript:" class="password_link">修改</a>
                             </div>
 
                         </div>
@@ -1084,7 +994,7 @@
                                 绑定手机
                             </label>
                             <div class="item_detail security_info">
-                                当前绑定手机号为：134****4357，若手机丢失或停用，请及时更换
+                                当前绑定手机号为：${user.phone}，若手机丢失或停用，请及时更换
                                 <a href="javascript:">更换</a>
                             </div>
 
@@ -1157,7 +1067,7 @@
 <div class="widgetcontainer">
     <div class="mask_widget"></div>
     <div class="address_widget">
-        <i class="iconfont icon-shanchu1 close_address_form"></i>
+        <i class="iconfont icon-shanchu1 close_form"></i>
         <form class="address_form">
             <div class="address_form_title">新建地址</div>
             <div class="address_form_item">
@@ -1184,8 +1094,87 @@
 
         </form>
     </div>
-
 </div>
+
+
+<div class="icon_widgetcontainer">
+    <div class="mask_widget"></div>
+    <div class="icon_widget">
+        <i class="iconfont icon-shanchu1 close_form"></i>
+        <form class="icon_form" action="user_avatar.do" method="post" enctype="multipart/form-data">
+            <div class="icon_form_title">设置头像</div>
+
+            <div class="icon_form_item">
+                <div class="icon_main">
+                    <a href="javascript:" class="file_box">
+                        <p class="file_tip">点击此处上传图片</p>
+
+                        <input type="file" name="user_image" required="required" class="file_input" accept="image/*">
+                    </a>
+                    <p>支持JPEG/JPG/PNG</p>
+                    <p class="filename"></p>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+
+            <div class="icon_form_item form_button">
+                <input type="submit" class="icon_submit" value="保存">
+                <a href="javascript:" class="cancel_button">取消</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<div class="password_widgetcontainer">
+    <div class="mask_widget"></div>
+    <div class="password_widget">
+        <i class="iconfont icon-shanchu1 close_form"></i>
+        <form class="password_form" action="alter_password.do">
+            <div class="password_form_title">修改密码</div>
+
+            <div class="password_form_item">
+                <label>原密码:</label>
+                <input type="password" required="required" name="password" id="origin_password">
+                <div class="clear"></div>
+            </div>
+
+            <div class="password_form_item">
+                <label>新密码:</label>
+                <input type="password" required="required" name="newpassword" id="new_password">
+                <div class="clear"></div>
+            </div>
+
+            <div class="password_form_item">
+                <label>重复密码:</label>
+                <input type="password" required="required" id="new_repeat_password">
+                <div class="clear"></div>
+            </div>
+
+            <div class="password_form_item form_button">
+                <input type="submit" class="password_submit" value="保存">
+                <a href="javascript:" class="cancel_button">取消</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
 <script src="js/user_center.js"></script>
+<script>
+    $('.password_form').submit(function () {
+        form = $(this);
+        if($('#new_password').val() == $('#new_repeat_password').val() && $('#origin_password').val() == '${user.password}'){
+            form.submit();
+            return true;
+        }else{
+            alert("请检查密码输入。");
+        }
+        return false;
+    });
+</script>
 </body>
 </html>

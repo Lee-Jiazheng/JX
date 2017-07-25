@@ -15,34 +15,62 @@
     <link rel="stylesheet" href="css/top_bottom_style.css"></link>
     <link rel="stylesheet" href="css/show_style.css"></link>
     <script src="js/jquery-3.2.1.min.js"></script>
+    
+    <script>
+        function buy() {
+            var uri = "order_good.do?shopID=" + $('#shopID').html() + "&amount=" + $('.num_input').val();
+            $.get(uri, function (responsetext) {
+                if(responsetext == 'ok'){
+                    alert("购买成功");
+                }else if(responsetext == 'unlogin'){
+                    alert("请先登录");
+                }else{
+                    alert("购买失败");
+                }
+            });
+        }
+    </script>
 
 </head>
 <body>
+
+<div style="display: none" id="shopID">${shopID}</div>
 <div class="header" id="top">
     <div class="top_nav">
         <div class="top_row">
             <img src="images/slogan.png">
+
             <div class="right">
-                <div class="before_login">
-                    <a href="javascript:">登录</a>
-                    <a href="javascript:">注册</a>
-                </div>
-                <div class="after_login">
-                    <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
-                        <a href="javascript:">
-                            <span class="nickname">wzzz00118</span>
-                            <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
-                        </a>
-                        <div class="drop_down_block">
-                            <div class="drop_down_menu">
-                                <a class="drop_down_item" href="javascript:">个人中心</a>
-                                <a class="drop_down_item" href="javascript:">订单管理</a>
-                                <a class="drop_down_item" href="javascript:">商品收藏</a>
-                                <a class="drop_down_item" href="javascript:">退出登录</a>
+
+                <c:if test="${empty user}">
+                    <div class="before_login">
+                        <a href="login.jsp">登录</a>
+                        <a href="register.jsp">注册</a>
+                    </div>
+                </c:if>
+
+                <c:if test="${!empty user}">
+                    <div class="after_login">
+                        <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
+                            <a href="javascript:">
+                                <span class="nickname">${user.nickname}</span>
+                                <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
+                            </a>
+                            <div class="drop_down_block">
+                                <div class="drop_down_menu">
+                                    <a class="drop_down_item" href="javascript:">个人中心</a>
+                                    <a class="drop_down_item" href="javascript:">订单管理</a>
+                                    <a class="drop_down_item" href="javascript:">商品收藏</a>
+                                    <a class="drop_down_item" href="javascript:">退出登录</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </c:if>
+
+
+
+
                 <div class="always_show">
                     <a href="javascript:">帮助</a>
                     <a href="javascript:">在线客服</a>
@@ -85,7 +113,7 @@
                     <c:forEach var="parent_category" items="${category_map}">
 
                         <li class="nav_li">
-                            <a href="javascript:">${parent_category.key.categoryName}</a>
+                            <a href="javascript:">${parent_category.key.categoryname}</a>
                             <div class="nav_dropdown">
                                 <div class="card_list">
                                     <ul class="card_item_list">
@@ -95,7 +123,7 @@
                                             <li class="item">
                                                 <a href="javascript:" class="url_nav_drop">
                                                     <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                                    <p class="title_nav_drop">${son_category.categoryName}</p>
+                                                    <p class="title_nav_drop">${son_category.categoryname}</p>
                                                 </a>
                                             </li>
                                         </c:forEach>
@@ -152,16 +180,21 @@
             &nbsp; > &nbsp;
             <a href="javascript:">二级分类</a>
             &nbsp; > &nbsp;
-            ${goodInfo.goodsName}
+            ${goodInfo.goodsname}
         </div>
 
         <div class="product_show">
             <div class="product_show_left">
-                <img src="images/defaultblue.png">
+                <c:if test="${empty good_photo.photo}">
+                    <img src="images/defaultblue.png">
+                </c:if>
+                <c:if test="${!empty good_photo.photo}">
+                    <img src="good_picture/${good_photo.photo}">
+                </c:if>
             </div>
             <div class="product_show_right">
                 <div class="product_info_name">
-                    <p class="product_name">${goodInfo.goodsName}</p>
+                    <p class="product_name">${goodInfo.goodsname}</p>
                     <p class="product_brief">100%情怀</p>
                 </div>
 
@@ -169,7 +202,7 @@
                     <div class="price_detail">
                         <span class="label">售价：</span>
                         <span class="rmb">￥</span>
-                        <span class="product_current_price">${goodInfo.goodsPrice}</span>
+                        <span class="product_current_price">${goodInfo.goodsprice}</span>
                         <span class="product_origin_price">￥250.00</span>
                         <span class="clear"></span>
                     </div>
@@ -207,7 +240,7 @@
                 </div>
 
                 <div class="product_button">
-                    <a href="javascript:" class="large_button purchase_button">立即购买</a>
+                    <a href="javascript:" onclick="buy()" class="large_button purchase_button">立即购买</a>
                     <a href="javascript:" class="large_button add_button">加入购物车</a>
                     <a href="javascript:" class="small_button">
                         <i class="iconfont icon-shoucang"></i>
@@ -264,8 +297,8 @@
                                     <div class="image_mask"></div>
                                 </div>
                                 <div class="review_right">
-                                    <p>${comment.commentsContent}</p>
-                                    <p class="review_time">${comment.userName}<pre>  </pre></p>
+                                    <p>${comment.commentscontent}</p>
+                                    <p class="review_time">${comment.userName}&nbsp;&nbsp;${comment.commentstime}</p>
                                 </div>
                                 <div class="clear"></div>
                             </li>
@@ -382,120 +415,8 @@
 <script src="js/top_bottom.js"></script>
 <script src="js/all.js"></script>
 <script>
-    var max_product_num=${goodInfo.goodsQuantity};
-    var min_product_num=1;
-    var reg = new RegExp("^[0-9]*");
-
-    $('.icon-minus').css('cursor','not-allowed');
-
-    $('.small_button').mouseover(function(){
-        $('.icon-shoucang').css('color','white');
-        $('.icon_description').css('color','white');
-        $(this).css('background-color','#15a8e0');
-    });
-    $('.small_button').mouseout(function(){
-        $('.icon-shoucang').css('color','#15a8e0');
-        $('.icon_description').css('color','#15a8e0');
-        $(this).css('background-color','white');
-    });
-    $('.num_input').change(function(){
-        $(this).val($(this).val().match(reg));
-
-        if($(this).val()==max_product_num){
-            $('.icon-plus').css('cursor','not-allowed');
-        }
-        else if($(this).val()>max_product_num){
-            $('.icon-plus').css('cursor','not-allowed');
-            $(this).val(max_product_num);
-            product_num_max();
-        }
-        else if($(this).val()==min_product_num){
-            $('.icon-minus').css('cursor','not-allowed');
-        }
-        else if($(this).val()<min_product_num){
-            $('.icon-minus').css('cursor','not-allowed');
-            $(this).val(min_product_num);
-            product_num_min();
-        }
-        else{
-            $('.icon-plus').css('cursor','pointer');
-            $('.icon-minus').css('cursor','pointer');
-        }
-    });
-
-    $('.icon-plus').click(function(){
-        if($('.num_input').val()>=max_product_num){
-            product_num_max();
-            $('.icon-plus').css('cursor','not-allowed');
-        }
-        else{
-            $('.num_input').val(parseInt($('.num_input').val())+1);
-            if($('.num_input').val()>=max_product_num){
-                $('.icon-plus').css('cursor','not-allowed');
-            }
-            if($('.num_input').val()!=min_product_num){
-                $('.icon-minus').css('cursor','pointer');
-            }
-        }
-    });
-
-
-    $('.icon-minus').click(function(){
-        if($('.num_input').val()<=min_product_num){
-            product_num_min();
-            $('.icon-minus').css('cursor','not-allowed');
-        }
-        else{
-            $('.num_input').val(parseInt($('.num_input').val())-1);
-            if($('.num_input').val()<=min_product_num){
-                $('.icon-minus').css('cursor','not-allowed');
-            }
-            if($('.num_input').val()!=max_product_num){
-                $('.icon-plus').css('cursor','pointer');
-            }
-        }
-    });
-
-    function product_num_max(){
-        $('.max_tip').show();
-        $('.max_tip').animate({opacity:1},200,function(){
-            $('.max_tip').delay(1700).animate({opacity:0},2000,function(){
-                $('.max_tip').delay(2400).hide();
-            });
-        });
-    };
-
-    function product_num_min(){
-        $('.min_tip').show();
-        $('.min_tip').animate({opacity:1},200,function(){
-            $('.min_tip').delay(1700).animate({opacity:0},2000,function(){
-                $('.min_tip').delay(2400).hide();
-            });
-        });
-    }
-
-    $('.product_img').mouseover(function(){
-        $(this).animate({height:"165px"},550);
-    });
-    $('.product_img').mouseout(function(){
-        $(this).animate({height:"160px"},300);
-    });
-
-    $('#product_detail').click(function(){
-        $('.product_review').hide();
-        $('.product_info_content').show();
-        $('#product_detail').addClass('active');
-        $('#product_review').removeClass('active');
-        $('#product_detail').css('border-right','1px solid #e8e8e8');
-    });
-
-    $('#product_review').click(function(){
-        $('.product_info_content').hide();
-        $('.product_review').show();
-        $('#product_review').addClass('active');
-        $('#product_detail').removeClass('active');
-        $('#product_detail').css('border-right','none');
-    });
+    var max_product_num=${goodInfo.goodsquantity};
 </script>
+<script src="js/show.js"></script>
 </body>
 </html>

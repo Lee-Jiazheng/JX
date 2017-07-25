@@ -1,5 +1,6 @@
 package com.neusoft.service;
 
+import com.neusoft.model.Address;
 import com.neusoft.model.User;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,4 +16,5 @@ public interface IUserService {
     public boolean change_avatar(MultipartFile avatar, User _user, String filePath);
     List<User> getChatUsers(User user);
     void alter_user_info(User user);
+    List<Address> getAllAddresses(int userid);
 }

@@ -9,8 +9,6 @@ public interface ICommentsMapper {
     /*
     三种获取评论的方式：评论id，评论者id，被评论的商品id
      */
-    @Select("select * from comments where commentsId= #{commentsId}")
-    public Comments getCommentsById(@Param("commentsId") int commentsId);
 
     @Select("select * from comments where commentsBuyer= #{commentsBuyer}")
     public List<Comments> getCommentsByUser(@Param("commentsBuyer") int
@@ -34,6 +32,14 @@ public interface ICommentsMapper {
 
     @Delete("delete from order where commentsId=#{commentsId}")
     public void delComment(@Param("commentsId") int commentsId);
+
+    /*
+    三种获取评论的方式：评论id，评论者id，被评论的商品id
+     */
+    @Select("select * from comments where commentsId= #{commentsId}")
+    public Comments getCommentsById(@Param("commentsId") int commentsId);
+
+
 
 
 }

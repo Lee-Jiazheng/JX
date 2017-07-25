@@ -1,120 +1,121 @@
 package com.neusoft.model;
 
+import java.io.Serializable;
 import java.util.*;
 import com.tgb.lk.annotation.*;
 
 @AutoBean(alias = "Goods",table="goods")
-public class Goods {
+public class Goods  implements Serializable {
 
-  @AutoField(alias = "goodsId", column = "goods_id", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "goods_id", column = "A")
-  private int goodsId;
+  @AutoField(alias = "goodsid", column = "goodsid", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "goodsid", column = "A")
+  private int goodsid;
 
-  @AutoField(alias = "goodsName", column = "goods_name", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "goods_name", column = "B")
-  private String goodsName;
+  @AutoField(alias = "goodsname", column = "goodsname", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "goodsname", column = "B")
+  private String goodsname;
 
-  @AutoField(alias = "goodsQuantity", column = "goods_quantity", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "goods_quantity", column = "C")
-  private int goodsQuantity;
+  @AutoField(alias = "goodsquantity", column = "goodsquantity", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "goodsquantity", column = "C")
+  private int goodsquantity;
 
-  @AutoField(alias = "��Ʒ״̬���������ڳ��ۡ�������", column = "goods_status", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "goods_status", column = "D")
-  private int goodsStatus;
+  @AutoField(alias = "��Ʒ״̬���������ڳ��ۡ�������", column = "goodsstatus", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "goodsstatus", column = "D")
+  private int goodsstatus;
 
-  @AutoField(alias = "goodsCreateTime", column = "goods_create_time", isRequired = true, type = "Date")
-  @ExcelVOAttribute(name = "goods_create_time", column = "E")
-  private Date goodsCreateTime;
+  @AutoField(alias = "goodscreatetime", column = "goodscreatetime", isRequired = true, type = "Date")
+  @ExcelVOAttribute(name = "goodscreatetime", column = "E")
+  private Date goodscreatetime;
 
-  @AutoField(alias = "goodsUpdateTime", column = "goods_update_time", isRequired = true, type = "Date")
-  @ExcelVOAttribute(name = "goods_update_time", column = "F")
-  private Date goodsUpdateTime;
+  @AutoField(alias = "goodsupdatetime", column = "goodsupdatetime", isRequired = true, type = "Date")
+  @ExcelVOAttribute(name = "goodsupdatetime", column = "F")
+  private Date goodsupdatetime;
 
-  @AutoField(alias = "goodsDescription", column = "goods_description", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "goods_description", column = "G")
-  private String goodsDescription;
+  @AutoField(alias = "goodsdescription", column = "goodsdescription", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "goodsdescription", column = "G")
+  private String goodsdescription;
 
-  @AutoField(alias = "��Ʒ�ؼ��֣����ڼ���", column = "goods_keywords", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "goods_keywords", column = "H")
-  private String goodsKeywords;
+  @AutoField(alias = "��Ʒ�ؼ��֣����ڼ���", column = "goodskeywords", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "goodskeywords", column = "H")
+  private String goodskeywords;
 
-  @AutoField(alias = "goodsPrice", column = "goods_price", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "goods_price", column = "I")
-  private Double goodsPrice;
+  @AutoField(alias = "goodsprice", column = "goodsprice", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "goodsprice", column = "I")
+  private Double goodsprice;
 
-  @AutoField(alias = "��Ʒ�Ż���Ϣ", column = "goods_promotion", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "goods_promotion", column = "J")
-  private int goodsPromotion;
+  @AutoField(alias = "��Ʒ�Ż���Ϣ", column = "goodspromotion", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "goodspromotion", column = "J")
+  private int goodspromotion;
 
-  @AutoField(alias = "goodsCategory", column = "goods_category", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "goods_category", column = "K")
-  private int goodsCategory;
+  @AutoField(alias = "goodscategory", column = "goodscategory", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "goodscategory", column = "K")
+  private int goodscategory;
 
 
-  public int getGoodsId() {
-    return goodsId;
+  public int getGoodsid() {
+    return goodsid;
   }
-  public void setGoodsId(int goodsId){
-    this.goodsId = goodsId;
+  public void setGoodsid(int goodsid){
+    this.goodsid = goodsid;
   }
-  public String getGoodsName() {
-    return goodsName;
+  public String getGoodsname() {
+    return goodsname;
   }
-  public void setGoodsName(String goodsName){
-    this.goodsName = goodsName;
+  public void setGoodsname(String goodsname){
+    this.goodsname = goodsname;
   }
-  public int getGoodsQuantity() {
-    return goodsQuantity;
+  public int getGoodsquantity() {
+    return goodsquantity;
   }
-  public void setGoodsQuantity(int goodsQuantity){
-    this.goodsQuantity = goodsQuantity;
+  public void setGoodsquantity(int goodsquantity){
+    this.goodsquantity = goodsquantity;
   }
-  public int getGoodsStatus() {
-    return goodsStatus;
+  public int getGoodsstatus() {
+    return goodsstatus;
   }
-  public void setGoodsStatus(int goodsStatus){
-    this.goodsStatus = goodsStatus;
+  public void setGoodsstatus(int goodsstatus){
+    this.goodsstatus = goodsstatus;
   }
-  public Date getGoodsCreateTime() {
-    return goodsCreateTime;
+  public Date getGoodscreatetime() {
+    return goodscreatetime;
   }
-  public void setGoodsCreateTime(Date goodsCreateTime){
-    this.goodsCreateTime = goodsCreateTime;
+  public void setGoodscreatetime(Date goodscreatetime){
+    this.goodscreatetime = goodscreatetime;
   }
-  public Date getGoodsUpdateTime() {
-    return goodsUpdateTime;
+  public Date getGoodsupdatetime() {
+    return goodsupdatetime;
   }
-  public void setGoodsUpdateTime(Date goodsUpdateTime){
-    this.goodsUpdateTime = goodsUpdateTime;
+  public void setGoodsupdatetime(Date goodsupdatetime){
+    this.goodsupdatetime = goodsupdatetime;
   }
-  public String getGoodsDescription() {
-    return goodsDescription;
+  public String getGoodsdescription() {
+    return goodsdescription;
   }
-  public void setGoodsDescription(String goodsDescription){
-    this.goodsDescription = goodsDescription;
+  public void setGoodsdescription(String goodsdescription){
+    this.goodsdescription = goodsdescription;
   }
-  public String getGoodsKeywords() {
-    return goodsKeywords;
+  public String getGoodskeywords() {
+    return goodskeywords;
   }
-  public void setGoodsKeywords(String goodsKeywords){
-    this.goodsKeywords = goodsKeywords;
+  public void setGoodskeywords(String goodskeywords){
+    this.goodskeywords = goodskeywords;
   }
-  public Double getGoodsPrice() {
-    return goodsPrice;
+  public Double getGoodsprice() {
+    return goodsprice;
   }
-  public void setGoodsPrice(Double goodsPrice){
-    this.goodsPrice = goodsPrice;
+  public void setGoodsprice(Double goodsprice){
+    this.goodsprice = goodsprice;
   }
-  public int getGoodsPromotion() {
-    return goodsPromotion;
+  public int getGoodspromotion() {
+    return goodspromotion;
   }
-  public void setGoodsPromotion(int goodsPromotion){
-    this.goodsPromotion = goodsPromotion;
+  public void setGoodspromotion(int goodspromotion){
+    this.goodspromotion = goodspromotion;
   }
-  public int getGoodsCategory() {
-    return goodsCategory;
+  public int getGoodscategory() {
+    return goodscategory;
   }
-  public void setGoodsCategory(int goodsCategory){
-    this.goodsCategory = goodsCategory;
+  public void setGoodscategory(int goodscategory){
+    this.goodscategory = goodscategory;
   }
 }

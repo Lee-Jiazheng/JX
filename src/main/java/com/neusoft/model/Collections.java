@@ -1,15 +1,13 @@
 package com.neusoft.model;
 
-import com.tgb.lk.annotation.AutoBean;
-import com.tgb.lk.annotation.AutoField;
-import com.tgb.lk.annotation.ExcelVOAttribute;
-
-import java.util.Date;
+import java.io.Serializable;
+import java.util.*;
+import com.tgb.lk.annotation.*;
 
 @AutoBean(alias = "Collections",table="collections")
-public class Collections {
+public class Collections  implements Serializable {
 
-  @AutoField(alias = "user", column = "user", isRequired = true, type = "Integer")
+  @AutoField(alias = "���", column = "user", isKey = true , isRequired = true , type="Integer", length=0)
   @ExcelVOAttribute(name = "user", column = "A")
   private int user;
 

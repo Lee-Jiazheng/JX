@@ -34,7 +34,7 @@
   position: relative;
   border-bottom: 1px solid #e8e8e8; }
   #reg_row .reg_box {
-    width: 400px;
+    width: 450px;
     padding: 40px 25px;
     color: #6c6c6c;
     margin: 0 auto; }
@@ -58,7 +58,7 @@
     width: 70%;
     height: 35px; }
     .reg_field .reg_input input {
-      width: 95%;
+      width: 75%;
       height: 85%;
       border: none;
       outline: 0;
@@ -79,5 +79,9 @@ input[type=submit] {
   width: 100%;
   height: 35px;
   margin: 5px 0 20px; }
+
+.nickName_tip, .repeat_tip {
+  display: none;
+  color: #d7282d; }
 
 /*# sourceMappingURL=reg_style.css.map */

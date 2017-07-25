@@ -1,10 +1,11 @@
 package com.neusoft.model;
 
+import java.io.Serializable;
 import java.util.*;
 import com.tgb.lk.annotation.*;
 
 @AutoBean(alias = "ChatUserRecord",table="chat_user_record")
-public class ChatUserRecord {
+public class ChatUserRecord  implements Serializable {
 
   @AutoField(alias = "originUser", column = "origin_user", type = "Integer")
   @ExcelVOAttribute(name = "origin_user", column = "A")

@@ -34,11 +34,11 @@ public class GoodsManager {
 
 
 
-    //增加一个商品
+    //����һ����Ʒ
     @RequestMapping("add_good.do")
-    public ModelAndView add_good(){
-        Goods good = new Goods();
-        good.setGoodsName("汉堡");
+    public ModelAndView add_good(Goods good){
+       /* Goods good = new Goods();
+        good.setGoodsname("����");
         Date date = new Date();
 
         good.setGoodsCreateTime(date);
@@ -46,7 +46,7 @@ public class GoodsManager {
         good.setGoodsQuantity(100);
         good.setGoodsPrice(99.9);
         good.setGoodsStatus(0);
-        good.setGoodsUpdateTime(date);
+        good.setGoodsUpdateTime(date);*/
         adminService.add_good(good);
         return null;
     }

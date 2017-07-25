@@ -1,61 +1,61 @@
 package com.neusoft.model;
 
-import com.tgb.lk.annotation.AutoBean;
-import com.tgb.lk.annotation.AutoField;
-import com.tgb.lk.annotation.ExcelVOAttribute;
+import java.io.Serializable;
+import java.util.*;
+import com.tgb.lk.annotation.*;
 
 @AutoBean(alias = "Promotion",table="promotion")
-public class Promotion {
+public class Promotion  implements Serializable {
 
-  @AutoField(alias = "promotionId", column = "promotion_id", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "promotion_id", column = "A")
-  private int promotionId;
+  @AutoField(alias = "promotionid", column = "promotionid", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "promotionid", column = "A")
+  private int promotionid;
 
-  @AutoField(alias = "promotionName", column = "promotion_name", isRequired = true, length = 45)
-  @ExcelVOAttribute(name = "promotion_name", column = "B")
-  private String promotionName;
+  @AutoField(alias = "", column = "promotionname", isRequired = true, length = 45)
+  @ExcelVOAttribute(name = "promotionname", column = "B")
+  private String promotionname;
 
-  @AutoField(alias = "promotionThreshold", column = "promotion_threshold", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "promotion_threshold", column = "C")
-  private Double promotionThreshold;
+  @AutoField(alias = "???????", column = "promotionthreshold", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "promotionthreshold", column = "C")
+  private Double promotionthreshold;
 
-  @AutoField(alias = "promotionDeduction", column = "promotion_deduction", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "promotion_deduction", column = "D")
-  private Double promotionDeduction;
+  @AutoField(alias = "????????", column = "promotiondeduction", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "promotiondeduction", column = "D")
+  private Double promotiondeduction;
 
-  @AutoField(alias = "effectiveTime", column = "effective_time", isRequired = true, type = "Integer")
-  @ExcelVOAttribute(name = "effective_time", column = "E")
-  private int effectiveTime;
+  @AutoField(alias = "???????????????15??", column = "effectivetime", isRequired = true, type = "Integer")
+  @ExcelVOAttribute(name = "effectivetime", column = "E")
+  private int effectivetime;
 
 
-  public int getPromotionId() {
-    return promotionId;
+  public int getPromotionid() {
+    return promotionid;
   }
-  public void setPromotionId(int promotionId){
-    this.promotionId = promotionId;
+  public void setPromotionid(int promotionid){
+    this.promotionid = promotionid;
   }
-  public String getPromotionName() {
-    return promotionName;
+  public String getPromotionname() {
+    return promotionname;
   }
-  public void setPromotionName(String promotionName){
-    this.promotionName = promotionName;
+  public void setPromotionname(String promotionname){
+    this.promotionname = promotionname;
   }
-  public Double getPromotionThreshold() {
-    return promotionThreshold;
+  public Double getPromotionthreshold() {
+    return promotionthreshold;
   }
-  public void setPromotionThreshold(Double promotionThreshold){
-    this.promotionThreshold = promotionThreshold;
+  public void setPromotionthreshold(Double promotionthreshold){
+    this.promotionthreshold = promotionthreshold;
   }
-  public Double getPromotionDeduction() {
-    return promotionDeduction;
+  public Double getPromotiondeduction() {
+    return promotiondeduction;
   }
-  public void setPromotionDeduction(Double promotionDeduction){
-    this.promotionDeduction = promotionDeduction;
+  public void setPromotiondeduction(Double promotiondeduction){
+    this.promotiondeduction = promotiondeduction;
   }
-  public int getEffectiveTime() {
-    return effectiveTime;
+  public int getEffectivetime() {
+    return effectivetime;
   }
-  public void setEffectiveTime(int effectiveTime){
-    this.effectiveTime = effectiveTime;
+  public void setEffectivetime(int effectivetime){
+    this.effectivetime = effectivetime;
   }
 }
