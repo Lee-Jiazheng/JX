@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>京西商城 - 智·享·生·活</title>
         <link rel="stylesheet" href="css/top_bottom_style.css"></link>
-        <link rel="stylesheet" href="css/index_main_style.css"></link>        
+        <link rel="stylesheet" href="css/cart_style.css"></link>        
         <script src="js/jquery-3.2.1.min.js"></script>
         
     </head>
@@ -438,7 +438,7 @@
                                 </li>
                                 <li class="nav_li">
                                     <a href="javascript:">玩具母婴</a>
-                                                                        <div class="nav_dropdown">
+                                    <div class="nav_dropdown">
                                         <div class="card_list">
                                             <ul class="card_item_list">
                                                 <li class="item">
@@ -520,295 +520,148 @@
             </div>           
         </div>
 
-        <div class="product_roll">
-            <div class="roll_main">
-                <button class="iconfont icon-zuo roll_button left"></button>
-                <div class="image_field">
-                    <a href="javascript:">
-                        <img src="images/1.png" id="roll_images">
-                    </a>
-                </div>
-                <button class="iconfont icon-you roll_button right"></button>
-            </div>
-        </div>
 
         <div class="main" id="main">
-            <div class="row" id="index_row">
-                <div class="index_item">
-                    <div class="index_item_title">新品推荐</div>
-                    <div class="index_item_title_description">周一周四上新，为你寻觅世间好物</div>
-                    <div class="index_item_more">
-                        <a href="javascript:">更多新品></a>
+            <div class="row" id="cart_row">
+                <div class="empty_cart">
+                    <div class="empty_tip">
+                        <i class="iconfont icon-gouwuche empty_icon"></i>
+                        <p class="empty_word">您的购物车是空的，快去逛逛吧!</p>
+                        <a href="javascript:" class="empty_url">继续逛</a>
                     </div>
+                </div>
+                <div class="cart_main">
+                    <form action="" method="post" name="myform">
+                    <table class="cart_table">
+                        
+                            <tbody id="table_body">
+                                <tr class="cart_head">
+                                    <td class="col1"></td>                                
+                                    <td class="col2">商品信息</td>
+                                    <td class="col3"></td>
+                                    <td class="col4">积分</td>                                
+                                    <td class="col5">单价</td>
+                                    <td class="col6">数量</td>
+                                    <td class="col7">小计</td>
+                                    <td class="col8">操作</td>
+                                </tr>
 
-                    <div class="index_new_content">
-                        <ul class="index_new_list">
-                            <div class="new_list_content">
-                                <button class="iconfont icon-zuo new_button left"></button>
-                                <div class="new_list_content">
-                                    <div class="new_item_collection">
-                                        <li class="new_item active">
-                                            <div class="new_item_main">
-                                                <div class="new_item_image_container">
-                                                    <a href="javascript:" class="new_item_url">
-                                                        <img src="images/defaultblack.png" class="new_item_image">
-                                                    </a>
-                                                </div>
-                                                <div class="new_item_desription">
-                                                    <a href="javascript:" class="new_item_name">情怀</a>
-                                                    <p class="new_item_price">￥150</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="new_item">
-                                            <div class="new_item_main">
-                                                <div class="new_item_image_container">
-                                                    <a href="javascript:" class="new_item_url">
-                                                        <img src="images/defaultblack.png" class="new_item_image">
-                                                    </a>
-                                                </div>
-                                                <div class="new_item_desription">
-                                                    <a href="javascript:" class="new_item_name">情怀0</a>
-                                                    <p class="new_item_price">￥150</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="new_item">
-                                            <div class="new_item_main">
-                                                <div class="new_item_image_container">
-                                                    <a href="javascript:" class="new_item_url">
-                                                        <img src="images/defaultblack.png" class="new_item_image">
-                                                    </a>
-                                                </div>
-                                                <div class="new_item_desription">
-                                                    <a href="javascript:" class="new_item_name">情怀1</a>
-                                                    <p class="new_item_price">￥150</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="new_item">
-                                            <div class="new_item_main">
-                                                <div class="new_item_image_container">
-                                                    <a href="javascript:" class="new_item_url">
-                                                        <img src="images/defaultblack.png" class="new_item_image">
-                                                    </a>
-                                                </div>
-                                                <div class="new_item_desription">
-                                                    <a href="javascript:" class="new_item_name">情怀2</a>
-                                                    <p class="new_item_price">￥150</p>
-                                                </div>
-                                            </div>
-                                        </li>
 
-                                        <li class="new_item">
-                                            <div class="new_item_main">
-                                                <div class="new_item_image_container">
-                                                    <a href="javascript:" class="new_item_url">
-                                                        <img src="images/defaultblack.png" class="new_item_image">
-                                                    </a>
-                                                </div>
-                                                <div class="new_item_desription">
-                                                    <a href="javascript:" class="new_item_name">情怀3</a>
-                                                    <p class="new_item_price">￥150</p>
-                                                </div>
-                                            </div>
-                                        </li>
+                                <tr class="cart_body first_cart_body">
+                                    <td class="col1">
+                                        <input type="checkbox" class="checked_single">                                        
+                                    </td>
+                                    <td class="col2">
+                                        <img src="images/defaultblack.png" class="cart_image">
+                                    </td>
+                                    <td class="col3">
+                                        <a href="javascript:" class="cart_item_url">测试商品3</a>
+                                    </td>
+                                    <td  class="col4">
+                                            4
+                                    </td>
+                                    <td class="col5">
+                                        <span class="hidden_price">10</span>
+                                        ￥10
+                                    </td>
+                                    <td class="col6">
+                                        <i class="iconfont icon-minus num_button"></i>
+                                        <input type="text" class="num_input" value="1">
+                                        <i class="iconfont icon-plus num_button"></i>
+                                    </td>
+                                    <td class="col7">
+                                            
+                                    </td>
+                                    <td class="col8">
+                                        <a href="javascript:" class="cart_item_delete">删除</a>                                            
+                                    </td>                                                                                
+                                </tr>
 
-                                    </div>
-                                </div>
-                                <button class="iconfont icon-you new_button right"></button>
+                                <tr class="cart_body">
+                                    <td class="col1">
+                                        <input type="checkbox" class="checked_single">                                        
+                                    </td>
+                                    <td class="col2">
+                                        <img src="images/defaultblack.png" class="cart_image">
+                                    </td>
+                                    <td class="col3">
+                                        <a href="javascript:" class="cart_item_url">测试商品4</a>
+                                    </td>
+                                    <td  class="col4">
+                                            4
+                                    </td>
+                                    <td class="col5">
+                                            <span class="hidden_price">15</span> 
+                                            ￥15                                       
+                                    </td>
+                                    <td class="col6">
+                                        <i class="iconfont icon-minus num_button"></i>
+                                        <input type="text" class="num_input" value="1">
+                                        <i class="iconfont icon-plus num_button"></i>
+                                    </td>
+                                    <td class="col7">
+                                            
+                                    </td>
+                                    <td class="col8">
+                                        <a href="javascript:" class="cart_item_delete">删除</a>                                            
+                                    </td>                                                                                
+                                </tr>
+
+
+                            </tbody>
+
+                    </table>
+                </form>
+                    <div class="cart_toolbar">
+                        <div class="operation_field">
+                            <diV class="checkbox_field">
+                                <input type="checkbox" id="checked_all">
+                            </diV>
+                            <span class="check_text">全选</span>
+                            <a href="javascript:" class="delete_selected">批量删除</a>
+                        </div>
+
+                        <div class="button_field">
+                            <a href="javascript:" class="place_order_url">下单</a>
+                        </div>
+
+                        <div class="price_field">
+                            <div class="price_info">
+                                <span class="origin_label">
+                                    商品合计:
+                                </span>
+                                ￥
+                                <span class="origin_price">
+                                    0.00
+                                </span>
+                                <span class="preferential_label">
+                                    活动优惠:
+                                </span>
+                                -￥
+                                <span class="preferential_price">
+                                    0.00
+                                </span>
+                                <span class="final_label">
+                                    应付总额:
+                                </span>
+                                <span class="final_price_sign">
+                                    ￥
+                                </span>
+                                <span class="final_price">
+                                    0.00
+                                </span>
                             </div>
-                        </ul>
+                            <div class="free_ship_tip">
+                                <a href="javascript:" class="free_ship_url">
+                                    再购¥<span class="free_remain">14.50</span>免邮 , 去凑单>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div id="index_recommend">
-                <div class="index_item">
-                    <div class="index_item_title">人气推荐</div>
-                    <div class="index_item_title_description">人气单品一应俱全</div>
-                    <div class="index_item_more">
-                        <a href="javascript:">更多推荐></a>
-                    </div>
-                </div>
-                <div class="index_item recommend_content">
-                    <div class="left_recommend">
-                        <div class="recommend_item">
-                            <a href="javascript:" class="recommend_url">
-                                <img src="images/defaultblue.png" class="recommend_image large_recommend">
-                            </a>
-                            <a href="javascript:" class="recommend_name">测试</a>
-                            <p class="recommend_price">￥1999</p>
-                        </div>
-                    </div>
-                    <div class="right_recommend">
-                        <div class="recommend_item">
-                            <a href="javascript:" class="recommend_url">
-                                <img src="images/defaultblue.png" class="recommend_image small_recommend">
-                            </a>
-                            <a href="javascript:" class="recommend_name">测试</a>
-                            <p class="recommend_price">￥1999</p>
-                        </div>
-
-                        <div class="recommend_item">
-                            <a href="javascript:" class="recommend_url">
-                                <img src="images/defaultblue.png" class="recommend_image small_recommend">
-                            </a>
-                            <a href="javascript:" class="recommend_name">测试</a>
-                            <p class="recommend_price">￥1999</p>
-                        </div>
-
-                        <div class="recommend_item">
-                            <a href="javascript:" class="recommend_url">
-                                <img src="images/defaultblue.png" class="recommend_image small_recommend">
-                            </a>
-                            <a href="javascript:" class="recommend_name">测试</a>
-                            <p class="recommend_price">￥1999</p>
-                        </div>
-
-                        <div class="recommend_item">
-                            <a href="javascript:" class="recommend_url">
-                                <img src="images/defaultblue.png" class="recommend_image small_recommend">
-                            </a>
-                            <a href="javascript:" class="recommend_name">测试</a>
-                            <p class="recommend_price">￥1999</p>
-                        </div>
-                        
-                        
-                        <div class="recommend_item">
-                            <a href="javascript:" class="recommend_url">
-                                <img src="images/defaultblue.png" class="recommend_image small_recommend">
-                            </a>
-                            <a href="javascript:" class="recommend_name">测试</a>
-                            <p class="recommend_price">￥1999</p>
-                        </div>
-
-                        <div class="recommend_item">
-                            <a href="javascript:" class="recommend_url">
-                                <img src="images/defaultblue.png" class="recommend_image small_recommend">
-                            </a>
-                            <a href="javascript:" class="recommend_name">测试</a>
-                            <p class="recommend_price">￥1999</p>
-                        </div>                        
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row" id="sort_row">
-                <div class="index_item">
-                    <div class="index_item_title">食品酒水</div>
-                    <div class="index_item_more">
-                        <a href="javascript:">查看更多></a>
-                    </div>
-                    <div class="index_sort_banner">
-                        <img src="images/1.png">
-                    </div>
-                    <div class="index_sort_content">
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-                        
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-                        
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-                        
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-                        
-                        
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row" id="sort_row">
-                <div class="index_item">
-                    <div class="index_item_title">日用洗护</div>
-                    <div class="index_item_more">
-                        <a href="javascript:">查看更多></a>
-                    </div>
-                    <div class="index_sort_banner">
-                        <img src="images/2.png">
-                    </div>
-                    <div class="index_sort_content">
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-                        
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-                        
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-                        
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-                        
-                        
-                        <div class="index_sort_item">
-                            <a href="javascript:" class="sort_item_url">
-                                <img src="images/defaultblue.png" class="sort_item_image">
-                            </a>
-                            <a href="javascript:" class="sort_item_name">测试</a>
-                            <p class="sort_item_price">￥1999</p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
         </div>
+
 
         <div class="footer">
             <div class="footer_top">
@@ -879,56 +732,225 @@
             </div>
         </div>
 
+        <div class="max_tip">
+            单品已达到上限
+        </div>
+        <div class="min_tip">
+            本商品1件起售
+        </div>
 
         <script src="js/top_bottom.js"></script>
         <script src="js/all.js"></script>
-        <script src="js/list.js"></script>
+         
         <script>
-            $('.new_list_content .icon-you').click(function(){
-                if($('.new_item_collection').children().length>4){
-                    $('.new_item_collection').css('transform','translateX(-1060px)');
+            function emptyOrNot(){
+                if($('.cart_body').length>0){
+                    $('.cart_main').show();
+                    $('.empty_cart').hide();
+                }
+                else{
+                    $('.empty_cart').show();
+                    $('.cart_main').hide();
+                }
+                
+            }
+            emptyOrNot();
+             $(".cart_body .col7").each(function(){
+                $(this).text("￥"+$(this).parent().children().eq(4).children().eq(0).html()*$(this).parent().children().eq(5).children().eq(1).val());
+            });
+            
+            $('#checked_all').click(function(){
+                var oInput = document.getElementsByClassName("checked_single");
+                for (var i = 0; i < oInput.length; i++) {
+                    oInput[i].checked = document.getElementById("checked_all").checked;
+                }
+                show_total_num();
+            });
+            $('.checked_single').click(function(){
+                var isallchecked = true;
+                var oInput = document.getElementsByClassName("checked_single");
+                for (var i = 0; i < oInput.length; i++) {
+                    if (oInput[i].checked == false) {
+                        isallchecked = false;
+                        break;
+                    }
+                }
+                if (isallchecked == true) {
+                    document.getElementById("checked_all").checked = true;
+                }
+                else {
+                    document.getElementById("checked_all").checked = false;
+                }
+                show_total_num();
+            });
+
+
+            $('#table_body .cart_body .col8 .cart_item_delete').click(function(){
+                var row = $(this).parent().parent().index();
+                $('#table_body').children().eq(row).remove();
+                show_total_num();
+                emptyOrNot();
+            });
+
+            $(".delete_selected").click(function(){
+                var oInput = document.getElementsByClassName("checked_single");
+                var Index;
+                for (var i = oInput.length - 1; i >= 0; i--) {
+                    if (oInput[i].checked == true) {
+                        $('#table_body').children().eq(i+1).remove();
+                    }
+                }
+                show_total_num();
+                emptyOrNot();
+            });
+
+            function show_total_num(){
+                var sumPrice=0;
+                var oInput = document.getElementsByClassName("checked_single");
+                var Index;
+                for (var i = oInput.length - 1; i >= 0; i--) {
+                    var currentRow=$('#table_body').children().eq(i+1);
+                    if (oInput[i].checked == true) {
+                        sumPrice=sumPrice+currentRow.children().eq(4).children().eq(0).html()*currentRow.children().eq(5).children().eq(1).val();
+                    }
+                }
+                $('.origin_price').html(setZero(sumPrice));
+                if(sumPrice>0){
+                    $('.final_price').html(setZero(sumPrice-$('.preferential_price').html()));
+                }
+                else{
+                    $('.final_price').html(setZero(0));
+                }
+
+                if(sumPrice>=88){
+                    $('.free_ship_tip').hide();
+                }
+                else{
+                    $('.free_ship_tip').show();
+                    $('.free_remain').html(setZero(88-$('.final_price').html()));
+                }
+            } 
+
+
+            show_total_num();
+
+
+            function setZero(sumPrice){
+                var sumString=sumPrice.toString().split(".");
+                if(sumString.length>1){
+                    if(sumString[1].length<2){
+                        sumPrice=sumPrice.toString()+"0";
+                    }
+                    return sumPrice;
+                }
+                else{
+                    return sumPrice.toString()+".00";
+                }
+            }
+
+
+
+            var max_product_num=50;
+            var min_product_num=1;
+            var reg = new RegExp("^[0-9]*");
+           
+
+            $('.icon-minus').css('cursor','not-allowed');
+
+            $('.num_input').change(function(){
+                $(this).val($(this).val().match(reg));
+                
+                if($(this).val()==max_product_num){
+                    $(this).parent().children().eq(2).css('cursor','not-allowed');
+                }
+                else if($(this).val()>max_product_num){
+                    $(this).parent().children().eq(2).css('cursor','not-allowed');
+                    $(this).val(max_product_num);
+                    product_num_max();
+                }
+                else if($(this).val()==min_product_num){
+                    $(this).parent().children().eq(0).css('cursor','not-allowed');
+                }
+                else if($(this).val()<min_product_num){
+                    $(this).parent().children().eq(0).css('cursor','not-allowed');
+                    $(this).val(min_product_num);
+                    product_num_min();
+                }
+                else{
+                    $(this).parent().children().eq(2).css('cursor','pointer');
+                    $(this).parent().children().eq(0).css('cursor','pointer');
+                }
+                 $(this).parent().parent().children().eq(6).html("￥"+$(this).parent().parent().children().eq(4).children().eq(0).html()*$(this).val());
+                 show_total_num();
+            });
+
+            $('.icon-plus').click(function(){
+                if($(this).parent().children().eq(1).val()>=max_product_num){
+                    product_num_max();
+                    $(this).css('cursor','not-allowed');   
+                }
+                else{
+                    $(this).parent().children().eq(1).val(parseInt($(this).parent().children().eq(1).val())+1);
+                    if($(this).parent().children().eq(1).val()>=max_product_num){
+                        $(this).css('cursor','not-allowed');   
+                    }
+
+                    if($(this).parent().children().eq(1).val()!=min_product_num){
+                        $(this).parent().children().eq(0).css('cursor','pointer');
+                    }
+                    $(this).parent().parent().children().eq(6).html("￥"+$(this).parent().parent().children().eq(4).children().eq(0).html()*$(this).parent().children().eq(1).val());
+                    show_total_num();
+                }
+            });
+            
+
+            $('.icon-minus').click(function(){
+                if($(this).parent().children().eq(1).val()<=min_product_num){
+                    product_num_min();
+                    $(this).css('cursor','not-allowed');  
+                }
+                else{
+                    $(this).parent().children().eq(1).val(parseInt($(this).parent().children().eq(1).val())-1);
+
+                    if($(this).parent().children().eq(1).val()<=min_product_num){
+                        $(this).css('cursor','not-allowed');   
+                    }
+                    else{
+                        $(this).css('cursor','pointer'); 
+                    }
+                    if($(this).parent().children().eq(1).val()!=max_product_num){
+                       $(this).parent().children().eq(2).css('cursor','pointer');   
+                    }
+
+                    $(this).parent().parent().children().eq(6).html("￥"+$(this).parent().parent().children().eq(4).children().eq(0).html()*$(this).parent().children().eq(1).val());
+                    show_total_num();
                 }
             });
 
-            $('.new_list_content .icon-zuo').click(function(){
-                $('.new_item_collection').css('transform','translateX(0)');
-            });
+            function product_num_max(){
+                $('.max_tip').show();
+                $('.max_tip').animate({opacity:1},200,function(){
+                    $('.max_tip').delay(1700).animate({opacity:0},2000,function(){
+                            $('.max_tip').delay(2400).hide();
+                    });
+                });
+            };
 
-
-            $('.new_item_image').mouseover(function(){
-                $(this).animate({height:"254px"},100);
-            });
+            function product_num_min(){
+                $('.min_tip').show();
+                $('.min_tip').animate({opacity:1},200,function(){
+                    $('.min_tip').delay(1700).animate({opacity:0},2000,function(){
+                            $('.min_tip').delay(2400).hide();
+                    });
+                });
+            }
             
-            $('.new_item_image').mouseout(function(){
-                $(this).animate({height:"250px"},100);
-            });
 
-            $('.large_recommend').mouseover(function(){
-                $(this).animate({height:"330px"},100);
-                console.log("OK");
-            });
-
-            $('.large_recommend').mouseout(function(){
-                $(this).animate({height:"325px"},100);
-            });
+            
 
 
-            $('.small_recommend').mouseover(function(){
-                $(this).animate({height:"183px"},100);
-            });
-
-            $('.small_recommend').mouseout(function(){
-                $(this).animate({height:"180px"},100);
-            });
-
-            $('.sort_item_image').mouseover(function(){
-                $(this).animate({height:"163px"},100);
-            });
-
-            $('.sort_item_image').mouseout(function(){
-                $(this).animate({height:"160px"},100);
-            });
 
         </script>
     </body>
 </html>
+

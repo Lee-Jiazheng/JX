@@ -34,7 +34,8 @@ i {
     position: relative;
     height: 36px;
     background-color: #333;
-    z-index: 104; }
+    z-index: 104;
+    min-width: 1200px; }
     .header .top_nav .top_row {
       font-size: 12px; }
       .header .top_nav .top_row img {
@@ -108,7 +109,8 @@ i {
     .header .main_nav .init_main {
       box-shadow: 0 0 3px 1px rgba(51, 51, 51, 0.1);
       width: 100%;
-      height: 150px; }
+      height: 150px;
+      min-width: 1200px; }
       .header .main_nav .init_main .main_row .main_logo {
         height: 90px;
         width: 270px;
@@ -150,7 +152,8 @@ i {
               font-size: 12px; }
   .header .fixed_nav {
     background-color: #fff;
-    border-bottom: 1px solid #ccc; }
+    border-bottom: 1px solid #ccc;
+    min-width: 1200px; }
     .header .fixed_nav .top_nav .top_row .smalllogo, .header .top_nav .fixed_nav .top_row .smalllogo, .header .fixed_nav .main_nav .init_main .main_row .smalllogo, .header .main_nav .init_main .fixed_nav .main_row .smalllogo, .header .fixed_nav .row .smalllogo, .header .fixed_nav .footer .footer_top .smalllogo, .footer .header .fixed_nav .footer_top .smalllogo, .header .fixed_nav .footer .footer_bottom .smalllogo, .footer .header .fixed_nav .footer_bottom .smalllogo {
       height: 40px;
       width: 120px;
@@ -274,7 +277,8 @@ i {
 
 .footer {
   border-top: 1px solid #ccc;
-  background-color: #fff; }
+  background-color: #fff;
+  min-width: 1200px; }
   .footer .footer_top .row .intro_list, .footer .footer_top .header .top_nav .top_row .intro_list, .header .top_nav .footer .footer_top .top_row .intro_list, .footer .footer_top .header .main_nav .init_main .main_row .intro_list, .header .main_nav .init_main .footer .footer_top .main_row .intro_list, .footer .footer_top .footer_top .intro_list, .footer .footer_top .footer_bottom .intro_list {
     padding: 40px 0;
     border-bottom: 1px solid #aaaaaa;
@@ -299,7 +303,8 @@ i {
     background-color: #414141;
     margin: 0;
     width: 100%;
-    padding: 50px 0; }
+    padding: 50px 0;
+    min-width: 1200px; }
     .footer .footer_bottom .row .clearfix .left_bottom, .footer .footer_bottom .header .top_nav .top_row .clearfix .left_bottom, .header .top_nav .footer .footer_bottom .top_row .clearfix .left_bottom, .footer .footer_bottom .header .main_nav .init_main .main_row .clearfix .left_bottom, .header .main_nav .init_main .footer .footer_bottom .main_row .clearfix .left_bottom, .footer .footer_bottom .footer_top .clearfix .left_bottom, .footer .footer_bottom .footer_bottom .clearfix .left_bottom {
       float: left;
       width: 25%;
@@ -343,7 +348,8 @@ i {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1000; }
+  z-index: 1000;
+  min-width: 1200px; }
 
 #dropdown {
   color: #ccc;

@@ -34,13 +34,13 @@
                 $(this).animate({height:"160px"},100);
             });
 
-            $('.icon-zuo').click(function(){
+            $('.roll_main .icon-zuo').click(function(){
                 clearInterval(interval);
                 show(image_num-1);
                 interval=setInterval('show(1)',3500);
             });
 
-            $('.icon-you').click(function(){
+            $('.roll_main .icon-you').click(function(){
                 clearInterval(interval);
                 show(1);
                 interval=setInterval('show(1)',3500);

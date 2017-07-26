@@ -97,6 +97,7 @@ i{
         height: 36px;
         background-color:$top_nav_background;
         z-index: 104;
+        min-width: 1200px;
         .top_row{
             @extend .row;
             font-size:12px;
@@ -154,6 +155,7 @@ i{
             box-shadow: 0 0 3px 1px rgba(51,51,51,.1);
             width: 100%;
             height: 150px;
+            min-width: 1200px;
             .main_row{
                 @extend .row;
                 .main_logo{
@@ -209,6 +211,7 @@ i{
     .fixed_nav{
         background-color: $main_nav_background;
         border-bottom:1px solid $top_nav_font;
+        min-width: 1200px;
             .row{
                 @extend .row;
                 .smalllogo{
@@ -357,6 +360,7 @@ i{
 .footer{
     border-top: 1px solid $grey_border;
     background-color: #fff;
+    min-width: 1200px;
     .footer_top{
         @extend .row;
         .row{
@@ -387,6 +391,7 @@ i{
         margin: 0;
         width: 100%;
         padding:50px 0;
+        min-width: 1200px;
         @extend .row;
         .row{
             .clearfix{
@@ -438,6 +443,7 @@ i{
     top:0;
     left: 0;
     z-index: 1000;
+    min-width: 1200px;
 }  
 
 #dropdown{
