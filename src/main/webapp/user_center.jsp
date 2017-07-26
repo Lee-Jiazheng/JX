@@ -852,8 +852,10 @@
 
                         </tr>
 
+
+                        <%--默认地址--%>
                         <tr class="address_info">
-                            <td>吴思伦</td>
+                            <td>${default_address.addressname}</td>
                             <td>辽宁省沈阳市和平区创新路195号东北大学浑南校区</td>
                             <td>13433394357</td>
 

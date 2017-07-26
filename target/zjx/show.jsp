@@ -241,7 +241,7 @@
 
                 <div class="product_button">
                     <a href="javascript:" onclick="buy()" class="large_button purchase_button">立即购买</a>
-                    <a href="javascript:" class="large_button add_button">加入购物车</a>
+                    <a href="add_good_to_shop_cart.do?goodId=${shopID}" class="large_button add_button">加入购物车</a>
                     <a href="javascript:" class="small_button">
                         <i class="iconfont icon-shoucang"></i>
                         <p class="icon_description">收藏</p>
