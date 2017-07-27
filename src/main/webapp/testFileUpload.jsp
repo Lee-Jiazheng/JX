@@ -12,7 +12,7 @@
 </head>
 <body>
 <form action="user_avatar.do" method="post" enctype="multipart/form-data">
-    <input type="file" name="file">
+    <input type="file" name="user_image">
     <input type="submit">
 </form>
 </body>

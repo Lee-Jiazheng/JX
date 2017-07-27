@@ -9,6 +9,7 @@ import com.neusoft.model.extraModel.CommentsWithUserName;
 import com.neusoft.service.ICommentsService;
 import com.neusoft.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -61,8 +62,24 @@ public class CommentsService implements ICommentsService{
     }
 
     @Override
+
     public Goods getGoodsInfoByID(int goodsID) {
         return goodsMapper.getGoods(goodsID);
+    }
+
+    @Override
+    public int deleteCommentById(int commentId) {
+        return commentsMapper.delComment(commentId);
+    }
+
+    @Override
+    public List<Goods> getAllGoods() {
+        return goodsMapper.getAllGoods();
+    }
+
+    @Override
+    public List<Goods> getAllGoodsByCategoryId(int cate_id) {
+        return goodsMapper.getGoodsByCategory(cate_id);
     }
 
 }

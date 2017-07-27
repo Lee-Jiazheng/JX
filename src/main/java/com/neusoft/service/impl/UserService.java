@@ -83,5 +83,10 @@ public class UserService implements IUserService{
         return addressMapper.getAllAddressByUserid(userid);
     }
 
+    @Override
+    public int addAddress(Address address) {
+        return addressMapper.addAddressByAddress(address);
+    }
+
 
 }

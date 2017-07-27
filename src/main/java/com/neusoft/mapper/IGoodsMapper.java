@@ -13,13 +13,13 @@ public interface IGoodsMapper {
     public Goods getGoods(@Param("goodsId") int goodsId);
 
 
-    @Select("selct * from goods where goodsCategory=#{goodsCategory}")
+    @Select("select * from goods where goodsCategory=#{goodsCategory}")
     List<Goods> getGoodsByCategory(@Param("goodsCategory") int goodsCategory);
 
 
-    @Select("select * from goods where (goodsName like #{%goodsName%}" +
-            "or goodsKeywords like #{%goodsName%})")
-    Goods getGoodsByWord(@Param("goodsName") String goodsName);
+    @Select("select * from goods where (goodsName like #{goodsName}" +
+            "or goodsKeywords like #{goodsName})")
+    List<Goods> getGoodsByWord(@Param("goodsName") String goodsName);
     /*
     插入一条商品数据时，必须给出名字和数量、种类、原始价格
     自动加上id、时间、状态

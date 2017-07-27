@@ -2,7 +2,8 @@
   background: url(../images/login_background.jpg);
   background-repeat: no-repeat;
   height: 600px;
-  width: 100%; }
+  width: 100%;
+  min-width: 1200px; }
 
 #login_row {
   width: 1200px;

@@ -10,7 +10,8 @@ $bottom_black:#414141;
 $bottom_white:#aaaaaa;
 $main_background:#f6f6f6;
 $grey_border:#ccc;
-
+$white_background:#fff;
+$black_font:#333;
 
 html,body,ol,ul,p,h1,h2,h3,h4,h5,h6{
     margin:0;
@@ -96,6 +97,7 @@ i{
         height: 36px;
         background-color:$top_nav_background;
         z-index: 104;
+        min-width: 1200px;
         .top_row{
             @extend .row;
             font-size:12px;
@@ -153,6 +155,7 @@ i{
             box-shadow: 0 0 3px 1px rgba(51,51,51,.1);
             width: 100%;
             height: 150px;
+            min-width: 1200px;
             .main_row{
                 @extend .row;
                 .main_logo{
@@ -208,6 +211,7 @@ i{
     .fixed_nav{
         background-color: $main_nav_background;
         border-bottom:1px solid $top_nav_font;
+        min-width: 1200px;
             .row{
                 @extend .row;
                 .smalllogo{
@@ -232,19 +236,20 @@ i{
                         padding:20px 0;
                         .nav_li{
                             float: left;
-                            padding: 6px 40px 0;
+                            padding: 6px 50px 0;
                             font-size: 14px;  
                             height: 60px;
                             .nav_dropdown{
                                 position: absolute;
                                 z-index: 101;
-                                top: 26px;
+                                top: 21px;
                                 left: 0;
                                 width: 300%;
                                 margin-left: -100%;
                                 background-color: #fff;
                                 margin-top:50px;
                                 display: none;
+                                border-bottom: 1px solid $grey_border;
                                 .card_list{
                                     position: relative;
                                     padding-top: 33px;
@@ -356,6 +361,7 @@ i{
 .footer{
     border-top: 1px solid $grey_border;
     background-color: #fff;
+    min-width: 1200px;
     .footer_top{
         @extend .row;
         .row{
@@ -386,6 +392,7 @@ i{
         margin: 0;
         width: 100%;
         padding:50px 0;
+        min-width: 1200px;
         @extend .row;
         .row{
             .clearfix{
@@ -437,6 +444,7 @@ i{
     top:0;
     left: 0;
     z-index: 1000;
+    min-width: 1200px;
 }  
 
 #dropdown{
@@ -457,6 +465,7 @@ i{
         width: 50px;
         font-size: 36px;
         vertical-align: top;
+        font-weight: 400;
     }
     .title_nav_drop{
         font-size: 14px;
@@ -471,4 +480,27 @@ i{
     text-decoration: none;
     border: none!important;
     color:$logo_blue!important;
+}
+
+.toolbox{
+    position: fixed;
+    right:0;
+    bottom: 20px;
+    z-index: 9900;
+    background-color:$white_background;
+    border: 1px solid $grey_border;
+    .tool_item{
+        a{
+            width: 70px;
+            height: 70px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            border-bottom: 1px solid $grey_border;
+            .icon_right{
+                color: $black_font!important;
+                font-size: 40px;
+            }
+        }
+    }
 }

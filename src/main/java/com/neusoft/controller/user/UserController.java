@@ -6,6 +6,7 @@ import com.neusoft.mapper.IChatMapper;
 import com.neusoft.mapper.IUserMapper;
 import com.neusoft.model.ChatUserRecord;
 import com.neusoft.model.User;
+import com.neusoft.service.IAdminService;
 import com.neusoft.service.IUserService;
 import com.neusoft.service.impl.UserService;
 import org.apache.ibatis.io.Resources;
@@ -37,6 +38,9 @@ public class UserController {
 
     @Value("#{userManager}")
     private IUserService userService;
+    @Value("#{adminService}")
+    private IAdminService adminService;
+
 
     @RequestMapping("verify_nick_name.do")
     public void verify_nick_name(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -56,10 +60,18 @@ public class UserController {
         if(user != null){
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            mav.setViewName("login");
+            session.setAttribute("userphoto", user.getUserphoto());
+            mav.setViewName("index");
         }else{
             mav.setViewName("login");
         }
+        return mav;
+    }
+
+    @RequestMapping("log_out.do")
+    public ModelAndView log_out(HttpServletRequest request){
+        request.getSession().setAttribute("user", null);
+        ModelAndView mav = new ModelAndView("index");
         return mav;
     }
 

@@ -36,11 +36,11 @@ public class MvcConfig extends WebMvcConfigurerAdapter
         super.addResourceHandlers(registry);
     }
 
-    @Override
+    /*@Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
         super.addViewControllers(registry);
-    }
+    }*/
 
     @Bean
     public InternalResourceViewResolver internalResourceViewResolver() {

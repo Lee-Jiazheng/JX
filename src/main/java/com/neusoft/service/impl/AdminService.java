@@ -4,6 +4,7 @@ import com.neusoft.mapper.IAdminMapper;
 import com.neusoft.mapper.ICategoryMapper;
 import com.neusoft.mapper.IGoodsMapper;
 import com.neusoft.mapper.IGoodsPhotoMapper;
+import com.neusoft.model.AdminUser;
 import com.neusoft.model.Category;
 import com.neusoft.model.Goods;
 import com.neusoft.model.Goodsphoto;
@@ -46,13 +47,14 @@ public class AdminService implements IAdminService{
         Map<Category, List<Category>> result_map = new HashMap<>();
         List<Category> categories = categoryMapper.getAllCategories();
 
-
         for(Category category : categories){
             if(category.getParentflag() == true){
                 List<Category> tempCategory = categoryMapper.getCategoriesByParentId(category.getCategoryid());
                 result_map.put(category, tempCategory);
             }
         }
+
+
         return result_map;
     }
 
@@ -64,5 +66,13 @@ public class AdminService implements IAdminService{
         }else{
             return null;
         }
+    }
+
+    @Override
+    public boolean verify_AdminUser(AdminUser adminUser) {
+        if(adminMapper.getCorrespondingAdminUser(adminUser)==null){
+            return false;
+        }
+        return true;
     }
 }

@@ -2,6 +2,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="com.neusoft.model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: Bruce Lee
@@ -27,29 +28,34 @@
         <div class="top_row">
             <img src="images/slogan.png">
             <div class="right">
-                <div class="before_login">
-                    <a href="javascript:">登录</a>
-                    <a href="javascript:">注册</a>
-                </div>
-                <div class="after_login">
-                    <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
-                        <a href="javascript:">
-                            <span class="nickname">wzzz00118</span>
-                            <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
-                        </a>
-                        <div class="drop_down_block">
-                            <div class="drop_down_menu">
-                                <a class="drop_down_item" href="javascript:">个人中心</a>
-                                <a class="drop_down_item" href="javascript:">订单管理</a>
-                                <a class="drop_down_item" href="javascript:">商品收藏</a>
-                                <a class="drop_down_item" href="javascript:">退出登录</a>
+                <c:if test="${empty user}">
+                    <div class="before_login">
+                        <a href="login.jsp">登录</a>
+                        <a href="register.jsp">注册</a>
+                    </div>
+                </c:if>
+
+                <c:if test="${!empty user}">
+                    <div class="after_login">
+                        <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
+                            <a href="user_center.do?type=1">
+                                <span class="nickname">${user.nickname}</span>
+                                <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
+                            </a>
+                            <div class="drop_down_block">
+                                <div class="drop_down_menu">
+                                    <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
+                                    <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
+                                    <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
+                                    <a class="drop_down_item" href="log_out.do">退出登录</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </c:if>
                 <div class="always_show">
                     <a href="javascript:">帮助</a>
-                    <a href="javascript:">在线客服</a>
+                    <a href="chat.jsp" target="_blank">在线客服</a>
                 </div>
 
             </div>
@@ -58,17 +64,19 @@
     <div class="main_nav">
         <div class="init_main">
             <div class="main_row">
-                <a href="javascript:" class="main_logo"></a>
+                <a href="index.do" class="main_logo"></a>
                 <div class="inner_main">
                     <div class="main_search">
-                        <a href="javascript:">
+                        <a href="entry_shopcart.do">
                             <i class="iconfont icon-gouwuche icon_top"></i>
                         </a>
                         <div class="search_bar">
                             <div class="search_button">
-                                <i class="iconfont icon-sousuo icon_top"></i>
+                                <a href="javascript:" onclick="search_good(0);">
+                                    <i class="iconfont icon-sousuo icon_top"></i>
+                                </a>
                             </div>
-                            <input type="text" maxlength="100" class="search_input">
+                            <input type="text" maxlength="100" class="search_input" id="search_good_name" value="${query_goods_name}">
                         </div>
                     </div>
                 </div>
@@ -77,458 +85,79 @@
     </div>
     <div class="fixed_nav">
         <div class="row">
-            <a href="javascript:" class="smalllogo"></a>
+            <a href="index.do" class="smalllogo"></a>
             <div class="inner_main">
 
                 <ul class="nav_ul" id="nav_ul">
                     <li class="nav_li first active">
-                        <a href="javascript:">首页</a>
+                        <a href="index.do">首页</a>
                     </li>
-                    <li class="nav_li">
-                        <a href="javascript:">食品酒水</a>
-                        <div class="nav_dropdown">
-                            <div class="card_list">
-                                <ul class="card_item_list">
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
+                    <c:forEach var="parent_category" items="${category_map}">
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
+                        <li class="nav_li">
+                            <a href="javascript:">${parent_category.key.categoryname}</a>
+                            <div class="nav_dropdown">
+                                <div class="card_list">
+                                    <ul class="card_item_list">
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
+                                        <c:forEach items="${parent_category.value}" var="son_category">
+                                            <li class="item">
+                                                <a href="entry_detail_list.do?categoryId=${son_category.categoryid}" class="url_nav_drop">
+                                                    <i class="iconfont ${son_category.categoryimg} icon_nav_drop"></i>
+                                                    <p class="title_nav_drop">${son_category.categoryname}</p>
+                                                </a>
+                                            </li>
+                                        </c:forEach>
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">日用洗护</a>
-                        <div class="nav_dropdown">
-                            <div class="card_list">
-                                <ul class="card_item_list">
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
+                        </li>
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
+                    </c:forEach>
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
 
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">家电数码</a>
-                        <div class="nav_dropdown">
-                            <div class="card_list">
-                                <ul class="card_item_list">
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">服装箱包</a>
-                        <div class="nav_dropdown">
-                            <div class="card_list">
-                                <ul class="card_item_list">
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">美妆健康</a>
-                        <div class="nav_dropdown">
-                            <div class="card_list">
-                                <ul class="card_item_list">
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">图书音像</a>
-                        <div class="nav_dropdown">
-                            <div class="card_list">
-                                <ul class="card_item_list">
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">玩具母婴</a>
-                        <div class="nav_dropdown">
-                            <div class="card_list">
-                                <ul class="card_item_list">
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                    <li class="item">
-                                        <a href="javascript:" class="url_nav_drop">
-                                            <i class="iconfont icon-gouwuche icon_nav_drop"></i>
-                                            <p class="title_nav_drop">分类</p>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
 
                 </ul>
+
+
+
                 <div class="user_info">
-                    <div class="before_login_s">
-                        <a href="javascript:">登录</a>
-                        <a href="javascript:">注册</a>
-                    </div>
-                    <div class="after_login_s" onmouseover="rotate_arrow(1)" onmouseout="reset_arrow(1)">
-                        <div class="user_center_s">
-                            <a href="javascript:">
-                                <i class="iconfont icon-wode icon_top"></i>
-                            </a>
-                            <div class="drop_down_block_s">
-                                <div class="drop_down_menu">
-                                    <a class="drop_down_item" href="javascript:">个人中心</a>
-                                    <a class="drop_down_item" href="javascript:">订单管理</a>
-                                    <a class="drop_down_item" href="javascript:">商品收藏</a>
-                                    <a class="drop_down_item" href="javascript:">退出登录</a>
+                    <c:if test="${empty user}">
+                        <div class="before_login_s">
+                            <a href="login.jsp">登录</a>
+                            <a href="register.jsp">注册</a>
+                        </div>
+                    </c:if>
+                    <c:if test="${!empty user}">
+                        <div class="after_login_s" onmouseover="rotate_arrow(1)" onmouseout="reset_arrow(1)">
+                            <div class="user_center_s">
+                                <a href="user_center.do">
+                                    <i class="iconfont icon-wode icon_top"></i>
+                                </a>
+                                <div class="drop_down_block_s">
+                                    <div class="drop_down_menu">
+                                        <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
+                                        <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
+                                        <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
+                                        <a class="drop_down_item" href="log_out.do">退出登录</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </c:if>
                     <div class="always_show_s">
-                        <a href="javascript:">
+                        <a href="entry_shopcart.do">
                             <i class="iconfont icon-gouwuche icon_top"></i>
                         </a>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -680,14 +309,14 @@
 
 
 
-                        <c:forEach items="#{orders}" var="order">
+                        <c:forEach items="${user_orders}" var="order">
 
                             <table class="order_item">
                                 <tbody>
                                 <tr class="head first">
                                     <th colspan="7">
                                                     <span>
-                                                        下单时间：2017-07-20 15:42:09
+                                                        下单时间：<fmt:formatDate value="${order.ordertime}" pattern="yyyy-MM-dd HH:mm:ss"/>
                                                     </span>
                                         <span>
                                                         订单号：${order.orderid}
@@ -852,37 +481,33 @@
 
                         </tr>
 
-                        <tr class="address_info">
-                            <td>吴思伦</td>
-                            <td>辽宁省沈阳市和平区创新路195号东北大学浑南校区</td>
-                            <td>13433394357</td>
 
-                            <td>
-                                <a href="javascript:" class="address_link address_first add_address">编辑</a>
-                                <a href="javascript:" class="address_link">删除</a>
-                            </td>
+                        <c:if test="${!empty addresses}">
+                            <c:forEach items="${addresses}" var="address">
+                            <tr class="address_info">
+                                <td>${address.contactname}</td>
+                                <td>${address.addressname}</td>
+                                <td>${address.phonenum}</td>
 
-                            <td>
-                                <a href="javascript:" class="address_default">默认地址</a>
-                            </td>
+                                <td>
+                                    <a href="javascript:" class="address_link address_first add_address">编辑</a>
+                                    <a href="javascript:" class="address_link">删除</a>
+                                </td>
 
-                        </tr>
+                                <c:if test="${address.isdefault == true}">
+                                    <td>
+                                        <a href="javascript:" class="address_default">默认地址</a>
+                                    </td>
+                                </c:if>
+                                <c:if test="${!address.isdefault}">
+                                    <td>
+                                    <a href="javascript:" class="address_link">设为默认地址</a>
+                                    </td>
+                                </c:if>
+                            </c:forEach>
+                            </tr>
+                        </c:if>
 
-                        <tr class="address_info">
-                            <td>吴某某</td>
-                            <td>广东省汕头市龙湖区金砂东路</td>
-                            <td>13433394357</td>
-
-                            <td>
-                                <a href="javascript:" class="address_link address_first add_address">编辑</a>
-                                <a href="javascript:" class="address_link">删除</a>
-                            </td>
-
-                            <td>
-                                <a href="javascript:" class="address_link">设为默认地址</a>
-                            </td>
-
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -1068,20 +693,20 @@
     <div class="mask_widget"></div>
     <div class="address_widget">
         <i class="iconfont icon-shanchu1 close_form"></i>
-        <form class="address_form">
+        <form class="address_form" action="add_address.do">
             <div class="address_form_title">新建地址</div>
             <div class="address_form_item">
                 <label class="detail_title">详细地址:</label>
-                <textarea cols="75" rows="8" id="address_detail" name="address_detail" required="required"></textarea>
+                <textarea cols="75" rows="8" id="address_detail" name="addressname" required="required"></textarea>
             </div>
             <div class="address_form_item">
                 <div class="address_left">
                     <label>联系方式:</label>
-                    <input type="text" name="address_contact" id="address_contact" required="required">
+                    <input type="text" id="address_contact" required="required" name="phonenum">
                 </div>
                 <div class="address_right">
                     <label>收货人:</label>
-                    <input type="text" name="address_receiver_name" id="address_receiver_name" required="required">
+                    <input type="text" id="address_receiver_name" required="required" name="contactname">
                 </div>
                 <div class="clear">
                 </div>

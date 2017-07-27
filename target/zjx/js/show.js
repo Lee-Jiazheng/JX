@@ -1,3 +1,4 @@
+            var max_product_num=50;
             var min_product_num=1;
             var reg = new RegExp("^[0-9]*");
 

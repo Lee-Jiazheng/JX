@@ -1,5 +1,6 @@
 package com.neusoft.service;
 
+import com.neusoft.model.AdminUser;
 import com.neusoft.model.Category;
 import com.neusoft.model.Goods;
 import com.neusoft.model.Goodsphoto;
@@ -17,4 +18,5 @@ public interface IAdminService {
     public Map<Category, List<Category>> getAllCategoriesWithLevel();
 
     public Goodsphoto getGoodPhotoByGoodId(int goodId);
+    public boolean verify_AdminUser(AdminUser adminUser);
 }

@@ -28,7 +28,7 @@ public interface IUserMapper {
             "#{createTime},#{email},#{phone},#{credit})")
     void registerUser(User user);
 
-    @Update("update user set nickname=#{nickname},realnam = #{realname}, password=#{password}," +
+    @Update("update user set nickname=#{nickname},realname = #{realname}, password=#{password}," +
             "email=#{email},phone=#{phone},credit=#{credit} where " +
             "userId=#{userid}")
     void updateUser(User user);

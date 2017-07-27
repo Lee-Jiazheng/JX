@@ -10,13 +10,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 
 /**
  * Created by Bruce Lee on 2017/7/23.
  */
-@Service("ShopCartService")
+@Service("shopCartService")
 @Transactional
 public class ShopCartService implements IShopCartService {
 
@@ -30,9 +33,19 @@ public class ShopCartService implements IShopCartService {
     private IShopcartMapper shopcartMapper;
 
     @Override
+    public List<Integer> getShopCartFromCookie(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        List<Integer> goodIds = new ArrayList<>();
+        for(Cookie cookie : cookies){
+            goodIds.add(Integer.parseInt(cookie.getValue()));
+        }
+        return goodIds;
+    }
+
+    @Override
     public List<Integer> getShopcartById(int shopcartBuyer) {
         List<Shopcart> shopcartList = shopcartMapper.getShopcartById(shopcartBuyer);
-        List<Integer> goodsList = null;
+        List<Integer> goodsList = new ArrayList<>();
         for (Shopcart shopcart : shopcartList) {
             goodsList.add(shopcart.getShopcartgoods());
         }

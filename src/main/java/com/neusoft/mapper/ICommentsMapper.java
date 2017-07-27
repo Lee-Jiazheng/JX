@@ -25,13 +25,13 @@ public interface ICommentsMapper {
             "#{commentsContent},#{commentsTime})")
     public void addComment(Comments comments);
 
-    @Update("update order set commentsContent=#{commentsContent} where " +
+    @Update("update comments set commentsContent=#{commentsContent} where " +
             "commentsId=#{commentsId}")
     public void updateComment(@Param("commentsContent") String commentsContent,
                               @Param("commentsId") int commentsId);
 
-    @Delete("delete from order where commentsId=#{commentsId}")
-    public void delComment(@Param("commentsId") int commentsId);
+    @Delete("delete from comments where commentsId=#{commentsId}")
+    public int delComment(@Param("commentsId") int commentsId);
 
     /*
     三种获取评论的方式：评论id，评论者id，被评论的商品id

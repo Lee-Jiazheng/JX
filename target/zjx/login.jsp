@@ -17,64 +17,79 @@
 </head>
 <body>
 <div class="header">
-    <div class="fixed_nav" id="fixed">
+    <div class="fixed_nav">
         <div class="row">
-            <a href="javascript:" class="smalllogo"></a>
+            <a href="index.do" class="smalllogo"></a>
             <div class="inner_main">
 
                 <ul class="nav_ul" id="nav_ul">
                     <li class="nav_li first active">
-                        <a href="javascript:">首页</a>
+                        <a href="index.do">首页</a>
                     </li>
-                    <li class="nav_li">
-                        <a href="javascript:">食品酒水</a>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">日用洗护</a>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">家电数码</a>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">服装箱包</a>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">美妆健康</a>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">图书音像</a>
-                    </li>
-                    <li class="nav_li">
-                        <a href="javascript:">玩具母婴</a>
-                    </li>
+                    <c:forEach var="parent_category" items="${category_map}">
+
+                        <li class="nav_li">
+                            <a href="javascript:">${parent_category.key.categoryname}</a>
+                            <div class="nav_dropdown">
+                                <div class="card_list">
+                                    <ul class="card_item_list">
+
+
+                                        <c:forEach items="${parent_category.value}" var="son_category">
+                                            <li class="item">
+                                                <a href="entry_detail_list.do?categoryId=${son_category.categoryid}" class="url_nav_drop">
+                                                    <i class="iconfont ${son_category.categoryimg} icon_nav_drop"></i>
+                                                    <p class="title_nav_drop">${son_category.categoryname}</p>
+                                                </a>
+                                            </li>
+                                        </c:forEach>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </c:forEach>
+
 
                 </ul>
+
+
+
                 <div class="user_info">
-                    <div class="before_login_s">
-                        <a href="javascript:">登录</a>
-                        <a href="javascript:">注册</a>
-                    </div>
-                    <div class="after_login_s" onmouseover="rotate_arrow(1)" onmouseout="reset_arrow(1)">
-                        <div class="user_center_s">
-                            <a href="javascript:">
-                                <i class="iconfont icon-wode icon_top"></i>
-                            </a>
-                            <div class="drop_down_block_s">
-                                <div class="drop_down_menu">
-                                    <a class="drop_down_item" href="javascript:">个人中心</a>
-                                    <a class="drop_down_item" href="javascript:">订单管理</a>
-                                    <a class="drop_down_item" href="javascript:">收藏夹</a>
-                                    <a class="drop_down_item" href="javascript:">退出登录</a>
+                    <c:if test="${empty user}">
+                        <div class="before_login_s">
+                            <a href="login.do">登录</a>
+                            <a href="register.do">注册</a>
+                        </div>
+                    </c:if>
+                    <c:if test="${!empty user}">
+                        <div class="after_login_s" onmouseover="rotate_arrow(1)" onmouseout="reset_arrow(1)">
+                            <div class="user_center_s">
+                                <a href="user_center.do">
+                                    <i class="iconfont icon-wode icon_top"></i>
+                                </a>
+                                <div class="drop_down_block_s">
+                                    <div class="drop_down_menu">
+                                        <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
+                                        <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
+                                        <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
+                                        <a class="drop_down_item" href="log_out.do">退出登录</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </c:if>
                     <div class="always_show_s">
-                        <a href="javascript:">
+                        <a href="entry_shopcart.do">
                             <i class="iconfont icon-gouwuche icon_top"></i>
                         </a>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>

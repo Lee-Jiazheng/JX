@@ -1,0 +1,59 @@
+$black_font:#333;
+$white_font:#fff;
+$white_background:#fff;
+$white_border:#e8e8e8;
+$logo_blue:#15a8e0;
+$dark_grey_background:#ddd;
+$grey_border:#ccc;
+$grey_background:#f5f5f5;
+$grey_font:#999;
+$red_font:#d4282d;
+
+#pay_row{
+    width:1200px;
+    min-height: 500px;
+    margin: 30px auto 50px;
+    .pay_main{
+        padding: 50px 0;
+        text-align: center;
+        .pay_title{
+            font-size: 18px;
+            color: $black_font;
+        }
+        img{
+            width: 300px;
+        }
+        .pay_button{
+            width: 290px;
+            margin: 20px auto 0;
+            .pay_button_url{
+                padding:10px 30px;
+                display: block;
+                font-size: 16px;
+                border: 1px solid $grey_border; 
+            }
+            .pay_finish{
+                float: left;
+                color: $white_font;
+                background-color: $logo_blue;
+            }
+            .pay_finish:hover{
+                background-color: lighten($logo_blue,10%);
+            }
+            .pay_cancel{
+                float: right;
+                background-color: $grey_background;
+            }
+            .pay_cancel:hover{
+                background-color: $white_background;
+            }
+        }
+        .pay_button::after,.pay_button::before{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+
+    }
+}

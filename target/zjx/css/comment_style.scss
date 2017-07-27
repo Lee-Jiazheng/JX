@@ -1,0 +1,149 @@
+$black_font:#333;
+$white_font:#fff;
+$white_background:#fff;
+$white_border:#e8e8e8;
+$logo_blue:#15a8e0;
+$dark_grey_background:#ddd;
+$grey_border:#ccc;
+$grey_background:#f5f5f5;
+$grey_font:#999;
+$red_font:#d4282d;
+
+#comment_row{
+    width: 1100px;
+    padding: 20px 0;
+    min-height: 350px;
+    .current_position{
+        font-size: 16px;
+        label{
+            color: $grey_font;
+        }
+        a{
+            color: darken($black_font,5%);
+            
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+    .comment_item{
+        width: 100%;
+        font-size: 16px;
+        margin: 30px 0 50px;
+        .comment_title{
+            font-size: 14px;
+            color: $grey_font;
+            border: 1px solid $grey_border;
+            padding: 10px 30px;
+            .comment_title_left{
+                float: left;
+            }
+            .comment_title_right{
+                float: right;
+                margin-right: 30px;
+            }
+        }
+        .comment_title::after,.comment_title::before{
+            content:" ";
+            display: block;
+            clear: both;
+        }
+
+        .comment_info{
+            padding: 20px;
+            border: 1px solid $grey_border;
+            border-top:none!important;
+            .comment_info_left{
+                float: left;
+                .item_image{
+                    float: left;
+                    a{
+                        img{
+                            height: 100px;
+                            max-width: 100px
+                        }
+                    }
+                }
+                .item_name{
+                    float: left;
+                    a{
+                        display: block;
+                        margin: 40px 0 0 15px;
+                        max-width: 500px;
+                    }
+                    a:hover{
+                        color: $logo_blue;
+                    }
+                }
+            }
+            .comment_info_right{
+                float: right;
+                a{
+                    color: $logo_blue;
+                    display: block;
+                    margin: 40px 30px 0 0;
+                }
+                a:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .comment_info::after,.comment_info::before{
+            content:" ";
+            display: table;
+            clear:both;
+        }
+        
+        .comment_main{
+            padding: 30px 50px;
+            border: 1px solid $grey_border;
+            background-color: $grey_background;
+            border-top:none!important;
+            .comment_star{
+                margin-bottom: 20px;
+                label{
+                    color: $grey_font;
+                    margin-right: 10px;
+                }
+                .icon_normal{
+                    font-weight: bold;
+                    color: $grey_font;
+                }
+                .icon_red{
+                    color: $red_font!important;
+                }
+                .comment_point{
+                    margin-left: 10px;
+                    margin-right: 0px;
+                }
+
+            }
+            .comment_text{
+                label{
+                    float: left;
+                    color: $grey_font;
+                }
+                .comment_content{
+                    padding: 10px;
+                    font-size: 14px;
+                    margin-left: 45px;
+                    resize:none;
+                }
+            }
+            .comment_button{
+                margin-top: 20px;
+                .publish_comment{
+                    display: block;
+                    color: $white_font;
+                    background-color: $logo_blue;
+                    padding: 10px 20px;
+                    width: 64px;
+                    margin-left: 80px;
+                }
+                .publish_comment:hover{
+                    background-color: lighten($logo_blue,10%);
+                }
+            }
+        }
+    }
+}

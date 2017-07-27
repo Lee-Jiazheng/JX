@@ -9,41 +9,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
+
 <html>
 <head>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/mqttws31.js"></script>
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/chat_style.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/mqttws31.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/chat_style.css">
     <script type="text/javascript">
         var client;
-        var clientID = '${user.nickname}';   //session获取登录用户的用户编号
+        var current_chat_client;
+        var avatar = ${user.userphoto};
+        var clientID = ${user.nickname};   //session获取登录用户的用户编号
+        var all_users = new Array();
+        var message_record = [[]];
         var all_users = [];
-        function lostConnection() {
-            //$('#message').append('连接已经断开！');
-            alert('连接已经断开');
-            <%
-            List<User> users = (List<User>)request.getAttribute("chat_users");
-            for(int i = 0; i < users.size(); ++i){%>
-                all_users.push('<%=(String)users.get(i).getNickname()%>');
-            <%}%>
-            <%=request.getAttribute("userName")%>
-        }
 
-        function successConnection() {
-            //$('#message').append('连接成功' + '</br>');
-            alert('连接成功');
-            client.subscribe("topic");
-        }
-        
-        function newMessageProcess(message) {
-            var msgObj = jQuery.parseJSON(message.payloadString);
-            //添加新消息
-            //$('#message').append(msgObj.from + ':' + msgObj.body + '</br>');
-            if(msgObj.to == clientID){
-
-                append_msg(msgObj.from, msgObj.body);
-            }
-        }
 
         function connect() {
             //clientID=$('#clientID').val();
@@ -63,15 +44,32 @@
                 var msgObj = jQuery.parseJSON(message.payloadString);
                 //添加新消息
                 //$('#message').append(msgObj.from + ':' + msgObj.body + '</br>');
-                append_msg(msgObj.from, msgObj.body, false);
+                if(msgObj.to == clientID){
+                    if(msgObj.from == current_chat_client){
+                        append_msg(msgObj.from, msgObj.body, msgObj.time);
+                    }else{
+                        var find = false;
+                        for(var i = 0; i < all_users.length; ++i){
+                            if(all_users[i] == msgObj.from){find = true;break;}
+                        }
+                        if(find == false) {
+                            all_users.push(msgObj.from);
+                            message_record.push(new Array())
+                            add_user(msgObj.from)
+                        }
+                    }
+                    var i=0;
+                    for(;i<all_users.length; ++i)
+                        if(all_users[i] == msgObj.from)
+                            break;
+                    var msg = {"user_name": msgObj.from, "content":msgObj.body, "time":msgObj.time};
+                    message_record[i].push(msg);
+                }
             };
 
         }
 
         $(function($) {
-            $.get("add_chat_user.do", function (responsetext) {
-                alert(responsetext);
-            });
             connect();
 
         });
@@ -79,21 +77,24 @@
         function sendMsg() {
             var msg={};
             msg.from = clientID;
-            msg.to = '1';
+            msg.to = 'admin_chat';
             msg.body = $('#message').val();
+            msg.avatar = avatar;
+            msg.time = getNowFormatDate();
             send_message = new Messaging.Message(JSON.stringify(msg));
             send_message.destinationName = "topic";
             client.send(send_message);
-            append_msg(clientID, msg.body, true);
-            alertss('fasong' + send_message);
+            var msg_temp = {"from":clientID, "content":msg.body, "time":msg.time};
+            message_record.push(msg_temp);
+            append_msg(clientID, msg.body, msg.time, true);
         }
 
-        function append_msg(user, msg, clear){
+        function append_msg(user, msg, chat_time, clear){
             var htmlData = '<div class="msg_item fn-clear">'
-                + '   <div class="uface"><img src="images/hetu.jpg" width="40" height="40"  alt=""/></div>'
+                + '   <div class="uface"><img src="avatar/admin.jpg width="40" height="40"  alt=""/></div>'
                 + '   <div class="item_right">'
                 + '     <div class="msg own">' + msg + '</div>'
-                + '     <div class="name_time">' + user + ' · 30秒前</div>'
+                + '     <div class="name_time">' + user + ' · ' + chat_time + '</div>'
                 + '   </div>'
                 + '</div>';
 
@@ -112,6 +113,48 @@
                 sendMsg();
             }
         });
+
+        function add_user(user_name) {
+            var htmlData = ' <li class="fn-clear" onclick="change_current_user(\'' + user_name + '\')"><span><img src="images/hetu.jpg" width="30" height="30"  alt=""/></span><em>'
+                + user_name + '</em><small class="online" title="在线"></small></li>';
+
+            $("#all_user_check").append(htmlData);
+        }
+
+        function change_current_user(user_name) {
+            var i = 0;
+            for(; i < all_users.length; ++i){
+                if(all_users[i] == user_name)
+                    break;
+            }
+            current_chat_client = user_name;
+            clear_message_box();
+            for(var j = 0; j < message_record[i].length; ++j){
+                append_msg(message_record[i][j].user_name, message_record[i][j].content, message_record[i][j].time, true);
+            }
+        }
+
+        function clear_message_box() {
+            $('#message_box').html("");
+        }
+
+        function getNowFormatDate() {
+            var date = new Date();
+            var seperator1 = "-";
+            var seperator2 = ":";
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+                + " " + date.getHours() + seperator2 + date.getMinutes()
+                + seperator2 + date.getSeconds();
+            return currentdate;
+        }
 
     </script>
     <title>chat-test</title>
@@ -136,29 +179,7 @@
     <div class="chat_message fn-clear">
         <div class="chat_left">
             <div class="message_box" id="message_box">
-                <div class="msg_item fn-clear">
-                    <div class="uface"><img src="images/53f44283a4347.jpg" width="40" height="40"  alt=""/></div>
-                    <div class="item_right">
-                        <div class="msg">近日，TIOBE发布了2014年9月的编程语言排行榜，Java、C++跌至历史最低点，前三名则没有变化，依旧是C、Java、Objective-C。</div>
-                        <div class="name_time">猫猫 · 3分钟前</div>
-                    </div>
-                </div>
 
-                <div class="msg_item fn-clear">
-                    <div class="uface"><img src="images/53f442834079a.jpg" width="40" height="40"  alt=""/></div>
-                    <div class="item_right">
-                        <div class="msg">(Visual) FoxPro, 4th Dimension/4D, Alice, APL, Arc, Automator, Awk, Bash, bc, Bourne shell, C++CLI, CFML, cg, CL (OS/400), Clean, Clojure, Emacs Lisp, Factor, Forth, Hack, Icon, Inform, Io, Ioke, J, JScript.NET, LabVIEW, LiveCode, M4, Magic, Max/MSP, Modula-2, Moto, NATURAL, OCaml, OpenCL, Oz, PILOT, Programming Without Coding Technology, Prolog, Pure Data, Q, RPG (OS/400), S, Smalltalk, SPARK, Standard ML, TOM, VBScript, Z shell</div>
-                        <div class="name_time">白猫 · 1分钟前</div>
-                    </div>
-                </div>
-
-                <div class="msg_item fn-clear">
-                    <div class="uface"><img src="images/hetu.jpg" width="40" height="40"  alt=""/></div>
-                    <div class="item_right">
-                        <div class="msg own">那个统计表也不能说明一切</div>
-                        <div class="name_time">河图 · 30秒前</div>
-                    </div>
-                </div>
             </div>
             <div class="write_box">
                 <textarea id="message" name="message" class="write_area" placeholder="说点啥吧..."></textarea>
@@ -172,18 +193,15 @@
             </div>
         </div>
         <div class="chat_right">
-            <ul class="user_list" title="双击用户私聊">
-                <li class="fn-clear selected"><em>所有用户</em></li>
+            <ul class="user_list" title="双击用户私聊" id = "all_user_check">
+                <li class="fn-clear selected" ><em>客服</em></li>
 
-                <c:forEach items="${chat_users}" var="chat_user" varStatus="index_object">
-                    <li class="fn-clear" data-id="${index_object.index+1}"><span><img src="images/hetu.jpg" width="30" height="30"  alt=""/></span><em>${chat_user.nickname}</em><small class="online" title="在线"></small></li>
-                </c:forEach>
             </ul>
         </div>
     </div>
 </div>
 
-<button onclick="connect();">连接</button>
 
 </body>
 </html>
+

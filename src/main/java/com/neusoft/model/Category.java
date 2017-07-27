@@ -11,6 +11,16 @@ public class Category implements Serializable{
   @ExcelVOAttribute(name = "categoryid", column = "A")
   private int categoryid;
 
+  public String getCategoryimg() {
+    return categoryimg;
+  }
+
+  public void setCategoryimg(String categoryimg) {
+    this.categoryimg = categoryimg;
+  }
+
+  private String categoryimg;
+
   @AutoField(alias = "����500��100", column = "categoryname", isRequired = true, length = 45)
   @ExcelVOAttribute(name = "categoryname", column = "B")
   private String categoryname;

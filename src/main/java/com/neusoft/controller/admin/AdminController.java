@@ -5,6 +5,9 @@ import com.neusoft.mapper.IAdminMapper;
 import com.neusoft.mapper.IUserMapper;
 import com.neusoft.model.AdminUser;
 import com.neusoft.model.User;
+import com.neusoft.service.IAdminService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,6 +21,8 @@ import java.io.IOException;
 @Controller
 @RequestMapping("/admin/")
 public class AdminController {
+    @Value("#{adminService}")
+    private IAdminService adminService;
 
     @RequestMapping("admin_reg_page.do")
     public ModelAndView admin_reg_page(){
@@ -32,8 +37,12 @@ public class AdminController {
     }
 
     @RequestMapping("admin_login.do")
-    public ModelAndView admin_login(HttpServletRequest request, User user){
-        return null;
+    public ModelAndView admin_login(HttpServletRequest request, AdminUser adminUser){
+        if(adminService.verify_AdminUser(adminUser) == false){
+            return new ModelAndView("/admin/login");
+        }
+        request.getSession().setAttribute("admin_user", adminUser);
+        return new ModelAndView("/admin/main");
     }
 
     @RequestMapping("admin_chat.do")

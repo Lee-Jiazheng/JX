@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
@@ -77,8 +78,8 @@ public class UserInfoController {
             orderWithGood_goodpictures.add(orderWithGood_goodpicture);
         }
 
-        request.getSession().setAttribute("orders", orderWithGood_goodpictures);
-        List<Address> addresses = userService.getAllAddresses(user.getUserid());
+        request.getSession().setAttribute("user_orders", orderWithGood_goodpictures);
+        /*List<Address> addresses = userService.getAllAddresses(user.getUserid());
         Address default_address = new Address();
         for(Address address : addresses){
             if(address.getIsdefault() == true){
@@ -88,7 +89,7 @@ public class UserInfoController {
             }
         }
 
-        request.getSession().setAttribute("default_address", default_address);
+        request.getSession().setAttribute("default_address", default_address);*/
         request.getSession().setAttribute("addresses", userService.getAllAddresses(user.getUserid()));
 
         return mav;
@@ -134,5 +135,13 @@ public class UserInfoController {
         ModelAndView mav = new ModelAndView("user_center");
         mav.addObject("user_orders", orderService.getOrderByBuyer(user.getUserid()));
         return mav;
+    }
+
+    @RequestMapping("add_address.do")
+    public ModelAndView add_address(Address address, HttpServletRequest request){
+        address.setAddressownerid(((User)request.getSession().getAttribute("user")).getUserid());
+        address.setIsdefault(false);
+        userService.addAddress(address);
+        return new ModelAndView("user_center");
     }
 }

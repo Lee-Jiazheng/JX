@@ -16,5 +16,7 @@ public interface ICommentsService {
     public int getCommentsCountByGoodsId(int goodsId);
     public List<CommentsWithUserName> getCommentsByGoodsId(int goodsId);
     public Goods getGoodsInfoByID(int goodsID);
-
+    public int deleteCommentById(int commentId);
+    public List<Goods> getAllGoods();
+    public List<Goods> getAllGoodsByCategoryId(int cate_id);
 }

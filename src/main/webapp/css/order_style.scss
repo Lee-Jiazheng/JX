@@ -1,0 +1,403 @@
+$black_font:#333;
+$white_font:#fff;
+$white_background:#fff;
+$white_border:#e8e8e8;
+$logo_blue:#15a8e0;
+$dark_grey_background:#ddd;
+$grey_border:#ccc;
+$grey_background:#f5f5f5;
+$grey_font:#999;
+$red_font:#d4282d;
+
+@mixin main_block{
+    float: left;
+    background:$white_background;
+    border: 1px solid $white_border;
+    z-index: 2;
+}
+@mixin full_screen{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+@mixin form_button{
+    .close_form{
+        font-size: 30px;
+        color:lighten($grey_font,20%);
+        font-weight: bold;
+        float: right;
+        margin-top:-10px;
+    }
+    .close_form:hover{
+        color:darken($grey_font,10%);
+    }
+    .cancel_button,.submit_button{
+        padding:10px 50px;
+        margin-left:20px;
+    }
+    .submit_button{
+        border: 1px solid $grey_border;
+        background-color: $logo_blue;
+        color: $white_font;              
+    }
+    .cancel_button{
+        border: 1px solid $grey_border;
+        background-color:$grey_background;
+        color: $black_font;
+    }
+    .cancel_button:hover{
+        background-color: $white_background;
+    }
+    .submit_button:hover{
+        background-color:lighten($logo_blue,20%);
+    }
+}
+
+
+#order_row{
+    font-size: 14px;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 30px 50px 40px;
+    .order_main{
+        z-index: 2;
+        min-height: 500px;
+        margin-left: 20px;
+        .user_address_selection{
+            width: 1077px;
+            margin: 0 auto;
+            border: 1px solid $dark_grey_background;
+            .address_title{
+                border-bottom: 1px solid $dark_grey_background;
+                background-color: $grey_background;
+                height: 30px;
+                font-weight: bold;
+                padding: 10px 0 0 20px;
+                color:$grey_font;
+            }
+            .address_info{
+                padding: 20px 40px;
+
+                .address_left{
+                    float: left;
+                    width: 720px;
+                    .line1{
+                        height: 35px;
+                        padding: 0!important;
+                        margin-bottom: 10px;
+                        border: none!important;
+                    }
+                }
+                .address_right{
+                    float: right;
+                    width: 230px;
+                    margin-top: 45px;
+                    .switch_address{
+                        color: $logo_blue;
+                        display: block;
+                        font-size: 14px;
+                        text-align: center;
+                    }
+                    .switch_adress:hover{
+                        text-decoration:underline;
+                    }
+                    .new_address{
+                        display: block;
+                        position: relative;
+                        margin: 0 auto;
+                        padding: 5px 10px;
+                        background-color: $grey_background;
+                        border: 1px solid $grey_border;
+                        border-radius: 2px;
+                        cursor: pointer;
+                        margin-top:10px;
+                    }
+                    .new_address:hover{
+                        background-color: $white_background;
+                    }
+                }
+            }
+        }
+        .order_info_content{
+            padding: 50px 20px 0;
+        }
+        .order_summary{
+            width:918px;
+            margin: -40px auto 80px;
+            background-color: $grey_background;
+            padding: 50px 80px;
+            .left{
+                width:600px;
+                float: left;
+            }
+            .right{
+                font-size: 14px;
+                float:right;
+                text-align: right;
+                width:280px;
+                .line{
+                    margin-bottom: 20px;
+                    span{
+                        display: inline-block;
+                        min-width:90px;
+                        max-width: 90px;
+                    }
+                    .sum_needed{
+                        font-size: 20px;
+                        color: $red_font;
+                        min-width:135px;
+                        max-width: 135px;
+                    }
+                    .pay_button{
+                        padding:10px 80px;
+                        border-radius: 2px;
+                        border: 1px solid $logo_blue;
+                        cursor: pointer;
+                        font-size: 22px;
+                        color:$white_font;
+                        background-color: $logo_blue; 
+                    }
+                    .pay_button:hover{
+                        background-color: lighten($logo_blue,15%);
+                    }
+                }
+                .split{
+                    border-bottom: 1px dashed $grey_border;
+                    width:100%;
+                }
+            }
+        }
+        .order_summary:after,.order_summary:before{
+            content:" ";
+            display: table;
+            clear: both;
+        }
+    }
+}
+
+.order_item{
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    border: 1px solid $grey_border;
+    margin: 0 auto 40px auto;
+    font-size:12px;
+    tbody{
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+        text-align: center;
+        .head{
+            background-color: $grey_background;
+            height: 43px;
+            border-bottom: 1px solid $grey_border;
+            color: $grey_font;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .body{
+           td{
+               padding: 20px 0;
+                font-size:16px;
+
+           }
+        }
+    }
+}
+.clear{
+    clear: both;
+}
+
+.edit_widgetcontainer,.switch_widgetcontainer{
+    display: none;
+    z-index: 2150;
+    position: fixed;
+    overflow: hidden;
+    @include full_screen;
+    .mask_widget{
+        opacity: .8!important;
+        background-color:$black_font;
+        position: absolute;
+        @include full_screen;
+    }
+    .address_widget{
+        font-size: 14px;
+        margin: 0 auto;
+        width: 620px;
+        height: 350px;
+        background-color: $white_background;
+        z-index: 2200;
+        position: relative;
+        top: 15%;
+        padding: 40px 50px;
+        .address_form{
+            margin-top:30px;
+            .address_form_title{
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+            .address_form_item{
+                margin: 20px 0 0 20px;
+                width: 600px;
+                textarea,input[type=text]{
+                    border: 1px solid $grey_border;
+                }
+                textarea{
+                    padding: 9px;
+                    outline: 0;
+                    resize: none;
+                }
+                label{
+                    margin-right: 15px;
+                    top:0;
+                }
+                .detail_title{
+                    display: block;
+                    width: 60px;
+                    float: left;
+                }
+                input[type=text]{
+                    padding: 5px;
+                }
+  
+                input[type=submit]{
+                    padding: 10px 50px;
+                    background-color: $logo_blue;
+                    color: $white_font;
+                    border: none;
+                    cursor: pointer;
+                }
+                input[type=submit]:hover{
+                    background-color: lighten($logo_blue,10%);
+                }
+                .address_left{
+                    float: left;
+                }
+                .address_right{
+                    float: right;
+                    margin-right: 10px;
+                }
+                .clear{
+                    clear: both;
+                }
+            }
+        }
+        @include form_button;
+        .form_button{
+            margin: 30px 10px 0 0;
+            float: right;
+            width:288px!important;
+        }
+    }
+    .switch_widget{
+        font-size: 14px;
+        margin: 0 auto;
+        width: 560px;
+        height: 531px;
+        background-color: $white_background;
+        z-index: 2200;
+        position: relative;
+        top: 4%;
+        padding: 40px 50px;
+        margin-top:30px;
+        .switch_title{
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .switch_list{
+            height: 400px;
+            max-height: 400px;
+            overflow: auto;
+            .switch_item{
+                border: 1px solid #e8e8e8;
+                width: 525px;
+                margin-bottom: 10px;
+                padding: 20px 0 20px 25px;
+                cursor: pointer;
+                position: relative;
+                .address_line{
+                    border: none!important;
+                    .text{
+                        max-width: 380px;
+                        width: 380px;
+                    }
+                }
+            }
+            .active{
+                border: 2px solid $logo_blue;
+                padding: 19px 0 19px 24px;
+            }
+        }
+    }
+    @include form_button;
+    .form_button{
+        margin: 30px 10px 0 0;
+        float: right;
+    }
+
+}
+
+.address_line{
+    padding-top: 8px;
+    border-right: 1px solid $grey_border;
+    .icon_location{
+        font-size: 26px;
+        color: $logo_blue;
+        margin-top:2px;
+        position: relative;
+        top: 4px;
+    }
+    .edit_address{
+        border: 1px solid $logo_blue;
+        background-color: lighten($logo_blue,45%);
+        color: $logo_blue;
+        padding: 3px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-left:15px;
+    }
+    label{
+        float: left;
+        color: $grey_font;
+    }
+    .text{
+        float: left;
+        max-width: 680px;
+        display: block;
+    }
+}
+.address_line::before,.address_line:after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+.col1{
+    width: 100px;
+    .item_image{
+        width: 80px;
+        max-width: 80px;
+    }
+}
+.col2{
+    width: 260px;
+    .item_name{
+        text-align: left;
+        padding: 0 15px;
+    }
+}
+.col3{
+    width:165px;
+}
+.col4{
+    width:170px;
+}
+.col5{
+    width:190px;
+}
+.col6{
+    width:180px;
+}

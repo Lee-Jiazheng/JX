@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.registry.infomodel.User;
 
 /**
  * Created by Bruce Lee on 2017/7/25.
@@ -22,6 +23,9 @@ public class CookiesController {
 
     @RequestMapping("add_good_to_shop_cart.do")
     public ModelAndView add_good_to_shop_cart( HttpServletRequest request, HttpServletResponse response){
+        User user = (User)request.getSession().getAttribute("user");
+        //未登录加入到cookie中
+        if(user == null){}
         int goodId = Integer.parseInt(request.getParameter("goodId"));
         //Goods good = commentsService.getGoodsInfoByID(goodId);
         Cookie[] cookies = request.getCookies();

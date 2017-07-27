@@ -14,6 +14,7 @@ public interface IAddressMapper {
     @Select("select * from address where addressowner = #{userid}")
     public List<Address> getAllAddressByUserid(int userid);
 
-    @Insert("insert into address values(#{userid}, #{address})")
-    public int addAddressByAddress(String address, int userid);
+    @Insert("insert into address values(#{addressownerid}, #{addressname}, 0, #{phonenum}, #{contactname})")
+    public int addAddressByAddress(Address address);
+
 }

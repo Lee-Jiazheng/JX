@@ -1,467 +1,512 @@
-<%@page import="com.neusoft.model.Goods" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:if test="${empty popProduct}">
+<c:redirect url="index.do">
+</c:redirect>
+</c:if>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title></title>
-    <link href="css/myCart.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="js/myCart.js"></script>
-    <style type="text/css">
-        body {
-            margin: 0px;
-            padding: 0px;
-            font-size: 12px;
-            line-height: 20px;
-            color: #333;
-        }
+    <meta charset="utf-8">
+    <title>京西商城 - 智·享·生·活</title>
+    <link rel="stylesheet" href="css/top_bottom_style.css"></link>
+    <link rel="stylesheet" href="css/index_main_style.css"></link>
+    <script src="js/jquery-3.2.1.min.js"></script>
 
-        ul, li, ol, h1, dl, dd {
-            list-style: none;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        a {
-            color: #1965b3;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #CD590C;
-            text-decoration: underline;
-        }
-
-        img {
-            border: 0px;
-            vertical-align: middle;
-        }
-
-        #header {
-            height: 40px;
-            margin: 10px auto 10px auto;
-            width: 800px;
-            clear: both;
-        }
-
-        #nav {
-            margin: 10px auto 10px auto;
-            width: 800px;
-            clear: both;
-        }
-
-        #navlist {
-            width: 800px;
-            margin: 0px auto 0px auto;
-            height: 23px;
-        }
-
-        #navlist li {
-            float: left;
-            height: 23px;
-            line-height: 26px;
-        }
-
-        .navlist_red_left {
-            background-image: url(../images/taobao_bg.png);
-            background-repeat: no-repeat;
-            background-position: -12px -92px;
-            width: 3px;
-        }
-
-        .navlist_red {
-            background-color: #ff6600;
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            color: #FFF;
-            width: 130px;
-        }
-
-        .navlist_red_arrow {
-            background-color: #ff6600;
-            background-image: url(../images/taobao_bg.png);
-            background-repeat: no-repeat;
-            background-position: 0px 0px;
-            width: 13px;
-        }
-
-        .navlist_gray {
-            background-color: #e4e4e4;
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            width: 150px;
-        }
-
-        .navlist_gray_arrow {
-            background-color: #e4e4e4;
-            background-image: url(/images/taobao_bg.png);
-            background-repeat: no-repeat;
-            background-position: 0px 0px;
-            width: 13px;
-        }
-
-        .navlist_gray_right {
-            background-image: url(/images/taobao_bg.png);
-            background-repeat: no-repeat;
-            background-position: -12px -138px;
-            width: 3px;
-        }
-
-        #content {
-            width: 800px;
-            margin: 10px auto 5px auto;
-            clear: both;
-        }
-
-        .title_1 {
-            text-align: center;
-            width: 50px;
-        }
-
-        .title_2 {
-            text-align: center;
-        }
-
-        .title_3 {
-            text-align: center;
-            width: 80px;
-        }
-
-        .title_4 {
-            text-align: center;
-            width: 80px;
-        }
-
-        .title_5 {
-            text-align: center;
-            width: 100px;
-        }
-
-        .title_6 {
-            text-align: center;
-            width: 80px;
-        }
-
-        .title_7 {
-            text-align: center;
-            width: 60px;
-        }
-
-        .line {
-            background-color: #a7cbff;
-            height: 3px;
-        }
-
-        .shopInfo {
-            padding-left: 10px;
-            height: 35px;
-            vertical-align: bottom;
-        }
-
-        .num_input {
-            border: solid 1px #666;
-            width: 25px;
-            height: 15px;
-            text-align: center;
-        }
-
-        .cart_td_1, .cart_td_2, .cart_td_3, .cart_td_4, .cart_td_5, .cart_td_6, .cart_td_7, .cart_td_8 {
-            background-color: #e2f2ff;
-            border-bottom: solid 1px #d1ecff;
-            border-top: solid 1px #d1ecff;
-            text-align: center;
-            padding: 5px;
-        }
-
-        .cart_td_1, .cart_td_3, .cart_td_4, .cart_td_5, .cart_td_6, .cart_td_7 {
-            border-right: solid 1px #FFF;
-        }
-
-        .cart_td_3 {
-            text-align: left;
-        }
-
-        .cart_td_4 {
-            font-weight: bold;
-        }
-
-        .cart_td_7 {
-            font-weight: bold;
-            color: #fe6400;
-            font-size: 14px;
-        }
-
-        .hand {
-            cursor: pointer;
-        }
-
-        .shopend {
-            text-align: right;
-            padding-right: 10px;
-            padding-bottom: 10px;
-        }
-
-        .yellow {
-            font-weight: bold;
-            color: #fe6400;
-            font-size: 18px;
-            line-height: 40px;
-        }
-    </style>
-    <script language="javascript">
-        function deletegoods(obj) {
-            var rowIndex = obj.parentNode.parentNode.rowIndex;
-            var table = document.getElementById("table");
-            table.deleteRow(rowIndex);
-        }
-
-        // JavaScript Document
-
-
-        /*改变所购商品的数量*/
-        function changeNum(numId, flag) {/*numId表示对应商品数量的文本框ID，flag表示是增加还是减少商品数量*/
-            var numId = document.getElementById(numId);
-            if (flag == "minus") {/*减少商品数量*/
-                if (numId.value <= 1) {
-                    alert("宝贝数量必须是大于0");
-                    return false;
-                }
-                else {
-                    numId.value = parseInt(numId.value) - 1;
-                    productCount();
-                }
-            }
-            else {/*flag为add，增加商品数量*/
-                numId.value = parseInt(numId.value) + 1;
-                productCount();
-            }
-        }
-
-        /*自动计算商品的总金额、总共节省的金额和积分*/
-        function productCount() {
-            var total = 0;      //商品金额总计
-            var integral = 0;   //可获商品积分
-
-            var point;      //每一行商品的单品积分
-            var price;     //每一行商品的单价
-            var number;    //每一行商品的数量
-            var subtotal;  //每一行商品的小计
-
-            /*访问ID为shopping表格中所有的行数*/
-            var myTableTr = document.getElementById("shopping").getElementsByTagName("tr");
-            if (myTableTr.length > 0) {
-                for (var i = 1; i < myTableTr.length; i++) {/*从1开始，第一行的标题不计算*/
-                    if (myTableTr[i].getElementsByTagName("td").length > 2) { //最后一行不计算
-                        point = myTableTr[i].getElementsByTagName("td")[3].innerHTML;
-                        price = myTableTr[i].getElementsByTagName("td")[4].innerHTML;
-                        number = myTableTr[i].getElementsByTagName("td")[5].getElementsByTagName("input")[0].value;
-                        integral += point * number;
-                        total += price * number;
-                        myTableTr[i].getElementsByTagName("td")[6].innerHTML = price * number;
-                    }
-                }
-                document.getElementById("total").innerHTML = total;
-                document.getElementById("integral").innerHTML = integral;
-
-            }
-        }
-
-        window.onload = productCount;
-
-        /*复选框全选或全不选效果*/
-        function selectAll() {
-            var oInput = document.getElementsByName("cartCheckBox");
-            for (var i = 0; i < oInput.length; i++) {
-                oInput[i].checked = document.getElementById("allCheckBox").checked;
-            }
-        }
-
-        /*根据单个复选框的选择情况确定全选复选框是否被选中*/
-        function selectSingle() {
-            var k = 0;
-            var oInput = document.getElementsByName("cartCheckBox");
-            for (var i = 0; i < oInput.length; i++) {
-                if (oInput[i].checked == false) {
-                    k = 1;
-                    break;
-                }
-            }
-            if (k == 0) {
-                document.getElementById("allCheckBox").checked = true;
-            }
-            else {
-                document.getElementById("allCheckBox").checked = false;
-            }
-        }
-
-        /*删除单行商品*/
-        function deleteRow(rowId) {
-            var Index = document.getElementById(rowId).rowIndex; //获取当前行的索引号
-            document.getElementById("shopping").deleteRow(Index);
-            document.getElementById("shopping").deleteRow(Index - 1);
-            productCount();
-        }
-
-        /*删除选中行的商品*/
-        function deleteSelectRow() {
-            var oInput = document.getElementsByName("cartCheckBox");
-            var Index;
-            for (var i = oInput.length - 1; i >= 0; i--) {
-                if (oInput[i].checked == true) {
-                    Index = document.getElementById(oInput[i].value).rowIndex;
-                    /*获取选中行的索引号*/
-                    document.getElementById("shopping").deleteRow(Index);
-                    document.getElementById("shopping").deleteRow(Index - 1);
-                }
-            }
-            productCount();
-        }
-
-    </script>
 </head>
 <body>
-<p>
-    <c:if test="${!empty user}">
-            <%
-            //如果已登录，读取购物车中的数据，放到cookie中
-            ArrayList<String[]> list = new ArrayList<String[]>();
-            list.add(new String[]{"1", "https://ww1.sinaimg.cn/thumbnail/005LWWStly1fhw40ettetj30jg0i3q3z.jpg", "商品1", "www.baidu.com", "100"});
-            list.add(new String[]{"2", "https://ww1.sinaimg.cn/thumbnail/005LWWStly1fhw40ettetj30jg0i3q3z.jpg", "商品2", "www.baidu.com", "200"});
+<div class="header" id="top">
+    <div class="top_nav">
+        <div class="top_row">
+            <img src="images/slogan.png">
+            <div class="right">
+                <c:if test="${empty user}">
+                    <div class="before_login">
+                        <a href="login.jsp">登录</a>
+                        <a href="register.jsp">注册</a>
+                    </div>
+                </c:if>
 
-            List<Goods> goodsList =
-                    (List<Goods>)request.getSession().getAttribute("goodsList");
+                <c:if test="${!empty user}">
+                    <div class="after_login">
+                        <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
+                            <a href="user_center.do?type=1">
+                                <span class="nickname">${user.nickname}</span>
+                                <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
+                            </a>
+                            <div class="drop_down_block">
+                                <div class="drop_down_menu">
+                                    <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
+                                    <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
+                                    <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
+                                    <a class="drop_down_item" href="log_out.do">退出登录</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="always_show">
+                    <a href="javascript:">帮助</a>
+                    <a href="chat.jsp" target="_blank">在线客服</a>
+                </div>
 
-            int times = 1 * 24 * 60 * 60;
-            int i = 0;
-            for (Goods goods:goodsList) {
-                i++;
-                Cookie cookie = new Cookie("item_id_" + i,
-                        String.valueOf(goods.getGoodsid()));
-                cookie.setMaxAge(times);
-                response.addCookie(cookie);
-                cookie = new Cookie("item_img_" + i, goods.getGoodsdescription());
-                cookie.setMaxAge(times);
-                response.addCookie(cookie);
-                cookie = new Cookie("item_title_" + i, goods.getGoodsname());
-                cookie.setMaxAge(times);
-                response.addCookie(cookie);
-                cookie = new Cookie("item_URL_" + i, String.valueOf(goods.getGoodsid()));
-                cookie.setMaxAge(times);
-                response.addCookie(cookie);
-                cookie = new Cookie("item_price_" + i,
-                        String.valueOf(goods.getGoodsprice()));
-                cookie.setMaxAge(times);
-                response.addCookie(cookie);
+            </div>
+        </div>
+    </div>
+    <div class="main_nav">
+        <div class="init_main">
+            <div class="main_row">
+                <a href="index.do" class="main_logo"></a>
+                <div class="inner_main">
+                    <div class="main_search">
+                        <a href="entry_shopcart.do">
+                            <i class="iconfont icon-gouwuche icon_top"></i>
+                        </a>
+                        <div class="search_bar">
+                            <div class="search_button">
+                                <a href="javascript:" onclick="search_good(0);">
+                                    <i class="iconfont icon-sousuo icon_top"></i>
+                                </a>
+                            </div>
+                            <input type="text" maxlength="100" class="search_input" id="search_good_name" value="${query_goods_name}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed_nav">
+        <div class="row">
+            <a href="index.do" class="smalllogo"></a>
+            <div class="inner_main">
 
-            }
-        %>
-    </c:if>
+                <ul class="nav_ul" id="nav_ul">
+                    <li class="nav_li first active">
+                        <a href="index.do">首页</a>
+                    </li>
+                    <c:forEach var="parent_category" items="${category_map}">
 
-        <%
-            //获取cookie
-
-            Cookie[] cookies = request.getCookies();
-
-            if (cookies != null && cookies.length > 5) {
-                ArrayList<String[]> goodslists = new ArrayList<String[]>();
-                int i = 1;
-                for (int j = 0; j < cookies.length / 5; j++) {
-                    String[] strings = new String[5];
-                    for (int k = 0; k < strings.length; k++) {
-                        strings[k] = java.net.URLDecoder.decode(cookies[i++].getValue(), "UTF-8");
-                    }
-                    goodslists.add(strings);
-                }
-                pageContext.setAttribute("goodslist", goodslists);
-            }
-        %>
-
-
-<div id="header"><img src="images/taobao_logo.gif" alt="logo"/></div>
-<div id="nav">您的位置：<a href="#">首页</a> > 购物车</div>
-
-
-<div id="content">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0"
-           id="shopping">
-        <form action="" method="post" name="myform">
-            <tr>
-                <td class="title_1"><input id="allCheckBox" type="checkbox"
-                                           value="" onclick="selectAll()"/>全选
-                </td>
-                <td class="title_2" colspan="2">店铺宝贝</td>
-                <td class="title_3">获积分</td>
-                <td class="title_4">单价（元）</td>
-                <td class="title_5">数量</td>
-                <td class="title_6">小计（元）</td>
-                <td class="title_7">操作</td>
-            </tr>
-            <tr>
-                <td colspan="8" class="line"></td>
-            </tr>
+                        <li class="nav_li">
+                            <a href="javascript:">${parent_category.key.categoryname}</a>
+                            <div class="nav_dropdown">
+                                <div class="card_list">
+                                    <ul class="card_item_list">
 
 
-            <c:forEach items="${goodslists}" var="goods">
-                <tr id="${goods[0]}">
-                    <td class="cart_td_1"><input name="cartCheckBox"
-                                                 type="checkbox"
-                                                 value="product4"
-                                                 onclick="selectSingle()"/></td>
-                    <------
-                    1：checkbox
-                    2：图片
-                    3：名称+url
-                    4：积分
-                    5：单价
-                    6：数量
-                    7：小计金额
-                    8：删除按钮
-                    ------->
-                    <td class="cart_td_2"><img src="${goods[1]}"
-                                               alt="shopping"/></td>
-                    <td class="cart_td_3"><a
-                            href="${goods[2]}">${goods[2]}</a><br/>
-                    </td>
-                    <td class="cart_td_4">12</td>
-                    <td class="cart_td_5">${goods[4]}</td>
-                    <td class="cart_td_6"><img src="images/taobao_minus.jpg"
-                                               alt="minus"
-                                               onclick="changeNum('num_${goods[0]}','minus')"
-                                               class="hand"/> <input
-                            id="num_${goods[0]}" type="text" value="2"
-                            class="num_input"
-                            readonly="readonly"/> <img
-                            src="images/taobao_adding.jpg"
-                            alt="add"
-                            onclick="changeNum('num_${goods[0]}','add')"
-                            class="hand"/></td>
-                    <td class="cart_td_7"></td>
-                    <td class="cart_td_8"><a
-                            href="javascript:deleteRow('${goods[0]}');">删除</a>
-                    </td>
-                </tr>
-            </c:forEach>
-            <tr>
-                <td colspan="3"><a href="javascript:deleteSelectRow()"><img
-                        src="images/taobao_del.jpg" alt="delete"/></a></td>
-                <td colspan="5" class="shopend">商品总价（不含运费）：<label id="total"
-                                                                  class="yellow"></label>
-                    元<br/> 可获积分 <label class="yellow" id="integral"></label>
-                    点<br/>
-                    <input name=" " type="image" src="images/taobao_subtn.jpg"/>
-                </td>
-            </tr>
-        </form>
-    </table>
-    <div style="text-align:center;">
+                                        <c:forEach items="${parent_category.value}" var="son_category">
+                                            <li class="item">
+                                                <a href="entry_detail_list.do?categoryId=${son_category.categoryid}" class="url_nav_drop">
+                                                    <i class="iconfont ${son_category.categoryimg} icon_nav_drop"></i>
+                                                    <p class="title_nav_drop">${son_category.categoryname}</p>
+                                                </a>
+                                            </li>
+                                        </c:forEach>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </c:forEach>
+
+
+
+
+                </ul>
+
+
+
+                <div class="user_info">
+                    <c:if test="${empty user}">
+                        <div class="before_login_s">
+                            <a href="login.jsp">登录</a>
+                            <a href="register.jsp">注册</a>
+                        </div>
+                    </c:if>
+                    <c:if test="${!empty user}">
+                        <div class="after_login_s" onmouseover="rotate_arrow(1)" onmouseout="reset_arrow(1)">
+                            <div class="user_center_s">
+                                <a href="user_center.do">
+                                    <i class="iconfont icon-wode icon_top"></i>
+                                </a>
+                                <div class="drop_down_block_s">
+                                    <div class="drop_down_menu">
+                                        <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
+                                        <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
+                                        <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
+                                        <a class="drop_down_item" href="log_out.do">退出登录</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </c:if>
+                    <div class="always_show_s">
+                        <a href="entry_shopcart.do">
+                            <i class="iconfont icon-gouwuche icon_top"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </div>
 </div>
-<p></p>
+
+<div class="product_roll">
+    <div class="roll_main">
+        <button class="iconfont icon-zuo roll_button left"></button>
+        <div class="image_field">
+            <a href="javascript:">
+                <img src="images/1.png" id="roll_images">
+            </a>
+        </div>
+        <button class="iconfont icon-you roll_button right"></button>
+    </div>
+</div>
+
+<div class="main" id="main">
+    <div class="row" id="index_row">
+        <div class="index_item">
+            <div class="index_item_title">新品推荐</div>
+            <div class="index_item_title_description">周一周四上新，为你寻觅世间好物</div>
+            <div class="index_item_more">
+                <a href="javascript:">更多新品></a>
+            </div>
+
+            <div class="index_new_content">
+                <ul class="index_new_list">
+                    <div class="new_list_main">
+                        <button class="iconfont icon-zuo new_button left"></button>
+                        <div class="new_list_content">
+                            <div class="new_item_collection">
+
+                                <c:forEach items="${newProduct}" var="product">
+                                    <li class="new_item">
+                                        <div class="new_item_main">
+                                            <div class="new_item_image_container">
+                                                <a href="shop_content.do?shopID=${product.goodsid}" class="new_item_url">
+                                                    <c:if test="${product.photo == null}">
+                                                        <img src="images/defaultblack.png" class="new_item_image">
+                                                    </c:if>
+                                                    <c:if test="${product.photo != null}">
+                                                        <img src="good_picture/${product.photo}" class="new_item_image">
+                                                    </c:if>
+
+                                                </a>
+                                            </div>
+                                            <div class="new_item_desription">
+                                                <a href="shop_content.do?shopID=${product.goodsid}" class="new_item_name">${product.goodsname}</a>
+                                                <p class="new_item_price">￥${product.goodsprice}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </c:forEach>
+
+
+                            </div>
+                        </div>
+                        <button class="iconfont icon-you new_button right"></button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="index_recommend">
+        <div class="index_item">
+            <div class="index_item_title">人气推荐</div>
+            <div class="index_item_title_description">人气单品一应俱全</div>
+            <div class="index_item_more">
+                <a href="javascript:">更多推荐></a>
+            </div>
+        </div>
+        <div class="index_item recommend_content">
+
+
+            <div class="left_recommend">
+                <c:forEach items="${popProduct}" var="product" varStatus="status">
+                    <c:if test="${status.first}">
+                        <div class="recommend_item">
+                            <a href="shop_content.do?shopID=${product.goodsid}" class="recommend_url">
+                                <c:if test="${product.photo == null}">
+                                    <img src="images/defaultblue.png" class="recommend_image large_recommend">
+                                </c:if>
+                                <c:if test="${product.photo != null}">
+                                    <img src="good_picture/${product.photo}" class="recommend_image large_recommend">
+                                </c:if>
+                            </a>
+                            <a href="shop_content.do?shopID=${product.goodsid}" class="recommend_name">${product.goodsname}</a>
+                            <p class="recommend_price">￥${product.goodsprice}</p>
+                        </div>
+                    </c:if>
+                </c:forEach>
+
+            </div>
+
+
+            <div class="right_recommend">
+                <c:forEach items="${popProduct}" var="product" varStatus="status">
+                    <c:if test="${!status.first}">
+                        <div class="recommend_item">
+                            <a href="shop_content.do?shopID=${product.goodsid}" class="recommend_url">
+                                <c:if test="${product.photo == null}">
+                                    <img src="images/defaultblue.png" class="recommend_image small_recommend">
+                                </c:if>
+                                <c:if test="${product.photo != null}">
+                                    <img src="good_picture/${product.photo}" class="recommend_image small_recommend">
+                                </c:if>
+                            </a>
+                            <a href="shop_content.do?shopID=${product.goodsid}" class="recommend_name">${product.goodsname}</a>
+                            <p class="recommend_price">￥${product.goodsprice}</p>
+                        </div>
+                    </c:if>
+                </c:forEach>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" id="sort_row">
+        <div class="index_item">
+            <div class="index_item_title">食品酒水</div>
+            <div class="index_item_more">
+                <a href="javascript:">查看更多></a>
+            </div>
+            <div class="index_sort_banner">
+                <img src="images/1.png">
+            </div>
+            <div class="index_sort_content">
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" id="sort_row">
+        <div class="index_item">
+            <div class="index_item_title">日用洗护</div>
+            <div class="index_item_more">
+                <a href="javascript:">查看更多></a>
+            </div>
+            <div class="index_sort_banner">
+                <img src="images/2.png">
+            </div>
+            <div class="index_sort_content">
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+
+                <div class="index_sort_item">
+                    <a href="javascript:" class="sort_item_url">
+                        <img src="images/defaultblue.png" class="sort_item_image">
+                    </a>
+                    <a href="javascript:" class="sort_item_name">测试</a>
+                    <p class="sort_item_price">￥1999</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <div class="footer_top">
+        <div class="row">
+            <div class="intro_list">
+                <ul class="clearfix">
+                    <li>
+                        <i class="iconfont icon-shouquanzhengpin icon_bottom"></i>
+                        <p class="icon_info">100% 正品保证</p>
+                    </li>
+                    <li>
+                        <i class="iconfont icon-wuyoushouhou icon_bottom"></i>
+                        <p class="icon_info">30 天无忧退换货</p>
+                    </li>
+                    <li>
+                        <i class="iconfont icon-kefu1 icon_bottom"></i>
+                        <p class="icon_info">24 小时在线客服</p>
+                    </li>
+                    <li>
+                        <i class="iconfont icon-baoyou icon_bottom"></i>
+                        <p class="icon_info">全场满 88 包邮</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="row">
+            <ul class="clearfix">
+                <li class="left_bottom">
+                    <a href="javascript:" class="logo_bottom">&nbsp;</a>
+                </li>
+                <li class="right_bottom">
+                    <p class="bottom_title">关于我们</p>
+                    <p class="bottom_content">
+                        <a href="javascript:">公司介绍</a> &nbsp;|&nbsp;
+                        <a href="javascript:">联系我们</a> &nbsp;|&nbsp;
+                        <a href="javascript:">客户服务</a> &nbsp;|&nbsp;
+                        <a href="javascript:">支付方式</a> &nbsp;|&nbsp;
+                        <a href="javascript:">配送服务</a> &nbsp;|&nbsp;
+                        <a href="javascript:">退货流程</a> &nbsp;|&nbsp;
+                        <a href="javascript:">常见问题</a>
+                    </p>
+                    <p class="bottom_content">京西公司 版权所有 &copy;2017</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--图片隐藏区域，用于JavaScript动态获取,src填写图片路径，alt填写链接地址-->
+<div class="image_hidden" style="display:none;">
+    <img src="images/1.png" alt="https://www.baidu.com/">
+    <img src="images/2.png" alt="http://www.163.com/">
+    <img src="images/3.png" alt="http://www.qq.com/">
+</div>
+
+<div class="toolbox">
+    <div class="tool_item" id="return_top">
+        <a href="javascript:" class="go_to_top">
+            <i class="iconfont icon-fanhuidingbu icon_right"></i>
+        </a>
+    </div>
+    <div class="tool_item">
+        <a href="javascript:">
+            <i class="iconfont icon-kefu1 icon_right"></i>
+        </a>
+    </div>
+</div>
+
+
+<script src="js/top_bottom.js"></script>
+<script src="js/all.js"></script>
+<script src="js/list.js"></script>
+<script>
+    if($('.new_item').length>4){
+        $('.new_list_main .new_button').show();
+    }
+
+    $('.new_list_main .icon-you').click(function(){
+        if($('.new_item_collection').children().length>4){
+            $('.new_item_collection').css('transform','translateX(-1060px)');
+        }
+    });
+
+    $('.new_list_main .icon-zuo').click(function(){
+        $('.new_item_collection').css('transform','translateX(0)');
+    });
+
+
+    $('.new_item_image').mouseover(function(){
+        $(this).animate({height:"254px"},100);
+    });
+
+    $('.new_item_image').mouseout(function(){
+        $(this).animate({height:"250px"},100);
+    });
+
+    $('.large_recommend').mouseover(function(){
+        $(this).animate({height:"330px"},100);
+        console.log("OK");
+    });
+
+    $('.large_recommend').mouseout(function(){
+        $(this).animate({height:"325px"},100);
+    });
+
+
+    $('.small_recommend').mouseover(function(){
+        $(this).animate({height:"183px"},100);
+    });
+
+    $('.small_recommend').mouseout(function(){
+        $(this).animate({height:"180px"},100);
+    });
+
+    $('.sort_item_image').mouseover(function(){
+        $(this).animate({height:"163px"},100);
+    });
+
+    $('.sort_item_image').mouseout(function(){
+        $(this).animate({height:"160px"},100);
+    });
+
+</script>
 </body>
 </html>
