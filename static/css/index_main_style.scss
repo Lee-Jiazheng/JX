@@ -12,6 +12,7 @@ $red_font:#d7282d;
 #main{
     color:$black_font;
     margin-bottom: 20px;
+    min-width: 1200px;
     #index_row,#index_recommend{
         width:1050px;
         margin:0 auto;
@@ -50,6 +51,7 @@ $red_font:#d7282d;
 
 .product_roll{
     width: 100%;
+    min-width: 1200px;
     .roll_main{
         width: 100%;
         height: 360px;
@@ -93,10 +95,11 @@ $red_font:#d7282d;
         margin-right: 0;
         width: 1090px;
         position: relative;
-        .new_list_content{
+        .new_list_main{
             position: static;
             width: 1050px;
             .new_button{
+                display: none;
                 position: absolute;
                 z-index: 9;
                 top: 100px;
@@ -139,7 +142,8 @@ $red_font:#d7282d;
                                     height: 255px;
                                     display: block;
                                     .new_item_image{
-                                        width: 250px;
+                                        height: 250px;
+                                        max-width: 250px;
                                         display: block;
                                         margin: 0 auto;
                                     }

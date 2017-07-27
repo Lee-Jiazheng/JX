@@ -236,19 +236,20 @@ i{
                         padding:20px 0;
                         .nav_li{
                             float: left;
-                            padding: 6px 40px 0;
+                            padding: 6px 50px 0;
                             font-size: 14px;  
                             height: 60px;
                             .nav_dropdown{
                                 position: absolute;
                                 z-index: 101;
-                                top: 26px;
+                                top: 21px;
                                 left: 0;
                                 width: 300%;
                                 margin-left: -100%;
                                 background-color: #fff;
                                 margin-top:50px;
                                 display: none;
+                                border-bottom: 1px solid $grey_border;
                                 .card_list{
                                     position: relative;
                                     padding-top: 33px;
@@ -464,6 +465,7 @@ i{
         width: 50px;
         font-size: 36px;
         vertical-align: top;
+        font-weight: 400;
     }
     .title_nav_drop{
         font-size: 14px;

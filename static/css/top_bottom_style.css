@@ -175,19 +175,20 @@ i {
         padding: 20px 0; }
         .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li, .header .fixed_nav .row .inner_main .nav_ul .nav_li, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li {
           float: left;
-          padding: 6px 40px 0;
+          padding: 6px 50px 0;
           font-size: 14px;
           height: 60px; }
           .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .row .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li .nav_dropdown, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown {
             position: absolute;
             z-index: 101;
-            top: 26px;
+            top: 21px;
             left: 0;
             width: 300%;
             margin-left: -100%;
             background-color: #fff;
             margin-top: 50px;
-            display: none; }
+            display: none;
+            border-bottom: 1px solid #ccc; }
             .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .fixed_nav .row .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown .card_list, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown .card_list {
               position: relative;
               padding-top: 33px;
@@ -367,7 +368,8 @@ i {
     height: 50px;
     width: 50px;
     font-size: 36px;
-    vertical-align: top; }
+    vertical-align: top;
+    font-weight: 400; }
   .url_nav_drop .title_nav_drop {
     font-size: 14px;
     line-height: 1;

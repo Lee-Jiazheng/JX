@@ -46,14 +46,14 @@
         function change_navbar(){
                 $(".fixed_nav").attr('id',"fixed"); 
                 $(".smalllogo").show();
-                $(".nav_li").css('padding','6px 25px 0');
+                $(".nav_li").css('padding','6px 30px 0');
                 $(".first").css('margin-left','165px');
                 $(".user_info").css('display',"block");
         }
         function reset_navbar(){
                 $(".fixed_nav").removeAttr("id"); 
                 $(".smalllogo").hide();
-                $(".nav_li").css('padding','6px 40px 0');
+                $(".nav_li").css('padding','6px 50px 0');
                 $(".first").css('margin-left','50px');
                 $(".user_info").css('display',"none");   
         }

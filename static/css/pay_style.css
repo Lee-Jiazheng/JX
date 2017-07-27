@@ -1,0 +1,37 @@
+#pay_row {
+  width: 1200px;
+  min-height: 500px;
+  margin: 30px auto 50px; }
+  #pay_row .pay_main {
+    padding: 50px 0;
+    text-align: center; }
+    #pay_row .pay_main .pay_title {
+      font-size: 18px;
+      color: #333; }
+    #pay_row .pay_main img {
+      width: 300px; }
+    #pay_row .pay_main .pay_button {
+      width: 290px;
+      margin: 20px auto 0; }
+      #pay_row .pay_main .pay_button .pay_button_url {
+        padding: 10px 30px;
+        display: block;
+        font-size: 16px;
+        border: 1px solid #ccc; }
+      #pay_row .pay_main .pay_button .pay_finish {
+        float: left;
+        color: #fff;
+        background-color: #15a8e0; }
+      #pay_row .pay_main .pay_button .pay_finish:hover {
+        background-color: #3bbced; }
+      #pay_row .pay_main .pay_button .pay_cancel {
+        float: right;
+        background-color: #f5f5f5; }
+      #pay_row .pay_main .pay_button .pay_cancel:hover {
+        background-color: #fff; }
+    #pay_row .pay_main .pay_button::after, #pay_row .pay_main .pay_button::before {
+      content: "";
+      clear: both;
+      display: table; }
+
+/*# sourceMappingURL=pay_style.css.map */

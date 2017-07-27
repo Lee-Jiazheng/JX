@@ -1,0 +1,100 @@
+#comment_row {
+  width: 1100px;
+  padding: 20px 0;
+  min-height: 350px; }
+  #comment_row .current_position {
+    font-size: 16px; }
+    #comment_row .current_position label {
+      color: #999; }
+    #comment_row .current_position a {
+      color: #262626; }
+    #comment_row .current_position a:hover {
+      text-decoration: underline; }
+  #comment_row .comment_item {
+    width: 100%;
+    font-size: 16px;
+    margin: 30px 0 50px; }
+    #comment_row .comment_item .comment_title {
+      font-size: 14px;
+      color: #999;
+      border: 1px solid #ccc;
+      padding: 10px 30px; }
+      #comment_row .comment_item .comment_title .comment_title_left {
+        float: left; }
+      #comment_row .comment_item .comment_title .comment_title_right {
+        float: right;
+        margin-right: 30px; }
+    #comment_row .comment_item .comment_title::after, #comment_row .comment_item .comment_title::before {
+      content: " ";
+      display: block;
+      clear: both; }
+    #comment_row .comment_item .comment_info {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-top: none !important; }
+      #comment_row .comment_item .comment_info .comment_info_left {
+        float: left; }
+        #comment_row .comment_item .comment_info .comment_info_left .item_image {
+          float: left; }
+          #comment_row .comment_item .comment_info .comment_info_left .item_image a img {
+            height: 100px;
+            max-width: 100px; }
+        #comment_row .comment_item .comment_info .comment_info_left .item_name {
+          float: left; }
+          #comment_row .comment_item .comment_info .comment_info_left .item_name a {
+            display: block;
+            margin: 40px 0 0 15px;
+            max-width: 500px; }
+          #comment_row .comment_item .comment_info .comment_info_left .item_name a:hover {
+            color: #15a8e0; }
+      #comment_row .comment_item .comment_info .comment_info_right {
+        float: right; }
+        #comment_row .comment_item .comment_info .comment_info_right a {
+          color: #15a8e0;
+          display: block;
+          margin: 40px 30px 0 0; }
+        #comment_row .comment_item .comment_info .comment_info_right a:hover {
+          text-decoration: underline; }
+    #comment_row .comment_item .comment_info::after, #comment_row .comment_item .comment_info::before {
+      content: " ";
+      display: table;
+      clear: both; }
+    #comment_row .comment_item .comment_main {
+      padding: 30px 50px;
+      border: 1px solid #ccc;
+      background-color: #f5f5f5;
+      border-top: none !important; }
+      #comment_row .comment_item .comment_main .comment_star {
+        margin-bottom: 20px; }
+        #comment_row .comment_item .comment_main .comment_star label {
+          color: #999;
+          margin-right: 10px; }
+        #comment_row .comment_item .comment_main .comment_star .icon_normal {
+          font-weight: bold;
+          color: #999; }
+        #comment_row .comment_item .comment_main .comment_star .icon_red {
+          color: #d4282d !important; }
+        #comment_row .comment_item .comment_main .comment_star .comment_point {
+          margin-left: 10px;
+          margin-right: 0px; }
+      #comment_row .comment_item .comment_main .comment_text label {
+        float: left;
+        color: #999; }
+      #comment_row .comment_item .comment_main .comment_text .comment_content {
+        padding: 10px;
+        font-size: 14px;
+        margin-left: 45px;
+        resize: none; }
+      #comment_row .comment_item .comment_main .comment_button {
+        margin-top: 20px; }
+        #comment_row .comment_item .comment_main .comment_button .publish_comment {
+          display: block;
+          color: #fff;
+          background-color: #15a8e0;
+          padding: 10px 20px;
+          width: 64px;
+          margin-left: 80px; }
+        #comment_row .comment_item .comment_main .comment_button .publish_comment:hover {
+          background-color: #3bbced; }
+
+/*# sourceMappingURL=comment_style.css.map */

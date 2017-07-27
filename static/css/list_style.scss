@@ -12,6 +12,7 @@ $red_font:#d7282d;
 #main{
     background-color: $grey_background;
     padding-bottom: 30px;
+    min-width: 1200px;
 }
 #list_row{
     width: 1200px;
@@ -111,6 +112,7 @@ $red_font:#d7282d;
                         height: 180px;
                         .item_photo_url{
                             img{
+                                max-width: 163px;
                                 height: 160px;
                             }
                         }
