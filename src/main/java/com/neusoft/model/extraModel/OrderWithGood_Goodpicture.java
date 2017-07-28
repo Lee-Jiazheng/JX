@@ -11,8 +11,6 @@ public class OrderWithGood_Goodpicture implements Serializable{
     private int orderid;
     private Date ordertime;
 
-
-
     private String orderStatus;
     private Double orderprice;
     private int amount;

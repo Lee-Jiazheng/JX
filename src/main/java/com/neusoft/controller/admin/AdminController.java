@@ -4,6 +4,7 @@ import com.neusoft.config.ModuleConfig;
 import com.neusoft.mapper.IAdminMapper;
 import com.neusoft.mapper.IUserMapper;
 import com.neusoft.model.AdminUser;
+import com.neusoft.model.Category;
 import com.neusoft.model.User;
 import com.neusoft.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Bruce Lee on 2017/7/18.
@@ -50,6 +53,14 @@ public class AdminController {
         //官方客服页面
         ModelAndView mav = new ModelAndView("admin/admin_chat");
         return mav;
+    }
+
+    @RequestMapping("get_all_categories.do")
+    public ModelAndView get_all_categories(){
+
+
+        ModelAndView modelAndView = new ModelAndView("testFileUpload");
+        return null;
     }
 }
 

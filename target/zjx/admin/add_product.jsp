@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Bruce Lee
@@ -31,19 +32,19 @@
 
 <body>
 <div class="margin">
-    <form action="/add_goods.do" method="post" enctype="multipart/form-data">
-    <div class="add_style">
-        <ul>
-            <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="goodsname" type="text"  class="col-xs-6"/></div></li>
-            <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="goodsdescription" type="text" class="col-xs-4"/></div></li>
-            <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>关&nbsp;键&nbsp;字：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="goodskeywords" type="text" class="col-xs-4"/><em class="Prompt"> 请用","分隔关键字</em></div></li>
-            <li class="clearfix">
-                <label class="label_name col-xs-1"><i>*</i>产品分类：&nbsp;&nbsp;</label>
-                <div class="Add_content col-xs-11">
-                    <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">新品发布</span></label></span>
-                    <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">限时促销</span></label></span>
-                    <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">特价处理</span></label></span>
-                    <span class="relative l_f">
+    <form action="add_goods.do" method="post" enctype="multipart/form-data">
+        <div class="add_style">
+            <ul>
+                <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="goodsname" type="text"  class="col-xs-6"/></div></li>
+                <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="goodsdescription" type="text" class="col-xs-4"/></div></li>
+                <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>关&nbsp;键&nbsp;字：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="goodskeywords" type="text" class="col-xs-4"/><em class="Prompt"> 请用","分隔关键字</em></div></li>
+                <li class="clearfix">
+                    <label class="label_name col-xs-1"><i>*</i>产品分类：&nbsp;&nbsp;</label>
+                    <div class="Add_content col-xs-11">
+                        <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">新品发布</span></label></span>
+                        <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">限时促销</span></label></span>
+                        <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">特价处理</span></label></span>
+                        <span class="relative l_f">
    <button  type="button" onclick="add_category()" class="btn bg-deep-blue operation_btn margin-left">添加分类</button>
    <div class="add_category_style">
      <p class="clearfix">
@@ -52,60 +53,75 @@
      <p class="Prompt"><em>该分类最多添加10个</em></p>
    </div>
    </span>
-                </div>
-            </li>
-            <li class="clearfix">
-                <div class="col-xs-4">
-                    <label class="label_name col-xs-3"><i>*</i>商品原价：&nbsp;&nbsp;</label>
-                    <div class="Add_content col-xs-9">
-                        <input name="goodsprice" type="text"  class="col-xs-7"/><em class="Prompt">元</em>
                     </div>
-                </div>
-                <div class="col-xs-4">
-                    <label class="label_name col-xs-3"><i>*</i>商品现价：&nbsp;&nbsp;</label>
-                    <div class="Add_content col-xs-9">
-                        <input name="goodsprice" type="text"  class="col-xs-7"/><em class="Prompt">元</em>
+                </li>
+                <li class="clearfix">
+                    <div class="col-xs-4">
+                        <label class="label_name col-xs-3"><i>*</i>商品原价：&nbsp;&nbsp;</label>
+                        <div class="Add_content col-xs-9">
+                            <input name="goodsprice" type="text"  class="col-xs-7"/><em class="Prompt">元</em>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-4">
-                    <label class="label_name col-xs-3"><i>*</i>商品数量：&nbsp;&nbsp;</label>
-                    <div class="Add_content col-xs-9">
-                        <input name="goodsquantity" type="text"  class="col-xs-7"/><em class="Prompt">件</em>
+                    <div class="col-xs-4">
+                        <label class="label_name col-xs-3"><i>*</i>商品现价：&nbsp;&nbsp;</label>
+                        <div class="Add_content col-xs-9">
+                            <input name="goodsprice" type="text"  class="col-xs-7"/><em class="Prompt">元</em>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="clearfix"><label class="label_name col-xs-1">设置规格：&nbsp;&nbsp;</label>
-                <div class="Add_content col-xs-11">
-                    <input name="" type="text"  class="col-xs-6"/><em class="Prompt">如"颜色,尺寸,型号"中间以英文逗号隔开</em>
-                </div>
-            </li>
-            <li class="clearfix">
-                <div class="col-xs-4">
-                    <label class="label_name col-xs-3">是否上架：&nbsp;&nbsp;</label>
-                    <div class="Add_content col-xs-9">
-                        <label><input type="radio" name="checkbox" class="ace" checked="checked"><span class="lbl">是</span></label>
-                        <label><input type="radio" name="checkbox" class="ace"><span class="lbl">否</span></label>
+                    <div class="col-xs-4">
+                        <label class="label_name col-xs-3"><i>*</i>商品数量：&nbsp;&nbsp;</label>
+                        <div class="Add_content col-xs-9">
+                            <input name="goodsquantity" type="text"  class="col-xs-7"/><em class="Prompt">件</em>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="clearfix">
-                <label class="label_name col-xs-1"><i>*</i>产品图片：&nbsp;&nbsp;</label>
-                <div class="Add_content col-xs-11" id="Upload">
-                    <div class="images_Upload clearfix margin-bottom" id="images_Upload">
-                        <span class="Upload_img"><input name="goods_image" type="file" /></span>
+                </li>
+                <li class="clearfix"><label class="label_name col-xs-1">设置规格：&nbsp;&nbsp;</label>
+                    <div class="Add_content col-xs-11">
+                        <input name="" type="text"  class="col-xs-6"/><em class="Prompt">如"颜色,尺寸,型号"中间以英文逗号隔开</em>
                     </div>
-                    <button type="button" class="add_Upload bg-deep-blue" id="add_Upload" onclick="add_Upload()"><i class="fa  fa-plus"></i></button>
-                </div>
-            </li>
+                </li>
+                <li class="clearfix">
+                    <div class="col-xs-4">
+                        <label class="label_name col-xs-3">是否上架：&nbsp;&nbsp;</label>
+                        <div class="Add_content col-xs-9">
+                            <label><input type="radio" name="checkbox" class="ace" checked="checked"><span class="lbl">是</span></label>
+                            <label><input type="radio" name="checkbox" class="ace"><span class="lbl">否</span></label>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <label class="label_name col-xs-1"><i>*</i>产品图片：&nbsp;&nbsp;</label>
+                    <div class="Add_content col-xs-11" id="Upload">
+                        <div class="images_Upload clearfix margin-bottom" id="images_Upload">
+                            <span class="Upload_img"><input name="goods_image" type="file" /></span>
+                        </div>
+                        <button type="button" class="add_Upload bg-deep-blue" id="add_Upload" onclick="add_Upload()"><i class="fa  fa-plus"></i></button>
+                    </div>
+                </li>
 
-        </ul>
-        <div class="Button_operation btn_width">
-            <input class="btn button_btn bg-deep-blue" type="submit">保存并提交</input>
-            <a class="btn button_btn bg-gray" href="products.jsp">取消添加</a>
+            </ul>
+            <div class="Button_operation btn_width">
+                <input class="btn button_btn bg-deep-blue" type="submit">保存并提交</input>
+                <a class="btn button_btn bg-gray" href="products.jsp">取消添加</a>
+            </div>
         </div>
-    </div>
     </form>
 </div>
+
+
+<c:forEach var="parent_category" items="${category_map}">
+
+    <h1>${parent_category.key.categoryid}${parent_category.key.categoryname}</h1>
+    <c:forEach items="${parent_category.value}" var="son_category">
+        <h4>${son_category.categoryid}${son_category.categoryname}</h4>
+    </c:forEach>
+    </br>
+</c:forEach>
+
+
+
+
+
 </body>
 </html>
 <!--复文本编辑框-->

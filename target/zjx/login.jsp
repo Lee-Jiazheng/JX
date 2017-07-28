@@ -27,7 +27,7 @@
                     <li class="nav_li first active">
                         <a href="index.do">首页</a>
                     </li>
-
+                    
                     <c:forEach var="parent_category" items="${category_map}">
 
                         <li class="nav_li">

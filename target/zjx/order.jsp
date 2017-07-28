@@ -176,15 +176,15 @@
                         </p>
                         <p class="address_line">
                             <label>收 货 人：</label>
-                            <span class="text" id="show_name">王</span>
+                            <span class="text" id="show_name">${addresses[0].contactname}</span>
                         </p>
                         <p class="address_line">
                             <label>联系方式：</label>
-                            <span class="text" id="show_contact">10010</span>
+                            <span class="text" id="show_contact">${addresses[0].phonenum}</span>
                         </p>
                         <p class="address_line">
                             <label>联系地址：</label>
-                            <span class="text" id="show_address">辽宁省沈阳市</span>
+                            <span class="text" id="show_address">${addresses[0].addressname}</span>
                         </p>
                     </div>
                     <div class="address_right">
@@ -384,35 +384,23 @@
         <div class="switch_title">选择地址</div>
         <div class="switch_list">
 
-            <div class="switch_item active">
-                <p class="address_line select_name">
-                    <label>收 货 人：</label>
-                    <span class="text">王</span>
-                </p>
-                <p class="address_line select_contact">
-                    <label>联系方式：</label>
-                    <span class="text">10010</span>
-                </p>
-                <p class="address_line select_address">
-                    <label>联系地址：</label>
-                    <span class="text">辽宁省沈阳市</span>
-                </p>
-            </div>
+            <c:forEach items="${addresses}" var="address">
+                <div class="switch_item active">
+                    <p class="address_line select_name">
+                        <label>收 货 人：</label>
+                        <span class="text">${address.contactname}</span>
+                    </p>
+                    <p class="address_line select_contact">
+                        <label>联系方式：</label>
+                        <span class="text">${address.phonenum}</span>
+                    </p>
+                    <p class="address_line select_address">
+                        <label>联系地址：</label>
+                        <span class="text">${address.addressname}</span>
+                    </p>
+                </div>
+            </c:forEach>
 
-            <div class="switch_item">
-                <p class="address_line select_name">
-                    <label>收 货 人：</label>
-                    <span class="text">吴</span>
-                </p>
-                <p class="address_line select_contact">
-                    <label>联系方式：</label>
-                    <span class="text">10086</span>
-                </p>
-                <p class="address_line select_address">
-                    <label>联系地址：</label>
-                    <span class="text">广东省汕头市</span>
-                </p>
-            </div>
 
         </div>
 

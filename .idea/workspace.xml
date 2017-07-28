@@ -440,6 +440,13 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/utf8-jsp/third-party/video-js/video-js.swf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/utf8-jsp/third-party/webuploader/Uploader.swf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/utf8-jsp/third-party/zeroclipboard/ZeroClipboard.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/lib/java-json.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_2_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/java_json.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/json_lib_2_4_jdk15.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/CommentsController.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/SearchController.java" />
@@ -448,13 +455,18 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IIndexMapper.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/model/extraModel/Good_with_photo.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/model/extraModel/GoodsWithPhotos.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/IAddressService.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/IGoodsManagerService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/IPromotionService.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/ISearchService.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/IShowIndex.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/AddressService.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/GoodsManagerService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/PromotionService.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/ShowIndex.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/add_product.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin/add_product.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_promotion.jsp" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin/comments_manager.jsp" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin/goods_manager.jsp" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin/login.jsp" />
@@ -769,113 +781,65 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/fonts/iconfont.eot" afterPath="$PROJECT_DIR$/src/main/webapp/fonts/iconfont.eot" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/fonts/iconfont.ttf" afterPath="$PROJECT_DIR$/src/main/webapp/fonts/iconfont.ttf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/fonts/iconfont.woff" afterPath="$PROJECT_DIR$/src/main/webapp/fonts/iconfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/config/ModuleConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/config/ModuleConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/config/MvcConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/config/MvcConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/config/SecurityConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/config/SecurityConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/LogicController/BuyController.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/LogicController/BuyController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/LogicController/CookiesController.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/LogicController/CookiesController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/admin/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/admin/AdminController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/admin/GoodsManager.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/admin/GoodsManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/redis/RedisUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/redis/RedisUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/user/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/user/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/controller/user/UserInfoController.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/controller/user/UserInfoController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IAddressMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IAddressMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IAdminMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IAdminMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/ICategoryMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/ICategoryMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IChatMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IChatMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/ICollectionsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/ICollectionsMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/ICommentsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/ICommentsMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IGoodsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IGoodsMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IGoodsPhotoMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IGoodsPhotoMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IOrderMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IOrderMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IPromotionMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IPromotionMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IShopcartMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IShopcartMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IUserMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/mapper/IUserMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Address.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Address.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/AdminUser.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/AdminUser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Category.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Category.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/ChatUserRecord.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/ChatUserRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Collections.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Collections.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Comments.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Comments.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Goods.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Goods.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Goodsphoto.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Goodsphoto.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Order.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Promotion.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Promotion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/Shopcart.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/Shopcart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/User.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/extraModel/CommentsWithUserName.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/extraModel/CommentsWithUserName.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/model/extraModel/OrderWithGood_Goodpicture.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/model/extraModel/OrderWithGood_Goodpicture.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/IAdminService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/IAdminService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/ICommentsService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/ICommentsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/IOrderService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/IOrderService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/IShopCartService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/IShopCartService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/IUserService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/IUserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/AdminService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/AdminService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/CommentsService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/CommentsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/DeleteCookies.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/DeleteCookies.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/OrderService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/OrderService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/ReadCookies.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/ReadCookies.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/ShopCartCookies.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/ShopCartCookies.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/ShopCartService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/ShopCartService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/neusoft/service/impl/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/neusoft/controller/redis/testFileTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/neusoft/controller/redis/testFileTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/neusoft/model/testFileTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/neusoft/model/testFileTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/testFile.class" afterPath="$PROJECT_DIR$/target/test-classes/testFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/ModuleConfig.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/ModuleConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/MvcConfig.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/MvcConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/SecurityConfig.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/config/SecurityConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/LogicController/BuyController.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/LogicController/BuyController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/LogicController/CookiesController.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/LogicController/CookiesController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/admin/AdminController.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/admin/AdminController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/admin/GoodsManager.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/admin/GoodsManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/redis/RedisUtils.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/redis/RedisUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/user/UserController.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/user/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/user/UserInfoController.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/controller/user/UserInfoController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IAddressMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IAddressMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IAdminMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IAdminMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/ICategoryMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/ICategoryMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IChatMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IChatMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/ICollectionsMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/ICollectionsMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/ICommentsMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/ICommentsMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IGoodsMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IGoodsMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IGoodsPhotoMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IGoodsPhotoMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IOrderMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IOrderMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IPromotionMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IPromotionMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IShopcartMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IShopcartMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IUserMapper.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/mapper/IUserMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Address.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Address.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/AdminUser.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/AdminUser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Category.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Category.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/ChatUserRecord.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/ChatUserRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Collections.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Collections.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Comments.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Comments.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Goods.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Goods.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Goodsphoto.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Goodsphoto.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Order.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Promotion.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Promotion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Shopcart.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/Shopcart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/User.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/extraModel/CommentsWithUserName.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/extraModel/CommentsWithUserName.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/extraModel/OrderWithGood_Goodpicture.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/model/extraModel/OrderWithGood_Goodpicture.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/IAdminService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/IAdminService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/ICommentsService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/ICommentsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/IOrderService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/IOrderService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/IShopCartService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/IShopCartService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/IUserService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/IUserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/AdminService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/AdminService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/CommentsService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/CommentsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/DeleteCookies.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/DeleteCookies.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/OrderService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/OrderService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/ReadCookies.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/ReadCookies.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/ShopCartCookies.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/ShopCartCookies.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/ShopCartService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/ShopCartService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/UserService.class" afterPath="$PROJECT_DIR$/target/zjx/WEB-INF/classes/com/neusoft/service/impl/UserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/fonts/iconfont.eot" afterPath="$PROJECT_DIR$/target/zjx/fonts/iconfont.eot" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/fonts/iconfont.ttf" afterPath="$PROJECT_DIR$/target/zjx/fonts/iconfont.ttf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/zjx/fonts/iconfont.woff" afterPath="$PROJECT_DIR$/target/zjx/fonts/iconfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/JX_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/JX_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JX.iml" afterPath="$PROJECT_DIR$/JX.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/config/MvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/config/MvcConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/CookiesController.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/CookiesController.java" />
@@ -888,10 +852,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/ICommentsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/ICommentsMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IGoodsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IGoodsMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IGoodsPhotoMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IGoodsPhotoMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IPromotionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IPromotionMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/model/Address.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/model/Address.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/model/Category.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/model/Category.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/model/Order.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/model/Order.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/model/extraModel/OrderWithGood_Goodpicture.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/model/extraModel/OrderWithGood_Goodpicture.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/service/IAdminService.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/IAdminService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/service/ICommentsService.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/ICommentsService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/neusoft/service/IShopCartService.java" afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/service/IShopCartService.java" />
@@ -986,75 +952,56 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IAddressMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IAddressMapper.java">
+      <file leaf-file-name="add_product.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/add_product.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+            <state relative-caret-position="-12">
+              <caret line="113" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+              <folding>
+                <marker date="1501237265385" expanded="true" signature="7906:7912" ph="&amp;nbsp;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuyController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="159" column="40" lean-forward="true" selection-start-line="159" selection-start-column="40" selection-end-line="159" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoodsManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-12">
+              <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserInfoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserInfoController.java">
+      <file leaf-file-name="IOrderService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/IOrderService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+            <state relative-caret-position="-12">
+              <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/show.js">
+      <file leaf-file-name="admin_promotion.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin_promotion.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
+            <state relative-caret-position="-12">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_center.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/user_center.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/target/zjx/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="194" column="0" lean-forward="true" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-              <folding>
-                <element signature="e#3002#3003#0" expanded="true" />
-                <element signature="e#3064#3065#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1068,20 +1015,13 @@
         <option value="JUnit" />
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>登录</find>
-      <find>登</find>
-      <find>sendMsg</find>
-      <find>send</find>
-      <find>admin</find>
-      <find>append</find>
-      <find>nick</find>
       <find>添加</find>
       <find>file</find>
       <find>add_goods.do</find>
@@ -1089,7 +1029,6 @@
       <find>login</find>
       <find>href</find>
       <find>query_flag</find>
-      <find>entry</find>
       <find>search_butt</find>
       <find>login.do</find>
       <find>commentsbuyer</find>
@@ -1105,6 +1044,14 @@
       <find>111</find>
       <find>input</find>
       <find>c:if</find>
+      <find>search</find>
+      <find>net.sf.json</find>
+      <find>entry</find>
+      <find>吴</find>
+      <find>first</find>
+      <find>王</find>
+      <find>express</find>
+      <find>session</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Bruce Lee\Desktop\JX\JX2\JX\src\main\webapp\css</dir>
@@ -1121,13 +1068,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/SearchService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/ISearchService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/list.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/SearchController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/SearchService.java" />
-        <option value="$PROJECT_DIR$/target/zjx/list.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/CookiesController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/admin_chat.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/server_chat.jsp" />
@@ -1139,11 +1079,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/Products.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/model/Category.java" />
         <option value="$PROJECT_DIR$/target/zjx/user_center.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/top_bottom.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/show.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/order.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/cart.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/list.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/ICommentsService.java" />
@@ -1156,15 +1094,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java" />
         <option value="$PROJECT_DIR$/target/zjx/admin/products.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsManager.java" />
-        <option value="$PROJECT_DIR$/target/zjx/admin/add_product.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IGoodsPhotoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/IAdminService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IGoodsMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/AdminService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/products.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/admin/add_product.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/index/Index_Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/neusoft/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/user_center.jsp" />
@@ -1172,6 +1107,18 @@
         <option value="$PROJECT_DIR$/src/main/webapp/js/user_center.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
         <option value="$PROJECT_DIR$/target/zjx/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/top_bottom.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/PromotionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/IPromotionMapper.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/IAddressService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/AddressService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/order.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/model/extraModel/OrderWithGood_Goodpicture.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/add_product.jsp" />
+        <option value="$PROJECT_DIR$/target/zjx/admin/add_product.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java" />
       </list>
     </option>
   </component>
@@ -1253,6 +1200,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="JX" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1286,6 +1243,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="zjx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zjx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1359,7 +1338,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1472,6 +1451,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="neusoft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extraModel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1741,11 +1754,11 @@
       <recent name="com.neusoft.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Bruce Lee\Desktop\JX\JX2\JX\src\main\webapp\lib" />
       <recent name="C:\Users\Bruce Lee\Desktop\JX\JX2\JX\src\main\java\com\neusoft\mapper" />
-      <recent name="C:\Users\Bruce Lee\Desktop\JX\JX2\JX\src\main\java\com\neusoft\model" />
-      <recent name="C:\Users\Bruce Lee\Desktop\JX\JX2\JX\src\main\java\com\neusoft\service\impl" />
       <recent name="C:\Users\Bruce Lee\Desktop\JX\JX2\JX\src\main\java\com\neusoft\service" />
-      <recent name="C:\Users\Bruce Lee\Desktop\JX\JX2\JX\src\main\java\com\neusoft\controller\user" />
+      <recent name="C:\Users\Bruce Lee\Desktop\JX\JX2\JX\src\main\java\com\neusoft\service\impl" />
+      <recent name="C:\Users\Bruce Lee\Desktop\JX\JX2\JX\src\main\webapp\admin" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.neusoft.controller.user" />
@@ -2458,7 +2471,7 @@
       <workItem from="1501079237441" duration="1773000" />
       <workItem from="1501116156984" duration="28251000" />
       <workItem from="1501167881515" duration="2381000" />
-      <workItem from="1501202276246" duration="15826000" />
+      <workItem from="1501202276246" duration="29824000" />
     </task>
     <servers />
   </component>
@@ -2495,10 +2508,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222821000" />
+    <option name="totallyTimeSpent" value="236819000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2515,7 +2528,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2689769" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34488449" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33828384" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2523,10 +2536,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3580858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.169967" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27818447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2877013" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2592,7 +2605,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/AdminController.java</url>
-          <line>29</line>
+          <line>32</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -2640,7 +2653,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java</url>
-          <line>77</line>
+          <line>78</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
@@ -2664,13 +2677,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java</url>
-          <line>95</line>
+          <line>96</line>
           <properties />
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java</url>
-          <line>117</line>
+          <line>122</line>
           <properties />
           <option name="timeStamp" value="114" />
         </line-breakpoint>
@@ -2682,7 +2695,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java</url>
-          <line>116</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="116" />
         </line-breakpoint>
@@ -2728,8 +2741,38 @@
           <properties />
           <option name="timeStamp" value="143" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java</url>
+          <line>218</line>
+          <properties />
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java</url>
+          <line>219</line>
+          <properties />
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java</url>
+          <line>193</line>
+          <properties />
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java</url>
+          <line>194</line>
+          <properties />
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java</url>
+          <line>236</line>
+          <properties />
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="144" />
+      <option name="time" value="153" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2738,269 +2781,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/model/extraModel/OrderWithGood_Goodpicture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/testFileUpload.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/zjx/admin/admin_reg_page.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/zjx/admin/add_product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#p#0;n#div#0;n#span#3;n#div#0;n#li#3;n#ul#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1501206247907" expanded="true" signature="7514:7520" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.4.RELEASE/spring-web-4.2.4.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="229" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/zjx/good_picture/a6ea86d9c17a4a7ebdf2d4a1008ef0e2LA_LA_LAND.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/model/Goodsphoto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/model/Goods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/IGoodsManagerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/IAdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IGoodsPhotoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="8" column="48" lean-forward="false" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IGoodsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="51" column="48" lean-forward="false" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="82" column="33" lean-forward="false" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
-          <folding>
-            <element signature="e#2464#2465#0" expanded="true" />
-            <element signature="e#2531#2532#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IAdminMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/server_chat.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Tools/JAVA/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="3166" column="34" lean-forward="true" selection-start-line="3166" selection-start-column="34" selection-end-line="3166" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/SearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/comments_manager.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="58" column="32" lean-forward="false" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="35" column="31" lean-forward="false" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/ICommentsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/SearchService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="51" lean-forward="false" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IShopcartMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/goods_manager.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/products.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="28" column="68" lean-forward="false" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
-          <folding>
-            <marker date="1501211257445" expanded="true" signature="6852:6858" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/add_product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="78" column="64" lean-forward="false" selection-start-line="78" selection-start-column="64" selection-end-line="78" selection-end-column="64" />
-          <folding>
-            <marker date="1501202332948" expanded="true" signature="7513:7519" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/zjx/admin/products.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="35" column="14" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="35" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.2.4.RELEASE/spring-webmvc-4.2.4.RELEASE.jar!/org/springframework/web/servlet/ModelAndView.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.2.4.RELEASE/spring-beans-4.2.4.RELEASE.jar!/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="316" column="32" lean-forward="false" selection-start-line="316" selection-start-column="32" selection-end-line="316" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.2.4.RELEASE/spring-beans-4.2.4.RELEASE.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -3012,26 +2792,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="115" column="24" lean-forward="false" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/ShowIndex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/index/Index_Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="51" column="11" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -3062,42 +2826,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/PIE/PIE_IE9.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/model/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IAddressMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -3113,19 +2845,11 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
-          <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+          <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
           <folding>
-            <element signature="e#3002#3003#0" expanded="true" />
-            <element signature="e#3064#3065#0" expanded="true" />
+            <element signature="e#3002#3003#0" expanded="false" />
+            <element signature="e#3064#3065#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3141,23 +2865,428 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding />
+          <folding>
+            <marker date="1501222494075" expanded="true" signature="46:408" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+          <caret line="24" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/target/zjx/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="194" column="0" lean-forward="true" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+        <state relative-caret-position="286">
+          <caret line="125" column="30" lean-forward="false" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="327" column="11" lean-forward="false" selection-start-line="327" selection-start-column="11" selection-end-line="329" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/top_bottom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="66" column="32" lean-forward="false" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/PromotionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/IPromotionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/IPromotionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/PromotionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IPromotionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1289">
+          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/CommentsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/ShopCartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-364">
+          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/IAddressService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/AddressService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#631#632#0" expanded="false" />
+            <element signature="e#697#698#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IAdminMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/mapper/IAddressMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/order.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="184" column="24" lean-forward="false" selection-start-line="184" selection-start-column="24" selection-end-line="184" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/model/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-397">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/model/extraModel/Good_with_photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/model/extraModel/CommentsWithUserName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/model/extraModel/OrderWithGood_Goodpicture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Tools/JAVA/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#124311#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#4677#4678#0" expanded="false" />
+            <element signature="e#4714#4715#0" expanded="false" />
+            <element signature="e#5687#5688#0" expanded="false" />
+            <element signature="e#5750#5751#0" expanded="false" />
+            <element signature="e#13098#13099#0" expanded="false" />
+            <element signature="e#13150#13151#0" expanded="false" />
+            <element signature="e#18781#18782#0" expanded="false" />
+            <element signature="e#18834#18835#0" expanded="false" />
+            <element signature="e#20727#20728#0" expanded="false" />
+            <element signature="e#20771#20772#0" expanded="false" />
+            <element signature="e#21961#21962#0" expanded="false" />
+            <element signature="e#22041#22042#0" expanded="false" />
+            <element signature="e#22786#22787#0" expanded="false" />
+            <element signature="e#22821#22822#0" expanded="false" />
+            <element signature="e#23072#23073#0" expanded="false" />
+            <element signature="e#23112#23113#0" expanded="false" />
+            <element signature="e#29462#29463#0" expanded="false" />
+            <element signature="e#29533#29534#0" expanded="false" />
+            <element signature="e#36393#36394#0" expanded="false" />
+            <element signature="e#36459#36460#0" expanded="false" />
+            <element signature="e#38369#38370#0" expanded="false" />
+            <element signature="e#38423#38424#0" expanded="false" />
+            <element signature="e#47538#47539#0" expanded="false" />
+            <element signature="e#47602#47603#0" expanded="false" />
+            <element signature="e#55800#55801#0" expanded="false" />
+            <element signature="e#55844#55845#0" expanded="false" />
+            <element signature="e#56437#56438#0" expanded="false" />
+            <element signature="e#56514#56515#0" expanded="false" />
+            <element signature="e#58481#58482#0" expanded="false" />
+            <element signature="e#58518#58519#0" expanded="false" />
+            <element signature="e#62860#62861#0" expanded="false" />
+            <element signature="e#62916#62917#0" expanded="false" />
+            <element signature="e#66457#66458#0" expanded="false" />
+            <element signature="e#66495#66496#0" expanded="false" />
+            <element signature="e#70749#70750#0" expanded="false" />
+            <element signature="e#70802#70803#0" expanded="false" />
+            <element signature="e#78240#78241#0" expanded="false" />
+            <element signature="e#78299#78300#0" expanded="false" />
+            <element signature="e#82616#82617#0" expanded="false" />
+            <element signature="e#82667#82668#0" expanded="false" />
+            <element signature="e#82971#82972#0" expanded="false" />
+            <element signature="e#83020#83021#0" expanded="false" />
+            <element signature="e#94598#94599#0" expanded="false" />
+            <element signature="e#94636#94637#0" expanded="false" />
+            <element signature="e#104675#104676#0" expanded="false" />
+            <element signature="e#104730#104731#0" expanded="false" />
+            <element signature="e#111196#111197#0" expanded="false" />
+            <element signature="e#111251#111252#0" expanded="false" />
+            <element signature="e#113343#113344#0" expanded="false" />
+            <element signature="e#113370#113371#0" expanded="false" />
+            <element signature="e#117893#117894#0" expanded="false" />
+            <element signature="e#117955#117956#0" expanded="false" />
+            <element signature="e#118405#118406#0" expanded="false" />
+            <element signature="e#118444#118445#0" expanded="false" />
+            <element signature="e#119456#119457#0" expanded="false" />
+            <element signature="e#119510#119511#0" expanded="false" />
+            <element signature="e#120159#120160#0" expanded="false" />
+            <element signature="e#120213#120214#0" expanded="false" />
+            <element signature="e#120482#120483#0" expanded="false" />
+            <element signature="e#120521#120522#0" expanded="false" />
+            <element signature="e#120889#120890#0" expanded="false" />
+            <element signature="e#120932#120933#0" expanded="false" />
+            <element signature="e#121727#121728#0" expanded="false" />
+            <element signature="e#121769#121770#0" expanded="false" />
+            <element signature="e#122184#122185#0" expanded="false" />
+            <element signature="e#122223#122224#0" expanded="false" />
+            <element signature="e#122645#122646#0" expanded="false" />
+            <element signature="e#122685#122686#0" expanded="false" />
+            <element signature="e#123115#123116#0" expanded="false" />
+            <element signature="e#123156#123157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.4.RELEASE/spring-web-4.2.4.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.2.4.RELEASE/spring-webmvc-4.2.4.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="466" column="19" lean-forward="true" selection-start-line="466" selection-start-column="19" selection-end-line="466" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/impl/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="47" column="66" lean-forward="false" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/index/Index_Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="111" column="32" lean-forward="true" selection-start-line="86" selection-start-column="20" selection-end-line="111" selection-end-column="32" />
+          <folding>
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/add_product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1478575438000" expanded="true" signature="7718:7724" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin_promotion.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/add_product.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="113" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+          <folding>
+            <marker date="1501237265385" expanded="true" signature="7906:7912" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/zjx/admin/add_product.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="199" column="8" lean-forward="false" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="8" />
+          <folding>
+            <marker date="1501237282849" expanded="true" signature="8158:8164" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/CookiesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-942">
+          <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/SearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/user/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="61" column="43" lean-forward="false" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/service/IOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/admin/GoodsManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/neusoft/controller/LogicController/BuyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="159" column="40" lean-forward="true" selection-start-line="159" selection-start-column="40" selection-end-line="159" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

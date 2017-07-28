@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Bruce Lee
@@ -106,6 +107,21 @@
     </div>
     </form>
 </div>
+
+
+<c:forEach var="parent_category" items="${category_map}">
+
+    <h1>${parent_category.key.categoryid}${parent_category.key.categoryname}</h1>
+    <c:forEach items="${parent_category.value}" var="son_category">
+        <h4>${son_category.categoryid}${son_category.categoryname}</h4>
+    </c:forEach>
+    </br>
+</c:forEach>
+
+
+
+
+
 </body>
 </html>
 <!--复文本编辑框-->

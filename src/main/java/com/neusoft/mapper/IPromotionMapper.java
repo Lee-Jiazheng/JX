@@ -3,7 +3,12 @@ package com.neusoft.mapper;
 import com.neusoft.model.Promotion;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 public interface IPromotionMapper {
+    @Select("select * from promotion")
+    public List<Promotion> getAllPromotion();
+
     @Select("select * from promotion where promotionId= #{promotionId}")
     public Promotion getPromotion(@Param("promotionId") int promotionId);
 

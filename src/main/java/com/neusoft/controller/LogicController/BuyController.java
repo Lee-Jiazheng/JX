@@ -5,25 +5,24 @@ import com.neusoft.model.*;
 import com.neusoft.model.extraModel.CommentsWithUserName;
 import com.neusoft.model.extraModel.Good_with_photo;
 import com.neusoft.model.extraModel.OrderWithGood_Goodpicture;
-import com.neusoft.service.IAdminService;
-import com.neusoft.service.ICommentsService;
-import com.neusoft.service.IOrderService;
-import com.neusoft.service.IShopCartService;
+import com.neusoft.service.*;
 import com.sun.javafx.sg.prism.NGShape;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.awt.event.MouseListener;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Bruce Lee on 2017/7/23.
@@ -39,6 +38,8 @@ public class BuyController {
     private IOrderService orderService;
     @Value("#{shopCartService}")
     private IShopCartService shopCartService;
+    @Value("#{addressService}")
+    private IAddressService addressService;
 
 
     //转到之后获取商品详情页面
@@ -90,7 +91,7 @@ public class BuyController {
     }
 
 
-    //进入订单页面
+    //点击直接购买后，进入订单页面
     @RequestMapping("entry_order.do")
     public ModelAndView entry_order(HttpServletRequest request) throws Exception{
         int shopID = Integer.parseInt(request.getParameter("shopID"));
@@ -113,8 +114,12 @@ public class BuyController {
         }else {
             mav.addObject("express_price", 5.00); order_price += 5;
         }
+        User user = (User)request.getSession().getAttribute("user");
+        List<Address> addresses = addressService.getAllAddressByUserId(user.getUserid());
+
         mav.addObject("total_price", order_price);
         mav.addObject("current_orders", orders);
+        mav.addObject("addresses", addresses);
         return mav;
     }
 
@@ -142,10 +147,16 @@ public class BuyController {
 
     }
 
-    //点击结算后应该把选中物品加入Order数据库后，
+    //点击支付后应该把选中物品加入Order数据库后，
+    @RequestMapping("close_acount.do")
     public String close_count(HttpServletRequest request){
-
-
+        List<OrderWithGood_Goodpicture> orders= (List<OrderWithGood_Goodpicture>)request.getSession().getAttribute("current_orders");
+        for(OrderWithGood_Goodpicture origin_order : orders){
+            Order order = new Order();
+            order.setOrderbuyer(((User)));
+            order.setOrdertime(new Date());
+            order.setOrderprice(origin_order.getOrderprice());
+        }
         return "forward:entry_order.do";
     }
 
@@ -169,9 +180,85 @@ public class BuyController {
         return mav;
     }
 
+    class TEMP{
+        int Num;
+        int ID;
+    }
+
+
+
+    //处理传入的选中购物车数据
     @RequestMapping("process_shop_cart.do")
-    public ModelAndView process_shop_cart(String shop_cart_json){
-        //JSONObject jb = JSONObject  .fromObject(shop_cart_json);
-        return null;
+    public ModelAndView process_shop_cart(String shop_cart_json, HttpServletRequest request) throws JSONException {
+
+        User user = (User)request.getSession().getAttribute("user");
+        List<Address> addresses = addressService.getAllAddressByUserId(user.getUserid());
+        ModelAndView mav = new ModelAndView("order");
+        mav.addObject("addresses", addresses);
+
+        List<OrderWithGood_Goodpicture> orders = getJson(shop_cart_json);
+
+        double total_price = 0;
+        for(OrderWithGood_Goodpicture order : orders){
+            total_price += order.getOrderprice();
+        }
+        if(total_price >= 88){
+            mav.addObject("express_price", 0.00);
+        }else{
+            mav.addObject("express_price", 5.00); total_price += 5;
+        }
+        mav.addObject("total_price", total_price);
+        request.getSession().setAttribute("current_orders", orders);
+
+
+
+        return mav;
+
+
+        /*
+        JSONArray jsonArray = JSONArray.fromObject(shop_cart_json);
+        for(int i = 0; i < jsonArray.size(); ++i){
+            JSONObject json = jsonArray.getJSONObject(i);
+            int Num = json.getInt("Num");
+            int ID = json.getInt("ID");
+        }*/
+    }
+
+
+
+    public List<OrderWithGood_Goodpicture> getJson(String src) throws JSONException {
+        String[] stringList = src.substring(2,src.length()-2).split("\\}, " +
+                "\\{");
+
+        for (int i = 0; i < stringList.length; ++i) {
+            stringList[i] = "{".concat(stringList[i]);
+            stringList[i] = stringList[i].concat("}");
+        }
+        List<OrderWithGood_Goodpicture> orders = new ArrayList<>();
+
+
+
+
+        for(int j = 0; j<stringList.length; ++j){
+            OrderWithGood_Goodpicture order = new OrderWithGood_Goodpicture();
+            JSONObject jsonObject = new JSONObject(stringList[j]);
+            int goodID = jsonObject.getInt("ID");
+            int count = jsonObject.getInt("Num");
+
+            Goods good = commentsService.getGoodsInfoByID(goodID);
+            double order_price = count * good.getGoodsprice();
+            Goodsphoto goodPhoto= adminService.getGoodPhotoByGoodId(good.getGoodsid());
+            if(goodPhoto == null){
+                order.setPhoto(null);
+            }else{
+                order.setPhoto(goodPhoto.getPhoto());
+            }
+            order.setGoodsname(good.getGoodsname());
+            order.setReilGoodPrice(good.getGoodsprice());
+            order.setAmount(count);
+            order.setOrderprice(order_price);
+            orders.add(order);
+        }
+        return orders;
     }
 }
