@@ -59,7 +59,11 @@
                     <td>促销化妆品</td>
                     <td>${good.goodsquantity}</td>
                     <td>${good.goodscreatetime}</td>
-                    <td><a href="javascript:ovid()" onclick="picture_edit(this," 123")"="" class="btn bg-deep-blue operation_btn">修改</a> <a href="javascript:ovid()" onclick="picture_del(this," 10001")"="" class="btn btn-danger operation_btn">删除</a> <a href="javascript:ovid()" onclick="picture_img(this,121)" class="btn bg-deep-blue operation_btn">图片</a></td></tr>
+                    <td><a href="javascript:ovid()" onclick="picture_edit(this," 123")"="" class="btn bg-deep-blue operation_btn">修改</a>
+                        <a href="javascript:ovid()" onclick="picture_del(this," 10001")"="" class="btn btn-danger operation_btn">删除</a>
+                        <a href="javascript:ovid()" onclick="picture_img(this,121)" class="btn bg-deep-blue operation_btn">图片</a>
+                        <a href="comment_manager.do?goodsid=${good.goodsid}" class="btn bg-deep-blue operation_btn">评价</a>
+                    </td></tr>
 
             </c:forEach>
 

@@ -248,7 +248,7 @@
 
                 <div class="product_button">
                     <a href="javascript:" onclick="buy()" class="large_button purchase_button">立即购买</a>
-                    <a href="add_good_to_shop_cart.do?goodId=${shopID}" class="large_button add_button">加入购物车</a>
+                    <a onclick="add_shopcart()" class="large_button add_button">加入购物车</a>
                     <a href="javascript:" class="small_button">
                         <i class="iconfont icon-shoucang"></i>
                         <p class="icon_description">收藏</p>
@@ -274,14 +274,10 @@
                     <div class="product_intro">
                         <ul class="intro_list">
 
-                            <li class="intro_item">
-                                <span class="intro_label">面料</span>
-                                <span class="intro_content">100%纯棉</span>
-                            </li>
 
                             <li class="intro_item">
                                 <span class="intro_label">产地</span>
-                                <span class="intro_content">山东省青岛市</span>
+                                <span class="intro_content">辽宁省沈阳市</span>
                             </li>
 
                             <li class="intro_item">
@@ -411,6 +407,14 @@
 <script src="js/all.js"></script>
 <script>
     var max_product_num=${goodInfo.goodsquantity};
+    function add_shopcart() {
+        uri = "add_to_shopcart.do?goodId=${shopID}";
+        $.get(uri, function (responsetext) {
+            if(responsetext == "ok"){
+                alert("加入购物车成功!");
+            }
+        });
+    }
 </script>
 <script src="js/show.js"></script>
 </body>

@@ -277,7 +277,7 @@
                         <span class="sum_needed">￥${total_price}</span>
                     </div>
                     <div class="line">
-                        <button class="pay_button">付款</button>
+                        <button class="pay_button" onclick="close_acount()">付款</button>
                     </div>
                 </div>
 
@@ -381,10 +381,13 @@
     <div class="mask_widget"></div>
     <div class="switch_widget">
         <i class="iconfont icon-shanchu1 close_form"></i>
+
         <div class="switch_title">选择地址</div>
         <div class="switch_list">
 
             <c:forEach items="${addresses}" var="address">
+
+                <input type="hidden" id="addressid" value="${address.addressid}"/>
                 <div class="switch_item active">
                     <p class="address_line select_name">
                         <label>收 货 人：</label>
@@ -416,6 +419,7 @@
 <script src="js/top_bottom.js"></script>
 <script src="js/all.js"></script>
 <script>
+    var current_address_id = 0;
     $('.new_address').click(function(){
         $('.address_form_title').text('新建地址');
         $('.edit_widgetcontainer').show();
@@ -455,10 +459,13 @@
         $('#show_contact').html($(".switch_list .active .select_contact .text").html());
         $('#show_address').html($(".switch_list .active .select_address .text").html());
         $('.switch_widgetcontainer').hide();
+
     });
 
-    function submit_order(){
-
+    function close_acount(){
+        //uri = "close_acount.do?addressid=" + $('#addressid').val();
+        uri = "close_acount.do?addressid=3";
+        location.href = uri;
     }
 </script>
 </body>

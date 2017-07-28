@@ -12,8 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 
 /**
@@ -37,9 +39,23 @@ public class ShopCartService implements IShopCartService {
         Cookie[] cookies = request.getCookies();
         List<Integer> goodIds = new ArrayList<>();
         for(Cookie cookie : cookies){
-            goodIds.add(Integer.parseInt(cookie.getValue()));
+            try{
+                goodIds.add(Integer.parseInt(cookie.getValue()));
+            }catch (Exception ex){
+                System.out.println("cookie异常");
+            }
         }
         return goodIds;
+    }
+
+    @Override
+    public void addShopCartToCookie(HttpServletRequest request, HttpServletResponse response, int goodId) {
+
+        String key = UUID.randomUUID().toString().replace("-", "");
+        String value = String.valueOf(goodId);
+        Cookie cookie = new Cookie(key, value);
+        cookie.setMaxAge(24*60*60);
+        response.addCookie(cookie);
     }
 
     @Override

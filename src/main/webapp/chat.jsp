@@ -19,8 +19,8 @@
     <script type="text/javascript">
         var client;
         var current_chat_client;
-        var avatar = ${user.userphoto};
-        var clientID = ${user.nickname};   //session获取登录用户的用户编号
+        var avatar = '${user.userphoto}';
+        var clientID = '${user.nickname}';   //session获取登录用户的用户编号
         var all_users = new Array();
         var message_record = [[]];
         var all_users = [];
@@ -115,7 +115,7 @@
         });
 
         function add_user(user_name) {
-            var htmlData = ' <li class="fn-clear" onclick="change_current_user(\'' + user_name + '\')"><span><img src="images/hetu.jpg" width="30" height="30"  alt=""/></span><em>'
+            var htmlData = ' <li class="fn-clear" onclick="change_current_user(\'' + user_name + '\')"><span><img src="avatar/${user.userphoto}" width="30" height="30"  alt=""/></span><em>'
                 + user_name + '</em><small class="online" title="在线"></small></li>';
 
             $("#all_user_check").append(htmlData);
@@ -164,7 +164,7 @@
 
 <div class="chatbox">
     <div class="chat_top fn-clear">
-        <div class="logo"><img src="images/logo.png" width="190" height="60"  alt=""/></div>
+        <div class="logo"><img src="images/logo_word.png" width="190" height="60"  alt=""/></div>
         <div class="uinfo fn-clear">
             <div class="uface"><img src="images/hetu.jpg" width="40" height="40"  alt=""/></div>
             <div class="uname">

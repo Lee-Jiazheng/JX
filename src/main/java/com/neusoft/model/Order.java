@@ -39,6 +39,16 @@ public class Order  implements Serializable {
   @ExcelVOAttribute(name = "ordercompany", column = "H")
   private String ordercompany;
 
+  public int getAddressid() {
+    return addressid;
+  }
+
+  public void setAddressid(int addressid) {
+    this.addressid = addressid;
+  }
+
+  private int addressid;
+
   public int getGoodcount() {
     return goodcount;
   }

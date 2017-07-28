@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -118,12 +119,30 @@ public class BuyController {
         List<Address> addresses = addressService.getAllAddressByUserId(user.getUserid());
 
         mav.addObject("total_price", order_price);
-        mav.addObject("current_orders", orders);
         mav.addObject("addresses", addresses);
+        request.getSession().setAttribute("current_orders", orders);
         return mav;
     }
 
 
+    //加入购物车的ajax
+    @RequestMapping("add_to_shopcart.do")
+    public void add_to_shopcart(int goodId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        User user = (User)request.getSession().getAttribute("user");
+        if(user == null){
+            //未登录放入session中
+            shopCartService.addShopCartToCookie(request, response, goodId);
+        }else{
+            Shopcart shopcart = new Shopcart();
+            shopcart.setShopcartbuyer(user.getUserid());
+            shopcart.setShopcartgoods(goodId);
+            shopcart.setShopcarttime(new Date());
+            shopCartService.addShopcart(shopcart);
+        }
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("utf-8");
+        response.getWriter().write("ok");
+    }
 
     //进入购物车页面
     @RequestMapping("entry_shopcart.do")
@@ -138,8 +157,22 @@ public class BuyController {
                 goodIds.add(integer);
             }
         }
+
+        List<Good_with_photo> goods = new ArrayList<>();
+        for(int goodId: goodIds){
+            Goods temp_good = commentsService.getGoodsInfoByID(goodId);
+            Good_with_photo good = new Good_with_photo();
+            good.setPhoto(adminService.getGoodPhotoByGoodId(goodId));
+            good.setGoodsprice(temp_good.getGoodsprice());
+            good.setGoodsname(temp_good.getGoodsname());
+            good.setGoodsid(goodId);
+            good.setGoodsquantity(temp_good.getGoodsquantity());
+            goods.add(good);
+        }
+
         //goodIds存放的是该用户的全部购物车数据，
-        return null;
+        request.getSession().setAttribute("shop_cart_goods", goods);
+        return new ModelAndView("cart");
     }
 
     @RequestMapping("evaluate.do")
@@ -149,15 +182,18 @@ public class BuyController {
 
     //点击支付后应该把选中物品加入Order数据库后，
     @RequestMapping("close_acount.do")
-    public String close_count(HttpServletRequest request){
+    public ModelAndView close_count(HttpServletRequest request, int addressid){
         List<OrderWithGood_Goodpicture> orders= (List<OrderWithGood_Goodpicture>)request.getSession().getAttribute("current_orders");
         for(OrderWithGood_Goodpicture origin_order : orders){
             Order order = new Order();
-            order.setOrderbuyer(((User)));
+            order.setOrderbuyer(((User)request.getSession().getAttribute("user")).getUserid());
             order.setOrdertime(new Date());
             order.setOrderprice(origin_order.getOrderprice());
+            order.setOrderfinished(false);
+            order.setAddressid(addressid);
+            orderService.addOrder(order);
         }
-        return "forward:entry_order.do";
+        return new ModelAndView("pay");
     }
 
 
@@ -179,12 +215,6 @@ public class BuyController {
         mav.addObject("result_goods", good_with_photos);
         return mav;
     }
-
-    class TEMP{
-        int Num;
-        int ID;
-    }
-
 
 
     //处理传入的选中购物车数据
