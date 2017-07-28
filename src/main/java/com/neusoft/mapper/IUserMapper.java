@@ -36,7 +36,7 @@ public interface IUserMapper {
     @Update("update user set userphoto=#{userphoto} where nickname = #{nickname}")
     void updateAvatar(User user);
 
-    @Select("select nickname from user, comments where userid=commentsbuyer and userid=#{buyer_id}")
+    @Select("select distinct nickname from user, comments where userid=commentsbuyer and userid=#{buyer_id}")
     String getUserNameByCommentsBuyerID(int buyer_id);
 
 }

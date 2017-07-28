@@ -10,34 +10,34 @@ public interface ICommentsMapper {
     三种获取评论的方式：评论id，评论者id，被评论的商品id
      */
 
-    @Select("select * from comments where commentsBuyer= #{commentsBuyer}")
-    public List<Comments> getCommentsByUser(@Param("commentsBuyer") int
-                                              commentsBuyer);
+    @Select("select * from comments where commentsBuyer= #{commentsbuyer}")
+    public List<Comments> getCommentsByUser(@Param("commentsbuyer") int
+                                                        commentsbuyer);
 
 
-    @Select("select * from Comments where commentsgoods= #{commentsGoods}")
-    public List<Comments> getCommentsByGoods(@Param("commentsGoods") int
-                                               commentsGoods);
+    @Select("select * from Comments where commentsgoods= #{commentsgoods}")
+    public List<Comments> getCommentsByGoods(@Param("commentsgoods") int
+                                                         commentsgoods);
 
-    @Insert("insert into Comments(commentsId,commentsBuyer,commentsGoods," +
-            "commentsContent,commentsTime)" +
-            "values(#{commentsId},#{commentsBuyer},#{commentsGoods}," +
-            "#{commentsContent},#{commentsTime})")
+    @Insert("insert into Comments(commentsid,commentsbuyer,commentsgoods," +
+            "commentscontent,commentstime)" +
+            "values(#{commentsid},#{commentsbuyer},#{commentsgoods}," +
+            "#{commentscontent},#{commentstime})")
     public void addComment(Comments comments);
 
-    @Update("update comments set commentsContent=#{commentsContent} where " +
-            "commentsId=#{commentsId}")
-    public void updateComment(@Param("commentsContent") String commentsContent,
-                              @Param("commentsId") int commentsId);
+    @Update("update comments set commentscontent=#{commentscontent} where " +
+            "commentsId=#{commentsid}")
+    public void updateComment(@Param("commentsContent") String commentscontent,
+                              @Param("commentsid") int commentsId);
 
-    @Delete("delete from comments where commentsId=#{commentsId}")
-    public int delComment(@Param("commentsId") int commentsId);
+    @Delete("delete from comments where commentsId=#{commentsid}")
+    public int delComment(@Param("commentsid") int commentsid);
 
     /*
     三种获取评论的方式：评论id，评论者id，被评论的商品id
      */
-    @Select("select * from comments where commentsId= #{commentsId}")
-    public Comments getCommentsById(@Param("commentsId") int commentsId);
+    @Select("select * from comments where commentsId= #{commentsid}")
+    public Comments getCommentsById(@Param("commentsid") int commentsid);
 
 
 

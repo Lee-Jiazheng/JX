@@ -50,7 +50,7 @@ public class CommentsService implements ICommentsService{
     @Override
     public List<CommentsWithUserName> getCommentsByGoodsId(int goodsId) {
         List<Comments> commentsList = commentsMapper.getCommentsByGoods(goodsId);
-        List<CommentsWithUserName> commentsWithUserNames = new ArrayList<CommentsWithUserName>();;
+        List<CommentsWithUserName> commentsWithUserNames = new ArrayList<CommentsWithUserName>();
         for(Comments comment : commentsList){
             CommentsWithUserName commentsWithUserName = new CommentsWithUserName();
             commentsWithUserName.userName = userMapper.getUserNameByCommentsBuyerID(comment.getCommentsbuyer());
@@ -82,4 +82,8 @@ public class CommentsService implements ICommentsService{
         return goodsMapper.getGoodsByCategory(cate_id);
     }
 
+    @Override
+    public void addComments(Comments comments) {
+        commentsMapper.addComment(comments);
+    }
 }

@@ -420,7 +420,7 @@
                                         <div class="good_total">
                                             <a href="javascript:" class="good_total_link">订单详情</a>
                                             <a href="javascript:" class="good_total_link">查看物流</a>
-                                            <a href="javascript:" class="good_total_link">评价</a>
+                                            <a href="entry_comment.do?orderID=${order.orderid}" class="good_total_link">评价</a>
                                         </div>
                                     </td>
 

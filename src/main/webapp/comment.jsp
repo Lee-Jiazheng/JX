@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Bruce Lee
@@ -24,8 +25,8 @@
             <div class="right">
                 <c:if test="${empty user}">
                     <div class="before_login">
-                        <a href="javascript:">登录</a>
-                        <a href="javascript:">注册</a>
+                        <a href="login.jsp">登录</a>
+                        <a href="register.jsp">注册</a>
                     </div>
                 </c:if>
 
@@ -123,8 +124,8 @@
                 <div class="user_info">
                     <c:if test="${empty user}">
                         <div class="before_login_s">
-                            <a href="login.do">登录</a>
-                            <a href="register.do">注册</a>
+                            <a href="login.jsp">登录</a>
+                            <a href="register.jsp">注册</a>
                         </div>
                     </c:if>
                     <c:if test="${!empty user}">
@@ -169,100 +170,63 @@
             <label>评价</label>
         </div>
 
-        <div class="comment_item">
-            <div class="comment_title">
-                <div class="comment_title_left">
-                    商品信息
-                </div>
-                <div class="comment_title_right">
-                    评价
-                </div>
-            </div>
 
-            <div class="comment_info">
-                <div class="comment_info_left">
-                    <div class="item_image">
-                        <a href="javascript:">
-                            <img src="images/defaultblack.png">
-                        </a>
+            <form action="add_comment.do" method="post">
+                <input type="hidden" value="${order_good.goodsid}" name="commentsgoods">
+                <div class="comment_item">
+                    <div class="comment_title">
+                        <div class="comment_title_left">
+                            商品信息
+                        </div>
+                        <div class="comment_title_right">
+                            评价
+                        </div>
                     </div>
-                    <div class="item_name">
-                        <a href="javascipt:">测试商品</a>
+
+                    <div class="comment_info">
+                        <div class="comment_info_left">
+                            <div class="item_image">
+                                <a href="javascript:">
+                                    <c:if test="${empty order_good.photo.photo}">
+                                        <img src="images/defaultblue.png">
+                                    </c:if>
+                                    <c:if test="${!empty order_good.photo.photo}">
+                                        <img src="good_picture/${order_good.photo.photo}">
+                                    </c:if>
+                                </a>
+                            </div>
+                            <div class="item_name">
+                                <a href="shop_content.do?shopID=${order_good.goodsid}">${order_good.goodsname}</a>
+                            </div>
+                        </div>
+                        <div class="comment_info_right">
+                            <a href="javascipt:" class="comment_state">待评价</a>
+                        </div>
                     </div>
-                </div>
-                <div class="comment_info_right">
-                    <a href="javascipt:" class="comment_state">待评价</a>
-                </div>
-            </div>
-            <div class="comment_main">
-                <div class="comment_star">
-                    <label>商品评分:</label>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <label class="comment_point">5</label>
-                    <label>分</label>
-                </div>
-                <div class="comment_text">
-                    <label>评价:</label>
-                    <textarea cols="68" rows="8" class="comment_content"></textarea>
+                    <div class="comment_main">
+                        <div class="comment_star">
+                            <label>商品评分:</label>
+                            <i class="iconfont icon-shoucang icon_normal icon_red"></i>
+                            <i class="iconfont icon-shoucang icon_normal icon_red"></i>
+                            <i class="iconfont icon-shoucang icon_normal icon_red"></i>
+                            <i class="iconfont icon-shoucang icon_normal icon_red"></i>
+                            <i class="iconfont icon-shoucang icon_normal icon_red"></i>
+                            <label class="comment_point">5</label>
+                            <label>分</label>
+                        </div>
+                        <div class="comment_text">
+                            <label>评价:</label>
+                            <textarea cols="68" rows="8" class="comment_content"
+                                      name="commentscontent"></textarea>
 
-                </div>
-                <div class="comment_button">
-                    <a href="javascript:" class="publish_comment" alt="11111">发表评论</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="comment_item">
-            <div class="comment_title">
-                <div class="comment_title_left">
-                    商品信息
-                </div>
-                <div class="comment_title_right">
-                    评价
-                </div>
-            </div>
-
-            <div class="comment_info">
-                <div class="comment_info_left">
-                    <div class="item_image">
-                        <a href="javascript:">
-                            <img src="images/defaultblack.png">
-                        </a>
-                    </div>
-                    <div class="item_name">
-                        <a href="javascipt:">测试商品</a>
+                        </div>
+                        <div class="comment_button">
+                            <input type="submit" class="publish_comment" >发表评论</input>
+                        </div>
                     </div>
                 </div>
-                <div class="comment_info_right">
-                    <a href="javascipt:" class="comment_state">待评价</a>
-                </div>
-            </div>
-            <div class="comment_main">
-                <div class="comment_star">
-                    <label>商品评分:</label>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <i class="iconfont icon-shoucang icon_normal icon_red"></i>
-                    <label class="comment_point">5</label>
-                    <label>分</label>
-                </div>
-                <div class="comment_text">
-                    <label>评价:</label>
-                    <textarea cols="68" rows="8" class="comment_content"></textarea>
 
-                </div>
-                <div class="comment_button">
-                    <a href="javascript:" class="publish_comment" alt="22222">发表评论</a>
-                </div>
-            </div>
-        </div>
+            </form>
     </div>
 </div>
 

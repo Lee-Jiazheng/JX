@@ -19,4 +19,6 @@ public interface ICommentsService {
     public int deleteCommentById(int commentId);
     public List<Goods> getAllGoods();
     public List<Goods> getAllGoodsByCategoryId(int cate_id);
+
+    public void addComments(Comments comments);
 }
