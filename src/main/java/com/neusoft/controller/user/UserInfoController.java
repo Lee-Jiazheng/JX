@@ -138,11 +138,17 @@ public class UserInfoController {
     }
 
     @RequestMapping("add_address.do")
-    public ModelAndView add_address(Address address, HttpServletRequest request){
-        address.setAddressownerid(((User)request.getSession().getAttribute("user")).getUserid());
-        address.setIsdefault(false);
-        userService.addAddress(address);
-        return new ModelAndView("user_center");
+    public String add_address(Address address,String state, int addressid,HttpServletRequest request){
+            address.setAddressownerid(((User)request.getSession().getAttribute("user")).getUserid());
+            address.setIsdefault(false);
+            userService.addAddress(address,state,addressid);
+        return "redirect:user_center.do?type=3";
+    }
+
+    @RequestMapping("del_address.do")
+    public String delAddress(int addressid){
+        userService.delAddress(addressid);
+        return  "redirect:user_center.do?type=3";
     }
 
 

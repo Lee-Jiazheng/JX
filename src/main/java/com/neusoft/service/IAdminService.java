@@ -19,4 +19,5 @@ public interface IAdminService {
 
     public Goodsphoto getGoodPhotoByGoodId(int goodId);
     public boolean verify_AdminUser(AdminUser adminUser);
+    public int getGoodsIdByGoodsName(String Goodsname);
 }

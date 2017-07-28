@@ -269,8 +269,8 @@
         </div>
     </div>
 
-
-    <div class="row" id="sort_row">
+    <%--
+        <div class="row" id="sort_row">
         <div class="index_item">
             <div class="index_item_title">食品酒水</div>
             <div class="index_item_more">
@@ -382,6 +382,10 @@
         </div>
     </div>
 
+
+
+    --%>
+
 </div>
 
 <div class="footer">
@@ -474,11 +478,11 @@
 
 
     $('.new_item_image').mouseover(function(){
-        $(this).animate({height:"254px"},100);
+        $(this).animate({height:"257px"},100);
     });
 
     $('.new_item_image').mouseout(function(){
-        $(this).animate({height:"250px"},100);
+        $(this).animate({height:"255px"},100);
     });
 
     $('.large_recommend').mouseover(function(){

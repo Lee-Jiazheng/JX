@@ -84,9 +84,19 @@ public class UserService implements IUserService{
     }
 
     @Override
-    public int addAddress(Address address) {
-        return addressMapper.addAddressByAddress(address);
+    public int addAddress(Address address,String state,int addressid) {
+        if(state.equals("new_address")){
+            return addressMapper.addAddressByAddress(address);
+        }
+        else if(state.equals("edit_address")){
+            address.setAddressid(addressid);
+            return addressMapper.editAddressByAddress(address);
+        }
+        return 0;
     }
 
-
+    @Override
+    public int delAddress(int addressid){
+        return addressMapper.delAddressById(addressid);
+    }
 }

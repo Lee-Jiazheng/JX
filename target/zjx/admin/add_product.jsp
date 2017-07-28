@@ -11,16 +11,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="css/shop.css" type="text/css" rel="stylesheet" />
-    <link href="css/Sellerber.css" type="text/css"  rel="stylesheet" />
-    <link href="css/bkg_ui.css" type="text/css"  rel="stylesheet" />
-    <link href="font/css/font-awesome.min.css"  rel="stylesheet" type="text/css" />
-    <script src="js/jquery-1.9.1.min.js" type="text/javascript" ></script>
-    <script src="js/Sellerber.js" type="text/javascript"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/jquery.dataTables.bootstrap.js"></script>
-    <script src="js/layer/layer.js" type="text/javascript"></script>
-    <script src="js/laydate/laydate.js" type="text/javascript"></script>
+    <link href="../css/shop.css" type="text/css" rel="stylesheet" />
+    <link href="../css/Sellerber.css" type="text/css" rel="stylesheet" />
+    <link href="../css/bkg_ui.css" type="text/css" rel="stylesheet" />
+    <link href="../font/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.9.1.min.js" type="text/javascript" ></script>
+    <script src="../js/Sellerber.js" type="text/javascript"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/jquery.dataTables.bootstrap.js"></script>
+    <script src="../js/layer/layer.js" type="text/javascript"></script>
+    <script src="../js/laydate/laydate.js" type="text/javascript"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js" type="text/javascript"></script>
     <script src="js/respond.min.js"></script>
@@ -31,7 +31,7 @@
 
 <body>
 <div class="margin">
-    <form action="add_goods.do" method="post" enctype="multipart/form-data">
+    <form action="/add_goods.do" method="post" enctype="multipart/form-data">
     <div class="add_style">
         <ul>
             <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="goodsname" type="text"  class="col-xs-6"/></div></li>

@@ -103,10 +103,11 @@
                 outline: 0;
                 width: 255px;
                 height: 255px;
-                display: block; }
+                display: block;
+                overflow: hidden; }
                 .index_new_content .index_new_list .new_list_main .new_list_content .new_item_collection .new_item .new_item_main .new_item_image_container .new_item_url .new_item_image {
-                  height: 250px;
-                  max-width: 250px;
+                  height: 255px;
+                  max-width: 255px;
                   display: block;
                   margin: 0 auto; }
             .index_new_content .index_new_list .new_list_main .new_list_content .new_item_collection .new_item .new_item_main .new_item_desription {

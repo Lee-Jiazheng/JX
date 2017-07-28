@@ -141,9 +141,10 @@ $red_font:#d7282d;
                                     width: 255px;
                                     height: 255px;
                                     display: block;
+                                    overflow: hidden;
                                     .new_item_image{
-                                        height: 250px;
-                                        max-width: 250px;
+                                        height: 255px;
+                                        max-width: 255px;
                                         display: block;
                                         margin: 0 auto;
                                     }

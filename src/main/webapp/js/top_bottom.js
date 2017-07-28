@@ -62,9 +62,3 @@
             $('body,html').animate({scrollTop:0},1200);
         });
 
-
-        function search_good(query_type) {
-            uri = 'search.do?query_goods_name='+$('#search_good_name').val()+'&query_type='+query_type+'&query_flag=1';
-            location.href=uri;
-        }
-

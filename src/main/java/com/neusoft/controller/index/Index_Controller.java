@@ -46,6 +46,7 @@ public class Index_Controller {
     @RequestMapping("/index.do")
     public ModelAndView showIndex(HttpServletRequest request){
 
+        System.out.println("1111");
         List<GoodsWithPhotos> newProductList=iShowIndex.getNewProduct();
         List<GoodsWithPhotos> popProductList=iShowIndex.getPopProduct();
         /**

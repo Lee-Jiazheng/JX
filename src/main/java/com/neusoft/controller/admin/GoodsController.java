@@ -1,16 +1,20 @@
 package com.neusoft.controller.admin;
 
 import com.neusoft.model.Goods;
+import com.neusoft.service.IAdminService;
 import com.neusoft.service.IGoodsManagerService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,11 +26,16 @@ public class GoodsController {
 
     @Value("#{goodsManagerService}")
     private IGoodsManagerService goodsManagerService;
+    @Value("#{adminService}")
+    private IAdminService adminService;
 
 
-    @RequestMapping("add_goods.do")
-    public ModelAndView add_goods(Goods goods, MultipartFile goods_image, HttpServletRequest request) {
-        ModelAndView mav = new ModelAndView("products");
+    @RequestMapping(value="add_goods.do", method = RequestMethod.POST)
+    public @ResponseBody
+    String add_goods(Goods goods, MultipartFile goods_image, HttpServletRequest request) {
+
+        goods.setGoodscreatetime(new Date());
+        goods.setGoodsupdatetime(new Date());
         String path = request.getSession().getServletContext().getRealPath("/good_picture");
         String fileName = UUID.randomUUID().toString().replace("-", "") + goods_image.getOriginalFilename();
         goodsManagerService.addGoods(goods);
@@ -34,11 +43,11 @@ public class GoodsController {
         try{
             //FileUtils.writeByteArrayToFile(new File(path, fileName), file.getBytes());
             goods_image.transferTo(new File(path+ '/' + fileName));
-            goodsManagerService.addGoodsPhoto (goodsManagerService.getAllGoods().size()+1, fileName);
+            goodsManagerService.addGoodsPhoto (adminService.getGoodsIdByGoodsName(goods.getGoodsname()), fileName);
         }catch (IOException e){
             System.out.println("文件上传失败");
         }
-        return mav;
+        return "redirect:/admin/good_manager.do";
     }
 
     @RequestMapping("add_goods_photo.do")

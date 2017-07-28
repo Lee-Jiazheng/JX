@@ -31,6 +31,8 @@ public class AdminService implements IAdminService{
     @Autowired
     private IAdminMapper adminMapper;
     @Autowired
+    private IGoodsMapper goodsMapper;
+    @Autowired
     private ICategoryMapper categoryMapper;
     @Autowired
     private IGoodsPhotoMapper goodsPhotoMapper;
@@ -74,5 +76,10 @@ public class AdminService implements IAdminService{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public int getGoodsIdByGoodsName(String Goodsname) {
+        return goodsMapper.getGoodsIdByGoodsName(Goodsname);
     }
 }

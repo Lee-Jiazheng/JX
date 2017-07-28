@@ -17,5 +17,6 @@ public interface IUserService {
     List<User> getChatUsers(User user);
     void alter_user_info(User user);
     List<Address> getAllAddresses(int userid);
-    int addAddress(Address address);
+    int addAddress(Address address, String state, int addressid);
+    int delAddress(int addressid);
 }

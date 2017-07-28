@@ -67,27 +67,12 @@ public class GoodsManager {
             good_with_photo.setPhoto(adminService.getGoodPhotoByGoodId(good.getGoodsid()));
             good_with_photos.add(good_with_photo);
         }
-        ModelAndView mav = new ModelAndView("/admin/goods_manager");
+        ModelAndView mav = new ModelAndView("/admin/products");
         mav.addObject("goods", good_with_photos);
         return mav;
     }
 
-    //����һ����Ʒ
-    @RequestMapping("add_good.do")
-    public ModelAndView add_good(Goods good){
-       /* Goods good = new Goods();
-        good.setGoodsname("����");
-        Date date = new Date();
 
-        good.setGoodsCreateTime(date);
-        good.setGoodsCategory(2);
-        good.setGoodsQuantity(100);
-        good.setGoodsPrice(99.9);
-        good.setGoodsStatus(0);
-        good.setGoodsUpdateTime(date);*/
-        adminService.add_good(good);
-        return null;
-    }
 
 
 

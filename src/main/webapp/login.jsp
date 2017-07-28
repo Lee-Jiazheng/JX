@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Bruce Lee
@@ -26,6 +27,7 @@
                     <li class="nav_li first active">
                         <a href="index.do">首页</a>
                     </li>
+                    
                     <c:forEach var="parent_category" items="${category_map}">
 
                         <li class="nav_li">
@@ -108,7 +110,7 @@
                             <i class="iconfont icon-wode icon_login"></i>
                         </div>
                         <div class="input_field">
-                            <input type="text" name="nickname">
+                            <input type="text" name="nickname" required="required">
                         </div>
                         <div class="clear">
                         </div>
@@ -118,7 +120,7 @@
                             <i class="iconfont icon-yanzhengma3 icon_login"></i>
                         </div>
                         <div class="input_field">
-                            <input type="password" name="password">
+                            <input type="password" name="password" required="required">
                         </div>
                         <div class="clear">
                         </div>

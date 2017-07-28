@@ -169,9 +169,7 @@
         <div class="user_left">
             <div class="user_detail">
                 <a class="user_icon" href="javascript:">
-                    <%--<c:if >--%>
                     <img src="avatar/${user.userphoto}">
-                    <%--</c:if>--%>
                 </a>
                 <p class="user_nickname">
                     ${user.nickname}
@@ -181,454 +179,474 @@
                 </a>
             </div>
             <div class="user_menu">
-                <a class="user_menu_link active" href="javascript:">
+                <a class="user_menu_link <c:if test="${param.type==1 || (empty param.type)}">active</c:if>" href="user_center.do?type=1">
                     个人信息
                 </a>
-                <a class="user_menu_link" href="javascript:">
+                <a class="user_menu_link <c:if test="${param.type==2}">active</c:if>" href="user_center.do?type=2">
                     订单管理
                 </a>
-                <a class="user_menu_link " href="javascript:">
+                <a class="user_menu_link <c:if test="${param.type==3}">active</c:if>" href="user_center.do?type=3">
                     地址管理
                 </a>
-                <a class="user_menu_link" href="javascript:">
-                    商品收藏
-                </a>
-                <a class="user_menu_link" href="javascript:">
+                <%--
+                    <a class="user_menu_link <c:if test="${param.type==4}">active</c:if>" href="user_center.do?type=4">
+                        商品收藏
+                    </a>
+                --%>
+                <a class="user_menu_link <c:if test="${param.type==5}">active</c:if>" href="user_center.do?type=5">
                     账号安全
                 </a>
             </div>
         </div>
         <div class="user_main">
 
-            <!--个人信息-->
-            <div id="user_info_manage">
-                <div class="user_info_tab">
+
+            <c:if test="${param.type==1 || (empty param.type)}">
+                <!--个人信息-->
+                <div id="user_info_manage">
+                    <div class="user_info_tab">
                                 <span class="info_tab_item active">
                                     基本资料
                                 </span>
+                    </div>
+                    <div class="user_info_content">
+                        <form class="user_info_form" action="alter_user_info.do">
+                            <div class="user_info_item">
+                                <label class="item_intro">
+                                    用户&nbsp;ID
+                                </label>
+                                <div class="item_detail">
+                                        ${user.userid}
+                                </div>
+                            </div>
+
+                            <div class="user_info_item">
+                                <label class="item_intro">
+                                    用户名
+                                </label>
+                                <div class="item_detail">
+                                        ${user.nickname}
+                                </div>
+                            </div>
+
+
+                            <div class="user_info_item">
+                                <label class="item_intro">
+                                    注册时间
+                                </label>
+                                <%
+                                    SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                    String date = ft.format(((User)request.getSession().getAttribute("user")).getCreatetime());%>
+                                <div class="item_detail">
+                                    <%=date%>
+                                </div>
+                            </div>
+
+                            <div class="user_info_item">
+                                <label class="item_intro">
+                                    真实姓名
+                                </label>
+                                <div class="item_detail">
+                                    <input type="text" value="${user.realname}" name="real_name">
+                                </div>
+                            </div>
+
+                            <div class="user_info_item">
+                                <label class="item_intro">
+                                    手机
+                                </label>
+                                <div class="item_detail">
+                                    <input type="text" value="${user.phone}" name="phone">
+                                </div>
+                            </div>
+
+                            <div class="user_info_item">
+                                <label class="item_intro">
+                                    电子邮箱
+                                </label>
+                                <div class="item_detail">
+                                    <input type="text" value="${user.email}" name = "email">
+                                </div>
+                            </div>
+
+                            <div class="user_info_item">
+                                <input type="submit" value="保存" class="save_button">
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
-                <div class="user_info_content">
-                    <form class="user_info_form" action="alter_user_info.do">
-                        <div class="user_info_item">
-                            <label class="item_intro">
-                                用户&nbsp;ID
-                            </label>
-                            <div class="item_detail">
-                                ${user.userid}
-                            </div>
-                        </div>
+            </c:if>
 
-                        <div class="user_info_item">
-                            <label class="item_intro">
-                                用户名
-                            </label>
-                            <div class="item_detail">
-                                ${user.nickname}
-                            </div>
-                        </div>
-
-
-                        <div class="user_info_item">
-                            <label class="item_intro">
-                                注册时间
-                            </label>
-                            <%
-                            SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                            String date = ft.format(((User)request.getSession().getAttribute("user")).getCreatetime());%>
-                            <div class="item_detail">
-                                <%=date%>
-                            </div>
-                        </div>
-
-                        <div class="user_info_item">
-                            <label class="item_intro">
-                                真实姓名
-                            </label>
-                            <div class="item_detail">
-                                <input type="text" value="${user.realname}" name="real_name">
-                            </div>
-                        </div>
-
-                        <div class="user_info_item">
-                            <label class="item_intro">
-                                手机
-                            </label>
-                            <div class="item_detail">
-                                <input type="text" value="${user.phone}" name="phone">
-                            </div>
-                        </div>
-
-                        <div class="user_info_item">
-                            <label class="item_intro">
-                                电子邮箱
-                            </label>
-                            <div class="item_detail">
-                                <input type="text" value="${user.email}" name = "email">
-                            </div>
-                        </div>
-
-                        <div class="user_info_item">
-                            <input type="submit" value="保存" class="save_button">
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-
-            <!--订单管理-->
-            <div id="user_orders_manage">
-                <div class="user_info_tab">
+            <c:if test="${param.type==2}">
+                <!--订单管理-->
+                <div id="user_orders_manage">
+                    <div class="user_info_tab">
                                 <span class="info_tab_item active">
                                     全部订单
                                 </span>
-
-                    <span class="info_tab_item">
+                        <%--
+                                 <span class="info_tab_item">
                                     待付款
                                 </span>
 
-                    <span class="info_tab_item">
+                        <span class="info_tab_item">
                                     待发货
                                 </span>
 
-                    <span class="info_tab_item">
+                        <span class="info_tab_item">
                                     已发货
                                 </span>
 
 
-                    <span class="info_tab_item">
+                        <span class="info_tab_item">
                                     待评价
                                 </span>
 
-                </div>
+                        --%>
+
+
+                    </div>
 
 
 
 
-                <div class="user_info_content">
-                    <div class="order_list">
+                    <div class="user_info_content">
+                        <div class="order_list">
 
 
 
-                        <c:forEach items="${user_orders}" var="order">
+                            <c:forEach items="${user_orders}" var="order">
 
-                            <table class="order_item">
-                                <tbody>
-                                <tr class="head first">
-                                    <th colspan="7">
+                                <table class="order_item">
+                                    <tbody>
+                                    <tr class="head first">
+                                        <th colspan="7">
                                                     <span>
                                                         下单时间：<fmt:formatDate value="${order.ordertime}" pattern="yyyy-MM-dd HH:mm:ss"/>
                                                     </span>
-                                        <span>
+                                            <span>
                                                         订单号：${order.orderid}
                                                     </span>
-                                    </th>
-                                </tr>
+                                        </th>
+                                    </tr>
 
-                                <tr class="head">
-                                    <th class="head_large">
+                                    <tr class="head">
+                                        <th class="head_large">
                                                     <span>
                                                         商品信息
                                                     </span>
-                                    </th>
+                                        </th>
 
-                                    <th class="head_small">
+                                        <th class="head_small">
                                                     <span>
                                                         单价
                                                     </span>
-                                    </th>
+                                        </th>
 
-                                    <th  class="head_small">
+                                        <th  class="head_small">
                                                     <span>
                                                         数量
                                                     </span>
-                                    </th>
+                                        </th>
 
-                                    <th class="head_small">
+                                        <th class="head_small">
                                                     <span>
                                                         小计
                                                     </span>
-                                    </th>
+                                        </th>
 
-                                    <th class="head_medium">
+                                        <th class="head_medium">
                                                     <span>
                                                         总计
                                                     </span>
-                                    </th>
+                                        </th>
 
 
-                                    <th class="head_medium">
+                                        <th class="head_medium">
                                                     <span>
                                                         订单状态
                                                     </span>
-                                    </th>
+                                        </th>
 
 
-                                    <th class="head_medium">
+                                        <th class="head_medium">
                                                     <span>
                                                         订单操作
                                                     </span>
-                                    </th>
+                                        </th>
 
-                                </tr>
+                                    </tr>
 
-                                <tr class="body">
-                                    <td colspan="4">
-                                        <div class="good_detail">
-                                            <div class="good_name">
-                                                <a href="javascript:">
-                                                    <c:if test="${!empty order.photo}">
-                                                        <img src="good_picture/${order.photo}" class="good_image">
-                                                    </c:if>
-                                                    <c:if test="${empty order.photo}">
-                                                        <img src="images/defaultblack.png" class="good_image">
-                                                    </c:if>
-                                                </a>
-                                                <a class="good_info" href="javascript:">
-                                                    ${order.goodsname}
-                                                </a>
+                                    <tr class="body">
+                                        <td colspan="4">
+                                            <div class="good_detail">
+                                                <div class="good_name">
+                                                    <a href="javascript:">
+                                                        <c:if test="${!empty order.photo}">
+                                                            <img src="good_picture/${order.photo}" class="good_image">
+                                                        </c:if>
+                                                        <c:if test="${empty order.photo}">
+                                                            <img src="images/defaultblack.png" class="good_image">
+                                                        </c:if>
+                                                    </a>
+                                                    <a class="good_info" href="javascript:">
+                                                            ${order.goodsname}
+                                                    </a>
+                                                </div>
+
+                                                <div class="good_num">
+                                                    ￥${order.reilGoodPrice}
+                                                </div>
+
+                                                <div class="good_num">
+                                                        ${order.amount}
+                                                </div>
+
+                                                <div class="good_num good_sum">
+                                                    ￥${order.orderprice}
+                                                </div>
                                             </div>
 
-                                            <div class="good_num">
-                                                ￥${order.reilGoodPrice}
-                                            </div>
+                                        </td>
 
-                                            <div class="good_num">
-                                                ${order.amount}
-                                            </div>
-
-                                            <div class="good_num good_sum">
+                                        <td>
+                                            <div class="good_total good_sum">
                                                 ￥${order.orderprice}
                                             </div>
-                                        </div>
 
-                                    </td>
+                                        </td>
 
-                                    <td>
-                                        <div class="good_total good_sum">
-                                            ￥${order.orderprice}
-                                        </div>
+                                        <td>
+                                            <div class="good_total">
+                                                <a href="javascript:">${order.orderStatus}</a>
+                                            </div>
+                                        </td>
 
-                                    </td>
+                                        <td>
+                                            <div class="good_total">
+                                                <%--<a href="javascript:" class="good_total_link">订单详情</a>--%>
 
-                                    <td>
-                                        <div class="good_total">
-                                            <a href="javascript:">${order.orderStatus}</a>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="good_total">
-                                            <a href="javascript:" class="good_total_link">订单详情</a>
-                                            <a href="javascript:" class="good_total_link">查看物流</a>
-                                            <a href="entry_comment.do?orderID=${order.orderid}" class="good_total_link">评价</a>
-                                        </div>
-                                    </td>
+                                                <a href="javascript:" class="good_total_link">查看物流</a>
+                                                <a href="entry_comment.do?orderID=${order.orderid}" class="good_total_link">订单评价</a>
+                                            </div>
+                                        </td>
 
 
-                                </tr>
-                                </tbody>
-                            </table>
-                        </c:forEach>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </c:forEach>
 
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
+            </c:if>
 
-            <!--地址管理-->
-            <div id="user_address_manage">
-                <div class="user_info_tab">
+            <c:if test="${param.type==3}">
+                <!--地址管理-->
+                <div id="user_address_manage">
+                    <div class="user_info_tab">
                                 <span class="info_tab_item active">
                                     地址管理
                                 </span>
-                </div>
-                <div class="user_info_content">
-                    <a href="javascript:" class="new_address">+新建收货地址</a>
-                    <table class="order_item address_list_item">
-                        <tbody>
+                    </div>
+                    <div class="user_info_content">
+                        <a href="javascript:" class="new_address">+新建收货地址</a>
+                        <table class="order_item address_list_item">
+                            <tbody>
 
-                        <tr class="head">
-                            <th class="head_medium">
+                            <tr class="head">
+                                <th class="head_medium">
                                                     <span>
                                                         收货人
                                                     </span>
-                            </th>
+                                </th>
 
-                            <th class="head_large">
+                                <th class="head_large">
                                                     <span>
                                                         详细地址
                                                     </span>
-                            </th>
+                                </th>
 
-                            <th  class="head_medium_lager">
+                                <th  class="head_medium_lager">
                                                     <span>
                                                         联系方式
                                                     </span>
-                            </th>
+                                </th>
 
-                            <th class="head_medium_lager">
+                                <th class="head_medium_lager">
                                                     <span>
                                                         操作
                                                     </span>
-                            </th>
+                                </th>
 
-                            <th class="head_medium_lager">
+                                <th class="head_medium_lager">
                                                     <span>
                                                         &nbsp;
                                                     </span>
-                            </th>
+                                </th>
 
-                        </tr>
-
-
-                        <c:if test="${!empty addresses}">
-                            <c:forEach items="${addresses}" var="address">
-                            <tr class="address_info">
-                                <td>${address.contactname}</td>
-                                <td>${address.addressname}</td>
-                                <td>${address.phonenum}</td>
-
-                                <td>
-                                    <a href="javascript:" class="address_link address_first add_address">编辑</a>
-                                    <a href="javascript:" class="address_link">删除</a>
-                                </td>
-
-                                <c:if test="${address.isdefault == true}">
-                                    <td>
-                                        <a href="javascript:" class="address_default">默认地址</a>
-                                    </td>
-                                </c:if>
-                                <c:if test="${!address.isdefault}">
-                                    <td>
-                                    <a href="javascript:" class="address_link">设为默认地址</a>
-                                    </td>
-                                </c:if>
-                            </c:forEach>
                             </tr>
-                        </c:if>
 
-                        </tbody>
-                    </table>
+
+                            <c:if test="${!empty addresses}">
+                                <c:forEach items="${addresses}" var="address">
+                                    <tr class="address_info">
+                                    <td>${address.contactname}</td>
+                                    <td>${address.addressname}</td>
+                                    <td>${address.phonenum}</td>
+
+                                    <td>
+                                        <a href="javascript:" class="address_link address_first add_address">编辑</a>
+                                        <a href="del_address.do?addressid=${address.addressid}" class="address_link">删除</a>
+                                        <span style="display: none" class="address_id">${address.addressid}</span>
+                                    </td>
+
+                                    <c:if test="${address.isdefault == true}">
+                                        <td>
+                                            <a href="javascript:" class="address_default">默认地址</a>
+                                        </td>
+                                    </c:if>
+                                    <c:if test="${!address.isdefault}">
+                                        <td>
+                                            <a href="javascript:" class="address_link">设为默认地址</a>
+                                        </td>
+                                    </c:if>
+                                </c:forEach>
+                                </tr>
+                            </c:if>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+            </c:if>
 
-            <!--商品收藏-->
-            <div id="user_favorite">
-                <div class="user_info_tab">
+            <c:if test="${param.type==4}">
+                <!--商品收藏-->
+                <%--
+                                   <div id="user_favorite">
+                    <div class="user_info_tab">
                                 <span class="info_tab_item active">
                                     商品收藏
                                 </span>
+                    </div>
+                    <div class="user_info_content">
+                        <ul class="favorite_list">
+                            <li class="favorite_item">
+                                <div class="product_info">
+                                    <div class="button_field">
+                                        <a href="javascript:" class="addtional_button">
+                                            <i class="iconfont icon-gouwuche button_icon"></i>
+                                        </a>
+                                        <a href="javascript:" class="addtional_button">
+                                            <i class="iconfont icon-shanchu2 button_icon"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="product_image">
+                                        <a href="javascript:">
+                                            <img src="images/defaultblue.png" class="product_img">
+                                        </a>
+                                    </div>
+
+                                    <div class="product_description">
+                                        <a href="javascript:" class="product_name">测试商品测试商品测试商品测试商品测试商品</a>
+                                        <p class="product_price">￥150</p>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="favorite_item">
+                                <div class="product_info">
+                                    <div class="button_field">
+                                        <a href="javascript:" class="addtional_button">
+                                            <i class="iconfont icon-gouwuche button_icon"></i>
+                                        </a>
+                                        <a href="javascript:" class="addtional_button">
+                                            <i class="iconfont icon-shanchu2 button_icon"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="product_image">
+                                        <a href="javascript:">
+                                            <img src="images/defaultblue.png" class="product_img">
+                                        </a>
+                                    </div>
+
+                                    <div class="product_description">
+                                        <a href="javascript:" class="product_name">测试商品测试商品测试商品测试商品测试商品</a>
+                                        <p class="product_price">￥150</p>
+                                    </div>
+                                </div>
+                            </li>
+
+
+
+
+
+
+
+
+                            <li class="clear">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="user_info_content">
-                    <ul class="favorite_list">
-                        <li class="favorite_item">
-                            <div class="product_info">
-                                <div class="button_field">
-                                    <a href="javascript:" class="addtional_button">
-                                        <i class="iconfont icon-gouwuche button_icon"></i>
-                                    </a>
-                                    <a href="javascript:" class="addtional_button">
-                                        <i class="iconfont icon-shanchu2 button_icon"></i>
-                                    </a>
-                                </div>
+                --%>
 
-                                <div class="product_image">
-                                    <a href="javascript:">
-                                        <img src="images/defaultblue.png" class="product_img">
-                                    </a>
-                                </div>
+            </c:if>
 
-                                <div class="product_description">
-                                    <a href="javascript:" class="product_name">测试商品测试商品测试商品测试商品测试商品</a>
-                                    <p class="product_price">￥150</p>
-                                </div>
-                            </div>
-                        </li>
-
-
-                        <li class="favorite_item">
-                            <div class="product_info">
-                                <div class="button_field">
-                                    <a href="javascript:" class="addtional_button">
-                                        <i class="iconfont icon-gouwuche button_icon"></i>
-                                    </a>
-                                    <a href="javascript:" class="addtional_button">
-                                        <i class="iconfont icon-shanchu2 button_icon"></i>
-                                    </a>
-                                </div>
-
-                                <div class="product_image">
-                                    <a href="javascript:">
-                                        <img src="images/defaultblue.png" class="product_img">
-                                    </a>
-                                </div>
-
-                                <div class="product_description">
-                                    <a href="javascript:" class="product_name">测试商品测试商品测试商品测试商品测试商品</a>
-                                    <p class="product_price">￥150</p>
-                                </div>
-                            </div>
-                        </li>
-
-
-
-
-
-
-
-
-                        <li class="clear">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!--账号安全-->
-            <div id="user_security">
-                <div class="user_info_tab">
+            <c:if test="${param.type==5}">
+                <!--账号安全-->
+                <div id="user_security">
+                    <div class="user_info_tab">
                                 <span class="info_tab_item active">
                                     账号安全
                                 </span>
-                </div>
-                <div class="user_info_content">
-                    <div class="user_info_form set_width">
-                        <div class="user_info_item set_bottom">
-                            <label class="item_intro">
-                                您的账号
-                            </label>
-                            <div class="item_detail">
-                                ${user.nickname}
-                            </div>
-                        </div>
-
-                        <div class="user_info_item">
-                            <label class="item_intro">
-                                登录密码
-                            </label>
-                            <div class="item_detail security_info">
-                                建议您定期更换密码，设置安全性高的密码可以使帐号更安全
-                                <a href="javascript:" class="password_link">修改</a>
+                    </div>
+                    <div class="user_info_content">
+                        <div class="user_info_form set_width">
+                            <div class="user_info_item set_bottom">
+                                <label class="item_intro">
+                                    您的账号
+                                </label>
+                                <div class="item_detail">
+                                        ${user.nickname}
+                                </div>
                             </div>
 
-                        </div>
+                            <div class="user_info_item">
+                                <label class="item_intro">
+                                    登录密码
+                                </label>
+                                <div class="item_detail security_info">
+                                    建议您定期更换密码，设置安全性高的密码可以使帐号更安全
+                                    <a href="javascript:" class="password_link">修改</a>
+                                </div>
+
+                            </div>
 
 
-                        <div class="user_info_item">
-                            <label class="item_intro">
-                                绑定手机
-                            </label>
-                            <div class="item_detail security_info">
-                                当前绑定手机号为：${user.phone}，若手机丢失或停用，请及时更换
-                                <a href="javascript:">更换</a>
+                            <div class="user_info_item">
+                                <label class="item_intro">
+                                    绑定手机
+                                </label>
+                                <div class="item_detail security_info">
+                                    当前绑定手机号为：${user.phone}，若手机丢失或停用，请及时更换
+                                    <a href="javascript:">更换</a>
+                                </div>
+
                             </div>
 
                         </div>
-
                     </div>
                 </div>
-            </div>
-
+            </c:if>
 
         </div>
         <div class="clear">
@@ -716,7 +734,8 @@
                 <input type="submit" class="address_submit" value="保存">
                 <a href="javascript:" class="cancel_button">取消</a>
             </div>
-
+            <input type="hidden" name="addressid" class="address_input" val="0">
+            <input type="hidden" name="state" class="address_state" val="new_address">
         </form>
     </div>
 </div>

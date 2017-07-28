@@ -11,16 +11,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="css/shop.css" type="text/css" rel="stylesheet" />
-    <link href="css/Sellerber.css" type="text/css"  rel="stylesheet" />
-    <link href="css/bkg_ui.css" type="text/css"  rel="stylesheet" />
-    <link href="font/css/font-awesome.min.css"  rel="stylesheet" type="text/css" />
-    <script src="js/jquery-1.9.1.min.js" type="text/javascript" ></script>
-    <script src="js/Sellerber.js" type="text/javascript"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/jquery.dataTables.bootstrap.js"></script>
-    <script src="js/layer/layer.js" type="text/javascript"></script>
-    <script src="js/laydate/laydate.js" type="text/javascript"></script>
+    <link href="../css/shop.css" type="text/css" rel="stylesheet" />
+    <link href="../css/Sellerber.css" type="text/css" rel="stylesheet" />
+    <link href="../css/bkg_ui.css" type="text/css" rel="stylesheet" />
+    <link href="../font/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.9.1.min.js" type="text/javascript" ></script>
+    <script src="../js/Sellerber.js" type="text/javascript"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/jquery.dataTables.bootstrap.js"></script>
+    <script src="../js/layer/layer.js" type="text/javascript"></script>
+    <script src="../js/laydate/laydate.js" type="text/javascript"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js" type="text/javascript"></script>
     <script src="js/respond.min.js"></script>

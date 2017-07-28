@@ -10,6 +10,7 @@ import com.neusoft.service.ICommentsService;
 import com.neusoft.service.IOrderService;
 import com.neusoft.service.IShopCartService;
 import com.sun.javafx.sg.prism.NGShape;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -166,5 +167,11 @@ public class BuyController {
 
         mav.addObject("result_goods", good_with_photos);
         return mav;
+    }
+
+    @RequestMapping("process_shop_cart.do")
+    public ModelAndView process_shop_cart(String shop_cart_json){
+        //JSONObject jb = JSONObject  .fromObject(shop_cart_json);
+        return null;
     }
 }

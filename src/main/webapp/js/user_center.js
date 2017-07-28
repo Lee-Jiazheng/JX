@@ -4,6 +4,8 @@
                 $('#address_detail').val('');
                 $('#address_receiver_name').val('');
                 $('#address_contact').val('');
+                $('.address_state').val('new_address');
+                $('.address_input').val(0);
             });
             $('.close_form').click(function(){
                 $('.widgetcontainer').hide();
@@ -20,11 +22,15 @@
                 var receiver=$(".address_list_item tr:eq("+row+") td:nth-child(1)").html();
                 var address=$(".address_list_item tr:eq("+row+") td:nth-child(2)").html();
                 var contact=$(".address_list_item tr:eq("+row+") td:nth-child(3)").html();
+                var addressid=$(this).parent().children().eq(2).html();
                 $('.address_form_title').text('编辑地址');
+                $('.address_state').val('edit_address');
                 $('#address_detail').val(address);
                 $('#address_receiver_name').val(receiver);
                 $('#address_contact').val(contact);
                 $('.widgetcontainer').show();
+                $('.address_input').val(addressid);
+                console.log(addressid);
             });
             
             $('.product_img').mouseover(function(){
