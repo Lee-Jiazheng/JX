@@ -16,7 +16,7 @@ public interface IUserMapper {
     User getUserByName(@Param("user_name") String user_name);
     @Select("select * from user where nickname = #{nickname} and password = #{password}")
     User verifyUser(User user);
-    @Insert("insert into user() values()")
+    @Insert("insert into user(nickname, password, realname, createtime, email, phone) values(#{nickname}, #{password}, #{realname}, #{createtime}, #{email}, #{phone})")
     int addUser(User user);
 
     @Select("select * from user where userId= #{userId}")

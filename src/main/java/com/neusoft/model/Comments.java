@@ -27,6 +27,17 @@ public class Comments  implements Serializable {
   @ExcelVOAttribute(name = "commentstime", column = "E")
   private Date commentstime;
 
+  public int getOrderid() {
+    return orderid;
+  }
+
+  public void setOrderid(int orderid) {
+    this.orderid = orderid;
+  }
+
+  private int orderid;
+
+
 
   public int getCommentsid() {
     return commentsid;

@@ -33,7 +33,7 @@
                 <c:if test="${!empty user}">
                     <div class="after_login">
                         <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
-                            <a href="user_center.do?type=1">
+                            <a href="javascript:">
                                 <span class="nickname">${user.nickname}</span>
                                 <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
                             </a>
@@ -41,7 +41,6 @@
                                 <div class="drop_down_menu">
                                     <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
                                     <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
-                                    <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
                                     <a class="drop_down_item" href="log_out.do">退出登录</a>
                                 </div>
                             </div>
@@ -184,67 +183,45 @@
                         <td class="col8">操作</td>
                     </tr>
 
+                    <c:forEach items="${shop_cart_goods}" var="shop_cart_good" varStatus="status">
+                        <tr class="cart_body <c:if test="${status.first}">first_cart_body</c:if>">
+                            <td class="col1">
+                                <input type="checkbox" class="checked_single">
+                            </td>
+                            <td class="col2">
+                                <c:if test="${empty shop_cart_good.photo}">
+                                    <img src="images/defaultblack.png" class="cart_image">
+                                </c:if>
+                                <c:if test="${!empty shop_cart_good.photo}">
+                                    <img src="good_picture/${shop_cart_good.photo.photo}" class="cart_image">
+                                </c:if>
+                            </td>
+                            <td class="col3">
+                                <a href="javascript:" class="cart_item_url">${shop_cart_good.goodsname}</a>
+                                <span style="display:none;" class="productId">${shop_cart_good.goodsid}</span>
+                            </td>
+                            <td class="col4">
+                                <span class="shoppingpoint">
 
-                    <tr class="cart_body first_cart_body">
-                        <td class="col1">
-                            <input type="checkbox" class="checked_single">
-                        </td>
-                        <td class="col2">
-                            <img src="images/defaultblack.png" class="cart_image">
-                        </td>
-                        <td class="col3">
-                            <a href="javascript:" class="cart_item_url">测试商品3</a>
-                        </td>
-                        <td  class="col4">
-                            4
-                        </td>
-                        <td class="col5">
-                            <span class="hidden_price">10</span>
-                            ￥10
-                        </td>
-                        <td class="col6">
-                            <i class="iconfont icon-minus num_button"></i>
-                            <input type="text" class="num_input" value="1">
-                            <i class="iconfont icon-plus num_button"></i>
-                        </td>
-                        <td class="col7">
+                                </span>
+                            </td>
+                            <td class="col5">
+                                <span class="hidden_price">${shop_cart_good.goodsprice}</span>
+                                ￥${shop_cart_good.goodsprice}
+                            </td>
+                            <td class="col6">
+                                <i class="iconfont icon-minus num_button"></i>
+                                <input type="text" class="num_input" value="${shop_cart_good.order_count}">
+                                <i class="iconfont icon-plus num_button"></i>
+                            </td>
+                            <td class="col7">
 
-                        </td>
-                        <td class="col8">
-                            <a href="javascript:" class="cart_item_delete">删除</a>
-                        </td>
-                    </tr>
-
-                    <tr class="cart_body">
-                        <td class="col1">
-                            <input type="checkbox" class="checked_single">
-                        </td>
-                        <td class="col2">
-                            <img src="images/defaultblack.png" class="cart_image">
-                        </td>
-                        <td class="col3">
-                            <a href="javascript:" class="cart_item_url">测试商品4</a>
-                        </td>
-                        <td  class="col4">
-                            4
-                        </td>
-                        <td class="col5">
-                            <span class="hidden_price">15</span>
-                            ￥15
-                        </td>
-                        <td class="col6">
-                            <i class="iconfont icon-minus num_button"></i>
-                            <input type="text" class="num_input" value="1">
-                            <i class="iconfont icon-plus num_button"></i>
-                        </td>
-                        <td class="col7">
-
-                        </td>
-                        <td class="col8">
-                            <a href="javascript:" class="cart_item_delete">删除</a>
-                        </td>
-                    </tr>
-
+                            </td>
+                            <td class="col8">
+                                <a href="javascript:" class="cart_item_delete">删除</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
 
                     </tbody>
 
@@ -381,6 +358,17 @@
 <script src="js/all.js"></script>
 
 <script>
+    function accMul(arg1,arg2)
+    {
+        var m=0,s1=arg1.toString(),s2=arg2.toString();
+
+        try{m+=s1.split(".")[1].length}catch(e){}
+        try{m+=s2.split(".")[1].length}catch(e){}
+        return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m)
+    }
+
+
+
     function emptyOrNot(){
         if($('.cart_body').length>0){
             $('.cart_main').show();
@@ -394,7 +382,11 @@
     }
     emptyOrNot();
     $(".cart_body .col7").each(function(){
-        $(this).text("￥"+$(this).parent().children().eq(4).children().eq(0).html()*$(this).parent().children().eq(5).children().eq(1).val());
+        $(this).text("￥"+accMul($(this).parent().children().eq(4).children().eq(0).html(),$(this).parent().children().eq(5).children().eq(1).val()));
+    });
+
+    $(".cart_body .col4 .shoppingpoint").each(function(){
+        $(this).text($(this).parent().parent().children().eq(6).html().split("￥")[1]);
     });
 
     $('#checked_all').click(function(){
@@ -449,7 +441,7 @@
         for (var i = oInput.length - 1; i >= 0; i--) {
             var currentRow=$('#table_body').children().eq(i+1);
             if (oInput[i].checked == true) {
-                sumPrice=sumPrice+currentRow.children().eq(4).children().eq(0).html()*currentRow.children().eq(5).children().eq(1).val();
+                sumPrice=sumPrice+accMul(currentRow.children().eq(4).children().eq(0).html(),currentRow.children().eq(5).children().eq(1).val());
             }
         }
         $('.origin_price').html(setZero(sumPrice));
@@ -518,7 +510,9 @@
             $(this).parent().children().eq(2).css('cursor','pointer');
             $(this).parent().children().eq(0).css('cursor','pointer');
         }
-        $(this).parent().parent().children().eq(6).html("￥"+$(this).parent().parent().children().eq(4).children().eq(0).html()*$(this).val());
+        var total=accMul($(this).parent().parent().children().eq(4).children().eq(0).html(),$(this).val());
+        $(this).parent().parent().children().eq(6).html("￥"+total);
+        $(this).parent().parent().children().eq(3).html(total.toString().split(".")[0]);
         show_total_num();
     });
 
@@ -535,8 +529,9 @@
 
             if($(this).parent().children().eq(1).val()!=min_product_num){
                 $(this).parent().children().eq(0).css('cursor','pointer');
-            }
-            $(this).parent().parent().children().eq(6).html("￥"+$(this).parent().parent().children().eq(4).children().eq(0).html()*$(this).parent().children().eq(1).val());
+            }var total=accMul($(this).parent().parent().children().eq(4).children().eq(0).html(),$(this).parent().children().eq(1).val());
+            $(this).parent().parent().children().eq(6).html("￥"+total);
+            $(this).parent().parent().children().eq(3).html(total.toString().split(".")[0]);
             show_total_num();
         }
     });
@@ -559,8 +554,9 @@
             if($(this).parent().children().eq(1).val()!=max_product_num){
                 $(this).parent().children().eq(2).css('cursor','pointer');
             }
-
-            $(this).parent().parent().children().eq(6).html("￥"+$(this).parent().parent().children().eq(4).children().eq(0).html()*$(this).parent().children().eq(1).val());
+            var total=accMul($(this).parent().parent().children().eq(4).children().eq(0).html(),$(this).parent().children().eq(1).val());
+            $(this).parent().parent().children().eq(6).html("￥"+total);
+            $(this).parent().parent().children().eq(3).html(total.toString().split(".")[0]);
             show_total_num();
         }
     });
@@ -582,6 +578,37 @@
             });
         });
     }
+
+    $('.place_order_url').click(function(){
+        if($('.final_price').html()!=0){
+            var idsAndNums={};
+            var jsonarray=new Array();
+            var oInput = document.getElementsByClassName("checked_single");
+            var Index;
+            for (var i = oInput.length - 1; i >= 0; i--) {
+                var currentRow=$('#table_body').children().eq(i+1);
+                if (oInput[i].checked == true) {
+                    var arr  =
+                        {
+                            "ID" : currentRow.children().eq(2).children().eq(1).html(),
+                            "Num" : currentRow.children().eq(5).children().eq(1).val()
+                        }
+                    jsonarray.push(arr);
+                }
+            }
+            console.log(jsonarray);
+            console.log(JSON.stringify(jsonarray));
+            var jsonstring = JSON.stringify(jsonarray);
+            var uri = "process_shop_cart.do?shop_cart_json=" + jsonstring;
+            location.href = uri;
+        }
+        else{
+            alert("未选择商品");
+            console.log("未选择商品");
+        }
+
+
+    });
 
 
 

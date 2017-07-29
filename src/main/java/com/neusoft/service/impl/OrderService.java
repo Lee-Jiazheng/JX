@@ -50,11 +50,16 @@ public class OrderService implements IOrderService {
         orderMapper.addOrder(order);
     }
 
-    public void updateOrder(int isFinished, int orderId) {
+    public void updateOrder(boolean isFinished, int orderId) {
         orderMapper.updateOrder(isFinished, orderId);
     }
 
     public void delOrderById(int orderId) {
         orderMapper.delOrderById(orderId);
+    }
+
+    @Override
+    public void evaluateOrder(int orderid) {
+        orderMapper.evaluateOrder(orderid);
     }
 }

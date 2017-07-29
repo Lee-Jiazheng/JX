@@ -1,5 +1,11 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:if test="${empty admin_user}">
+    <c:redirect url="/index.do">
+    </c:redirect>
+</c:if>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -22,9 +28,8 @@
         <div class="logo">
             <h1>京西商城管理系统</h1>
             <div id="UserInfo">
-                <label id="UserLabel"><%=session.getAttribute("employee")%></label>
-                <a href="javascript:" id="ChangePassword" target="IframeMain">账户管理</a>
-                <button id="UButton" onclick="LoginOut()">注销</button>
+                <label id="UserLabel">${admin_user.adminName}</label>
+                <a id="UButton" href="admin_log_out.do">注销</a>
             </div>
         </div>
     </div>
@@ -38,22 +43,13 @@
 
 
             <li>
-                <div class="link">信息管理<i class="fa fa-chevron-down"></i></div>
+                <div class="link">分类管理<i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
-                    <li><a href="RoomInfo/RoomInfo.jsp" target="IframeMain">客房信息管理</a></li>
-                    <li><a href="RoomInfo/HotelDept.jsp" target="IframeMain">部门信息管理</a></li>
-                    <li><a href="javascript:">通知公告管理</a></li>
+                    <li><a href="parent_category.do" target="IframeMain">一级分类管理</a></li>
+                    <li><a href="son_category.do" target="IframeMain">二级分类管理</a></li>
                 </ul>
             </li>
 
-            <li>
-                <div class="link">信息管理<i class="fa fa-chevron-down"></i></div>
-                <ul class="submenu">
-                    <li><a href="RoomInfo/RoomInfo.jsp" target="IframeMain">客房信息管理</a></li>
-                    <li><a href="RoomInfo/HotelDept.jsp" target="IframeMain">部门信息管理</a></li>
-                    <li><a href="javascript:">通知公告管理</a></li>
-                </ul>
-            </li>
 
             <li>
                 <div class="link">商品管理<i class="fa fa-chevron-down"></i></div>
@@ -63,9 +59,11 @@
             </li>
 
             <li>
-                <div class="link">评论管理<i class="fa fa-chevron-down"></i></div>
+                <div class="link">订单管理<i class="fa fa-chevron-down"></i></div>
                 <ul class="submenu">
-                    <li><a href="/admin/comment_manager.do" target="IframeMain">评论信息管理</a></li>
+                    <li><a href="/admin/entry_allorders.do" target="IframeMain">全部订单管理</a></li>
+                    <li><a href="/admin/entry_weifahuo.do" target="IframeMain">未发货订单</a></li>
+                    <li><a href="/admin/entry_fahuo.do" target="IframeMain">已发货订单</a></li>
                 </ul>
             </li>
 

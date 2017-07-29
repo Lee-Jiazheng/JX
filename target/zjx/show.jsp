@@ -52,7 +52,7 @@
                 <c:if test="${!empty user}">
                     <div class="after_login">
                         <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
-                            <a href="user_center.do?type=1">
+                            <a href="javascript:">
                                 <span class="nickname">${user.nickname}</span>
                                 <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
                             </a>
@@ -60,7 +60,6 @@
                                 <div class="drop_down_menu">
                                     <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
                                     <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
-                                    <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
                                     <a class="drop_down_item" href="log_out.do">退出登录</a>
                                 </div>
                             </div>
@@ -180,7 +179,8 @@
 
 <div class="main">
     <div clsss="row" id="show_row">
-        <div class="product_level">
+
+                <div class="product_level">
             <a href="javascript:">首页</a>
             &nbsp; > &nbsp;
             <a href="javascript:">一级分类</a>
@@ -189,6 +189,9 @@
             &nbsp; > &nbsp;
             ${goodInfo.goodsname}
         </div>
+
+
+
 
         <div class="product_show">
             <div class="product_show_left">
@@ -210,15 +213,21 @@
                         <span class="label">售价：</span>
                         <span class="rmb">￥</span>
                         <span class="product_current_price">${goodInfo.goodsprice}</span>
-                        <span class="product_origin_price">￥250.00</span>
+                        <span class="product_origin_price">￥${goodInfo.goodsprice}</span>
                         <span class="clear"></span>
                     </div>
 
                     <div class="sale_info">
                         <span class="label">促销信息：</span>
+                        <span class="sale_detail">本商品暂不参加促销</span>
+                        <%--
                         <span class="sale_detail">满300减100</span>
                         <span class="sale_detail">满三免一</span>
+                        --%>
+
+
                     </div>
+
 
 
                     <div class="service_info">
@@ -241,6 +250,7 @@
                             <input type="text" class="num_input" value="1">
                             <i class="iconfont icon-plus num_button"></i>
                         </div>
+                        <span class="label">( 仅剩  ${goodInfo.goodsquantity}  件 )</span>
                     </div>
                     <div class="clear">
                     </div>
@@ -318,29 +328,22 @@
                         商品推荐
                     </p>
                 </div>
-                <a href="javascript:" class="recommend_url first_recommend">
-                    <div class="image_container">
-                        <img src="images/defaultblack.png" class="product_img">
-                    </div>
-                    <p class="recommend_detail">测试商品</p>
-                    <p class="recommend_price">￥150</p>
-                </a>
 
-                <a href="javascript:" class="recommend_url">
-                    <div class="image_container">
-                        <img src="images/defaultblack.png" class="product_img">
-                    </div>
-                    <p class="recommend_detail">测试商品</p>
-                    <p class="recommend_price">￥150</p>
-                </a>
+                <c:forEach items="${new_products}" var="new_product" begin="1" end="3">
+                    <a href="shop_content.do?shopID=${new_product.goodsid}" class="recommend_url first_recommend">
+                        <div class="image_container">
+                            <c:if test="${empty new_product.photo}">
+                                <img src="images/defaultblack.png" class="product_img">
+                            </c:if>
+                            <c:if test="${!empty new_product.photo}">
+                                <img src="good_picture/${new_product.photo}" class="product_img">
+                            </c:if>
+                        </div>
+                        <p class="recommend_detail">${new_product.goodsname}</p>
+                        <p class="recommend_price">￥${new_product.goodsprice}</p>
+                    </a>
+                </c:forEach>
 
-                <a href="javascript:" class="recommend_url">
-                    <div class="image_container">
-                        <img src="images/defaultblack.png" class="product_img">
-                    </div>
-                    <p class="recommend_detail">测试商品</p>
-                    <p class="recommend_price">￥150</p>
-                </a>
             </div>
             <div class="clear">
             </div>

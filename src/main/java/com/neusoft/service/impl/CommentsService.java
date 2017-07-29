@@ -86,4 +86,9 @@ public class CommentsService implements ICommentsService{
     public void addComments(Comments comments) {
         commentsMapper.addComment(comments);
     }
+
+    @Override
+    public String getCommentsContentByOrderId(int orderid) {
+        return commentsMapper.getCommentContentByOrderId(orderid);
+    }
 }

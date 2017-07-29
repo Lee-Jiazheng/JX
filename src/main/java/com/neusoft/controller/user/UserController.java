@@ -80,7 +80,7 @@ public class UserController {
     public ModelAndView user_register(User user, HttpServletRequest request) throws IOException {
         ModelAndView mav = new ModelAndView("register");
         if(userService.user_register(user) == true){
-            mav.setViewName("user_center");
+            mav.setViewName("login");
         }else{
             mav.addObject("reg_info", "注册失败");
         }

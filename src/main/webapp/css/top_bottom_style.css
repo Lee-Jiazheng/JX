@@ -76,7 +76,8 @@ i {
               position: absolute;
               z-index: 105;
               vertical-align: middle;
-              display: none; }
+              display: none;
+              margin-left: -15px; }
               .header .top_nav .top_row .right .after_login .user_center .drop_down_block .drop_down_menu {
                 padding: 3px 13px;
                 background-color: #fff;
@@ -175,7 +176,7 @@ i {
         padding: 20px 0; }
         .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li, .header .fixed_nav .row .inner_main .nav_ul .nav_li, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li {
           float: left;
-          padding: 6px 50px 0;
+          padding: 6px 40px 0;
           font-size: 14px;
           height: 60px; }
           .header .fixed_nav .top_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .top_nav .fixed_nav .top_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .main_nav .init_main .main_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .main_nav .init_main .fixed_nav .main_row .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .row .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .footer .footer_top .inner_main .nav_ul .nav_li .nav_dropdown, .footer .header .fixed_nav .footer_top .inner_main .nav_ul .nav_li .nav_dropdown, .header .fixed_nav .footer .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown, .footer .header .fixed_nav .footer_bottom .inner_main .nav_ul .nav_li .nav_dropdown {
@@ -395,10 +396,16 @@ i {
     height: 70px;
     display: table-cell;
     text-align: center;
-    vertical-align: middle;
-    border-bottom: 1px solid #ccc; }
+    vertical-align: middle; }
     .toolbox .tool_item a .icon_right {
       color: #333 !important;
       font-size: 40px; }
+  .toolbox .tool_item .go_to_top {
+    border-bottom: 1px solid #ccc; }
+
+.user_center a {
+  min-width: 40px;
+  display: block;
+  text-align: center; }
 
 /*# sourceMappingURL=top_bottom_style.css.map */

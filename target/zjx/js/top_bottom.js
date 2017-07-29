@@ -53,7 +53,7 @@
         function reset_navbar(){
                 $(".fixed_nav").removeAttr("id"); 
                 $(".smalllogo").hide();
-                $(".nav_li").css('padding','6px 50px 0');
+                $(".nav_li").css('padding','6px 40px 0');
                 $(".first").css('margin-left','50px');
                 $(".user_info").css('display',"none");   
         }
@@ -63,7 +63,13 @@
         });
 
         function search_good(query_type) {
-            uri = 'search.do?query_goods_name=' + $('#search_good_name').val() + '&query_type=' + query_type + '&query_flag=1';
-            location.href = uri;
+            uri = 'search.do?query_goods_name='+$('#search_good_name').val()+'&query_type='+query_type
+                + '&query_flag='+i%2 +'&click_num='+0;
+            location.href=uri;
         }
 
+        $('#search_good_name').keyup(function(){
+            if(event.keyCode == 13){
+                search_good(0);
+            }
+        });

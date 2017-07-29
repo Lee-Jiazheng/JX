@@ -362,3 +362,20 @@ $red_font:#d7282d;
 #return_top{
     display: none;
 }
+.product_star{
+    padding: 20px 6%;
+    border-bottom: 1px solid $grey_border;
+    font-size: 18px;
+    label{
+        font-size: 18px;
+        color: $grey_font;
+    }
+    .star_num{
+        color: $red_font;
+        margin-right: 30px;
+    }
+    .star_rate{
+        color: $red_font;
+    }
+
+}

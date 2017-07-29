@@ -59,6 +59,16 @@ public class Order  implements Serializable {
 
   private int goodcount;
 
+  public boolean getIscommented() {
+    return iscommented;
+  }
+
+  public void setIscommented(boolean iscommented) {
+    this.iscommented = iscommented;
+  }
+
+  private boolean iscommented;
+
 
   public int getOrderid() {
     return orderid;

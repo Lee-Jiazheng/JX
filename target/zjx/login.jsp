@@ -127,8 +127,7 @@
                     </div>
                     <input type="submit" value="登录">
                 </form>
-                <a href="javascript:" class="login_url">忘记密码</a> |
-                <a href="javascript:" class="login_url">新用户注册</a>
+
             </div>
         </div>
     </div>

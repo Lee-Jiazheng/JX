@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -45,6 +46,7 @@ public class UserService implements IUserService{
     public boolean user_register(User user) {
         if(check_username(user.getNickname()) == true)
         {
+            user.setCreatetime(new Date());
             userMapper.addUser(user);
             return true;
         }

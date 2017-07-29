@@ -21,4 +21,5 @@ public interface ICommentsService {
     public List<Goods> getAllGoodsByCategoryId(int cate_id);
 
     public void addComments(Comments comments);
+    public String getCommentsContentByOrderId(int orderid);
 }

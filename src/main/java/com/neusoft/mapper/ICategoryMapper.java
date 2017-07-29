@@ -13,20 +13,29 @@ public interface ICategoryMapper {
     @Select("select * from category where parentId = #{parentId}")
     public List<Category> getCategoriesByParentId(int parentId);
 
-    @Insert("insert into category(categoryId,categoryName,parentFlag,parentId" +
-            "values(#{categoryId},#{categoryName},#{parentFlag},#{parentId}")
-    public void addCategory(Category category);
+    @Insert("insert into category(categoryname,parentflag,parentid,categoryimg) " +
+            "values(#{categoryname},#{parentflag},#{parentid},#{categoryimg})")
+    public int addCategory(Category category);
 
-    @Update("update category set categoryName=#{categoryName}," +
-            "parentFlag=#{parentFlag},parentId=#{parentId}")
+    @Insert("insert into category(categoryname,parentflag,categoryimg) " +
+            "values(#{categoryname},#{parentflag},#{categoryimg})")
+    public int addCategoryParent(Category category);
+
+    @Update("update category set categoryname=#{categoryname}," +
+            "parentflag=#{parentflag},parentid=#{parentid} where categoryid = #{categoryid}")
     public void updateCategory(Category category);
 
-    @Delete("delete from category where categoryId=#{categoryId}")
-    public void delCategoryById(@Param("categoryId") int categoryId);
+    @Delete("delete from category where categoryid=#{categoryid}")
+    public void delCategoryById(@Param("categoryid") int categoryid);
 
     @Select("select * from category")
     public List<Category> getAllCategories();
 
+    @Select("select * from category where parentflag = true")
+    public List<Category> getAllParentCategories();
+
+    @Select("select * from category where parentflag = false")
+    public List<Category> getAllSonCategories();
 
 
 }

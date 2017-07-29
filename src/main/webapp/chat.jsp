@@ -9,6 +9,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:if test="${empty user}">
+    <c:redirect url="/index.do">
+    </c:redirect>
+</c:if>
+
 
 
 <html>
@@ -91,7 +96,7 @@
 
         function append_msg(user, msg, chat_time, clear){
             var htmlData = '<div class="msg_item fn-clear">'
-                + '   <div class="uface"><img src="avatar/admin.jpg width="40" height="40"  alt=""/></div>'
+                + '   <div class="uface"><img src="avatar/${user.userphoto}" width="40" height="40"  alt=""/></div>'
                 + '   <div class="item_right">'
                 + '     <div class="msg own">' + msg + '</div>'
                 + '     <div class="name_time">' + user + ' · ' + chat_time + '</div>'
@@ -164,11 +169,11 @@
 
 <div class="chatbox">
     <div class="chat_top fn-clear">
-        <div class="logo"><img src="images/logo_word.png" width="190" height="60"  alt=""/></div>
+        <div class="logo"><img src="/images/logoword.png" width="190" height="60"  alt=""/></div>
         <div class="uinfo fn-clear">
-            <div class="uface"><img src="images/hetu.jpg" width="40" height="40"  alt=""/></div>
+            <div class="uface"><img src="avatar/${user.userphoto}" width="40" height="40"  alt=""/></div>
             <div class="uname">
-                ${user.nickname}  <i class="fontico down"></i>
+                ${user.nickname}
                 <ul class="managerbox">
                     <li><a href="#"><i class="fontico lock"></i>修改密码</a></li>
                     <li><a href="#"><i class="fontico logout"></i>退出登录</a></li>

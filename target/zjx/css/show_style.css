@@ -271,4 +271,17 @@
 #return_top {
   display: none; }
 
+.product_star {
+  padding: 20px 6%;
+  border-bottom: 1px solid #ccc;
+  font-size: 18px; }
+  .product_star label {
+    font-size: 18px;
+    color: #999; }
+  .product_star .star_num {
+    color: #d7282d;
+    margin-right: 30px; }
+  .product_star .star_rate {
+    color: #d7282d; }
+
 /*# sourceMappingURL=show_style.css.map */

@@ -1,5 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:if test="${empty admin_user}">
+    <c:redirect url="/index.do">
+    </c:redirect>
+</c:if>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -60,8 +65,7 @@
                     <td>${good.goodsquantity}</td>
                     <td>${good.goodscreatetime}</td>
                     <td><a href="javascript:ovid()" onclick="picture_edit(this," 123")"="" class="btn bg-deep-blue operation_btn">修改</a>
-                        <a href="javascript:ovid()" onclick="picture_del(this," 10001")"="" class="btn btn-danger operation_btn">删除</a>
-                        <a href="javascript:ovid()" onclick="picture_img(this,121)" class="btn bg-deep-blue operation_btn">图片</a>
+                        <a href="/admin/del_goods.do?good_id=${good.goodsid}" onclick="picture_del(this," 10001")"="" class="btn btn-danger operation_btn">删除</a>
                         <a href="comment_manager.do?goodsid=${good.goodsid}" class="btn bg-deep-blue operation_btn">评价</a>
                     </td></tr>
 

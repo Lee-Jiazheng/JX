@@ -132,6 +132,7 @@ i{
                             z-index: 105;
                             vertical-align: middle;
                             display: none;
+                            margin-left: -15px;
                            @include drop_down_type;
                         }
                     }
@@ -496,11 +497,19 @@ i{
             display: table-cell;
             text-align: center;
             vertical-align: middle;
-            border-bottom: 1px solid $grey_border;
+            
             .icon_right{
                 color: $black_font!important;
                 font-size: 40px;
             }
         }
+        .go_to_top{
+            border-bottom: 1px solid $grey_border;
+        }
     }
+}
+.user_center a{
+    min-width: 40px;
+    display: block;
+    text-align: center;
 }

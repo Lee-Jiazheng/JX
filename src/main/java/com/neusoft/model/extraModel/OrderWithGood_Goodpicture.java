@@ -84,4 +84,24 @@ public class OrderWithGood_Goodpicture implements Serializable{
         this.orderStatus = orderStatus;
     }
 
+    public boolean getIscommented() {
+        return iscommented;
+    }
+
+    public void setIscommented(boolean iscommented) {
+        this.iscommented = iscommented;
+    }
+
+    private boolean iscommented;
+
+    public String getCommentContent() {
+        return commentContent;
+    }
+
+    public void setCommentContent(String commentContent) {
+        this.commentContent = commentContent;
+    }
+
+    private String commentContent;
+
 }

@@ -20,9 +20,9 @@ public interface ICommentsMapper {
                                                          commentsgoods);
 
     @Insert("insert into Comments(commentsid,commentsbuyer,commentsgoods," +
-            "commentscontent,commentstime)" +
+            "commentscontent,commentstime, orderid)" +
             "values(#{commentsid},#{commentsbuyer},#{commentsgoods}," +
-            "#{commentscontent},#{commentstime})")
+            "#{commentscontent},#{commentstime}, #{orderid})")
     public void addComment(Comments comments);
 
     @Update("update comments set commentscontent=#{commentscontent} where " +
@@ -39,6 +39,8 @@ public interface ICommentsMapper {
     @Select("select * from comments where commentsId= #{commentsid}")
     public Comments getCommentsById(@Param("commentsid") int commentsid);
 
+    @Select("select commentscontent from comments where orderid = #{orderid}")
+    public String getCommentContentByOrderId(int orderid);
 
 
 

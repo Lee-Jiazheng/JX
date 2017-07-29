@@ -38,7 +38,7 @@
                 <c:if test="${!empty user}">
                     <div class="after_login">
                         <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
-                            <a href="user_center.do?type=1">
+                            <a href="javascript:">
                                 <span class="nickname">${user.nickname}</span>
                                 <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
                             </a>
@@ -46,7 +46,6 @@
                                 <div class="drop_down_menu">
                                     <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
                                     <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
-                                    <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
                                     <a class="drop_down_item" href="log_out.do">退出登录</a>
                                 </div>
                             </div>
@@ -169,7 +168,13 @@
         <div class="user_left">
             <div class="user_detail">
                 <a class="user_icon" href="javascript:">
-                    <img src="avatar/${user.userphoto}">
+                    <c:if test="${!empty user.userphoto}">
+                        <img src="avatar/${user.userphoto}">
+                    </c:if>
+                    <c:if test="${empty user.userphoto}">
+                        <img src="images/defaultblack.png">
+                    </c:if>
+
                 </a>
                 <p class="user_nickname">
                     ${user.nickname}
@@ -285,25 +290,25 @@
                                 <span class="info_tab_item active">
                                     全部订单
                                 </span>
-                        <%--
-                                 <span class="info_tab_item">
-                                    待付款
-                                </span>
+                            <%--
+                                     <span class="info_tab_item">
+                                        待付款
+                                    </span>
 
-                        <span class="info_tab_item">
-                                    待发货
-                                </span>
+                            <span class="info_tab_item">
+                                        待发货
+                                    </span>
 
-                        <span class="info_tab_item">
-                                    已发货
-                                </span>
+                            <span class="info_tab_item">
+                                        已发货
+                                    </span>
 
 
-                        <span class="info_tab_item">
-                                    待评价
-                                </span>
+                            <span class="info_tab_item">
+                                        待评价
+                                    </span>
 
-                        --%>
+                            --%>
 
 
                     </div>
@@ -390,7 +395,7 @@
                                                             <img src="images/defaultblack.png" class="good_image">
                                                         </c:if>
                                                     </a>
-                                                    <a class="good_info" href="javascript:">
+                                                    <a class="good_info" href="javascript:pay">
                                                             ${order.goodsname}
                                                     </a>
                                                 </div>
@@ -425,10 +430,20 @@
 
                                         <td>
                                             <div class="good_total">
-                                                <%--<a href="javascript:" class="good_total_link">订单详情</a>--%>
+                                                    <%--<a href="javascript:" class="good_total_link">订单详情</a>--%>
 
                                                 <a href="javascript:" class="good_total_link">查看物流</a>
-                                                <a href="entry_comment.do?orderID=${order.orderid}" class="good_total_link">订单评价</a>
+
+
+                                                <c:if test="${order.iscommented}">
+                                                    <span>${order.commentContent}</span>
+                                                </c:if>
+                                                <c:if test="${order.orderStatus == \"已完成\"}">
+                                                    <c:if test="${!order.iscommented}">
+                                                        <a href="entry_comment.do?orderID=${order.orderid}" class="good_total_link">订单评价</a>
+                                                    </c:if>
+                                                </c:if>
+
                                             </div>
                                         </td>
 

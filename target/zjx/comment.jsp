@@ -33,7 +33,7 @@
                 <c:if test="${!empty user}">
                     <div class="after_login">
                         <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
-                            <a href="user_center.do?type=1">
+                            <a href="javascript:">
                                 <span class="nickname">${user.nickname}</span>
                                 <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
                             </a>
@@ -41,7 +41,6 @@
                                 <div class="drop_down_menu">
                                     <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
                                     <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
-                                    <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
                                     <a class="drop_down_item" href="log_out.do">退出登录</a>
                                 </div>
                             </div>
@@ -173,6 +172,7 @@
 
             <form action="add_comment.do" method="post">
                 <input type="hidden" value="${order_good.goodsid}" name="commentsgoods">
+                <input type="hidden" value="${orderid}" name="orderid">
                 <div class="comment_item">
                     <div class="comment_title">
                         <div class="comment_title_left">

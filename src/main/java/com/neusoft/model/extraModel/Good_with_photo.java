@@ -72,4 +72,14 @@ public class Good_with_photo {
     private String goodsdescription;
     private Double goodsprice;
     private Goodsphoto photo;
+
+    public int getOrder_count() {
+        return order_count;
+    }
+
+    public void setOrder_count(int order_count) {
+        this.order_count = order_count;
+    }
+
+    private int order_count;
 }

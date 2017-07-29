@@ -1,6 +1,7 @@
 package com.neusoft.controller.user;
 
 import com.neusoft.model.*;
+import com.neusoft.model.extraModel.GoodsWithPhotos;
 import com.neusoft.model.extraModel.OrderWithGood_Goodpicture;
 import com.neusoft.service.IAdminService;
 import com.neusoft.service.ICommentsService;
@@ -40,6 +41,7 @@ public class UserInfoController {
     //进入user_center界面的servlet
     @RequestMapping("user_center.do")
     public ModelAndView user_center(HttpServletRequest request){
+
         User user = (User)request.getSession().getAttribute("user");
         ModelAndView mav = new ModelAndView("user_center");
         //尚未登陆
@@ -74,6 +76,12 @@ public class UserInfoController {
             int amount = order.getOrderprice()/price == (int)(order.getOrderprice()/price)? (int)(order.getOrderprice()/price) : (int)(order.getOrderprice()/price) + 1;
             orderWithGood_goodpicture.setAmount(amount);
             orderWithGood_goodpicture.setReilGoodPrice(price);
+
+            orderWithGood_goodpicture.setIscommented(order.getIscommented());
+            if(orderWithGood_goodpicture.getIscommented() == true){
+                //如果已经评论了获取评论的内容
+                orderWithGood_goodpicture.setCommentContent(commentsService.getCommentsContentByOrderId(order.getOrderid()));
+            }
 
             orderWithGood_goodpictures.add(orderWithGood_goodpicture);
         }

@@ -15,7 +15,14 @@
     <link rel="stylesheet" href="css/top_bottom_style.css"></link>
     <link rel="stylesheet" href="css/list_style.css"></link>
     <script src="js/jquery-3.2.1.min.js"></script>
-
+    <script type="text/javascript">
+        function search_good_order(query_type) {
+            var i = parseInt(${click_num});
+            uri = 'search.do?query_goods_name='+$('#search_good_name').val()+'&query_type='+query_type
+                + '&query_flag='+i%2 +'&click_num='+i;
+            location.href=uri;
+        }
+    </script>
 </head>
 <body>
 <div class="header" id="top">
@@ -33,7 +40,7 @@
                 <c:if test="${!empty user}">
                     <div class="after_login">
                         <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
-                            <a href="user_center.do?type=1">
+                            <a href="javascript:">
                                 <span class="nickname">${user.nickname}</span>
                                 <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
                             </a>
@@ -41,7 +48,6 @@
                                 <div class="drop_down_menu">
                                     <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
                                     <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
-                                    <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
                                     <a class="drop_down_item" href="log_out.do">退出登录</a>
                                 </div>
                             </div>
@@ -161,11 +167,14 @@
 
 <div class="main" id="main">
     <div clsss="row" id="list_row">
-        <div class="product_level">
+        <%--
+            <div class="product_level">
             <a href="javascript:">首页</a>
             &nbsp; > &nbsp;
             一级分类
         </div>
+        --%>
+
 
         <div class="product_roll">
             <div class="roll_main">
@@ -202,15 +211,15 @@
                     <label>排序：</label>
                     <div class="sort_url">
                         <a href="javascript:">默认</a>
-                        <a href="javascript:"  class="active" onclick="search_good(1)">
+                        <a href="javascript:"  class="active" onclick="search_good_order(1)">
                             价格
                             <i class="iconfont icon-xiangshang icon-sort active"></i>
                         </a>
-                        <a href="javascript:"onclick="search_good(2)" >
+                        <a href="javascript:"onclick="search_good_order(2)" >
                             销量
                             <i class="iconfont icon-xiangxia icon-sort"></i>
                         </a>
-                        <a href="javascript:" onclick="search_good(3)">
+                        <a href="javascript:" onclick="search_good_order(3)">
                             上架时间
                             <i class="iconfont icon-xiangxia icon-sort"></i>
                         </a>

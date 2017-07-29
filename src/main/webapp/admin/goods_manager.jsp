@@ -11,7 +11,7 @@
 <head>
     <title>Title</title>
 </head>
-<body>
+<body style=" margin-bottom: 30px;">
 <c:forEach items="${goods}" var="good">
     <c:if test="${empty good.photo}">
         <img src="/images/defaultblue.png">
@@ -28,5 +28,6 @@
     <a href="delete_good?goodId=${good.goodsid}"><b>删除</b></a>
 
 </c:forEach>
+
 </body>
 </html>

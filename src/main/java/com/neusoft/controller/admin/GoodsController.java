@@ -5,6 +5,7 @@ import com.neusoft.service.IAdminService;
 import com.neusoft.service.IGoodsManagerService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,11 +32,11 @@ public class GoodsController {
 
 
     @RequestMapping(value="add_goods.do", method = RequestMethod.POST)
-    public @ResponseBody
-    String add_goods(Goods goods, MultipartFile goods_image, HttpServletRequest request) {
+    public String add_goods(Goods goods, MultipartFile goods_image, HttpServletRequest request, int categoryid) {
 
         goods.setGoodscreatetime(new Date());
         goods.setGoodsupdatetime(new Date());
+        goods.setGoodscategory(categoryid);
         String path = request.getSession().getServletContext().getRealPath("/good_picture");
         String fileName = UUID.randomUUID().toString().replace("-", "") + goods_image.getOriginalFilename();
         goodsManagerService.addGoods(goods);
@@ -63,10 +64,12 @@ public class GoodsController {
     @RequestMapping("del_goods_photo.do")
     public ModelAndView del_goods_photo(int goodsId) {
         ModelAndView mav = new ModelAndView("del_goods_photo");
-            goodsManagerService.delGoodsById(goodsId);
-            mav.addObject("del_goods_status", "OK");
+        goodsManagerService.delGoodsById(goodsId);
+        mav.addObject("del_goods_status", "OK");
         return mav;
     }
+
+
 
     @RequestMapping("get_all_goods.do")
     public ModelAndView get_all_goods() {
@@ -84,13 +87,7 @@ public class GoodsController {
         return mav;
     }
 
-    @RequestMapping("del_goods.do")
-    public ModelAndView del_goods(int goodsId) {
-        ModelAndView mav = new ModelAndView();
-        goodsManagerService.delGoodsById(goodsId);
-        mav.addObject("del_status", "OK");
-        return mav;
-    }
+
 
     @RequestMapping("update_goods.do")
     public ModelAndView update_goods(Goods goods) {

@@ -8,6 +8,7 @@ import com.neusoft.model.Goods;
 import com.neusoft.model.extraModel.Good_with_photo;
 import com.neusoft.service.IAdminService;
 import com.neusoft.service.ICommentsService;
+import com.neusoft.service.IGoodsManagerService;
 import com.sun.javafx.sg.prism.NGShape;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,15 @@ public class GoodsManager {
     private IAdminService adminService;
     @Value("#{commentsService}")
     private ICommentsService commentsService;
+    @Value("#{goodsManagerService}")
+    private IGoodsManagerService goodsManagerService;
+
+    @RequestMapping("del_category.do")
+    public String del_category(int categoryID){
+        adminService.delete_category(categoryID);
+        return "redirect:parent_category.do";
+    }
+
 
     @RequestMapping("comment_manager.do")
     public ModelAndView comment_manager(){
@@ -48,8 +58,14 @@ public class GoodsManager {
     @RequestMapping("delete_comment.do")
     public ModelAndView delete_comment(HttpServletRequest request){
         commentsService.deleteCommentById(Integer.parseInt(request.getParameter("commentsid")));
-        ModelAndView mav = new ModelAndView("/admin/comments_manager");
+        ModelAndView mav = new ModelAndView("/admin/products");
         return mav;
+    }
+
+    @RequestMapping("del_goods.do")
+    public String del_goods(int good_id){
+        goodsManagerService.delGoodsById(good_id);
+        return "redirect:/admin/good_manager.do";
     }
 
     @RequestMapping("good_manager.do")

@@ -4,6 +4,7 @@ import com.neusoft.mapper.IShopcartMapper;
 import com.neusoft.model.*;
 import com.neusoft.model.extraModel.CommentsWithUserName;
 import com.neusoft.model.extraModel.Good_with_photo;
+import com.neusoft.model.extraModel.GoodsWithPhotos;
 import com.neusoft.model.extraModel.OrderWithGood_Goodpicture;
 import com.neusoft.service.*;
 import com.sun.javafx.sg.prism.NGShape;
@@ -41,11 +42,16 @@ public class BuyController {
     private IShopCartService shopCartService;
     @Value("#{addressService}")
     private IAddressService addressService;
+    @Value("#{iShowIndex}")
+    private IShowIndex iShowIndex;
 
 
     //转到之后获取商品详情页面
     @RequestMapping("shop_content.do")
     public ModelAndView shop_content(HttpServletRequest request){
+        List<GoodsWithPhotos> newProductList=iShowIndex.getNewProduct();
+
+
         int goodID = Integer.parseInt((String)request.getParameter("shopID"));
         List<CommentsWithUserName> commentsList = commentsService.getCommentsByGoodsId(goodID);
         Goods good = commentsService.getGoodsInfoByID(goodID);
@@ -55,6 +61,7 @@ public class BuyController {
         mav.addObject("category_map", adminService.getAllCategoriesWithLevel());
         mav.addObject("shopID", goodID);
         mav.addObject("good_photo", adminService.getGoodPhotoByGoodId(goodID));
+        mav.addObject("new_products", newProductList);
         return mav;
     }
 
@@ -157,9 +164,20 @@ public class BuyController {
                 goodIds.add(integer);
             }
         }
+        List<Integer> temp_goods = new ArrayList<>();
+        Map<Integer,Integer> good_and_count = new HashMap<>();
+        for(int goodId: goodIds){
+            if(good_and_count.containsKey(goodId)){
+                int count = good_and_count.get(goodId);
+                good_and_count.put(goodId, count+1);
+            }else{
+                good_and_count.put(goodId, 1);
+                temp_goods.add(goodId);
+            }
+        }
 
         List<Good_with_photo> goods = new ArrayList<>();
-        for(int goodId: goodIds){
+        for(int goodId: temp_goods){
             Goods temp_good = commentsService.getGoodsInfoByID(goodId);
             Good_with_photo good = new Good_with_photo();
             good.setPhoto(adminService.getGoodPhotoByGoodId(goodId));
@@ -167,6 +185,7 @@ public class BuyController {
             good.setGoodsname(temp_good.getGoodsname());
             good.setGoodsid(goodId);
             good.setGoodsquantity(temp_good.getGoodsquantity());
+            good.setOrder_count(good_and_count.get(goodId));
             goods.add(good);
         }
 
@@ -191,6 +210,7 @@ public class BuyController {
             order.setOrderprice(origin_order.getOrderprice());
             order.setOrderfinished(false);
             order.setAddressid(addressid);
+            order.setOrdergoods(adminService.getGoodsIdByGoodsName(origin_order.getGoodsname()));
             orderService.addOrder(order);
         }
         return new ModelAndView("pay");
@@ -222,6 +242,9 @@ public class BuyController {
     public ModelAndView process_shop_cart(String shop_cart_json, HttpServletRequest request) throws JSONException {
 
         User user = (User)request.getSession().getAttribute("user");
+        if(user == null){
+            return new ModelAndView("login");
+        }
         List<Address> addresses = addressService.getAllAddressByUserId(user.getUserid());
         ModelAndView mav = new ModelAndView("order");
         mav.addObject("addresses", addresses);
@@ -257,7 +280,7 @@ public class BuyController {
 
 
     public List<OrderWithGood_Goodpicture> getJson(String src) throws JSONException {
-        String[] stringList = src.substring(2,src.length()-2).split("\\}, " +
+        String[] stringList = src.substring(2,src.length()-2).split("\\}," +
                 "\\{");
 
         for (int i = 0; i < stringList.length; ++i) {

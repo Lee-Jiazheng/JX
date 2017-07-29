@@ -157,6 +157,11 @@ $red_font:#d7282d;
                                     text-align: center;
                                     display: block;
                                     font-weight: bold;
+                                    max-width: 210px;
+                                    margin: 0 auto;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
                                 }
                                 .new_item_name:hover{
                                     color:$logo_blue;
@@ -193,6 +198,11 @@ $red_font:#d7282d;
                     color:$black_font;
                     font-weight: bold;
                     display: block;
+                    max-width: 160px;
+                    margin: 0 auto;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
                 .recommend_name:hover{
                     color: $logo_blue;
@@ -343,4 +353,7 @@ $red_font:#d7282d;
             content:" ";
             clear: both;
         }
+}
+#large_commend{
+    max-width: 300px!important;
 }

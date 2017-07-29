@@ -30,7 +30,7 @@
                 <c:if test="${!empty user}">
                     <div class="after_login">
                         <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
-                            <a href="user_center.do?type=1">
+                            <a href="javascript:">
                                 <span class="nickname">${user.nickname}</span>
                                 <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
                             </a>
@@ -38,7 +38,6 @@
                                 <div class="drop_down_menu">
                                     <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
                                     <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
-                                    <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
                                     <a class="drop_down_item" href="log_out.do">退出登录</a>
                                 </div>
                             </div>
@@ -238,7 +237,7 @@
                                     <img src="good_picture/${product.photo}" class="recommend_image large_recommend">
                                 </c:if>
                             </a>
-                            <a href="shop_content.do?shopID=${product.goodsid}" class="recommend_name">${product.goodsname}</a>
+                            <a href="shop_content.do?shopID=${product.goodsid}" class="recommend_name" id="large_commend">${product.goodsname}</a>
                             <p class="recommend_price">￥${product.goodsprice}</p>
                         </div>
                     </c:if>
@@ -451,7 +450,7 @@
         </a>
     </div>
     <div class="tool_item">
-        <a href="javascript:">
+        <a href="chat.jsp" target="_blank">
             <i class="iconfont icon-kefu1 icon_right"></i>
         </a>
     </div>

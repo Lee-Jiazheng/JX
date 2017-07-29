@@ -8,9 +8,11 @@ import com.neusoft.model.AdminUser;
 import com.neusoft.model.Category;
 import com.neusoft.model.Goods;
 import com.neusoft.model.Goodsphoto;
+import com.neusoft.model.extraModel.Admin_order;
 import com.neusoft.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,6 +40,7 @@ public class AdminService implements IAdminService{
     private IGoodsPhotoMapper goodsPhotoMapper;
 
 
+    @CacheEvict(allEntries=true)
     public int add_good(Goods good) {
         adminMapper.addGood(good);
         return 0;
@@ -81,5 +84,48 @@ public class AdminService implements IAdminService{
     @Override
     public int getGoodsIdByGoodsName(String Goodsname) {
         return goodsMapper.getGoodsIdByGoodsName(Goodsname);
+    }
+
+    @Override
+    @CacheEvict(allEntries=true)
+    public int addCategory(Category category) {
+        if(category.getParentflag() == null || category.getParentflag() == false){
+            category.setParentflag(false);
+            categoryMapper.addCategory(category);
+        }else{
+            categoryMapper.addCategoryParent(category);
+        }
+        return 0;
+    }
+
+    @Override
+    public List<Admin_order> getAllAdminOrders() {
+        return adminMapper.getAllAdminOrders();
+    }
+
+    @Override
+    public List<Admin_order> getAllAdminOrdersIsFinished() {
+        return adminMapper.getAllAdminOrdersIsFinished();
+    }
+
+    @Override
+    public List<Admin_order> getAllAdminOrdersNotFinished() {
+        return adminMapper.getAllAdminOrdersNotFinished();
+    }
+
+    @Override
+    public List<Category> getAllParentCategories() {
+        return categoryMapper.getAllParentCategories();
+    }
+
+    @Override
+    public List<Category> getAllSonCategories() {
+        return categoryMapper.getAllSonCategories();
+    }
+
+    @Override
+    public int delete_category(int categoryid) {
+        categoryMapper.delCategoryById(categoryid);
+        return 0;
     }
 }

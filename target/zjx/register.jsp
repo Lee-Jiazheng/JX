@@ -23,18 +23,26 @@
             width: 70%!important;
         }
     </style>
+    <script>
+        function test() {
+            <c:if test="${!empty reg_info}">
+                alert("${reg_info}");
+            </c:if>
+        }
+        test();
+    </script>
 </head>
 <body>
 <div class="header">
     <div class="fixed_nav">
         <div class="row reg_nav">
-            <a href="javascript:" class="smalllogo_reg"></a>
+            <a href="index.do" class="smalllogo_reg"></a>
             <div class="reg_nav_left">
                 欢迎注册
             </div>
             <div class="reg_nav_right">
                 已有账号？
-                <a href="javascript:">请登录</a>
+                <a href="login.jsp">请登录</a>
             </div>
         </div>
     </div>
@@ -46,13 +54,13 @@
         <div class="reg_box">
             <div class="form">
 
-                <form>
+                <form action="user_register.do" method="post">
                     <div class="reg_field">
                         <div class="reg_label">
                             <label>用户名</label>
                         </div>
                         <div class="reg_input">
-                            <input type="text" id="nickName" name="nickname">
+                            <input type="text" id="nickname" name="nickname">
                             <span class="nickName_tip">用户名已存在</span>
                         </div>
                         <div class="clear">

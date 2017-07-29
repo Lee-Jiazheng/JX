@@ -38,7 +38,7 @@ public class ShowIndex implements IShowIndex {
 
     @Override
     public List<GoodsWithPhotos> getPopProduct(){
-        Goods goods=new Goods();
+        Goods goods= new Goods();
         ArrayList<Integer> integerArrayList=indexMapper.getTopSevenPopIDs();
         List<GoodsWithPhotos> goodsWithPhotosList=new ArrayList<GoodsWithPhotos>();
         for(Integer integer:integerArrayList){

@@ -1,4 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:if test="${empty admin_user}">
+    <c:redirect url="/index.do">
+    </c:redirect>
+</c:if>
 <%--
   Created by IntelliJ IDEA.
   User: Bruce Lee
@@ -16,7 +21,7 @@
     <title>Title</title>
 </head>
 <body>
-<div class="margin" id="page_style" style="left: 0px;max-height: 600px;overflow: auto;">
+<div class="margin" id="page_style" style="left: 0px;max-height: 600px;overflow: auto; margin-bottom: 30px;">
     <!--列表展示-->
     <div class="list_Exhibition margin-sx">
         <table class="table table_list table_striped table-bordered" id="sample-table">

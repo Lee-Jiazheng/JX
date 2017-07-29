@@ -34,7 +34,7 @@
                 <c:if test="${!empty user}">
                     <div class="after_login">
                         <div class="user_center" onmouseover="rotate_arrow(0)" onmouseout="reset_arrow(0)">
-                            <a href="user_center.do?type=1">
+                            <a href="javascript:">
                                 <span class="nickname">${user.nickname}</span>
                                 <i class="fa fa-angle-up fa-1x" aria-hidden="true" id="dropdown"></i>
                             </a>
@@ -42,7 +42,6 @@
                                 <div class="drop_down_menu">
                                     <a class="drop_down_item" href="user_center.do?type=1">个人中心</a>
                                     <a class="drop_down_item" href="user_center.do?type=2">订单管理</a>
-                                    <a class="drop_down_item" href="user_center.do?type=4">商品收藏</a>
                                     <a class="drop_down_item" href="log_out.do">退出登录</a>
                                 </div>
                             </div>
@@ -278,6 +277,7 @@
                     </div>
                     <div class="line">
                         <button class="pay_button" onclick="close_acount()">付款</button>
+                        <input type="hidden" id="addressid" value="${addresses[0].addressid}">
                     </div>
                 </div>
 
@@ -385,10 +385,11 @@
         <div class="switch_title">选择地址</div>
         <div class="switch_list">
 
-            <c:forEach items="${addresses}" var="address">
+            <c:forEach items="${addresses}" var="address" varStatus="status">
 
-                <input type="hidden" id="addressid" value="${address.addressid}"/>
-                <div class="switch_item active">
+
+                <div class="switch_item    <c:if test="${status.first}">      active         </c:if> ">
+                    <input type="hidden" id="address_select" value="${address.addressid}"/>
                     <p class="address_line select_name">
                         <label>收 货 人：</label>
                         <span class="text">${address.contactname}</span>
@@ -419,7 +420,7 @@
 <script src="js/top_bottom.js"></script>
 <script src="js/all.js"></script>
 <script>
-    var current_address_id = 0;
+    var current_address_id = ${addresses[0].addressid};
     $('.new_address').click(function(){
         $('.address_form_title').text('新建地址');
         $('.edit_widgetcontainer').show();
@@ -459,12 +460,13 @@
         $('#show_contact').html($(".switch_list .active .select_contact .text").html());
         $('#show_address').html($(".switch_list .active .select_address .text").html());
         $('.switch_widgetcontainer').hide();
-
+        $("#addressid").val($('.switch_list .active #address_select').val());
+        console.log($("#addressid").val());
     });
 
     function close_acount(){
         //uri = "close_acount.do?addressid=" + $('#addressid').val();
-        uri = "close_acount.do?addressid=3";
+        uri = "close_acount.do?addressid="+$('#addressid').val();
         location.href = uri;
     }
 </script>

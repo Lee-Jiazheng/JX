@@ -11,6 +11,8 @@ import java.util.List;
  * Created by Bruce Lee on 2017/7/22.
  */
 public interface ISearchService {
+    public static final String cacheName = "searchService";
+
     String splitGoodsName(String goodsName);
 
     public List<Goods> sortByPrice(List<Goods> goodsList, boolean flag);

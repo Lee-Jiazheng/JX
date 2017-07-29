@@ -39,10 +39,12 @@ public class ShopCartService implements IShopCartService {
         Cookie[] cookies = request.getCookies();
         List<Integer> goodIds = new ArrayList<>();
         for(Cookie cookie : cookies){
+            int goodId = 0;
             try{
                 goodIds.add(Integer.parseInt(cookie.getValue()));
             }catch (Exception ex){
                 System.out.println("cookie异常");
+                continue;
             }
         }
         return goodIds;

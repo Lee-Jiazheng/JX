@@ -48,6 +48,7 @@ public class CommentsController {
         ModelAndView mav = new ModelAndView("user_center");
         comments.setCommentstime(new Date());
         comments.setCommentsbuyer(((User)request.getSession().getAttribute("user")).getUserid());
+        orderService.evaluateOrder(comments.getOrderid());
         commentsService.addComments(comments);
 
         return mav;
@@ -63,6 +64,7 @@ public class CommentsController {
         good_with_photo.setGoodsid(good.getGoodsid());
         ModelAndView mav = new ModelAndView("comment");
         mav.addObject("order_good", good_with_photo);
+        mav.addObject("orderid", orderID);
         return mav;
     }
 

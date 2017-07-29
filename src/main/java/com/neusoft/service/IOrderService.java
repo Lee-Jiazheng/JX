@@ -28,7 +28,9 @@ public interface IOrderService {
     /*
     只能修改订单状态，原始数据一插入就不能修改
     */
-    public void updateOrder(int isFinished, int orderId);
+    public void updateOrder(boolean isFinished, int orderId);
 
     public void delOrderById(int orderId);
+
+    public void evaluateOrder(int orderid);
 }

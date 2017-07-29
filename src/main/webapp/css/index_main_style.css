@@ -116,7 +116,12 @@
               .index_new_content .index_new_list .new_list_main .new_list_content .new_item_collection .new_item .new_item_main .new_item_desription .new_item_name {
                 text-align: center;
                 display: block;
-                font-weight: bold; }
+                font-weight: bold;
+                max-width: 210px;
+                margin: 0 auto;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis; }
               .index_new_content .index_new_list .new_list_main .new_list_content .new_item_collection .new_item .new_item_main .new_item_desription .new_item_name:hover {
                 color: #15a8e0; }
               .index_new_content .index_new_list .new_list_main .new_list_content .new_item_collection .new_item .new_item_main .new_item_desription .new_item_price {
@@ -139,7 +144,12 @@
       #index_recommend .index_item .left_recommend .recommend_item .recommend_name, #index_recommend .index_item .right_recommend .recommend_item .recommend_name {
         color: #333;
         font-weight: bold;
-        display: block; }
+        display: block;
+        max-width: 160px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
       #index_recommend .index_item .left_recommend .recommend_item .recommend_name:hover, #index_recommend .index_item .right_recommend .recommend_item .recommend_name:hover {
         color: #15a8e0; }
       #index_recommend .index_item .left_recommend .recommend_item .recommend_price, #index_recommend .index_item .right_recommend .recommend_item .recommend_price {
@@ -248,5 +258,8 @@
     display: table;
     content: " ";
     clear: both; }
+
+#large_commend {
+  max-width: 300px !important; }
 
 /*# sourceMappingURL=index_main_style.css.map */

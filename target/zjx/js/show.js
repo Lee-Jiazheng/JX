@@ -1,6 +1,10 @@
-            var max_product_num=50;
+
             var min_product_num=1;
             var reg = new RegExp("^[0-9]*");
+            if($('.review_item').length!=0){
+                $('#product_review').html("评价 ( "+$('.review_item').length+" )");
+            }
+
 
             $('.icon-minus').css('cursor','not-allowed');
 

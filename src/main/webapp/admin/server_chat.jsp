@@ -6,7 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:if test="${empty admin_user}">
+    <c:redirect url="/index.do">
+    </c:redirect>
+</c:if>
 <html>
 <head>
     <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
@@ -50,8 +55,8 @@
                         if(find == false) {
                             var user = {"user_name":msgObj.from, "avatar": msgObj.avatar};
                             all_users.push(user);
-                            message_record.push(new Array())
-                            add_user(msgObj.from)
+                            message_record.push(new Array());
+                            add_user(msgObj.from, msgObj.avatar);
                         }
                     }
                     var i=0;
@@ -97,7 +102,7 @@
 
         function append_msg(user, msg, chat_time, avatar, clear){
             var htmlData = '<div class="msg_item fn-clear">'
-                + '   <div class="uface"><img src=\"avatar/'+ avatar + '\" width="40" height="40"  alt=""/></div>'
+                + '   <div class="uface"><img src=\"/avatar/'+ avatar + '\" width="40" height="40"  alt=""/></div>'
                 + '   <div class="item_right">'
                 + '     <div class="msg own">' + msg + '</div>'
                 + '     <div class="name_time">' + user + ' · ' + chat_time + '</div>'
@@ -120,8 +125,8 @@
             }
         });
 
-        function add_user(user_name) {
-            var htmlData = ' <li class="fn-clear" onclick="change_current_user(\'' + user_name + '\')"><span><img src="images/hetu.jpg" width="30" height="30"  alt=""/></span><em>'
+        function add_user(user_name, avatar) {
+            var htmlData = ' <li class="fn-clear" onclick="change_current_user(\'' + user_name + '\')"><span><img src=\"/avatars/'+ avatar +'\" width="30" height="30"  alt=""/></span><em>'
                 + user_name + '</em><small class="online" title="在线"></small></li>';
 
             $("#all_user_check").append(htmlData);
@@ -173,11 +178,11 @@
 
 <div class="chatbox">
     <div class="chat_top fn-clear">
-        <div class="logo"><img src="images/logo.png" width="190" height="60"  alt=""/></div>
+        <div class="logo"><img src="/images/logoword.png" width="190" height="60"  alt=""/></div>
         <div class="uinfo fn-clear">
-            <div class="uface"><img src="images/hetu.jpg" width="40" height="40"  alt=""/></div>
+            <div class="uface"><img src="/avatar/admin.jpg" width="40" height="40"  alt=""/></div>
             <div class="uname">
-                管理员客服  <i class="fontico down"></i>
+                管理员客服
                 <ul class="managerbox">
                     <li><a href="#"><i class="fontico lock"></i>修改密码</a></li>
                     <li><a href="#"><i class="fontico logout"></i>退出登录</a></li>

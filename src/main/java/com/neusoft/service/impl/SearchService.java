@@ -2,12 +2,14 @@ package com.neusoft.service.impl;
 
 import com.neusoft.mapper.IGoodsMapper;
 import com.neusoft.mapper.IOrderMapper;
+import com.neusoft.model.Collections;
 import com.neusoft.model.Goods;
 import com.neusoft.service.ISearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -29,88 +31,56 @@ public class SearchService implements ISearchService {
         }
         return goodsName;
     }
+    static Comparator<Goods> QuantityComparator = new Comparator<Goods>() {
+        @Override
+        public int compare(Goods s1, Goods s2) {
+            if(s1.getGoodsquantity() > s2.getGoodsquantity()){
+                return 1;
+            }
+            else if(s1.getGoodsquantity() == s2.getGoodsquantity()){
+                return 0;
+            }
+            else {
+                return -1;
+            }
+        }
+    };
+    static Comparator<Goods> DateComparator = new Comparator<Goods>() {
+        @Override
+        public int compare(Goods s1, Goods s2) {
+            return s1.getGoodscreatetime().compareTo(s2.getGoodscreatetime());
+        }
+    };
+    static Comparator<Goods> DoubleComparator = new Comparator<Goods>() {
+        @Override
+        public int compare(Goods s1, Goods s2) {
+            return s1.getGoodsprice().compareTo(s2.getGoodsprice());
+        }
+    };
 
     public List<Goods> sortByPrice(List<Goods> goodsList, boolean flag) {
-        int size = goodsList.size();
-        for (int i = 0; i < size; ++i) {
-            int max = 0;
-            for (int j = 0; j < size - i; ++j) {
-                if (flag == true) {
-                    if (goodsList.get(max).getGoodsprice() <= goodsList.get(j)
-                            .getGoodsprice()) {
-                        Double tmp = goodsList.get(max).getGoodsprice();
-                        goodsList.get(max).setGoodsprice(goodsList.get(j)
-                                .getGoodsprice());
-                        goodsList.get(j).setGoodsprice(tmp);
-                    }
-                }
-                else{
-                    if (goodsList.get(max).getGoodsprice() > goodsList.get(j)
-                            .getGoodsprice()) {
-                        Double tmp = goodsList.get(max).getGoodsprice();
-                        goodsList.get(max).setGoodsprice(goodsList.get(j)
-                                .getGoodsprice());
-                        goodsList.get(j).setGoodsprice(tmp);
-                    }
-                }
-            }
+        java.util.Collections.sort(goodsList,DoubleComparator);
+        if (flag != true) {
+            java.util.Collections.reverse(goodsList);
+
         }
         return goodsList;
     }
 
-
     public List<Goods> sortByTime(List<Goods> goodsList, boolean flag) {
-        int size = goodsList.size();
-        for (int i = 0; i < size; ++i) {
-            int max = 0;
-            for (int j = 0; j < size - i; ++j) {
-                if (flag == true) {
-                    if ((goodsList.get(max).getGoodscreatetime().compareTo
-                            (goodsList.get(j).getGoodscreatetime())) >= 0) {
-                        Date tmp = goodsList.get(max).getGoodscreatetime();
-                        goodsList.get(max).setGoodscreatetime(goodsList.get(j)
-                                .getGoodscreatetime());
-                        goodsList.get(j).setGoodscreatetime(tmp);
-                    }
-                }
-                else{
-                    if ((goodsList.get(max).getGoodscreatetime().compareTo
-                            (goodsList.get(j).getGoodscreatetime())) < 0) {
-                        Date tmp = goodsList.get(max).getGoodscreatetime();
-                        goodsList.get(max).setGoodscreatetime(goodsList.get(j)
-                                .getGoodscreatetime());
-                        goodsList.get(j).setGoodscreatetime(tmp);
-                    }
-                }
-            }
+        java.util.Collections.sort(goodsList,DateComparator);
+        if (flag != true) {
+            java.util.Collections.reverse(goodsList);
+
         }
         return goodsList;
     }
 
     public List<Goods> sortBySales(List<Goods> goodsList, boolean flag) {
-        int size = goodsList.size();
-        for (int i = 0; i < size; ++i) {
-            int max = 0;
-            for (int j = 0; j < size - i; ++j) {
-                if(flag == true) {
-                    if ((goodsList.get(max).getGoodsquantity() >
-                            (goodsList.get(j).getGoodsquantity()))) {
-                        int tmp = goodsList.get(max).getGoodsquantity();
-                        goodsList.get(max).setGoodsquantity(goodsList.get(j)
-                                .getGoodsquantity());
-                        goodsList.get(j).setGoodsquantity(tmp);
-                    }
-                }
-                else {
-                    if ((goodsList.get(max).getGoodsquantity() <
-                            (goodsList.get(j).getGoodsquantity()))) {
-                        int tmp = goodsList.get(max).getGoodsquantity();
-                        goodsList.get(max).setGoodsquantity(goodsList.get(j)
-                                .getGoodsquantity());
-                        goodsList.get(j).setGoodsquantity(tmp);
-                    }
-                }
-            }
+        java.util.Collections.sort(goodsList,QuantityComparator);
+        if (flag != true) {
+            java.util.Collections.reverse(goodsList);
+
         }
         return goodsList;
     }

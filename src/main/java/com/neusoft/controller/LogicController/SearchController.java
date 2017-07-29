@@ -30,10 +30,13 @@ public class SearchController {
      * query_type 是查询类型， 例如价格、销量
      * query_flag 是按照升序降序排列，1是升序，0是降序
      */
+    public static int click_num = 0;
     @RequestMapping("search.do")
     public ModelAndView search(String query_goods_name, int query_type, int query_flag, HttpServletRequest request){
         //if(query_goods_name == null && request.getSession().get)
+        click_num++;
         request.getSession().setAttribute("query_goods_name", query_goods_name);
+        request.getSession().setAttribute("click_num",click_num);
         List<Goods> goodsList = new ArrayList<>();
         switch (query_type){
             case 0://简单地查一下
@@ -68,6 +71,7 @@ public class SearchController {
             good_with_photos.add(temp_good_photo);
         }
         mav.addObject("result_goods", good_with_photos);
+        mav.addObject("click_num", click_num);
         return mav;
     }
 }
